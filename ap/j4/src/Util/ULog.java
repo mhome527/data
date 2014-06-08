@@ -1,0 +1,16 @@
+package sjpn4.vn.Util;
+
+import android.util.Log;
+import sjpn4.vn.Constant;
+
+public class ULog {
+	public static void i(Object obj, String msg) {
+		if (Constant.bLog)
+			Log.i(obj.getClass().getSimpleName() + "-HuynhTD", msg);
+	}
+
+	public static void e(Object obj, String msg) {
+		if (Constant.bLog)
+			Log.e(obj.getClass().getSimpleName() + "-HuynhTD", msg);
+	}
+}

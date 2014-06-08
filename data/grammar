@@ -1,0 +1,729 @@
+{	
+	"listGrammar":[
+		{"grammar":"あげく(に）", "meanJP":"", 
+			"meanEN":"In the end; finally; on top of all that; to make matters worse.", 
+			"meanVN":"Sau khi đã ~, rốt cuộc", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~あげく(に）</b></p>
+<b>意味：</b><br/>In the end; finally; on top of all that; to make matters worse. <br/>
+Sau khi đã ~, rốt cuộc ...
+<br/><br/><b>接続：</b><br/>　[動-た形；名-の]＋あげく
+<br/><br/><b>例文：</b><br/>
+さんさん迷ったあげく、大学院には行かないことにした。<br/>
+Sau khi phân vân rất nhiều, cuối cùng tôi quyết định không đi học cao học nữa. "},
+
+		{"grammar":"あまり", "meanJP":"", 
+			"meanEN":"Do ~ so much as to ~ ", 
+			"meanVN":" ~[làm gì] quá nhiều mà ..", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~あまり</b></p>
+<b>意味：</b><br/>
+Do ~ so much as to ~<br/>
+[làm gì] quá nhiều mà ...
+<br/><br/><b>接続：</b><br/>[動-辞書形 / た形；な形-な；名-の]＋あまり
+<br/><br/><b>例文：</b><br/>
+子どもの将来を思うあまり、厳しすぎることを言ってしまった。<br/>
+Do quá lo lắng cho tương lai con cái mà tôi lỡ nói những lời quá khắc nghiệt."},
+
+		{"grammar":"以上(は)", "meanJP":"", 
+			"meanEN":"　Since", 
+			"meanVN":"Một khi đã ~ [thì phải ...] (chỉ nghĩa vụ)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~以上(は)</b></p>
+<b>意味：</b><br/>
+Since     <br/>
+Một khi đã ~ [thì phải ...] (chỉ nghĩa vụ)
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の名詞修飾型＋以上　　　＜[な形-な；名-の]becomes [な形-である；名-である] ＞
+<br/><br/><b>例文：</b><br/>
+日本に住んでいる以上、日本の法律を守らなければならない。<br/>
+Một khi đã sống ở Nhật Bản thì phải tuân thủ pháp luật Nhật Bản. 類語：　「~からには」<br/>
+注 意：　<br/>
+often followed by obligations, prohibitions, demands, presumptions, and strong conclusions such as [なければならない /　てはいけない　/ てください　 / だろう]"
+		},
+			
+		{"grammar":"~一方 / ~一方では", "meanJP":"", 
+			"meanEN":"While; Meanwhile　(shows a comparison between two things)", 
+			"meanVN":" Trong khi [vế 1] thì [vế 2, chỉ đối lập]", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~一方 / ~一方では　</b></p>
+<b>意味：</b><br/>
+While; Meanwhile　(shows a comparison between two things) <br/>
+Trong khi [vế 1] thì [vế 2, chỉ đối lập] 
+<br/><br/><b>接続：</b><br/>
+[動・い形・な形・名]の名詞修飾型＋一方　＜[な形・名] use [である]＞ 
+<br/><br/><b>例文：</b><br/>
+私の仕事は夏は非常に忙しい一方、冬は暇になる。<br/>
+Công việc của tôi mùa hè thì cực kỳ bận mà mùa đông thì lại nhàn. "
+		},
+		
+		{"grammar":"~一方だ ", "meanJP":"", 
+			"meanEN":"(no specific meaning) shows something continuing towards a certain tendency.　ex. more and more; less and less; keep on~; never stop~", 
+			"meanVN":"Chỉ toàn là ~ (chỉ việc gì tiếp tục không dừng)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~一方だ </b></p>
+<b>意味：</b><br/>
+(no specific meaning) shows something continuing towards a certain tendency.　ex. more and more; less and less; keep on~; never stop~<br/>
+Chỉ toàn là ~ (chỉ việc gì tiếp tục không dừng)
+<br/><br/><b>接続：</b><br/>
+[動-辞書形]＋一方だ
+<br/><br/><b>例文：</b><br/>
+最近、パソコン通信の利用者は増える一方だ。<br/>
+Gần đây, số người dùng truyền thông máy tính chỉ toàn tăng lên. 注意：　Uses verbs that show / express a change "
+		},
+		
+		{"grammar":" ~うえ(に)", "meanJP":"", 
+			"meanEN":"In addition to~ ", 
+			"meanVN":"Thêm vào ~ / Cùng với [việc] ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~うえ(に)</b></p>
+<b>意味：</b><br/>　In addition to~    Thêm vào ~ / Cùng với [việc] ~
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の名詞修飾型＋うえ
+<br/><br/><b>例文：</b><br/>　今年のインフルエンザは高熱が出るうえ、せきもひどい。<br/>
+        Dịch cúm năm nay cùng với việc bị sốt cao tôi còn bị ho nặng nữa. "
+		},
+		
+		{"grammar":" ~上で(は) / ~上での / ~上でも / ~上の", "meanJP":"", 
+			"meanEN":"1. After...ing, Upon…ing \n 2. used when talking about something from a certain time, place, or condition　(often following sentence gives advice or warning)", 
+			"meanVN":"Sau khi đã ~ [mới] ...; Khi [làm gì đó]", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~上で(は) / ~上での / ~上でも / ~上の</b></p>
+<b>A意味：</b><br/>　After...ing ; Upon…ing <br/> Sau khi đã ~ [mới] ...
+<br/><br/><b>接続：</b><br/>　[動-た形；名-の]＋上で
+<br/><br/><b>例文：</b><br/>　みんなの意見を聞いた上で決めました。
+          Tôi đã quyết định sau khi đã nghe hết ý kiến của mọi người.<br/><br/>
+<b>B意味：</b><br/>　used when talking about something from a certain time, place, or condition　(often following sentence gives advice or warning)<br/>
+Khi [làm gì đó]
+<br/><br/><b>接続：</b><br/>　[動-辞書形；名-の]＋上で
+<br/><br/><b>例文：</b><br/>　日本の会社で働く上で、注意しなければならないことは何でしょうか。
+Khi làm việc ở công ty của Nhật thì cần chú ý việc gì ạ? "
+		},
+		
+		{"grammar":"~上は", "meanJP":"", 
+			"meanEN":"Now that~; Since~", 
+			"meanVN":"Một khi ~ [thì phải ...]", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~上は</b></p>
+<b>意味：</b><br/>　Now that~; Since~ <br/>           Một khi ~ [thì phải ...]
+<br/><br/><b>接続：</b><br/>　[動-辞書形 / た形]＋上は
+<br/><br/><b>例文：</b><br/>　約束を結ぶ上は、条件を慎重に検討すべきである。<br/>
+Một khi thỏa thuận thì phải xem xét các điều khiện một cách cẩn thận. "
+		},
+		
+		{"grammar":" ~(よ)うじゃないか / ~(よ)うではないか", "meanJP":"", 
+			"meanEN":"　Shall we~; Let's~", 
+			"meanVN":"Chúng ta cần phải ~ chứ? (chỉ kêu gọi nghĩa vụ)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~(よ)うじゃないか / ~(よ)うではないか</b></p>
+<b>意味：</b><br/>　Shall we~; Let's~ <br/>                           Chúng ta cần phải ~ chứ? (chỉ kêu gọi nghĩa vụ)
+<br/><br/><b>接続：</b><br/>　[動-意向形]＋ではないか
+<br/><br/><b>例文：</b><br/>　災害を受けた人々に救援物資を送ろうではないか。<br/>
+Chúng ta cần phải gửi đồ cứu trợ cho những người gặp nạn chứ?"
+		},
+		
+		{"grammar":" ~うちに / ~ないうちに", "meanJP":"", 
+			"meanEN":"1. While~ < do something before the condition changes > \n 2. While~ < during that time, something that did not start, will happen >", 
+			"meanVN":"1. Trong lúc ~ (khi có gì đang/chưa xảy ra) \n 2.  Trong lúc ~ (đang có gì xảy ra)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~うちに / ~ないうちに</b></p>
+<br/><br/><b>接続：</b><br/>　[動-辞書形 / ない形-ない；い形-い；な形-な；名-の]＋うちに<br/>
+  <b>A意味：</b><br/>　While~ < do something before the condition changes ><br/>
+Trong lúc ~ (khi có gì đang/chưa xảy ra)
+    <br/><br/><b>例文：</b><br/>　日本にいるうちに、一度京都を訪ねたいと思っている。<br/>
+Trong lúc còn đang ở Nhật, tôi luôn muốn một lần được đi Kyoto.<br/><br/>
+  <b>B意味：</b><br/>　While~ < during that time, something that did not start, will happen ><br/>
+Trong lúc ~ (đang có gì xảy ra)
+    <br/><br/><b>接続：</b><br/>　寒かったが、走っているうちに体が暖かくなった。<br/>
+Trời rất lạnh nhưng trong lúc tôi chạy thì cơ thể ấm lên."
+		},
+		
+		{"grammar":" ~得る", "meanJP":"", 
+			"meanEN":"Be possible to~", 
+			"meanVN":"Có thể ~ / Trong phạm vi có thể ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~得る</b></p>
+<b>意味：</b><br/>　Be possible to~ <br/>   Có thể ~ / Trong phạm vi có thể ~
+<br/><br/><b>接続：</b><br/>　[動-ます形]＋得る
+<br/><br/><b>例文：</b><br/>　考え得るかぎりの手は尽くしたが、問題の解決には至らなかった。<br/>
+Tôi đã cố gắng hết sức mọi việc có thể nghĩ ra những vẫn không giải quyết được vấn đề."
+		},
+		
+		{"grammar":"~得ない", "meanJP":"", 
+			"meanEN":"Be impossible to~ ", 
+			"meanVN":"Không thể ~ (khách quan)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~得ない</b></p>
+<b>意味：</b><br/>　Be impossible to~ <br/>             Không thể ~ (khách quan)
+<br/><br/><b>接続：</b><br/>　[動-ます形]＋得ない
+<br/><br/><b>例文：</b><br/>　こんな低い山で遭難することはあり得ないと思う。<br/>
+        Tôi nghĩ ở ngọn núi thấp thế này thì không thể gặp tai nạn gì cả. "
+		},
+		
+		{"grammar":" ~おかげだ / ~おかげで", "meanJP":"", 
+			"meanEN":"Thanks to~; Owing to~; Because of~　(express thanks to the result of a good outcome) ", 
+			"meanVN":"Nhờ có ~ / May mà có ~ (chỉ ân huệ)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~おかげだ / ~おかげで</b></p>
+<b>意味：</b><br/>　Thanks to~; Owing to~; Because of~　(express thanks to the result of a good outcome) <br/>            Nhờ có ~ / May mà có ~ (chỉ ân huệ)
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の名詞修飾型＋おかげで
+<br/><br/><b>例文：</b><br/>　科学技術が発達したおかげで、我々の生活は便利になった。<br/>
+        Nhờ khoa học kỹ thuật phát triển mà cuộc sống của chúng ta mới trở nên tiện lợi. <br/>
+慣用：　おかげさまで　Thanks to you or some higher power / Nhờ trời"
+		},
+		
+		{"grammar":" ~おそれがある", "meanJP":"", 
+			"meanEN":"Be in danger of~", 
+			"meanVN":"Có nguy cơ ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~おそれがある</b></p>
+<b>意味：</b><br/>　Be in danger of~ <br/>Có nguy cơ ~
+<br/><br/><b>接続：</b><br/>　[動-辞書形；名-の]＋おそれがある
+<br/><br/><b>例文：</b><br/>早く手術しないと、手遅れになるおそれがある。<br/>
+        Nếu không phẫu thuật sớm thì có nguy cơ sẽ quá muộn."
+		},
+		
+		{"grammar":"~かぎり(は) / ~かぎりでは / ないかぎり(は)", "meanJP":"", 
+			"meanEN":"As long as~ ; As far as~　<during a specific time>\nAs long as~ ; As far as~　<show a specific range, limit, bound>\n　As long as~ ; As far as~　<until a certain limit>\nAs long as~ ; As far as~　<show a condition>", 
+			"meanVN":"Trong khi còn ~ / Một khi còn ~\nTrong phạm vi ~ (hiểu biết,v.v...)\nTrong khi còn ~ (chỉ giới hạn nhất định)\n", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~かぎり(は) / ~かぎりでは / ないかぎり(は)</b></p>
+<b>A意味：</b><br/>
+As long as~ ; As far as~　<during a specific time><br/>
+Trong khi còn ~ / Một khi còn ~
+<br/><br/><b>接続：</b><br/>[動-辞書形；い形-い；な形-な；名-の / である]＋かぎり
+<br/><br/><b>例文：</b><br/>
+日本にいるかぎり、タンさんは私に連絡してくれるはずだ。<br/>
+Nếu còn đang ở Nhật Bản  thì chắc chắn anh Tan sẽ liên lạc với tôi.<br/>
+
+<b>B意味：</b><br/>
+As long as~ ; As far as~　<show a specific range, limit, bound><br/>
+Trong phạm vi ~ (hiểu biết,v.v...)
+<br/><br/><b>接続：</b><br/>
+[動-辞書形 / た形]＋かぎりでは
+<br/><br/><b>例文：</b><br/>
+私が知っているかぎりでは、この本は今年一番よく売れたそうです。<br/>
+Trong phạm vi mà tôi biết thì hình như quyển sách này năm nay bán chạy nhất.<br/><br/>
+<b>C意味：</b><br/>
+As long as~ ; As far as~　<until a certain limit><br/>
+Trong khi còn ~ (chỉ giới hạn nhất định)
+<br/><br/><b>接続：</b><br/>　[動-辞書形；名-の]＋かぎり
+<br/><br/><b>例文：</b><br/>
+時間の許すかぎり、話し合いを続きましょう。<br/>
+Trong khi thời gian còn cho phép chúng ta hãy nói chuyện với nhau tiếp.<br/>
+D<b>意味：</b><br/>
+As long as~ ; As far as~　<show a condition><br/>
+Khi ~ (chỉ điều kiện)
+<br/><br/><b>接続：</b><br/>
+[動-ない形；い形-く；な形-で；名-で]＋ないかぎり
+<br/><br/><b>例文：</b><br/>
+雨や雪が降らないかぎり、毎日ジョギングを欠かさない。<br/>
+Khi không có mưa hay tuyết, hàng ngày tôi không nghỉ đi bộ thể dục lần nào."
+		},
+		
+		{"grammar":" ~かけだ / ~かけの / ~かける", "meanJP":"", 
+			"meanEN":"Unfinished ; Half~ (ex. half eaten, half finished) ", 
+			"meanVN":"[Làm gì đó]~ dang dở", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~かけだ / ~かけの / ~かける</b></p>
+<b>意味：</b><br/>
+　Unfinished ; Half~ (ex. half eaten, half finished)    [Làm gì đó]~ dang dở
+<br/><br/><b>接続：</b><br/>　[動-ます形]＋かけだ
+<br/><br/><b>例文：</b><br/>
+この仕事はやりかけですから、そのままにしておいてください。<br/>
+Việc này chỉ làm dở thôi nên xin hãy cứ để nguyên như vậy."
+		},
+		
+		{"grammar":" ~がたい", "meanJP":"", 
+			"meanEN":"Can’t do~ ; Difficult to~ ", 
+			"meanVN":"Khó có thể ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~がたい</b></p>
+<b>意味：</b><br/>
+　Can’t do~ ; Difficult to~ <br/>Khó có thể ~
+<br/><br/><b>接続：</b><br/>　[動-ます形]＋がたい
+<br/><br/><b>例文：</b><br/>　彼女がそんなことをするとは、信じがたい。
+Rất khó tin là cô ấy sẽ làm một việc như thế."
+		},
+		
+		{"grammar":"~がちだ / ~がちの", "meanJP":"", 
+			"meanEN":"Tend to~ ", 
+			"meanVN":"Hay ~ (chỉ xu hướng như hay muộn, hay quên, v.v...)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~がちだ / ~がちの</b></p>
+<b>意味：</b><br/>　Tend to~<br/>
+Hay ~ (chỉ xu hướng như hay muộn, hay quên, v.v...)
+<br/><br/><b>接続：</b><br/>　[動-ます形；名]＋がちだ
+<br/><br/><b>例文：</b><br/>
+雪が降ると、電車が遅れがちだ。<br/>
+Nếu tuyết rơi thì tàu điện thường bị muộn.<br/>
+注意：　<br/>
+Used mostly with a negative meaning"
+		},
+		
+		{"grammar":" ~(か)と思うと / ~(か)と思ったら", "meanJP":"", 
+			"meanEN":"As soon as~", 
+			"meanVN":"Vừa ~[làm gi] xong đã ...", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~(か)と思うと / ~(か)と思ったら</b></p>
+<b>意味：</b><br/>
+soon as~<br/>
+Vừa ~[làm gi] xong đã ...
+<br/><br/><b>接続：</b><br/>　[動-た形]＋(か)と思うと
+<br/><br/><b>例文：</b><br/>
+リ-さんは「さようなら」と言ったかと思うと教室を飛び出していった。<br/>
+Lee vừa nói \"Tạm biệt\" xong là đã phi ra khỏi lớp học."
+		},
+		
+		{"grammar":"~か~ないかのうちに", "meanJP":"", 
+			"meanEN":"No sooner than~", 
+			"meanVN":"Chưa ~ xong đã ...", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~か~ないかのうちに</b></p>
+<b>意味：</b><br/>
+No sooner than~ <br/>
+Chưa ~ xong đã ...
+<br/><br/><b>接続：</b><br/>
+[動-辞書形 / た形]＋か＋[動-ない形]＋ないかのうちに
+<br/><br/><b>例文：</b><br/>
+ヘビ-スモ-カ-の彼は、タバコを一本吸い終わったか終わらないかのうちに、次のタバコに火をつけた。<br/>
+Anh ta, vốn là người nghiện thuốc lá, chưa hút xong điếu thuốc này đã châm tiếp điếu khác.<br/>
+(ヘビースモーカー：heavy smoker, tiếng Anh, nghĩa là người nghiện thuốc lá) "
+		},
+		
+		{"grammar":"~かねない", "meanJP":"", 
+			"meanEN":"Be capable of~ ; Be in danger of~ (Used when there is a chance of something bad happening)", 
+			"meanVN":"Có khả năng sẽ ~ / Có thể sẽ ~ (dùng có kết quả xấu)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~かねない</b></p>
+<b>意味：</b><br/>
+Be capable of~ ; Be in danger of~ (Used when there is a chance of something bad happening)<br/>
+Có khả năng sẽ ~ / Có thể sẽ ~ (dùng có kết quả xấu)
+<br/><br/><b>接続：</b><br/>　[動-ます形]＋かねない<br/>
+<b>意味：</b><br/>
+あんなスピ-ドを出したら、事故を起こしかねない。<br/>
+Chạy với tốc độ như thế có ngày tai nạn."
+		},
+		
+		{"grammar":"~かねる", "meanJP":"", 
+			"meanEN":"Be hard to~ ; Be difficult to~", 
+			"meanVN":"Khó có thể ~", 
+			"detail":"<p style='font-size:22px; text-align:center'>~かねる</b></p>
+<b>意味：</b><br/>　Be hard to~ ; Be difficult to~          Khó có thể ~
+<br/><br/><b>接続：</b><br/>　[動-ます形]＋かねる
+<br/><br/><b>例文：</b><br/>　そんな多額な寄付には応じかねます。
+Chúng tôi khó có thể đóng góp với mức lớn như thế."
+		},
+		
+		{"grammar":" ~かのようだ / ~かのような / ~かのように", "meanJP":"", 
+			"meanEN":"Like~", 
+			"meanVN":"Có vẻ như ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~かのようだ / ~かのような / ~かのように</b></p>
+<b>意味：</b><br/>　Like~     Có vẻ như ~
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の普通＋かのようだ　＜[な形・名] use [である]＞
+<br/><br/><b>例文：</b><br/>　激しい雨と風は、まるで台風が来たかのようだ。
+Mưa và gió mạnh có vẻ như đang có bão."
+		},
+		
+		{"grammar":" ~からいうと / ~からいえば / ~からいって", "meanJP":"", 
+			"meanEN":"Judging from~ ; When it comes to~; As for~", 
+			"meanVN":"Về mặt ~ mà nói", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~からいうと / ~からいえば / ~からいって</b></p>
+<b>意味：</b><br/>　Judging from~ ; When it comes to~; As for~
+Về mặt ~ mà nói
+<br/><br/><b>接続：</b><br/>　[名]＋からいうと
+<br/><br/><b>例文：</b><br/>　中国は人口からいうと世界一だが、人口密度は日本よりずっと低い。
+Trung Quốc về mặt dân số mà nói thì đứng nhất thế giới, nhưng mật độ dân số thì thấp hơn Nhật Bản nhiều."
+		},
+		
+		{"grammar":"~からして", "meanJP":"", 
+			"meanEN":"Even~", 
+			"meanVN":"Ngay cả ~ cũng (chỉ căn cứ sự việc)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~からして </b></p>
+<br/><br/><b>接続：</b><br/>　[名]＋からして
+<b>A意味：</b><br/>　Even~                            Ngay cả ~ cũng (chỉ căn cứ sự việc)
+<br/><br/><b>例文：</b><br/>　彼は礼儀を知らない。あいさつからして、きちんとしていない。
+Anh ta không biết phép lịch sự. Ngay cả chào hỏi cũng không làm nghiêm chỉnh được.
+
+<b>B意味：</b><br/>　Judging from~ Dựa theo việc ~ thì ... (chỉ căn cứ sự việc)
+<br/><br/><b>例文：</b><br/>　窓ガラスが破られていることからして、泥棒はここから入ったに違いない。
+Nếu dựa vào việc kính cửa sổ bị vỡ thì chắc chắn là trộm đã vào từ đây."
+		},
+		
+		{"grammar":"~からすると / ~からすれば", "meanJP":"", 
+			"meanEN":"For~", 
+			"meanVN":"Với ~ mà nói", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~からすると / ~からすれば</b></p>
+<br/><br/><b>接続：</b><br/>　[名]＋からすると
+<b>A意味：</b><br/>　For~   Với ~ mà nói
+<br/><br/><b>例文：</b><br/>　親からすると、子供はいくつになっても子供で、心配なものだ。
+Với cha mẹ mà nói, con cái có lớn thế nào vẫn là con cái, vẫn cần phải lo lắng.
+<b>B意味：</b><br/>　Judging from~ Dựa theo ~ mà nói
+<br/><br/><b>例文：</b><br/>　あの車は形からすると１０年ぐらい前のものだと思う。
+Tôi thấy chiếc xe kia dựa theo hình dáng mà nói thì là xe của 10 năm trước.
+　類語：　「~から見ると」/「~からして」B meaning"
+		},
+		
+		{"grammar":" ~からといって", "meanJP":"", 
+			"meanEN":"Just because~", 
+			"meanVN":"Dù rằng ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~からといって</b></p>
+<b>意味：</b><br/>　Just because~    Dù rằng ~
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の普通形＋からというと
+<br/><br/><b>例文：</b><br/>　お金があるからというと偉いわけではない。
+Một người dù rằng có tiền nhưng không có nghĩa đó sẽ là một người lớn lao.
+注意：　(often the sentence will be negative.)"
+		},
+		
+		{"grammar":"~から~にかけて", "meanJP":"", 
+			"meanEN":"From~to~", 
+			"meanVN":"Từ ~ tới ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~から~にかけて</b></p>
+<b>意味：</b><br/>　From~to~            Từ ~ tới ~
+<br/><br/><b>接続：</b><br/>　[名]＋から＋[名]＋にかけて
+<br/><br/><b>例文：</b><br/>　昨夜から今朝にかけて雨が降りました。
+Trời mưa từ đêm qua tới sáng nay."
+		},
+
+		{"grammar":"~からには / ~からは", "meanJP":"", 
+			"meanEN":"Now that~ ; Since~", 
+			"meanVN":"Vì là ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~からには / ~からは</b></p>
+<b>意味：</b><br/>　Now that~ ; Since~          Vì là ~
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の普通形＋からには　＜[な形・名] use [である]＞
+<br/><br/><b>例文：</b><br/>　試合に出るからには、勝ちたい。
+Vì là tham dự trận đấu nên tôi muốn thắng.
+注意：　followed by obligations, resolutions, presumptions, suggestions, and commands"
+		},
+
+		{"grammar":"~から見て(も) / ~から見ると / ~から見れば", "meanJP":"", 
+			"meanEN":"From the viewpoint of~", 
+			"meanVN":"Từ quan điểm ~ mà nói", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~から見て(も) / ~から見ると / ~から見れば</b></p>
+<b>意味：</b><br/>　From the viewpoint of~    Từ quan điểm ~ mà nói
+類語：　「~からいうと」
+<br/><br/><b>接続：</b><br/>　[名]＋から見ると
+<br/><br/><b>例文：</b><br/>　子共の教育という点から見ると、豊かすぎる生活は、必ずしもいいとは言えない。
+Từ quan điểm giáo dục trẻ em mà nói, cuộc sống quá đầy đủ chưa chắc đã là tốt."
+		},
+
+		{"grammar":"~かわりに", "meanJP":"", 
+			"meanEN":"Instead of~", 
+			"meanVN":"Thay vì ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~かわりに</b></p>
+Ａ<b>意味：</b><br/>　Instead of~     Thay vì ~
+<br/><br/><b>接続：</b><br/>　[動-辞書形]＋かわりに
+<br/><br/><b>例文：</b><br/>　音楽会に行くかわりに、ＣＤを３枚買うほうがいいと思う。
+Tôi nghĩ là thay vì đi tới buổi hòa nhạc thì nên mua 3 đĩa CD.
+
+Ｂ<b>意味：</b><br/>　In place of~     Thay cho ~
+　<b>意味：</b><br/>　[名-の]＋かわりに
+　類語：　「~にかわって」のＢの意味。
+<br/><br/><b>例文：</b><br/>　病気の父のかわりに、私が参りました。
+Tôi đến thay cho bố bị bệnh.
+
+Ｃ<b>意味：</b><br/>　Fitting of~; Suiting~; Be appropriate to
+Thay cho việc ~ thì ... (chỉ đáp ứng về nghĩa vụ)
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の名詞修飾型＋かわりに
+<br/><br/><b>例文：</b><br/>　私が料理するかわりに、あなたは掃除してください。
+Em sẽ nấu ăn, thay vào đó anh dọn dẹp nhé."
+		},
+
+		{"grammar":"~ぎみ気味", "meanJP":"", 
+			"meanEN":"Rather~ ; A little~", 
+			"meanVN":"Có cảm giác hơi ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ぎみ気味</b></p>
+<b>意味：</b><br/>　Rather~ ; A little~             Có cảm giác hơi ~
+<br/><br/><b>接続：</b><br/>　[動-ます形；名]＋気味
+<br/><br/><b>例文：</b><br/>　仕事が忙しくて、最近少し疲れ気味だ。
+        Công việc bận quá, dạo này có cảm giác hơi mệt."
+		},
+
+		{"grammar":"~きり(だ)", "meanJP":"", 
+			"meanEN":"Only~ ; Just~", 
+			"meanVN":"Chỉ toàn ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~きり(だ)</b></p>
+<b>A意味：</b><br/>　Only~ ; Just~  Chỉ toàn ~
+<br/><br/><b>接続：</b><br/>　[動-辞書形 / た形；名]＋きり
+<br/><br/><b>例文：</b><br/>　彼女は、何を聞いても笑っているきりで、答えない。
+          Cô ấy nghe xong cái gì cũng chỉ toàn cười mà không trả lời.
+
+<b>B意味：</b><br/>　(something continuing the same condition after happening)
+(chỉ làm gì đó triền miên, như ngủ hôn mê chẳng hạn)
+<br/><br/><b>接続：</b><br/>　[動-た形]＋きり
+<br/><br/><b>例文：</b><br/>　寝たきり老人が増えている。
+Người già nằm hôn mê đang tăng lên.
+注意：　In spoken language becomes 「~っきり」"
+		},
+
+		{"grammar":"~きる / ~きれない/ ~きれる", "meanJP":"", 
+			"meanEN":"Do(be) completely~ / Be unable to do till the end / Be able to do till the end", 
+			"meanVN":"~ hết sức / ~ hết mức (ví dụ: kiệt sức)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~きる / ~きれない/ ~きれる</b></p>
+<b>意味：</b><br/>　Do(be) completely~ / Be unable to do till the end / Be able to do till the end
+~ hết sức / ~ hết mức (ví dụ: kiệt sức)
+<br/><br/><b>接続：</b><br/>　[動-ます形]＋きる
+<br/><br/><b>例文：</b><br/>　木村さんは疲れきった顔をして帰って来た。
+Chị Kimura trở về với vẻ mặt kiệt sức."
+		},
+
+		{"grammar":"~くせに", "meanJP":"", 
+			"meanEN":"In spite of~ ; Though~", 
+			"meanVN":"Đã không ~ mà còn ...", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~くせに</b></p>
+<b>意味：</b><br/>　In spite of~ ; Though~     Đã không ~ mà còn ...
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の名詞修飾型＋くせに
+<br/><br/><b>例文：</b><br/>　よく知らないくせに、あの人は何でも説明したがる。
+        Người kia đã không biết mà cái gì cũng muốn diễn giải.
+注意：　Not often used in formal situations"
+		},
+
+		{"grammar":"~くせに", "meanJP":"", 
+			"meanEN":"In spite of~ ; Though~", 
+			"meanVN":"", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~くせに</b></p>
+<b>意味：</b><br/>　In spite of~ ; Though~     Đã không ~ mà còn ...
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の名詞修飾型＋くせに
+<br/><br/><b>例文：</b><br/>　よく知らないくせに、あの人は何でも説明したがる。
+        Người kia đã không biết mà cái gì cũng muốn diễn giải.
+注意：　Not often used in formal situations
+
+~くらい(だ) / ~ぐらい(だ)
+Ａ<b>意味：</b><br/>　To the extent that~ ; As~as~ ; To the point that
+Vào cỡ ~ (chỉ mức độ đại khái)
+<br/><br/><b>接続：</b><br/>　[動-辞書形 / ない形-ない；い形-い；な形-な；名]＋くらい
+<br/><br/><b>例文：</b><br/>　棚から物が落ちるくらい地震があった。
+Ở đây có trận động đất chỉ cỡ làm rơi đồ trên giá xuống.
+
+Ｂ<b>意味：</b><br/>　At least~          Chỉ cần cỡ ~
+<br/><br/><b>接続：</b><br/>　[動-普通形；名-の]＋くらい
+<br/><br/><b>例文：</b><br/>　忙しくても電話をかけるくらいはできたでしょう。
+Dù bận nhưng những việc như gọi điện vẫn làm được chứ."
+		},
+
+		{"grammar":"~げ", "meanJP":"", 
+			"meanEN":"Seem~ ", 
+			"meanVN":"Với vẻ ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~げ</b></p>
+<b>意味：</b><br/>　Seem~   Với vẻ ~
+<br/><br/><b>接続：</b><br/>　[い形-○；な形-○]＋げ
+<br/><br/><b>例文：</b><br/>　彼女は悲しげな様子で話した。
+        Cô ấy nói chuyện với vẻ đau khổ.
+注意：　~げ becomes a な形容詞"
+		},
+
+		{"grammar":"~こそ / ~からこそ", "meanJP":"", 
+			"meanEN":"emphatic (Place a strong emphasis on the subject)", 
+			"meanVN":"~ nhất định ... [làm gì] (nhấn mạnh)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~こそ / ~からこそ</b></p>
+<b>意味：</b><br/>　emphatic (Place a strong emphasis on the subject)
+~ nhất định ... [làm gì] (nhấn mạnh)
+<br/><br/><b>接続：</b><br/>　[名]＋こそ
+<br/><br/><b>例文：</b><br/>　今度こそ試合に勝ちたい。
+Lần này tôi nhất định muốn thắng trận."
+		},
+
+		{"grammar":"~ことか", "meanJP":"", 
+			"meanEN":"I wonder ; quite ; surely", 
+			"meanVN":"Không biết ... gì nhỉ? (chỉ sự phân vân, thắc mắc)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ことか</b></p>
+<b>意味：</b><br/>　I wonder ; quite ; surely   Không biết ... gì nhỉ? (chỉ sự phân vân, thắc mắc)
+<br/><br/><b>接続：</b><br/>　[動・い形・な形]の名詞修飾型＋ことか
+<br/><br/><b>例文：</b><br/>　息子から半年も連絡がない。一体何をしていることか
+Con trai tôi đã nửa năm không liên lạc gì. Không biết nó đang làm cái quái gì nhỉ?"
+		},
+
+		{"grammar":"~ことから", "meanJP":"", 
+			"meanEN":"Because~ (tells why something is)", 
+			"meanVN":"Dựa theo [việc] ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ことから</b></p>
+<b>意味：</b><br/>　Because~ (tells why something is)              Dựa theo [việc] ~
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の名詞修飾型＋ことから <[名]uses [である]、[な形]sometimes uses[である]>
+<br/><br/><b>例文：</b><br/>　道がぬれていることから、昨夜、雨が降ったことがわかった。
+Thấy đường ướt nên tôi biết đêm qua có mưa."
+		},
+
+		{"grammar":"~ことだ", "meanJP":"", 
+			"meanEN":"When you want to tell someone that something has importance", 
+			"meanVN":"Phải (chỉ mệnh lệnh phải làm gì đó)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ことだ</b></p>
+<b>意味：</b><br/>　When you want to tell someone that something has importance
+Phải (chỉ mệnh lệnh phải làm gì đó)
+<br/><br/><b>接続：</b><br/>　[動-辞書形 / ない形-ない]＋ことだ
+<br/><br/><b>例文：</b><br/>　大学に入りたければ、一所懸命勉強することだ。
+Muốn đỗ đại học thì phải học hành hết sức."
+		},
+
+		{"grammar":"~ことだから", "meanJP":"", 
+			"meanEN":"As it is ~ it can be expected that ~ \n (Used to tell something everyone knows. Following sentence is a presumption)", 
+			"meanVN":"Vì đang còn là ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ことだから</b></p>
+<b>意味：</b><br/>　As it is ~ it can be expected that ~
+(Used to tell something everyone knows. Following sentence is a presumption)
+Vì đang còn là ~
+<br/><br/><b>接続：</b><br/>　[名]＋ことだから
+<br/><br/><b>例文：</b><br/>　子供のことだから、少しぐらいいたずらをしても仕方がないです。
+Vì là trẻ con nên có  nghịch ngợm chút cũng chịu thôi."
+		},
+
+		{"grammar":"~ことなく", "meanJP":"", 
+			"meanEN":"Without~", 
+			"meanVN":"Không có ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ことなく</b></p>
+<b>意味：</b><br/>　Without~             Không có ~
+<br/><br/><b>接続：</b><br/>　[動-辞書形]＋ことなく
+<br/><br/><b>例文：</b><br/>　ロボットは２４時間休むことなく働いている。
+Người máy làm việc không nghỉ suốt 24 giờ."
+		},
+
+		{"grammar":"~ことに(は)", "meanJP":"", 
+			"meanEN":"To my~", 
+			"meanVN":"(nhấn mạnh cảm giác, ví dụ: Thật ngạc nhiên) Thật ~ là", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ことに(は)</b></p>
+<b>意味：</b><br/>　To my~ (nhấn mạnh cảm giác, ví dụ: Thật ngạc nhiên) Thật ~ là
+<br/><br/><b>接続：</b><br/>　[動-た形・い形-い・な形-な]＋ことに
+<br/><br/><b>例文：</b><br/>　驚いたことに、私の祖父と恋人のおじさんは小学校時代の友達だったそうです。
+Thật ngạc nhiên là nghe nói ông nội tôi và bác người yêu lại là bạn thời tiểu học."
+		},
+
+		{"grammar":"~ことになっている", "meanJP":"", 
+			"meanEN":"Be supposed to ~ \n(shows an appointment or rule)", 
+			"meanVN":"Phải ~ (diễn tả sự chỉ định hay quy định)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ことになっている</b></p>
+<b>意味：</b><br/>　Be supposed to ~ (shows an appointment or rule) Phải ~ (diễn tả sự chỉ định hay quy định)
+<br/><br/><b>接続：</b><br/>　[動-辞書形；動-ない形-ない；い形-い]＋ことになっている
+<br/><br/><b>例文：</b><br/>　今度の日曜日、友達と会うことになっている。
+Chủ nhật lần này, tôi phải gặp bạn bè."
+		},
+
+		{"grammar":" ~ことはない", "meanJP":"", 
+			"meanEN":"No need to ~", 
+			"meanVN":"Không cần phải ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~ことはない</b></p>
+<b>意味：</b><br/>　No need to ~ ; Không cần phải ~
+<br/><br/><b>接続：</b><br/>　[動-辞書形]＋ことはない
+<br/><br/><b>例文：</b><br/>　時間は十分あるから、急ぐことはない。
+Còn nhiều thời gian nên không cần phải vội."
+		},
+
+		{"grammar":"~さい（際）(は) / ~際に", "meanJP":"", 
+			"meanEN":"When~ ; Upon~", 
+			"meanVN":"Khi ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~さい（際）(は) / ~際に</b></p>
+<b>意味：</b><br/>　When~ ; Upon~  Khi ~
+<br/><br/><b>接続：</b><br/>　[動-辞書形 / た形；名-の]＋際
+<br/><br/><b>例文：</b><br/>　カ-ドを紛失した際はカ-ド会社にすぐ知らさせなければならない。
+Khi mất thẻ phải thông báo ngay lập tức cho công ty phát hành thẻ."
+		},
+
+		{"grammar":"~さいちゅう（最中）だ / ~最中に", "meanJP":"", 
+			"meanEN":"In the midst of~ ; During ~", 
+			"meanVN":"Đang lúc ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~さいちゅう（最中）だ / ~最中に</b></p>
+<b>意味：</b><br/>　In the midst of~ ; During ~            Đang lúc ~
+<br/><br/><b>接続：</b><br/>　[動-ている；名-の]＋最中に
+<br/><br/><b>例文：</b><br/>　考えている最中に、話をかけられて困った。
+Đang lúc mải suy nghĩ thì bị người khác bắt chuyện thật là phiền phức."
+		},
+
+		{"grammar":"~さえ / (~で)さえ", "meanJP":"", 
+			"meanEN":"Even~　<one example is an extreme conditon, and everything that follows is a needless to say>", 
+			"meanVN":"Ngay cả ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~さえ / (~で)さえ</b></p>
+<b>意味：</b><br/>　Even~　<one example is an extreme conditon, and everything that follows is a needless to say>
+Ngay cả ~
+<br/><br/><b>接続：</b><br/>　[名]＋さえ
+<br/><br/><b>例文：</b><br/>　そこは電気さえない山奥だ。
+Chỗ đó là sâu trong núi, ngay cả điện cũng không có.
+注意：　when さえ is connected to a noun, the particles が and を are omitted."
+		},
+
+		{"grammar":"~さえ~ば", "meanJP":"", 
+			"meanEN":"If only~ ", 
+			"meanVN":"Chỉ cần ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~さえ~ば</b></p>
+<b>意味：</b><br/>　If only~               Chỉ cần ~
+<br/><br/><b>接続：</b><br/>　[動-ます形]＋さえ＋すれば / しなければ
+　　　　　[い形-く；な形で；名-で]＋さえ＋あれば / なければ
+　　　　　[名]＋さえ＋[動-ば；い形-ければ；な形-なら；名-なら]
+<br/><br/><b>例文：</b><br/>　インスタントラ-メンはお湯を入れさえすれば食べられる便利な食品だ。
+Mì ăn liền là loại thực phẩm rất tiện lợi chỉ cần cho vào nước sôi là ăn được ngay.
+　　　　　体さえ丈夫なら、どんな苦労に耐えられると思う。
+Tôi nghĩ chỉ cần có cơ thể khỏe mạnh là có thể chịu đựng được mọi khó khăn.
+			"
+		},
+
+		{"grammar":"~ざるをえ（得）ない", "meanJP":"", 
+			"meanEN":"Can’t help thinking~", 
+			"meanVN":"Không làm ~ không được", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~ざるをえ（得）ない</b></p>
+<b>意味：</b><br/>　Can’t help thinking~        Không làm ~ không được
+<br/><br/><b>接続：</b><br/>　[動-ない形]＋ざるを得ない　＜[する] becomes 「せざる得ない」＞
+<br/><br/><b>例文：</b><br/>　みんなで決めた規則だから、守らざるを得ない。
+Đây là quy tắc mà mọi người đã quyết định nên không thể không tuân thủ."
+		},
+
+		{"grammar":"~しかない", "meanJP":"", 
+			"meanEN":"Have no other way but~ / Must~", 
+			"meanVN":"Chỉ còn cách ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~しかない</b></p>
+<b>意味：</b><br/>　Have no other way but~ / Must~   Chỉ còn cách ~
+<br/><br/><b>接続：</b><br/>　[動-辞書形]＋しかない
+<br/><br/><b>例文：</b><br/>　事故で電車が動かないから、歩いて行くしかない。
+Tàu điện không chạy do tai nạn nên chỉ còn cách đi bộ."
+		},
+
+		{"grammar":"~しだい（次第）", "meanJP":"", 
+			"meanEN":"As soon as~ ", 
+			"meanVN":"Khi đã ~ xong", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~しだい（次第）</b></p>
+<b>意味：</b><br/>　As soon as~        Khi đã ~ xong
+<br/><br/><b>接続：</b><br/>　[動-ます形；名]＋次第
+<br/><br/><b>例文：</b><br/>　新しい住所が決まり次第、連絡します。
+Khi nào quyết định xong chỗ ở mới tôi sẽ liên lạc."
+		},
+
+		{"grammar":"~次第だ / ~次第で(は)", "meanJP":"", 
+			"meanEN":"1. show a reason, details.  When you want to show the result of something.
+					\n 2. Depending on~", 
+			"meanVN":"1. chỉ kết quả của lý do \n
+					2. Tùy thuộc vào ~", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~次第だ / ~次第で(は)</b></p>
+<b>A意味：</b><br/>　show a reason, details.  When you want to show the result of something.
+(chỉ kết quả của lý do)
+<br/><br/><b>接続：</b><br/>　[動・い形・な形]の名詞修飾型＋次第だ
+<br/><br/><b>例文：</b><br/>　このたび日本政府の招きにより、親善大使として日本に来た次第だ。
+Lần này do được chính phủ Nhật Bản mời nên tôi đến Nhật với tư cách là đại sứ thân thiện.
+
+<b>B意味：</b><br/>　Depending on~                            Tùy thuộc vào ~
+<br/><br/><b>接続：</b><br/>　[名]＋次第だ
+<br/><br/><b>例文：</b><br/>　この世の中はお金次第だと言う人もいる。
+Cũng có người nói rằng mọi thứ trên đời là do đồng tiền quyết định."
+		},
+
+		{"grammar":"~じょう(上)(は) / ~上の / ~上も", "meanJP":"", 
+			"meanEN":"From the standpoint of~; (can also be thought of as ~ly. Ex. 歴史上?hisorically 法律上?legally)", 
+			"meanVN":"Về mặt ~ (lịch sử, pháp luật, v.v...)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~じょう(上)(は) / ~上の / ~上も</b></p>
+<b>意味：</b><br/>　From the standpoint of~; (can also be thought of as ~ly. Ex. 歴史上?hisorically 法律上?legally) 
+Về mặt ~ (lịch sử, pháp luật, v.v...)
+<br/><br/><b>接続：</b><br/>　[名]＋上
+<br/><br/><b>例文：</b><br/>　京都には歴史上有名なお寺が数多くある
+Ở Kyoto có rất nhiều chùa nổi tiếng về mặt lịch sử.
+注意：　 the noun in front of ~上 is usually a Chinese word　Ex. 「教育上」、「外見上」、「経済上」、「政治上」、「学問上」、「表面上」、「職業上」、「外交上」etc…"
+		},
+
+		{"grammar":"~(た)すえ（末）に / ~(た)末の / (~の) 末 (に)", "meanJP":"", 
+			"meanEN":"After~(for a long time)", 
+			"meanVN":"Sau khi đã ~ [kỹ càng]", 
+			"detail":"<p style='font-size:22px; text-align:center'><b> ~(た)すえ（末）に / ~(た)末の / (~の) 末 (に)</b></p>
+<b>意味：</b><br/>　After~(for a long time)   
+Sau khi đã ~ [kỹ càng]
+<br/><br/><b>接続：</b><br/>　[動-た形；名-の]＋末
+<br/><br/><b>例文：</b><br/>　いろいろ考えた末、会社を辞めることにした。 
+Sau khi suy nghĩ kỹ càng, tôi quyết định bỏ việc.
+			"
+		},
+
+		{"grammar":"~せいか / ~せいだ / ~せいで", "meanJP":"", 
+			"meanEN":"Because of~ ; On account of~ (The cause leads to a bad result)", 
+			"meanVN":"[Lỗi] là tại ~ (chỉ nguyên nhân dẫn tới kết quả xấu)", 
+			"detail":"<p style='font-size:22px; text-align:center'><b>~せいか / ~せいだ / ~せいで</b></p>
+<b>意味：</b><br/>　Because of~ ; On account of~ (The cause leads to a bad result)
+[Lỗi] là tại ~ (chỉ nguyên nhân dẫn tới kết quả xấu)
+<br/><br/><b>接続：</b><br/>　[動・い形・な形・名]の名詞修飾型＋せいだ
+<br/><br/><b>例文：</b><br/>　私が失敗したのは、彼のせいだ。
+Tôi thất bại là do lỗi của anh ta.
+慣用：　気のせい be one’s imagination / ảo giác
+せいにしている　blame something or somebody / đổ lỗi cho ..."
+		},
+
+
+		{"grammar":"", "meanJP":"", 
+			"meanEN":"", 
+			"meanVN":"", 
+			"detail":"<p style='font-size:22px; text-align:center'><b></b></p>"
+		}
+
+
+	
+	]
+   
+}

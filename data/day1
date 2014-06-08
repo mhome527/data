@@ -1,0 +1,39 @@
+{
+	"title":"青高祭り\nいかんたんな広告の読み取り",
+    "reading":"rrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeee",
+    "title2":"問題　つぎの文章を読んで、質問に答えなさい。答えは、１・２・３・４から最もよいもののを一つえらびなさい。",
+    "img":"bai1p12",
+    "note":"(＊１) フリーマーケット \n 一般の人が、自分の持っている服や小物の中から、まだ使えるけれど、もういらないというものを、公園や広場で売ることです。ほかの人から買うこともできます。 \n\n（＊２）模擬店 \nパーティーや祭りなどの会場で、おもに食べ物や飲み物を売る屋台（屋根が付いた小さな店）のことです。",
+    "readingList":[
+        {
+            "question":"これは何のための<sup style='left:0px; top:-8px;position: relative;font-size:9px'>まつ</sup><span style='left:-17px; position:relative'>祭りか。</span>",
+            "ans":"4",
+            "listQuestion":[
+                {"qa":"新しい学校の完成を<sup style='left:0px; top:-8px;position: relative;font-size:9px'>いわ</sup><span style='left:-15px; position:relative'>祝うための</span><span>祭り</span>"},
+                {"qa":"フリーマーケットをする祭り"},
+                {"qa":"<sup style='left:5px; top:-8px;position: relative;font-size:8px'>ち いき</sup> <span style='left:-25px; position:relative'>地域のおいしいのを,</span><span>みんなで食べる祭り</span>"},
+                {"qa":"学校がなくなるので、<sup style='left:6px; top:-8px;position: relative;font-size:8px'>わか</sup><span style='left:-25px; position:relative'>お別れ</span><span style='left:-15px; position:relative'>を</span><span>するための祭り</span>"}
+            ]
+        },
+        {
+            "question":"今、青津高校ではどんな人を探しているか。",
+            "ans":"4",
+            "listQuestion":[
+                {"qa":"祭りを手伝ってくれる生徒"},
+                {"qa":"祭りのお金を出してくれる人"},
+                {"qa":"祭りの準備をしてくれる卒業生"},
+                {"qa":"フリーマーケットに参加してくれる人"}
+            ]
+        },
+        {
+            "question":"模擬店を出すための情報はどこで、どのように知ることができるか。",
+            "ans":"2",
+            "listQuestion":[
+                {"qa":"ホームページを見るか、担当にメールを送る。"},
+                {"qa":"ホームページを見るか、担当に電話をかける。"},
+                {"qa":"青津高校に電話をすると教えてもらえる。"},
+                {"qa":"青津高校の生徒に聞くと教えてもらえる。"}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="list_selector">#ff0F0078</color>
+    <color name="color_clicked">#fbc31d</color>
+    <color name="color_focused">#f26b00</color>
+    <color name="black_transparent">#dd000000</color>
+    <color name="black_back_transparent">#88000000</color>
+    <color name="white_back_transparent">#88FFFFFF</color>
+    <color name="dark_green">#2e950e</color>
+    <color name="orange1">#f5c700</color>
+    <color name="color_btn_disabled">#000000</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="light_white_transparent">#22FFFFFF</color>
+    <color name="light_black_transparent">#22000000</color>
+    <color name="light_black_transparent2">#11000000</color>
+    <color name="blue1">#0000FF</color>
+    <color name="red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green1">#003300</color>
+    <color name="green2">#005500</color>
+    <color name="green3">#4C9203</color>
+    <color name="cream">#E7E18F</color>
+    <color name="gray1">#808080</color>
+    <color name="gray2">#cbcbcb</color>
+    <color name="gray3">#66625D</color>
+    <color name="gray5">#a9a9aa</color>
+    <color name="gray6">#747474</color>
+    <color name="gray7">#c9c9c9</color>
+    <color name="gray8">#dcdcdc</color>
+    <color name="fairway_off">#585858</color>
+    <color name="fairway_on">#D70000</color>
+    <color name="list_bg">#44187800</color>
+    <color name="list_bg_cache">#beca8f</color>
+    <color name="pink">#fd5977</color>
+    <color name="orange">#ff5915</color>
+    <color name="green">#b6d420</color>
+    <color name="emerald">#0abfa1</color>
+    <color name="blue">#0070bf</color>
+    <color name="purple">#685ba6</color>
+    <color name="gray">#555555</color>
+    <color name="white_alpha_i">#80ffffff</color>
+    <color name="black_alpha_i">#7f000000</color>
+    <color name="black_alpha_i_3">#4c000000</color>
+    <color name="black_alpha_i_6">#99000000</color>
+    <color name="black_alpha_i_10">#19000000</color>
+    <color name="black_alpha_i_15">#26000000</color>
+    <color name="black_alpha_i_20">#33000000</color>
+    <color name="black_alpha_i_30">#4D000000</color>
+    <color name="black_alpha_i_40">#66000000</color>
+    <color name="black_alpha_i_50">#80000000</color>
+    <color name="white_alpha_i_80">#CCffffff</color>
+    <color name="white_alpha_i_30">#4Dffffff</color>
+    <color name="white_alpha_i_50">#80ffffff</color>
+    <color name="white_alpha_i_60">#99ffffff</color>
+    <color name="white_alpha_i_45">#73ffffff</color>
+    <color name="white_alpha_i_25">#40ffffff</color>
+    
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+
+</resources>

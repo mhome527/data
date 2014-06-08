@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/background"
+        android:keepScreenOn="true" >
+
+        <ImageView
+            android:id="@+id/imgLeft"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/tvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/transparent"
+            android:text="@string/page"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imgRight"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/right_arrow" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/width_border"
+        android:background="@color/transparent"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnNew"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/tab_button"
+            android:text="@string/new_vocabulary" />
+
+        <Button
+            android:id="@+id/btnOld"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/tab_button"
+            android:text="@string/old_vocabulary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/width_border"
+        android:layout_marginLeft="@dimen/width_border"
+        android:layout_marginRight="@dimen/width_border"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/lvWordNew"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_alpha_i_30" >
+        </ListView>
+
+        <ListView
+            android:id="@+id/lvWordOld"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_alpha_i_30"
+            android:visibility="gone" >
+        </ListView>
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/adUnitId" />
+
+</LinearLayout>
