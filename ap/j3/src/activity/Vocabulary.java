@@ -197,50 +197,50 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 
 				@Override
 				public void onClickItem(View v, int position) {
-					View change;
-					String tag = "";
-					change = v.findViewById(R.id.llWord);
-					ULog.i(Vocabulary.this, "onClickItem() new llWord:" + R.id.llWord + "; tag:" + change.getTag());
-
-					if (change.getTag() != null)
-						tag = change.getTag().toString();
-
-					if (change.getId() == R.id.llWord && tag != null && tag.equals("1")) {
-						change.setTag("");
-						change.setVisibility(View.GONE);
-						v.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
-						arrWordNew.get(position).wordView = "1";
-						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "1").execute();
-						return;
-					}
-
-					change = v.findViewById(R.id.tvJP2);
-					tag = "";
-					if (change.getTag() != null)
-						tag = change.getTag().toString();
-					ULog.i(Vocabulary.this, "onClickItem() new tvJP2:" + R.id.tvJP2 + "; tag:" + change.getTag());
-					if (change.getId() == R.id.tvJP2 && tag != null && tag.equals("1")) {
-						change.setTag("");
-						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
-						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-						arrWordNew.get(position).wordView = "0";
-						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "0").execute();
-						return;
-					}
-
-					change = v.findViewById(R.id.imgbRedo);
-					tag = "";
-					if (change.getTag() != null)
-						tag = change.getTag().toString();
-					ULog.i(Vocabulary.this, "onClickItem() new imgbRedo:" + R.id.imgbRedo + "; tag:" + change.getTag());
-					if (change.getId() == R.id.imgbRedo && tag != null && tag.equals("1")) {
-						change.setTag("");
-						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
-						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-						arrWordNew.get(position).wordView = "0";
-						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "0").execute();
-						return;
-					}
+//					View change;
+//					String tag = "";
+//					change = v.findViewById(R.id.llWord);
+//					ULog.i(Vocabulary.this, "onClickItem() new llWord:" + R.id.llWord + "; tag:" + change.getTag());
+//
+//					if (change.getTag() != null)
+//						tag = change.getTag().toString();
+//
+//					if (change.getId() == R.id.llWord && tag != null && tag.equals("1")) {
+//						change.setTag("");
+//						change.setVisibility(View.GONE);
+//						v.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
+//						arrWordNew.get(position).wordView = "1";
+//						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "1").execute();
+//						return;
+//					}
+//
+//					change = v.findViewById(R.id.tvJP2);
+//					tag = "";
+//					if (change.getTag() != null)
+//						tag = change.getTag().toString();
+//					ULog.i(Vocabulary.this, "onClickItem() new tvJP2:" + R.id.tvJP2 + "; tag:" + change.getTag());
+//					if (change.getId() == R.id.tvJP2 && tag != null && tag.equals("1")) {
+//						change.setTag("");
+//						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
+//						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+//						arrWordNew.get(position).wordView = "0";
+//						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "0").execute();
+//						return;
+//					}
+//
+//					change = v.findViewById(R.id.imgbRedo);
+//					tag = "";
+//					if (change.getTag() != null)
+//						tag = change.getTag().toString();
+//					ULog.i(Vocabulary.this, "onClickItem() new imgbRedo:" + R.id.imgbRedo + "; tag:" + change.getTag());
+//					if (change.getId() == R.id.imgbRedo && tag != null && tag.equals("1")) {
+//						change.setTag("");
+//						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
+//						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+//						arrWordNew.get(position).wordView = "0";
+//						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "0").execute();
+//						return;
+//					}
 				}
 			});
 
@@ -285,49 +285,49 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 
 				@Override
 				public void onClickItem(View v, int position) {
-					View change;
-					String tag = "";
-					ULog.i(this, "onClickItem() old");
-					change = v.findViewById(R.id.llWord);
-					if (change.getTag() != null)
-						tag = change.getTag().toString();
-
-					if (tag != null && tag.equals("1")) {
-						change.setTag("");
-						change.setVisibility(View.GONE);
-						v.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
-						arrWordOld.get(position).wordView = "1";
-						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "1").execute();
-						return;
-					}
-
-					change = v.findViewById(R.id.tvJP2);
-					tag = "";
-					if (change.getTag() != null)
-						tag = change.getTag().toString();
-
-					if (tag != null && tag.equals("1")) {
-						change.setTag("");
-						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
-						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-						arrWordOld.get(position).wordView = "0";
-						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "0").execute();
-						return;
-					}
-
-					change = v.findViewById(R.id.imgbRedo);
-					tag = "";
-					if (change.getTag() != null)
-						tag = change.getTag().toString();
-
-					if (change.getId() == R.id.imgbRedo && tag != null && tag.equals("1")) {
-						change.setTag("");
-						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
-						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-						arrWordNew.get(position).wordView = "0";
-						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "0").execute();
-						return;
-					}
+//					View change;
+//					String tag = "";
+//					ULog.i(this, "onClickItem() old");
+//					change = v.findViewById(R.id.llWord);
+//					if (change.getTag() != null)
+//						tag = change.getTag().toString();
+//
+//					if (tag != null && tag.equals("1")) {
+//						change.setTag("");
+//						change.setVisibility(View.GONE);
+//						v.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
+//						arrWordOld.get(position).wordView = "1";
+//						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "1").execute();
+//						return;
+//					}
+//
+//					change = v.findViewById(R.id.tvJP2);
+//					tag = "";
+//					if (change.getTag() != null)
+//						tag = change.getTag().toString();
+//
+//					if (tag != null && tag.equals("1")) {
+//						change.setTag("");
+//						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
+//						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+//						arrWordOld.get(position).wordView = "0";
+//						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "0").execute();
+//						return;
+//					}
+//
+//					change = v.findViewById(R.id.imgbRedo);
+//					tag = "";
+//					if (change.getTag() != null)
+//						tag = change.getTag().toString();
+//
+//					if (change.getId() == R.id.imgbRedo && tag != null && tag.equals("1")) {
+//						change.setTag("");
+//						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
+//						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+//						arrWordNew.get(position).wordView = "0";
+//						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "0").execute();
+//						return;
+//					}
 				}
 			});
 

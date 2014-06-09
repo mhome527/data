@@ -209,7 +209,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 				mDownY = motionEvent.getRawY();
 				mDownPosition = mListView.getPositionForView(mDownView);
 
-				ULog.i(this, "onTouch() llWord tag:" + mDownView.findViewById(R.id.llWord).getTag() + "; pos:" + mDownPosition);
+//				ULog.i(this, "onTouch() llWord tag:" + mDownView.findViewById(R.id.llWord).getTag() + "; pos:" + mDownPosition);
 				if (mCallbacks.canDismiss(mDownPosition)) {
 					mVelocityTracker = VelocityTracker.obtain();
 					mVelocityTracker.addMovement(motionEvent);
@@ -243,7 +243,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 
 		case MotionEvent.ACTION_UP: {
 			
-			ULog.i(this, "onTouch()  !!!!!!!!!!!!!!!!!!!!! + action up, tvJP2:" + view.findViewById(R.id.tvJP2).getTag() +"; llWord:"+ view.findViewById(R.id.llWord).getTag());
+//			ULog.i(this, "onTouch()  !!!!!!!!!!!!!!!!!!!!! + action up, tvJP2:" + view.findViewById(R.id.tvJP2).getTag() +"; llWord:"+ view.findViewById(R.id.llWord).getTag());
 			if (mVelocityTracker == null) {
 				moveMouse = 0;
 				break;

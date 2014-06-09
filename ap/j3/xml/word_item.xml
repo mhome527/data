@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal" >
 
-    <LinearLayout
+   <!--  <LinearLayout
         android:id="@+id/llWord"
         android:layout_width="fill_parent"
         android:layout_height="100dp"
@@ -19,7 +19,7 @@
             android:gravity="center"
             android:text="1111"
             android:textSize="20sp" />
-    </LinearLayout>
+    </LinearLayout> -->
 
     <RelativeLayout
         android:id="@+id/rlMean"
@@ -31,33 +31,31 @@
         <RelativeLayout
             android:id="@+id/rlWord"
             android:layout_width="100dp"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:layout_marginRight="5dp" >
 
             <TextView
                 android:id="@+id/tvJP2"
                 android:layout_width="fill_parent"
                 android:layout_height="80dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/black_alpha_i_50"
+                android:background="@color/black_alpha_i_30"
                 android:gravity="center"
                 android:text="TextView"
                 android:textSize="16dp" />
 
-            <ImageButton
+            <!-- <ImageButton
                 android:id="@+id/imgbRedo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/left" />
+                android:background="@drawable/left" /> -->
 
             <TextView
                 android:id="@+id/tvViet"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvJP2"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 android:text="TextView22"

@@ -2,6 +2,7 @@ package sjpn3.vn.activity;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+
 import sjpn3.vn.Constant;
 import sjpn3.vn.R;
 import sjpn3.vn.Util.BitmapUtil;
@@ -11,6 +12,7 @@ import sjpn3.vn.adapter.ReadingPagerAdapter;
 import sjpn3.vn.model.ReadingModel;
 import sjpn3.vn.model.subModel.ReadingDay;
 import sjpn3.vn.slidingmenu.adapter.SlideMenuListAdapter;
+import sjpn3.vn.view.CustomizePagerView;
 import sjpn3.vn.view.ScaleImageView;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -24,6 +26,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -41,10 +44,10 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 
 	private ImageView imgLeft;
 	private ImageView imgRight;
-	private ScaleImageView imgReading;
+//	private ScaleImageView imgReading;
 	private ImageView imgClose;
 	private boolean isClick = false;
-	private ViewPager myPager;
+	private CustomizePagerView myPager;
 	private Button btnExercises;
 	private Button btnShow;
 
@@ -78,9 +81,9 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 		tvDay = (TextView) findViewById(R.id.tvDay);
 		imgLeft = (ImageView) findViewById(R.id.imgLeft);
 		imgRight = (ImageView) findViewById(R.id.imgRight);
-		imgReading = (ScaleImageView) findViewById(R.id.imgReading);
-		imgClose = (ImageView)findViewById(R.id.imgClose);
-		myPager = (ViewPager) findViewById(R.id.pagerReading);
+//		imgReading = (ScaleImageView) findViewById(R.id.imgReading);
+		imgClose = (ImageView) findViewById(R.id.imgClose);
+		myPager = (CustomizePagerView) findViewById(R.id.pagerReading);
 		btnShow = (Button) findViewById(R.id.btnShow);
 		btnExercises = (Button) findViewById(R.id.btnExercises);
 
@@ -116,6 +119,14 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 					imgRight.setVisibility(View.VISIBLE);
 					imgLeft.setVisibility(View.VISIBLE);
 				}
+				
+				//// set image
+//				ReadingModel model = allDay.day.get(position);
+//				int idReading = getResources().getIdentifier(model.img, "drawable", getPackageName());
+//				ImageView img = (ImageView) myPager.findViewWithTag("img" + (day - 1));
+//				img.setImageBitmap(BitmapUtil.decodeSampledBitmapFromResource2(getResources(), idReading, widthScreen - 10, widthScreen - 10));
+				///
+				
 				pref.putIntValue(day, Constant.DAY_READING_LEARN);
 
 			}
@@ -174,8 +185,7 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 	public void onBackPressed() {
 		if (isShow) {
 			showImageZoom(false);
-		}
-		else
+		} else
 			super.onBackPressed();
 	}
 
@@ -187,31 +197,36 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 		isShow = false;
 	}
 
+	
 	private void showImageZoom(boolean show) {
 		ReadingModel model;
 		isShow = show;
-		
-		//test
-//		ImageView tv = (ImageView)myPager.findViewWithTag("img" + (day -1));
-//		ULog.i(ReadingPager.class, "showImageZoom tv:" + tv.getText());
-		////
+
+		// test
+		// ImageView tv = (ImageView)myPager.findViewWithTag("img" + (day -1));
+		// ULog.i(ReadingPager.class, "showImageZoom tv:" + tv.getText());
+		// //
+		ScaleImageView imgReading = (ScaleImageView) findViewById(R.id.imgReading);
+		model = allDay.day.get(day - 1);
+
 		if (show) {
-			myPager.setEnabled(false);
+			myPager.setPagingEnabled(false);
 			rlReading.setVisibility(View.VISIBLE);
-			model = allDay.day.get(day);
 			int idReading = getResources().getIdentifier(model.img, "drawable", getPackageName());
-			imgReading.setImageBitmap(BitmapUtil.decodeSampledBitmapFromResource2(getResources(), idReading,
-					widthScreen - 10, widthScreen - 10));
-			ImageView img = (ImageView)myPager.findViewWithTag("img" + (day -1));
+			imgReading.setImageBitmap(BitmapUtil.decodeSampledBitmapFromResource2(getResources(), idReading, widthScreen - 10, widthScreen - 10));
+			ImageView img = (ImageView) myPager.findViewWithTag("img" + (day - 1));
 			img.setImageBitmap(null);
 
-		}else{
+		} else {
 			rlReading.setVisibility(View.GONE);
 			imgReading.setImageBitmap(null);
-			myPager.setEnabled(true);
-//			ImageView img = (ImageView)myPager.findViewWithTag("img" + (day -1));
-
+//			myPager.setEnabled(false);
+			myPager.setPagingEnabled(true);
+			int idReading = getResources().getIdentifier(model.img, "drawable", getPackageName());
+			ImageView img = (ImageView) myPager.findViewWithTag("img" + (day - 1));
+			img.setImageBitmap(BitmapUtil.decodeSampledBitmapFromResource2(getResources(), idReading, widthScreen - 10, widthScreen - 10));
 		}
+		System.gc();
 	}
 
 	private class LoadData extends AsyncTask<Void, Void, Boolean> {

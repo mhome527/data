@@ -97,7 +97,7 @@
                     ads:adUnitId="@string/adUnitId" />
             </LinearLayout>
 
-            <android.support.v4.view.ViewPager
+            <sjpn3.vn.view.CustomizePagerView
                 android:id="@+id/pagerReading"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -112,7 +112,7 @@
                 android:layout_height="fill_parent"
                 android:background="@color/black_alpha_i_50"
                 android:padding="10dp"
-                android:visibility="visible" >
+                android:visibility="gone" >
 
                 <sjpn3.vn.view.ScaleImageView
                     android:id="@+id/imgReading"

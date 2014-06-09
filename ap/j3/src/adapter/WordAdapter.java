@@ -18,9 +18,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class WordAdapter extends ArrayAdapter<VocabularyList> implements OnTouchListener {
@@ -53,29 +51,26 @@ public class WordAdapter extends ArrayAdapter<VocabularyList> implements OnTouch
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			row = inflater.inflate(layoutResourceId, parent, false);
 			wordHolder = new WordHolder();
-			wordHolder.tvJP1 = (TextView) row.findViewById(R.id.tvJP1);
+//			wordHolder.tvJP1 = (TextView) row.findViewById(R.id.tvJP1);
 			wordHolder.tvJP2 = (TextView) row.findViewById(R.id.tvJP2);
 			wordHolder.tvHiragana = (TextView) row.findViewById(R.id.tvHiragana);
 			wordHolder.tvMean = (TextView) row.findViewById(R.id.tvMean);
 			wordHolder.tvEx = (TextView) row.findViewById(R.id.tvEx);
 			wordHolder.tvViet = (TextView) row.findViewById(R.id.tvViet);
-			wordHolder.llWord = (LinearLayout) row.findViewById(R.id.llWord);
-		
-			wordHolder.llWord.setOnTouchListener(new OnTouchListener() {
-
-				@Override
-				public boolean onTouch(View v, MotionEvent event) {
-					
-						ULog.i(WordAdapter.this, "onTouch()1 item action:" + event.getAction() + ";llWord id:" + v.getId());
-
-						v.setTag("1");
-//						if(event.getAction()==1)
-//							return false;
-//						new UpdateView(context, arrWord.get(position).ID, "1").execute();
-						return false;
-					
-				}
-			});
+//			wordHolder.llWord = (LinearLayout) row.findViewById(R.id.llWord);
+//		
+//			wordHolder.llWord.setOnTouchListener(new OnTouchListener() {
+//
+//				@Override
+//				public boolean onTouch(View v, MotionEvent event) {
+//					
+//						ULog.i(WordAdapter.this, "onTouch()1 item action:" + event.getAction() + ";llWord id:" + v.getId());
+//
+//						v.setTag("1");
+//						return false;
+//					
+//				}
+//			});
 //
 			wordHolder.tvJP2.setOnTouchListener(new OnTouchListener() {
 
@@ -92,18 +87,18 @@ public class WordAdapter extends ArrayAdapter<VocabularyList> implements OnTouch
 		
 			
 			///////////////////
-			ImageButton imgbRedo = (ImageButton) row.findViewById(R.id.imgbRedo);
-			imgbRedo.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					v.setTag("1");
-//					row.findViewById(R.id.rlMean).setVisibility(View.GONE);
-//					row.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-//					// arrWord.get(position).wordView = "0";
-//					new UpdateView(context, arrWord.get(position).ID, "0");
-				}
-			});
+//			ImageButton imgbRedo = (ImageButton) row.findViewById(R.id.imgbRedo);
+//			imgbRedo.setOnClickListener(new OnClickListener() {
+//
+//				@Override
+//				public void onClick(View v) {
+//					v.setTag("1");
+////					row.findViewById(R.id.rlMean).setVisibility(View.GONE);
+////					row.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+////					// arrWord.get(position).wordView = "0";
+////					new UpdateView(context, arrWord.get(position).ID, "0");
+//				}
+//			});
 
 			ImageView imgRemove = (ImageView) row.findViewById(R.id.imgRemove);
 			imgRemove.setOnClickListener(new OnClickListener() {
@@ -140,24 +135,24 @@ public class WordAdapter extends ArrayAdapter<VocabularyList> implements OnTouch
 			wordHolder = (WordHolder) row.getTag();
 		}
 
-		if (entry.wordView != null && entry.wordView.equals("1")) {
-			row.findViewById(R.id.llWord).setVisibility(View.GONE);
-			row.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
-		} else {
-			row.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-			row.findViewById(R.id.rlMean).setVisibility(View.GONE);
-		}
-		// //////////// test
-		if (position == 5) {
-			ULog.i(this, "getView() " + entry.wordJP + ", hira:" + entry.wordHiragana);
-		}
+//		if (entry.wordView != null && entry.wordView.equals("1")) {
+//			row.findViewById(R.id.llWord).setVisibility(View.GONE);
+//			row.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
+//		} else {
+//			row.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+//			row.findViewById(R.id.rlMean).setVisibility(View.GONE);
+//		}
+//		// //////////// test
+//		if (position == 5) {
+//			ULog.i(this, "getView() " + entry.wordJP + ", hira:" + entry.wordHiragana);
+//		}
 		// /////////
 
 		if (entry.wordJP != null && !entry.wordJP.equals("")) {
-			wordHolder.tvJP1.setText(entry.wordJP);
+//			wordHolder.tvJP1.setText(entry.wordJP);
 			wordHolder.tvJP2.setText(entry.wordJP);
 		} else {
-			wordHolder.tvJP1.setText(entry.wordHiragana);
+//			wordHolder.tvJP1.setText(entry.wordHiragana);
 			wordHolder.tvJP2.setText(entry.wordHiragana);
 		}
 		wordHolder.tvHiragana.setText(entry.wordHiragana);
@@ -175,14 +170,14 @@ public class WordAdapter extends ArrayAdapter<VocabularyList> implements OnTouch
 	}
 
 	static class WordHolder {
-		TextView tvJP1;
+//		TextView tvJP1;
 		TextView tvJP2;
 		TextView tvHiragana;
 		TextView tvEx;
 		TextView tvMean;
 		TextView tvViet;
 		ImageView imgRemove;
-		LinearLayout llWord;
+//		LinearLayout llWord;
 	}
 
 	@Override
