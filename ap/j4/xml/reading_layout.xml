@@ -13,157 +13,81 @@
         android:layout_height="match_parent" >
 
         <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/adView"
-                android:orientation="vertical" >
-
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/background"
-                    android:keepScreenOn="true" >
-
-                    <ImageView
-                        android:id="@+id/imgLeft"
-                        android:layout_width="40dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/left_arrow"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:id="@+id/tvDay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginBottom="@dimen/width_border"
-                        android:background="@color/transparent"
-                        android:text="@string/page"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:id="@+id/imgRight"
-                        android:layout_width="40dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/right_arrow" />
-                </RelativeLayout>
-
-                <ScrollView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" >
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" >
-
-                        <TextView
-                            android:id="@+id/tvTitle"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="@string/app_name"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/tvTitle2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:text="@string/app_name" />
-
-                        <TextView
-                            android:id="@+id/tvReading"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:text="@string/app_name" />
-
-                        <ImageView
-                            android:id="@+id/imgReadingS"
-                            android:layout_width="wrap_content"
-                            android:layout_height="340dp"
-                            android:layout_gravity="center"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginTop="10dp"
-                            android:scaleType="fitXY" />
-
-                        <Button
-                            android:id="@+id/btnShow"
-                            android:layout_width="100dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="right"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/button_on"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:text="@string/Show_Reading" />
-
-                        <TextView
-                            android:id="@+id/tvNote"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/app_name" />
-
-                        <Button
-                            android:id="@+id/btnExercises"
-                            android:layout_width="100dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="right"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@drawable/button_on"
-                            android:text="@string/Exercises" />
-                    </LinearLayout>
-                </ScrollView>
-            </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
             <RelativeLayout
-                android:id="@+id/rlReading"
+                android:id="@+id/rlTitle"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_above="@+id/adView"
-                android:background="@color/black_alpha_i_50"
-                android:padding="10dp"
-                android:visibility="gone" >
-
-                <sjpn4.vn.view.ScaleImageView
-                    android:id="@+id/imgReading"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/transparent"
-                    android:src="@drawable/bai2p16" />
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/background"
+                android:keepScreenOn="true" >
 
                 <ImageView
-                    android:id="@+id/imgClose"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:id="@+id/imgLeft"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/left_arrow"
+                    android:contentDescription="@string/app_name"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="@dimen/width_border"
+                    android:background="@color/transparent"
+                    android:text="@string/page"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/imgRight"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/close" />
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/right_arrow"
+                    android:contentDescription="@string/app_name" />
             </RelativeLayout>
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/lnFooter"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/adUnitId" />
+                android:keepScreenOn="true"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnExercises"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_on"
+                    android:text="@string/Exercises" />
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/adUnitId" />
+            </LinearLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pagerReading"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/lnFooter"
+                android:layout_below="@+id/rlTitle" />
         </RelativeLayout>
     </FrameLayout>
 

@@ -7,7 +7,6 @@ import com.google.android.gms.ads.AdView;
 
 import sjpn4.vn.R;
 import sjpn4.vn.Util.Common;
-import sjpn4.vn.Util.ULog;
 import sjpn4.vn.model.subModel.ReadingList;
 import sjpn4.vn.model.subModel.SubReadingList;
 import android.app.Activity;
@@ -108,7 +107,7 @@ public class SlideMenuListAdapter extends BaseAdapter {
 		}
 		htmlQA += " </p></body></html>";
 
-		ULog.i(this, "createHtml() html:" + htmlQA);
+//		ULog.§i(this, "createHtml() html:" + htmlQA);
 		return htmlQA;
 	}
 

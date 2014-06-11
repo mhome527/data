@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="test">viet</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">chao!</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+    <string name="language">Tiếng Việt</string>
+    <string name="vocabulary">Từ Vựng</string>
+    <string name="reading">Bài Đọc</string>
+    <string name="new_vocabulary">Từ mới</string>
+    <string name="old_vocabulary">Đã học</string>
+    <string name="Exercises">bài tập</string>
+    <string name="Show_Reading">Xem hình</string>
+    <string name="grammar">Ngữ pháp</string>
+    <string name="yes">Đồng ý</string>
+    <string name="no">Không</string>
+    <string name="top_title">Luyện thi tiếng nhật N3</string>
+    <string name="top_part">phần I</string>
+    <string name="level">Phần</string>
+	<string name="top_language">English</string>
+    
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_home</item>
+    </array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+</resources>

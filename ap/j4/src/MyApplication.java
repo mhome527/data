@@ -14,7 +14,8 @@ public class MyApplication extends Application {
 	}
 	
 	private void initData(){
-		new DataVocabulary(this);
+//		new DataVocabulary(this);
+		DataVocabulary.getInstance(this);
 //		data.initData(this);
 	}
 }

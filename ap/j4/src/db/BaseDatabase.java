@@ -55,7 +55,7 @@ public abstract class BaseDatabase extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		ULog.i(this, "onCreate() create database ");
+		ULog.i(BaseDatabase.class, "onCreate() create database ");
 		db.execSQL("CREATE TABLE " + TABLE_NAME_WORD + " (" + WORD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," 
 				+ WORD_JP + " TEXT," + WORD_HIRAGANA + " TEXT," + WORD_EX + " TEXT," 
 				+ WORD_EN + " TEXT," + WORD_VN + " TEXT,"
@@ -84,9 +84,13 @@ public abstract class BaseDatabase extends SQLiteOpenHelper {
 	}
 
 	protected void initInsertData(SQLiteDatabase db) {
-		ULog.i(this, "initInsertData() ");
+//		ULog.i(BaseDatabase.class, "initInsertData() ");
 		HashMap<String, String> queryValues = new HashMap<String, String>();
 		VocabularyModel model = (VocabularyModel) Common.getObjectJson(context);
+		if(model==null){
+			ULog.e(BaseDatabase.class, "Read Json error!!!!!");
+			return;
+		}
 		List<VocabularyList> list = model.vocabularyList;
 		for (VocabularyList result : list) {
 			if (result != null) {
@@ -104,13 +108,13 @@ public abstract class BaseDatabase extends SQLiteOpenHelper {
 				insertData(db, queryValues);
 			}
 		}
-
+		ULog.i(BaseDatabase.class, "initInsertData() inserted ALL");
 	}
 
 	protected void insertData(SQLiteDatabase db, HashMap<String, String> queryValues) {
 		String key;
 		ContentValues values = new ContentValues();
-		ULog.i(this, "insertData() ");
+		ULog.i(BaseDatabase.class, "insertData() ");
 		Iterator<String> myIterator = queryValues.keySet().iterator();
 		while (myIterator.hasNext()) {
 			key = (String) myIterator.next();
@@ -123,7 +127,7 @@ public abstract class BaseDatabase extends SQLiteOpenHelper {
 	protected void insertData(HashMap<String, String> queryValues) {
 		String key;
 		ContentValues values = new ContentValues();
-		ULog.i(this, "insertData() ");
+//		ULog.i(BaseDatabase.class, "insertData() ");
 		Iterator<String> myIterator = queryValues.keySet().iterator();
 		while (myIterator.hasNext()) {
 			key = (String) myIterator.next();
@@ -134,7 +138,7 @@ public abstract class BaseDatabase extends SQLiteOpenHelper {
 	}
 
 	protected void deleteData(String key, String cond) {
-		ULog.i(this, "deleteData() ");
+		ULog.i(BaseDatabase.class, "deleteData() ");
 		String deleteQuery = "DELETE FROM " + table_name + " WHERE " + key + "='" + cond + "'";
 		database.execSQL(deleteQuery);
 	}
@@ -142,7 +146,7 @@ public abstract class BaseDatabase extends SQLiteOpenHelper {
 	protected int updateData(HashMap<String, String> queryValues, String key, String value) {
 		String nameColumn;
 		ContentValues values = new ContentValues();
-		ULog.i(BaseDatabase.this, "updateData() key:" + key +"; value:" + value);
+		ULog.i(BaseDatabase.class, "updateData() key:" + key +"; value:" + value);
 		Iterator<String> myIterator = queryValues.keySet().iterator();
 		while (myIterator.hasNext()) {
 			nameColumn = (String) myIterator.next();

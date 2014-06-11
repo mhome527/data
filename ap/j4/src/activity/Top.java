@@ -21,6 +21,8 @@ public class Top extends BaseAct implements OnClickListener {
 	private TextView tvTitle;
 	private TextView tvPart;
 	private ImageView imgLanguage;
+	private TextView tvLanguage;
+
 	private Button btnVocabulary;
 	private Button btnReading;
 	private Button btnGammer;
@@ -40,7 +42,9 @@ public class Top extends BaseAct implements OnClickListener {
 		btnVocabulary = (Button) findViewById(R.id.btnVocabulary);
 		btnReading = (Button) findViewById(R.id.btnReading);
 		btnGammer = (Button) findViewById(R.id.btnGammer);
+		tvLanguage =  (TextView) findViewById(R.id.tvLanguage);
 
+		tvLanguage.setOnClickListener(this);
 		imgLanguage.setOnClickListener(this);
 		btnVocabulary.setOnClickListener(this);
 		btnReading.setOnClickListener(this);
@@ -70,6 +74,7 @@ public class Top extends BaseAct implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		case R.id.tvLanguage:
 		case R.id.imgLanguage:
 			setLocle();
 			if (pref.getBooleanValue(false, Constant.LANGUAGE)){
@@ -87,8 +92,8 @@ public class Top extends BaseAct implements OnClickListener {
 			// startActivityAct(Reading.class);
 			break;
 		case R.id.btnReading:
-			// startActivityAct(Vocabulary.class);
-			startActivityAct(Reading.class);
+//			startActivityAct(Reading.class);
+			startActivityAct(ReadingPager.class);
 			break;
 		case R.id.btnGammer:
 			// startActivityAct(Vocabulary.class);
@@ -110,6 +115,7 @@ public class Top extends BaseAct implements OnClickListener {
 	private void refreshLayout() {
 		tvTitle.setText(this.getResources().getString(R.string.top_title));
 		tvPart.setText(this.getResources().getString(R.string.top_part));
+		tvLanguage.setText(this.getResources().getString(R.string.top_language));
 		btnVocabulary.setText(this.getResources().getString(R.string.vocabulary));
 		btnReading.setText(this.getResources().getString(R.string.reading));
 		btnGammer.setText(this.getResources().getString(R.string.grammar));

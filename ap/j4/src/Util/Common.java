@@ -27,7 +27,8 @@ public class Common {
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, VocabularyModel.class);
 		} catch (Exception e) {
-			ULog.e("Common", "getObjectJson Error:" + e.getMessage());
+			ULog.e(Common.class, "getObjectJson Error:" + e.getMessage());
+			e.printStackTrace();
 		}
 		return obj;
 	}
@@ -39,7 +40,7 @@ public class Common {
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, cls);
 		} catch (Exception e) {
-			ULog.e("Common", "getObjectJson 2 Error:" + e.getMessage());
+			ULog.e(Common.class, "getObjectJson 2 Error:" + e.getMessage());
 		}
 		return obj;
 	}

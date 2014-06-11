@@ -8,7 +8,6 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="qqqq"
         android:textSize="18sp" />
 
     <TextView
@@ -16,7 +15,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:text="qqqq" 
         android:layout_marginBottom="5dp"/>
 
 </LinearLayout>

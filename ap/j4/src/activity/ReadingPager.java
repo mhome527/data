@@ -2,24 +2,25 @@ package sjpn4.vn.activity;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import sjpn4.vn.Constant;
 import sjpn4.vn.R;
 import sjpn4.vn.Util.Common;
 import sjpn4.vn.Util.ULog;
+import sjpn4.vn.adapter.ReadingPagerAdapter;
+import sjpn4.vn.model.subModel.ReadingDay;
 import sjpn4.vn.slidingmenu.adapter.SlideMenuListAdapter;
-import sjpn4.vn.model.ReadingModel;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,48 +28,32 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Reading extends BaseAct implements OnClickListener {
+public class ReadingPager extends BaseAct implements OnClickListener {
 
 	private LinearLayout lnProgressDialog;
 	private TextView tvDay;
-	private WebView webReading;
-	private TextView tvNote;
-	private TextView tvTitle;
-	private TextView tvTitle2;
 
-//	private ScaleImageView imgReading;
-//	private ImageView imgReadingS;
 	private ImageView imgLeft;
 	private ImageView imgRight;
-//	private ImageView imgClose;
-//	private RelativeLayout rlReading;
-//	private Button btnShow;
-	private Button btnExercises;
-//	private int idReading = -1;
 	private boolean isClick = false;
+	private ViewPager myPager;
+	private Button btnExercises;
 
-//	private Bitmap bmp = null;
-	// private WebView webReading;
 	private int day = 1;
-
-	private ReadingModel model;
 
 	// //slide menu
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
+	private ReadingPagerAdapter adapter;
+	private ReadingDay allDay;
 
 	// slide menu items
 	// private String[] navMenuTitles;
 	private TypedArray navMenuIcons;
 
-	// private NavDrawerListAdapter adapter;
 	private SlideMenuListAdapter adapterMenu;
 
-	// /////
-
-//	private boolean isShow = false;
-//
 	@Override
 	public int getContentViewID() {
 		// TODO Auto-generated method stub
@@ -77,51 +62,80 @@ public class Reading extends BaseAct implements OnClickListener {
 
 	@Override
 	public void onAfterCreate(Bundle savedInstanceState) {
+		lnProgressDialog = (LinearLayout) findViewById(R.id.content_progress_dialog);
+		tvDay = (TextView) findViewById(R.id.tvDay);
 		imgLeft = (ImageView) findViewById(R.id.imgLeft);
 		imgRight = (ImageView) findViewById(R.id.imgRight);
-		tvDay = (TextView) findViewById(R.id.tvDay);
-		tvTitle = (TextView) findViewById(R.id.tvTitle);
-		tvTitle2 = (TextView) findViewById(R.id.tvTitle2);
-		webReading = (WebView) findViewById(R.id.webReading);
-		tvNote = (TextView) findViewById(R.id.tvNote);
-//		imgReading = (ScaleImageView) findViewById(R.id.imgReading);
-//		imgReadingS = (ImageView) findViewById(R.id.imgReadingS);
-//		rlReading = (RelativeLayout) findViewById(R.id.rlReading);
-//		imgClose = (ImageView) findViewById(R.id.imgClose);
-//		btnShow = (Button) findViewById(R.id.btnShow);
-		lnProgressDialog = (LinearLayout) findViewById(R.id.content_progress_dialog);
-
-		/*
-		 * webReading = (WebView) findViewById(R.id.webReading);
-		 * 
-		 * webReading.getSettings().setJavaScriptEnabled(true); webReading.getSettings().setSupportZoom(true); webReading.getSettings().setBuiltInZoomControls(true);
-		 * webReading.getSettings().setLoadWithOverviewMode(true);
-		 * 
-		 * webReading.getSettings().setPluginsEnabled(true);
-		 */
-
+		myPager = (ViewPager) findViewById(R.id.pagerReading);
 		btnExercises = (Button) findViewById(R.id.btnExercises);
+		
 		btnExercises.setOnClickListener(this);
-		imgLeft.setOnClickListener(Reading.this);
-		imgRight.setOnClickListener(Reading.this);
-//		imgReadingS.setOnClickListener(Reading.this);
-//		imgClose.setOnClickListener(Reading.this);
-//		btnShow.setOnClickListener(Reading.this);
-
-		ULog.i(this, "=========== WidthScreen" + widthScreen +"; heigth:" + heightScreen);
-//		day = pref.getIntValue(1, Constant.DAY_READING_LEARN);
-		if (day == 1)
+		imgLeft.setOnClickListener(this);
+		imgRight.setOnClickListener(this);
+		
+		day = pref.getIntValue(1, Constant.DAY_READING_LEARN);
+		if (day <= 1) {
 			imgLeft.setVisibility(View.INVISIBLE);
-		tvDay.setText(Reading.this.getString(R.string.level) + " " + day);
-		new LoadData().execute();
-		// initData();
+			day = 1;
+		} else if (day >= Constant.READING_DAY_MAX) {
+			imgRight.setVisibility(View.INVISIBLE);
+			day = Constant.READING_DAY_MAX;
+		}
+		tvDay.setText(this.getString(R.string.level) + " " + day);
+		
+		myPager.setOnPageChangeListener(new OnPageChangeListener() {
+
+			@Override
+			public void onPageSelected(int position) {
+				// TODO Auto-generated method stub
+				ULog.i(ReadingPager.class, "**** onPageSelected = " + position);
+				isClick = false;
+				day = position + 1;
+				tvDay.setText(ReadingPager.this.getString(R.string.level) + " " + day);
+				// /
+				// slide menu
+				adapterMenu = new SlideMenuListAdapter(ReadingPager.this, allDay.day.get(position).readingList);
+				// setting the nav drawer list adapter
+				mDrawerList.setAdapter(adapterMenu);
+
+				// //
+				if (day == Constant.READING_DAY_MAX) {
+					imgRight.setVisibility(View.GONE);
+
+				} else if (day == 1) {
+					imgLeft.setVisibility(View.GONE);
+
+				} else {
+					imgRight.setVisibility(View.VISIBLE);
+					imgLeft.setVisibility(View.VISIBLE);
+				}
+				pref.putIntValue(day, Constant.DAY_READING_LEARN);
+
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+
 		createLayoutSlideMenu();
+
+		new LoadData().execute();
 
 		// ///////ad
 		AdView adView = (AdView) this.findViewById(R.id.adView);
-		AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("sony-so_04d-CB5A1KBLPT").build();
+		AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+				.addTestDevice("sony-so_04d-CB5A1KBLPT").build();
 		adView.loadAd(adRequest);
-		// //////////////////
+
 	}
 
 	@Override
@@ -139,7 +153,6 @@ public class Reading extends BaseAct implements OnClickListener {
 		}
 	}
 
-
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -147,7 +160,7 @@ public class Reading extends BaseAct implements OnClickListener {
 		isClick = false;
 	}
 
-	private class LoadData extends AsyncTask<Void, Void, Integer> {
+	private class LoadData extends AsyncTask<Void, Void, Boolean> {
 
 		@Override
 		protected void onPreExecute() {
@@ -156,72 +169,36 @@ public class Reading extends BaseAct implements OnClickListener {
 		}
 
 		@Override
-		protected Integer doInBackground(Void... params) {
+		protected Boolean doInBackground(Void... params) {
 			ULog.i(this, "load day:" + day);
-			model = (ReadingModel) Common.getObjectJson(Reading.this, ReadingModel.class, "day" + day);
-			return null;
+			allDay = (ReadingDay) Common.getObjectJson(ReadingPager.this, ReadingDay.class, "reading");
+			return true;
 		}
 
 		@Override
-		protected void onPostExecute(Integer result) {
-//			Bitmap bmp;
+		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
-			isClick = false;
 			lnProgressDialog.setVisibility(View.GONE);
+			if (allDay != null) {
+				adapter = new ReadingPagerAdapter(ReadingPager.this, allDay.day);
+				myPager.setAdapter(adapter);
+				myPager.setCurrentItem(day - 1);
 
-//			if (model.img != null && !model.img.equals("")) {
-//
-//				idReading = getResources().getIdentifier(model.img, "drawable", getPackageName());
-////				System.gc();
-////				bmp = BitmapUtil.decodeSampledBitmapFromResource2(getResources(), idReading, widthScreen - 10, widthScreen - 10);
-////				ULog.i(this, "bitmap ===========size:" + bmp.getByteCount()/1024);
-//				// imgReading.setVisibility(View.VISIBLE);
-//				// imgReading.setImageResource(idReading);
-////				System.gc();
-////				imgReadingS.setVisibility(View.VISIBLE);
-////				System.gc();
-//				// imgReadingS.setImageResource(idReading);
-//				imgReadingS.setImageBitmap(BitmapUtil.decodeSampledBitmapFromResource2(getResources(), idReading, widthScreen - 10, widthScreen - 10));
-//
-//				tvReading.setVisibility(View.GONE);
-//
-//				
-//
-//			}
-			
-			if(model.title==null || model.title.equals(""))
-				tvTitle.setVisibility(View.GONE);
-			else
-				tvTitle.setText(model.title);
-			
-			if(model.title2==null || model.title2.equals(""))
-				tvTitle2.setVisibility(View.GONE);
-			else
-				tvTitle2.setText(model.title2);
-			
-			
-//			tvReading.setText(model.reading);
-			webReading.loadData(model.reading, "text/html; charset=utf-8", "utf-8");
-			tvNote.setText(model.note);
-
-			// slide menu
-			adapterMenu = new SlideMenuListAdapter(Reading.this, model.readingList);
-			// setting the nav drawer list adapter
-			// adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
-			// mDrawerList.setAdapter(adapter);
-			mDrawerList.setAdapter(adapterMenu);
+				// slide menu
+				adapterMenu = new SlideMenuListAdapter(ReadingPager.this, allDay.day.get(0).readingList);
+				// setting the nav drawer list adapter
+				// adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
+				// mDrawerList.setAdapter(adapter);
+				mDrawerList.setAdapter(adapterMenu);
+			} else {
+				ULog.e(ReadingPager.class, "Loaddata Json error:");
+			}
 		}
 	}
 
 	// //////////////////////////////
 	// /////////////////////////////
 	private void createLayoutSlideMenu() {
-		// ArrayList<String> arrText = new ArrayList<String>();
-		// mTitle = mDrawerTitle = getTitle();
-		// mTitle = misClickDrawerTitle = "DAY " + day;
-
-		// load slide menu items
-		// navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
 
 		// nav drawer icons from resources
 		navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
@@ -233,15 +210,6 @@ public class Reading extends BaseAct implements OnClickListener {
 		navMenuIcons.recycle();
 
 		mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
-
-		/*
-		 * adapterMenu = new SlideMenuListAdapter(this, model.readingList); // setting the nav drawer list adapter // adapter = new NavDrawerListAdapter(getApplicationContext(),
-		 * navDrawerItems); // mDrawerList.setAdapter(adapter); mDrawerList.setAdapter(adapterMenu);
-		 */
-
-		// enabling action bar app icon and behaving it as toggle button
-		// getActionBar().setDisplayHomeAsUpEnabled(true);
-		// getActionBar().setHomeButtonEnabled(true);
 
 		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_drawer, // nav menu toggle icon
 				R.string.app_name, // nav drawer open - description for accessibility
@@ -305,6 +273,8 @@ public class Reading extends BaseAct implements OnClickListener {
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
+		if (mDrawerToggle == null)
+			return;
 		// Sync the toggle state after onRestoreInstanceState has occurred.
 		mDrawerToggle.syncState();
 	}
@@ -323,18 +293,22 @@ public class Reading extends BaseAct implements OnClickListener {
 
 		isClick = true;
 		day = day + 1;
-		tvDay.setText(Reading.this.getString(R.string.level) + " " + day);
+		tvDay.setText(ReadingPager.this.getString(R.string.level) + " " + day);
 		if (day == Constant.READING_DAY_MAX)
 			imgRight.setVisibility(View.GONE);
 		else
 			imgRight.setVisibility(View.VISIBLE);
 		pref.putIntValue(day, Constant.DAY_READING_LEARN);
 		imgLeft.setVisibility(View.VISIBLE);
+		myPager.setCurrentItem(day - 1);
+//		myPager.animate().translationX(0f).setDuration(1700);
 
-		// initData();
-		// adapterMenu = new SlideMenuListAdapter(this, model.readingList);
-		// mDrawerList.setAdapter(adapterMenu);
-		new LoadData().execute();
+
+		// slide menu
+		adapterMenu = new SlideMenuListAdapter(ReadingPager.this, allDay.day.get(day - 1).readingList);
+		// setting the nav drawer list adapter
+		mDrawerList.setAdapter(adapterMenu);
+
 	}
 
 	private void preReading() {
@@ -342,17 +316,21 @@ public class Reading extends BaseAct implements OnClickListener {
 			return;
 		isClick = true;
 		day = day - 1;
-		tvDay.setText(Reading.this.getString(R.string.level) + " " + day);
+		tvDay.setText(ReadingPager.this.getString(R.string.level) + " " + day);
 		if (day == 1)
 			imgLeft.setVisibility(View.GONE);
 		else
 			imgLeft.setVisibility(View.VISIBLE);
 		pref.putIntValue(day, Constant.DAY_READING_LEARN);
 		imgRight.setVisibility(View.VISIBLE);
-		// initData();
-		// adapterMenu = new SlideMenuListAdapter(this, model.readingList);
-		// mDrawerList.setAdapter(adapterMenu);
-		new LoadData().execute();
+		myPager.setCurrentItem(day - 1);
+//		myPager.animate().translationX(0f).setDuration(1700);
+
+		// slide menu
+		adapterMenu = new SlideMenuListAdapter(ReadingPager.this, allDay.day.get(day - 1).readingList);
+		// setting the nav drawer list adapter
+		mDrawerList.setAdapter(adapterMenu);
+
 	}
 
 }

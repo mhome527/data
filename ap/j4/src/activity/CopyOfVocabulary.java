@@ -1,8 +1,11 @@
 package sjpn4.vn.activity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+
 import sjpn4.vn.Constant;
 import sjpn4.vn.R;
 import sjpn4.vn.Util.ULog;
@@ -11,6 +14,7 @@ import sjpn4.vn.adapter.WordAdapter;
 import sjpn4.vn.db.DataVocabulary;
 import sjpn4.vn.model.subModel.VocabularyList;
 import sjpn4.vn.viewmodel.UpdateData;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Vocabulary extends BaseAct implements OnClickListener {
+public class CopyOfVocabulary extends BaseAct implements OnClickListener {
 
 	private LinearLayout lnProgressDialog;
 	private TextView tvDay;
@@ -65,24 +69,20 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 		btnOld.setOnClickListener(this);
 		day = pref.getIntValue(1, Constant.DAY_WORD_LEARN);
 
-		if (day <= 1){
+		if (day == 1)
 			imgLeft.setVisibility(View.INVISIBLE);
-			day = 1;
-		}
-		else if(day >= Constant.WORD_DAY_MAX){
+		else if(day == Constant.WORD_DAY_MAX)
 			imgRight.setVisibility(View.INVISIBLE);
-			day = Constant.WORD_DAY_MAX;
-		}
+		
 		tvDay.setText(this.getString(R.string.level) + " " + day);
 
-		new LoadinitData().execute();
 		// ///////ad
 		AdView adView = (AdView) this.findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("sony-so_04d-CB5A1KBLPT").build();
 		adView.loadAd(adRequest);
 		// //////////////////
 
-		
+		new LoadinitData().execute();
 
 	}
 
@@ -94,13 +94,16 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 				return;
 			isClickNew = true;
 			isClickOld = false;
-//			lvWordNew.setVisibility(View.VISIBLE);
-//			lvWordOld.setVisibility(View.GONE);
-//			btnNew.setBackgroundResource(R.drawable.tab_b_selected);
-//			btnOld.setBackgroundResource(R.drawable.tab_button);
-//		
-//			new LoadData("0").execute();
-			loadListDataNew();
+			lvWordNew.setVisibility(View.VISIBLE);
+			lvWordOld.setVisibility(View.GONE);
+			btnNew.setBackgroundResource(R.drawable.tab_b_selected);
+			btnOld.setBackgroundResource(R.drawable.tab_button);
+			// adapterNew.notifyDataSetChanged();
+			// ULog.i(this, "onClick() datachange1:" + dataChange);
+			// if (dataChange) {
+			new LoadData("0").execute();
+			// dataChange = false;
+			// }
 			break;
 		case R.id.btnOld:
 			if (isClickOld)
@@ -116,7 +119,7 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 			// adapterOld.notifyDataSetChanged();
 			lvWordOld.invalidateViews();
 			// lvWordOld.refreshDrawableState();
-			 ULog.i(this, "onClick() day:" + day);
+			// ULog.i(this, "onClick() datachange2:" + dataChange);
 			// if (dataChange) {
 			new LoadData("1").execute();
 			// dataChange = false;
@@ -126,40 +129,27 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 			day++;
 			if (day >= Constant.WORD_DAY_MAX) {
 				imgRight.setVisibility(View.INVISIBLE);
-				day = Constant.WORD_DAY_MAX;
 			}
 			pref.putIntValue(day, Constant.DAY_WORD_LEARN);
 			imgLeft.setVisibility(View.VISIBLE);
 			tvDay.setText(this.getString(R.string.level) + " " + day);
-//			new LoadData("0").execute();
-			loadListDataNew();
+			new LoadData("0").execute();
+
 			break;
 
 		case R.id.imgLeft:
 			day--;
-			if (day <= 1) {
+			if (day == 1) {
 				imgLeft.setVisibility(View.INVISIBLE);
-				day = 1;
 			}
 			pref.putIntValue(day, Constant.DAY_WORD_LEARN);
 			tvDay.setText(this.getString(R.string.level) + " " + day);
 			imgRight.setVisibility(View.VISIBLE);
-//			new LoadData("0").execute();
-			loadListDataNew();
+			new LoadData("0").execute();
 			break;
 		default:
 			break;
 		}
-	}
-	
-	private void loadListDataNew(){
-		lvWordNew.setVisibility(View.VISIBLE);
-		lvWordOld.setVisibility(View.GONE);
-		btnNew.setBackgroundResource(R.drawable.tab_b_selected);
-		btnOld.setBackgroundResource(R.drawable.tab_button);
-	
-		new LoadData("0").execute();
-	
 	}
 
 	private void setInitData() {
@@ -169,8 +159,8 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 			 * dbData = new DataVocabulary(this); arrWordNew = dbData.getWordByLean("0");
 			 */
 			if (arrWordNew == null || arrWordNew.size() == 0) {
-				ULog.i(this, "setInitData() can't get data!!!!!!!!!!!!!");
-//				return;
+				ULog.e(this, "setInitData() new; can't get data!!!!!!!!!!!!!");
+				return;
 			}
 			adapterNew = new WordAdapter(this, R.layout.word_item, arrWordNew, false);
 
@@ -181,7 +171,7 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 			SwipeDismissListViewTouchListener touchListenerNew = new SwipeDismissListViewTouchListener(lvWordNew, new SwipeDismissListViewTouchListener.DismissCallbacks() {
 				@Override
 				public boolean canDismiss(int pos) {
-					ULog.i(Vocabulary.this, "canDismiss() new");
+					ULog.i(CopyOfVocabulary.this, "canDismiss() new");
 					return true;
 				}
 
@@ -197,7 +187,7 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 							adapterNew.remove(entry);
 							// dataChange = true;
 							// dbData.updateWordLeand(entry.ID, "1");
-							new UpdateData(Vocabulary.this, entry.ID, "1").execute();
+							new UpdateData(CopyOfVocabulary.this, entry.ID, "1").execute();
 							// new UpdateData(Vocabulary.this, entry.ID, "1", adapterNew).execute();
 							// ULog.i(this, "onDismiss() position:" + position + "; jp:" + entry.wordJP);
 						}
@@ -209,50 +199,50 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 
 				@Override
 				public void onClickItem(View v, int position) {
-//					View change;
-//					String tag = "";
-//					change = v.findViewById(R.id.llWord);
-//					ULog.i(Vocabulary.this, "onClickItem() new llWord:" + R.id.llWord + "; tag:" + change.getTag());
-//
-//					if (change.getTag() != null)
-//						tag = change.getTag().toString();
-//
-//					if (change.getId() == R.id.llWord && tag != null && tag.equals("1")) {
-//						change.setTag("");
-//						change.setVisibility(View.GONE);
-//						v.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
-//						arrWordNew.get(position).wordView = "1";
-//						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "1").execute();
-//						return;
-//					}
-//
-//					change = v.findViewById(R.id.tvJP2);
-//					tag = "";
-//					if (change.getTag() != null)
-//						tag = change.getTag().toString();
-//					ULog.i(Vocabulary.this, "onClickItem() new tvJP2:" + R.id.tvJP2 + "; tag:" + change.getTag());
-//					if (change.getId() == R.id.tvJP2 && tag != null && tag.equals("1")) {
-//						change.setTag("");
-//						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
-//						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-//						arrWordNew.get(position).wordView = "0";
-//						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "0").execute();
-//						return;
-//					}
-//
-//					change = v.findViewById(R.id.imgbRedo);
-//					tag = "";
-//					if (change.getTag() != null)
-//						tag = change.getTag().toString();
-//					ULog.i(Vocabulary.this, "onClickItem() new imgbRedo:" + R.id.imgbRedo + "; tag:" + change.getTag());
-//					if (change.getId() == R.id.imgbRedo && tag != null && tag.equals("1")) {
-//						change.setTag("");
-//						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
-//						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-//						arrWordNew.get(position).wordView = "0";
-//						new UpdateView(Vocabulary.this, arrWordNew.get(position).ID, "0").execute();
-//						return;
-//					}
+					View change;
+					String tag = "";
+					change = v.findViewById(R.id.llWord);
+					ULog.i(CopyOfVocabulary.this, "onClickItem() new llWord:" + R.id.llWord + "; tag:" + change.getTag());
+
+					if (change.getTag() != null)
+						tag = change.getTag().toString();
+
+					if (change.getId() == R.id.llWord && tag != null && tag.equals("1")) {
+						change.setTag("");
+						change.setVisibility(View.GONE);
+						v.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
+						arrWordNew.get(position).wordView = "1";
+						new UpdateView(CopyOfVocabulary.this, arrWordNew.get(position).ID, "1").execute();
+						return;
+					}
+
+					change = v.findViewById(R.id.tvJP2);
+					tag = "";
+					if (change.getTag() != null)
+						tag = change.getTag().toString();
+					ULog.i(CopyOfVocabulary.this, "onClickItem() new tvJP2:" + R.id.tvJP2 + "; tag:" + change.getTag());
+					if (change.getId() == R.id.tvJP2 && tag != null && tag.equals("1")) {
+						change.setTag("");
+						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
+						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+						arrWordNew.get(position).wordView = "0";
+						new UpdateView(CopyOfVocabulary.this, arrWordNew.get(position).ID, "0").execute();
+						return;
+					}
+
+					change = v.findViewById(R.id.imgbRedo);
+					tag = "";
+					if (change.getTag() != null)
+						tag = change.getTag().toString();
+					ULog.i(CopyOfVocabulary.this, "onClickItem() new imgbRedo:" + R.id.imgbRedo + "; tag:" + change.getTag());
+					if (change.getId() == R.id.imgbRedo && tag != null && tag.equals("1")) {
+						change.setTag("");
+						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
+						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+						arrWordNew.get(position).wordView = "0";
+						new UpdateView(CopyOfVocabulary.this, arrWordNew.get(position).ID, "0").execute();
+						return;
+					}
 				}
 			});
 
@@ -262,14 +252,14 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 			// /////List OLd
 
 			if (arrWordNew == null || arrWordNew.size() == 0) {
-				ULog.i(Vocabulary.this, "setInitData() can't get data!!!!!!!!!!!!!");
-//				return;
+				ULog.e(CopyOfVocabulary.this, "setInitData() can't get data!!!!!!!!!!!!!");
+				return;
 			}
 			adapterOld = new WordAdapter(this, R.layout.word_item, arrWordOld, true);
 			SwipeDismissListViewTouchListener touchListenerOld = new SwipeDismissListViewTouchListener(lvWordOld, new SwipeDismissListViewTouchListener.DismissCallbacks() {
 				@Override
 				public boolean canDismiss(int pos) {
-					ULog.i(Vocabulary.this, "canDismiss() old");
+					ULog.i(CopyOfVocabulary.this, "canDismiss() old");
 
 					return true;
 				}
@@ -283,7 +273,7 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 							VocabularyList entry = adapterOld.getItem(position);
 							arrWordOld.remove(entry);
 							adapterOld.remove(entry);
-							new UpdateData(Vocabulary.this, entry.ID, "0").execute();
+							new UpdateData(CopyOfVocabulary.this, entry.ID, "0").execute();
 							// dataChange = true;
 							// new UpdateData(Vocabulary.this, entry.ID, "0", adapterOld).execute();
 							// ULog.i(this, "onDismiss() old position:" + position + "; jp:" + entry.wordJP);
@@ -291,55 +281,55 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 
 						adapterOld.notifyDataSetChanged();
 					} catch (Exception e) {
-						ULog.e(Vocabulary.this, "Dismiss 2 error:" + e.getMessage());
+						ULog.e(CopyOfVocabulary.this, "Dismiss 2 error:" + e.getMessage());
 					}
 				}
 
 				@Override
 				public void onClickItem(View v, int position) {
-//					View change;
-//					String tag = "";
-//					ULog.i(this, "onClickItem() old");
-//					change = v.findViewById(R.id.llWord);
-//					if (change.getTag() != null)
-//						tag = change.getTag().toString();
-//
-//					if (tag != null && tag.equals("1")) {
-//						change.setTag("");
-//						change.setVisibility(View.GONE);
-//						v.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
-//						arrWordOld.get(position).wordView = "1";
-//						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "1").execute();
-//						return;
-//					}
-//
-//					change = v.findViewById(R.id.tvJP2);
-//					tag = "";
-//					if (change.getTag() != null)
-//						tag = change.getTag().toString();
-//
-//					if (tag != null && tag.equals("1")) {
-//						change.setTag("");
-//						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
-//						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-//						arrWordOld.get(position).wordView = "0";
-//						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "0").execute();
-//						return;
-//					}
-//
-//					change = v.findViewById(R.id.imgbRedo);
-//					tag = "";
-//					if (change.getTag() != null)
-//						tag = change.getTag().toString();
-//
-//					if (change.getId() == R.id.imgbRedo && tag != null && tag.equals("1")) {
-//						change.setTag("");
-//						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
-//						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
-//						arrWordNew.get(position).wordView = "0";
-//						new UpdateView(Vocabulary.this, arrWordOld.get(position).ID, "0").execute();
-//						return;
-//					}
+					View change;
+					String tag = "";
+					ULog.i(this, "onClickItem() old");
+					change = v.findViewById(R.id.llWord);
+					if (change.getTag() != null)
+						tag = change.getTag().toString();
+
+					if (tag != null && tag.equals("1")) {
+						change.setTag("");
+						change.setVisibility(View.GONE);
+						v.findViewById(R.id.rlMean).setVisibility(View.VISIBLE);
+						arrWordOld.get(position).wordView = "1";
+						new UpdateView(CopyOfVocabulary.this, arrWordOld.get(position).ID, "1").execute();
+						return;
+					}
+
+					change = v.findViewById(R.id.tvJP2);
+					tag = "";
+					if (change.getTag() != null)
+						tag = change.getTag().toString();
+
+					if (tag != null && tag.equals("1")) {
+						change.setTag("");
+						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
+						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+						arrWordOld.get(position).wordView = "0";
+						new UpdateView(CopyOfVocabulary.this, arrWordOld.get(position).ID, "0").execute();
+						return;
+					}
+
+					change = v.findViewById(R.id.imgbRedo);
+					tag = "";
+					if (change.getTag() != null)
+						tag = change.getTag().toString();
+
+					if (change.getId() == R.id.imgbRedo && tag != null && tag.equals("1")) {
+						change.setTag("");
+						v.findViewById(R.id.rlMean).setVisibility(View.GONE);
+						v.findViewById(R.id.llWord).setVisibility(View.VISIBLE);
+						arrWordNew.get(position).wordView = "0";
+						new UpdateView(CopyOfVocabulary.this, arrWordOld.get(position).ID, "0").execute();
+						return;
+					}
 				}
 			});
 
@@ -361,9 +351,7 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 		@Override
 		protected Void doInBackground(Void... params) {
 //			dbData = new DataVocabulary(Vocabulary.this);
-			ULog.i(Vocabulary.class, "loadinitData day:" + day);
-			dbData =  DataVocabulary.getInstance(Vocabulary.this);
-
+			dbData =  DataVocabulary.getInstance(CopyOfVocabulary.this);
 			arrWordNew = dbData.getWordByLeanDay("0", day + "");
 			arrWordOld = dbData.getWordByLeanDay("1", day + "");
 			return null;
@@ -374,7 +362,10 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			lnProgressDialog.setVisibility(View.GONE);
-			setInitData();
+			if(arrWordNew==null && arrWordOld==null)
+				ULog.e(CopyOfVocabulary.class, "finish data: NULL");
+			else
+				setInitData();
 		}
 
 	}
@@ -404,9 +395,8 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 		protected void onPostExecute(ArrayList<VocabularyList> result) {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
-			ULog.i(this, "onPostExecute() lean:" + lean);
+			ULog.i(CopyOfVocabulary.class, "onPostExecute() lean:" + lean);
 			lnProgressDialog.setVisibility(View.GONE);
-		
 			if (result != null && result.size() > 0) {
 				if (lean.equals("1")) {
 					arrWordOld = result;
@@ -414,8 +404,6 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 					adapterOld.addAll(arrWordOld);
 					adapterOld.notifyDataSetChanged();
 				} else {
-					isClickNew = true;
-					isClickOld = false;
 					arrWordNew = result;
 					adapterNew.clear();
 					adapterNew.addAll(arrWordNew);
@@ -423,48 +411,38 @@ public class Vocabulary extends BaseAct implements OnClickListener {
 
 				}
 			}else{
-				if (lean.equals("1")) {
-					adapterOld.clear();
-					adapterOld.notifyDataSetChanged();
-
-				}else{
-					isClickNew = true;
-					isClickOld = false;
-					adapterNew.clear();
-					adapterNew.notifyDataSetChanged();
-				}
+				ULog.e(CopyOfVocabulary.class, "onPostExecute() Data not found");
 			}
 		}
 	}
 
-//	private class UpdateView extends AsyncTask<Void, Void, Integer> {
-//
-//		private DataVocabulary dbData;
-//		private String lean;
-//		private String id;
-//
-//		public UpdateView(Context context, String id, String lean) {
-//			this.lean = lean;
-//			this.id = id;
-////			dbData = new DataVocabulary(context);
-//			dbData =  DataVocabulary.getInstance(Vocabulary.this);
-//
-//		}
-//
-//		@Override
-//		protected Integer doInBackground(Void... params) {
-//			HashMap<String, String> map = new HashMap<String, String>();
-//			map.put(dbData.WORD_VIEW, lean);
-//			return dbData.updateWordById(map, id);
-//		}
-//
-//		@Override
-//		protected void onPostExecute(Integer result) {
-//			// TODO Auto-generated method stub
-//			super.onPostExecute(result);
-//			ULog.i(Vocabulary.this, "result update:" + result);
-//
-//		}
-//
-//	}
+	private class UpdateView extends AsyncTask<Void, Void, Integer> {
+
+		private DataVocabulary dbData;
+		private String lean;
+		private String id;
+
+		public UpdateView(Context context, String id, String lean) {
+			this.lean = lean;
+			this.id = id;
+//			dbData = new DataVocabulary(context);
+			dbData =  DataVocabulary.getInstance(CopyOfVocabulary.this);
+		}
+
+		@Override
+		protected Integer doInBackground(Void... params) {
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put(dbData.WORD_VIEW, lean);
+			return dbData.updateWordById(map, id);
+		}
+
+		@Override
+		protected void onPostExecute(Integer result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			ULog.i(CopyOfVocabulary.this, "result update:" + result);
+
+		}
+
+	}
 }

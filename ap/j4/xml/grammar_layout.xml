@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="10dp"
-    android:background="@color/transparent"
+    android:background="@color/gray"
     android:orientation="vertical" >
 
     <TextView
@@ -42,7 +42,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp" >
+        android:paddingRight="10dp"
+        android:layout_margin="5dp" >
     </ListView>
 
     <com.google.android.gms.ads.AdView

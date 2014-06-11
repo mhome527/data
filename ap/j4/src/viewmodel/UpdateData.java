@@ -13,7 +13,8 @@ public class UpdateData extends AsyncTask<Void, Void, Integer> {
 	public UpdateData(Context context, String id, String lean) {
 		this.lean = lean;
 		this.id = id;
-		dbData = new DataVocabulary(context);
+//		dbData = new DataVocabulary(context);
+		dbData =  DataVocabulary.getInstance(context);
 	}
 
 	@Override

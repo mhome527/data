@@ -10,23 +10,23 @@ import android.database.Cursor;
 
 public class DataVocabulary extends BaseDatabase {
 
-	// private static DataVocabulary mInstance = null;
+	private static DataVocabulary mInstance = null;
 
 	@Override
 	public String getTableName() {
 		return TABLE_NAME_WORD;
 	}
 
-	public DataVocabulary(Context context) {
+	private DataVocabulary(Context context) {
 		super(context);
 	}
 
-	// public static synchronized DataVocabulary getInstance(Context context) {
-	// if (mInstance == null) {
-	// mInstance = new DataVocabulary(context.getApplicationContext());
-	// }
-	// return mInstance;
-	// }
+	public static synchronized DataVocabulary getInstance(Context context) {
+		if (mInstance == null) {
+			mInstance = new DataVocabulary(context.getApplicationContext());
+		}
+		return mInstance;
+	}
 
 	public void insertWord(HashMap<String, String> queryValues) {
 		insertData(queryValues);
@@ -34,7 +34,7 @@ public class DataVocabulary extends BaseDatabase {
 
 	// //////update
 	public int updateWordById(HashMap<String, String> queryValues, String cond) {
-		ULog.i(this, "updateWordById()...WORD_ID:" + cond );
+		ULog.i(this, "updateWordById()...WORD_ID:" + cond);
 		return updateData(queryValues, WORD_ID, cond);
 	}
 
@@ -134,28 +134,29 @@ public class DataVocabulary extends BaseDatabase {
 		return arrWord;
 	}
 
-	private ArrayList<VocabularyList> getWordByCond(String[] whereClause,
-			String[] whereArgs) {
+	private ArrayList<VocabularyList> getWordByCond(String[] whereClause, String[] whereArgs) {
 		VocabularyList wordList;
 		ArrayList<VocabularyList> arrWord = new ArrayList<VocabularyList>();
 		Cursor cursor;
-//		ULog.i(this, "getWordById() where:" + whereArgs);
+		// ULog.i(this, "getWordById() where:" + whereArgs);
 		cursor = getDataByCond(whereClause, whereArgs);
-		if (cursor == null)
+		if (cursor == null) {
+			ULog.e(this, "getWordByCond1 cursor is NULL");
 			return null;
+		}
 		if (cursor.moveToFirst()) {
+			ULog.i(DataVocabulary.this, "getWordByCond() get data....");
+
 			do {
 				wordList = new VocabularyList();
 				for (int i = 0; i < cursor.getColumnCount(); i++) {
-					if (WORD_ID.equals(cursor.getColumnName(i))){
+					if (WORD_ID.equals(cursor.getColumnName(i))) {
 						wordList.ID = cursor.getString(i);
-//						ULog.i(DataVocabulary.this,"getWordByCond() wordID:" + cursor.getString(i));
-					}
-					else if (WORD_JP.equals(cursor.getColumnName(i))){
+						// ULog.i(DataVocabulary.this,"getWordByCond() wordID:" + cursor.getString(i));
+					} else if (WORD_JP.equals(cursor.getColumnName(i))) {
 						wordList.wordJP = cursor.getString(i);
-//						ULog.i(DataVocabulary.this,"getWordByCond() wordJP:" + cursor.getString(i));
-					}
-					else if (WORD_HIRAGANA.equals(cursor.getColumnName(i)))
+						// ULog.i(DataVocabulary.this,"getWordByCond() wordJP:" + cursor.getString(i));
+					} else if (WORD_HIRAGANA.equals(cursor.getColumnName(i)))
 						wordList.wordHiragana = cursor.getString(i);
 					else if (WORD_EX.equals(cursor.getColumnName(i)))
 						wordList.wordEX = cursor.getString(i);
@@ -172,10 +173,10 @@ public class DataVocabulary extends BaseDatabase {
 					else if (WORD_DAY.equals(cursor.getColumnName(i)))
 						wordList.wordDay = cursor.getString(i);
 					else if (WORD_LEANED.equals(cursor.getColumnName(i)))
-						wordList.wordLean = cursor.getString(i);						
-					else if (WORD_VIEW.equals(cursor.getColumnName(i))){
+						wordList.wordLean = cursor.getString(i);
+					else if (WORD_VIEW.equals(cursor.getColumnName(i))) {
 						wordList.wordView = cursor.getString(i);
-//						ULog.i(DataVocabulary.this,"getWordByCond() view:" + cursor.getString(i));
+						// ULog.i(DataVocabulary.this,"getWordByCond() view:" + cursor.getString(i));
 					}
 				}
 				arrWord.add(wordList);
@@ -186,13 +187,11 @@ public class DataVocabulary extends BaseDatabase {
 	}
 
 	public ArrayList<VocabularyList> getWordByLean1(String lean) {
-		return getWordByCond(new String[] { WORD_LEANED },
-				new String[] { lean });
+		return getWordByCond(new String[] { WORD_LEANED }, new String[] { lean });
 	}
-	
+
 	public ArrayList<VocabularyList> getWordByLeanDay(String lean, String day) {
-		return getWordByCond(new String[] { WORD_LEANED, WORD_DAY },
-				new String[] { lean, day });
+		return getWordByCond(new String[] { WORD_LEANED, WORD_DAY }, new String[] { lean, day });
 	}
 
 }

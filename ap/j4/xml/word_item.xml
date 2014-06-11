@@ -31,18 +31,16 @@
         <RelativeLayout
             android:id="@+id/rlWord"
             android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginRight="5dp" >
+            android:layout_height="100dp" >
 
             <TextView
                 android:id="@+id/tvJP2"
                 android:layout_width="fill_parent"
-                android:layout_height="80dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/black_alpha_i_50"
+                android:layout_height="65dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/black_alpha_i_30"
                 android:gravity="center"
-                android:text="TextView"
-                android:textSize="16dp" />
+                android:textSize="18sp" />
 
             <ImageButton
                 android:id="@+id/imgbRedo"
@@ -50,14 +48,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/left" />
+                android:background="@drawable/left"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvViet"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvJP2"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 android:text="TextView22"
