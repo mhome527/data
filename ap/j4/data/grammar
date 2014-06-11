@@ -1,0 +1,1626 @@
+{	
+	"listGrammar":[
+{"grammar":"～の・～だい・～（の）かい","meanJP":"",
+"meanEN":"sentence-final particle used in informal questions",
+"meanVN":"Dùng ở cuối câu cho câu hỏi không mang tính nghi thức.",
+"detail":"<p style='font-size:22px; text-align:center'><b>～の・～だい・～（の）かい</b></p>
+<b>意味：</b><br/>
+くsentence-final particle used in informal questions〉<br/>
+Dùng ở cuối câu cho câu hỏi không mang tính nghi thức.<br/><br/>
+
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ→な）、N（xだ→な）＋の<br/>
+※usage: plain form　<br/><br/>
+
+<b>用例：</b><br/>
+    A「きのう　来なかったね。どうしたの。」<br/>
+    Hôm qua không đến. Sao vậy?<br/>
+    B「頭が　いたかったんです。」<br/>
+    Bị nhức đầu.<br/><br/>
+
+    A「いい　くつね。どこで　買ったの。」<br/>
+    Vớ/tất đẹp nhỉ. Mua ở đâu thế?<br/>
+    B「駅前の　店。とても　安かったんだ。」<br/>
+    Ở của hàng trước ga. Rất rẻ<br/><br/>
+
+<b>接続：</b><br/>
+V（ん）、い－adj（ん）、な－adj（xだ→なん）、N（xだ→なん）＋だい<br/>
+
+※usage: plain form　<br/><br/>
+
+<b>用例：</b><br/>
+    A「田中さんは　何時に　来るんだい。」<br/>
+    Mr.Tanaka mấy giờ đến vậy?<br/>
+    B「9時です。」<br/>
+    9 giờ.<br/><br/>
+
+    A「山田くん。車の　かぎは　どこに　あるんだい。」<br/>
+    Yamada. Chìa khóa xe ở đâu?<br/>
+     B「あ、ここです。」<br/>
+    À, đây nè<br/><br/>
+
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ→な）、N（xだ→な）＋かい<br/>
+
+※usage: plain form　<br/><br/>
+
+<b>用例：</b><br/>
+    A「かいぎは　10時からなのかい。」<br/>
+    Buổi họp từ 10 giờ à?<br/>
+    B「ええ、そうです。」<br/>
+    Ừ, đúng rồi<br/><br/>
+
+    A「勉強は　もう　終わったのかい。」<br/>
+    Học xong rồi sao?<br/>
+    B「うん。終わった。」<br/>
+    Ừ, xong rồi " 
+ },
+
+{"grammar":"～ちや/じや","meanJP":"",
+"meanEN":"colloquial form of '～ては/では'",
+"meanVN":"Hình thức thông dụng của '～ては/では'",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ちや/じや</b></p>
+<b>意味：</b><br/>
+
+くcolloquial form of \"～ては/では\"〉<br/>
+Hình thức thông dụng của “～ては/では”<br/>
+※ては　いけません　→ちゃ　いけません<br/>
+※では　いけません　→じゃ　いけません<br/><br/>
+
+<b>接続：</b>
+～ちや/じや<br/><br/>
+
+<b>用例：</b><br/>
+    A「これ、食べても　いい？」<br/>
+    Ăn cái này được không?<br/>
+    B「ううん。それは　おきゃくさまに　出す　おかしだから、<br/>
+    食べちゃ　だめよ。」.<br/>
+    Ư,Vì là bánh kẹo đưa khách hàng nên ăn là không được.<br/><br/>
+
+    A「まだ　中学生なんだから、おさけを　飲んじゃ　いけませんよ。」<br/>
+    Vì đang là học sinh trung học nên không được uống rượu.<br/>
+    B「はい、わかリました。」<br/>
+    Vâng, hiểu rồi.<br/>
+"},
+
+{"grammar":"～ということ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ということ</b></p>
+<b>意味：</b><br/>
+the fact that ～<used to change a sentence into a noun clause〉<br/><br/>
+
+<b>接続：</b>
+V plain＋ ということ<br/><br/>
+
+<b>用例：</b><br/>
+    レストランに　電話しても　だれも　出ないということは　きょうは　休みかもしれません。<br/>
+    Gọi điện đến nhà hàng mà không ai bắt máy nghĩa là có lẽ hôm nay nghỉ<br/><br/>
+
+    せきに　まだ　かばんが　あるということは　山田さんは　まだ 　この　建物の　中に　いるのでしよう。<br/>
+    Cặp còn ở trên ghế tức là có lẽ Mr.Yamada vẫn còn trong tòa nhà này.<br/><br/>
+
+    友だちが　夜に　なっても　山から　もどらないということを　閒いて、とても　しんぱいして　います。<br/>
+    Nghe các bạn trên núi chưa quay lại dù trời đã tối, rất là lo lắng.<br/><br/>
+
+    じしんで　ビルが　たくさん　たおれたということを　閒きました。<br/>
+    Nghe tòa nhà đổ vì động đất.<br/>
+" },
+
+{"grammar":"～の/こと","meanJP":"",
+"meanEN":"used to nominalize the previous clause",
+"meanVN":"Danh từ hóa mệnh đề trước.",
+"detail":"<p style='font-size:22px; text-align:center'><b>～の/こと</b></p>
+<b>意味：</b><br/>
+くused to nominalize the previous clause><br/>
+Danh từ hóa mệnh đề trước.<br/><br/>
+
+<b>接続：</b>
+V plain＋ の/こと<br/><br/>
+
+<b>用例：</b><br/>
+    子どもが　あそんで　いるのが　見えます。<br/>
+    Có thề nhìn thấy việc chơi đùa của con.<br/><br/>
+
+    朝　早く　こうえんを　さんぽするのが　好きです。<br/>
+    Sáng sớm thích đi dạo công viên.<br/><br/>
+
+    しゅくだいが　たくさん　あって、おわるのに　2時間も　かかリました。<br/>
+    Bài tập rất nhiều, mất 2 tiếng mới xong bài tập.<br/><br/>
+
+    小林さんに　電話する（の／こと）をわすれて　しまいました。<br/>
+    Quên mất việc gọi điện thọai cho Mr.Kobayashi.<br/><br/>
+
+    山田さんが　けっこんした（の／こと）を　知って　いますか。<br/>
+    Có biết Mr.Yamada đã kết hôn không?<br/>
+" },
+
+{"grammar":"～さ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～さ</b></p>
+<b>意味：</b><br/>
+くused to nominalize adjectives〉<br/>
+Danh từ hóa.<br/>
+Chuyển tính từ thành danh từ.<br/><br/>
+
+<b>接続：</b>
+い－adj（xい）、な－adj（xな）＋ さ<br/>
+※いい→よさ。<br/><br/>
+
+<b>用例：</b><br/>
+    その　へやの　広さは　どのくらいですか。<br/>
+    Phòng đó rộng bao nhiêu?<br/><br/>
+
+    A「かみを　切って　ください。」<br/>
+    Vui lòng cắt tóc đi.<br/><br/>
+    B「どのくらいの　長さに　しますか。」<br/>
+    Để dài bao nhiêu?<br/><br/>
+
+    あの　人には　この　問題の　大切さが　わかっていないようです。<br/>
+    Người kia hình như không hiểu tầm quan trong của vấn đề" },
+
+{"grammar":"こ・そ・あ・ど","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>こ・そ・あ・ど</b></p>
+<b>用例：</b><br/>
+    「それは　いくらですか。」<br/>
+    Cái đó giá bao nhiêu?<br/>
+    B「どれ　ですか。」<br/>
+    Cái nào?<br/>
+    A「その　青い　シャツです。」<br/>
+    Cái áo xanh đó.<br/>
+    B「ああ、これは　2，500円です。」<br/>
+    A, cái đó 2.500yen.<br/><br/>
+
+    この　町が　好きで、もう　20年も　住んで　います。<br/>
+    Tôi thích phố này, tôi đã sống 20 năm rồi<br/><br/>
+
+    この　漢字は　こう　書いて　ください。<br/>
+    Chữ Kanji này viết thế này này.<br/><br/>
+
+    A「きのう　フランス料理の　レス卜ランに　行きました。 とても　おいしかったです。」<br/>
+    Hôm qua đã đi nhà hàng thức ăn Pháp. Rất là ngon.<br/>
+    B「それは　どこに　あるんですか。教えて　ください。」<br/>
+    Nhà hàng đó ở đâu vậy? Vui lòng chỉ cho tôi.<br/><br/>
+
+    A「山田さんは　すてきな　人ですね。」<br/>
+    Mr.Yamada thích mẫu ngườiđẹp nhỉ.<br/>
+    B「ええ、私も　あんな　人に　なリたいです。」<br/>
+    A, tôi cũng thích người như thế.<br/><br/>
+
+    あの　人に　どう　説明すれば　いいですか。<br/>
+    Giải thích cho người kia sao cho tốt vậy?<br/>
+" },
+
+{"grammar":"sound • voice • smell • tasteがする","meanJP":"",
+"meanEN":"used to describe a phenomenon that is perceivable by the senses",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>sound • voice • smell • tasteがする</b></p>
+<b>意味：</b><br/>
+hear, smell, taste くused to describe a phenomenon that is perceivable by the senses><br/><br/>
+
+<b>接続：</b>
+sound • voice • smell • taste がする<br/><br/>
+
+<b>用例：</b><br/>
+
+    となリの　へやで　へんな　音が　します。<br/>
+    Nghe thấy âm thanh lạ ở phòng bên cận.<br/><br/>
+
+    「うわあ、いい　においが　する。」<br/>
+    Wow, mùi thơm quá.
+" },
+
+{"grammar":"という","meanJP":"",
+"meanEN":"called",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>という</b></p>
+<b>意味：</b>
+～called～<br/><br/>
+<b>接続：</b>
+N＋という　N<br/><br/>
+
+<b>用例：</b><br/>
+    「坊ちゃん」という　小説を　読んだ　ことが　ありますか。<br/>
+    Bạn đã đọc tiểu thuyết \"Thằng bé\" chưa?<br/><br/>
+
+    うけつけに　山田さんという人が　来て　いますよ。<br/>
+    Mr.Tanaka đang đến quần tiếp tân.
+" },
+
+{"grammar":"ようにいう","meanJP":"",
+"meanEN":"tell someone to do ～",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>ようにいう</b></p>
+<b>意味：</b><br/>
+tell someone to do ～<br/><br/>
+
+<b>接続：</b>
+V dictionary、Vない ＋ようにいう<br/><br/>
+
+<b>用例：</b><br/>
+    先生は　私に　教室の　前で　持って　いるように　言いました。<br/>
+    Giáo viên nói tôi chờ ở trước phòng học.<br/><br/>
+
+    ここには　入らないように　言われました。<br/>
+    Nói là đừng vào đây.
+" },
+
+{"grammar":"と","meanJP":"",
+"meanEN":"that～",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>と</b></p>
+<b>意味：</b><br/>
+that～<br/><br/>
+
+<b>接続：</b>
+plain form ＋ と<br/><br/>
+
+<b>用例：</b><br/>
+    私は　また　来年　アメリカへ　行きたいと　思って　います。<br/>
+    Tôi muốn rằng sang năm đi Mỹ.<br/><br/>
+
+    朝　会った　ときに　「おはよう　ございます」と　言います。<br/>
+    Gặp nhau vào buổi sáng nói 'おはよう　ございます'
+" },
+
+{"grammar":"とか","meanJP":"",
+"meanEN":"～or something",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>とか</b></p> 
+<b>意味：</b><br/>
+～and so on くused to give example(s)><br/><br/>
+
+<b>接続：</b>N＋ とか<br/><br/>
+
+<b>用例：</b><br/>
+    私は　日本料理とか、イタリア料理とかが　好きです。<br/>
+    Tôi thích món ăn Nhật, Ý...<br/><br/>
+
+    タイエツ卜して　いるので、チョコレ一卜とか、ケーキとか、 あまい物を　食べないように　して　います。<br/>
+    Vì đang ăn kiêng, nên không ăn đồ ngọt, socola, bánh kem.
+"},
+
+{"grammar":"でも","meanJP":"",
+"meanEN":"any ～",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>でも</b></p> 
+<b>意味：</b><br/>
+any ～
+
+<b>接続：</b>
+
+<b>用例：</b><br/>
+    ここは　だれでも　入る　ことが　できます。<br/>
+     Ở đây ai cũng có thể vào được.<br/><br/>
+
+    田中さんは　スポーツなら　何でも　できるそうです。<br/>
+    Nếu nói thể thao thì Mr.Tanaka hình như thích tất cả.<br/><br/>
+
+    どうぞ、いつでも　あそびに　来て　ください。<br/>
+    Xin mời, Lúc nào cũng được đến chơi nhé.<br/><br/>
+
+    日本に　5年　住んで　いますから、もう　どこでも　1人で 行けます。<br/>
+    Vì đã sống ở Nhật 5 năm nên dù ở đâu một mình cũng có thể đi.<br/><br/>
+
+    どれでも　好きな物を　食べて　ください。<br/>
+    Ăn bất cứ thứ gì thích.<br/><br/>
+
+    この　ナイフは　どんな　物でも　切れますよ。<br/>
+    Dao này cắt vật gì cũng được.<br/><br/>
+
+意味2：
+(108) even ～<br/><br/>
+
+<b>接続：</b>
+N＋～<br/><br/>
+
+<b>用例：</b><br/>
+    さいきん　いそがしくて、土曜日でも　休めない　ことが 多くなリました。<br/>
+    Gần đây vì bận rộn nên thứ 7 cũng thế công viêc không nghĩ càng nhiều lên.<br/><br/>
+
+    山田さんは　どんなに　むずかしい仕事でも　やる人です。<br/>
+    Mr. Yamada là người ngay cả công việc khó đi chăng nữa cũng làm.<br/><br/>
+
+意味3：
+(108) ～or something<br/><br/>
+
+<b>用例：</b><br/>
+    ちょっと　つかれました。あそこで　お茶でも　飲みませんか。<br/>
+    Hơi mệt chút, Uống trà chẳng hạn ở kia nhé.<br/><br/>
+
+    A「小林さんの　家に　よばれたんですが、何を　持って いったらいいでしょうか。」<br/>
+    Được gọi đến nhà Mr.Kobayahi, mang theo gì thì tốt nhỉ?<br/>
+    B「そうですね。あまい　物が　好きだから、チョコレ一トでも　持って　いったら　とうですか。」<br/>
+    Ừ nhỉ, Vì thích đồ ngọt nên mang socola, được đấy?
+"},
+
+
+{"grammar":"numeralも • numeral/nounしか • numeralで","meanJP":"",
+"meanEN":"only, no more than, no ～but",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>numeralも • numeral/nounしか • numeralで</b></p> 
+<b>意味：</b><br/>
+as many/much/long as くindicates emphasis><br/><br/>
+
+<b>接続：</b>
+numeral も<br/><br/>
+
+<b>用例：</b><br/>
+    妹は　パンを　6つも　食べました。<br/>
+    Em gái đã ăn đến 6 ổ mì.<br/><br/>
+
+    あしたの　パーテイーには　おきゃくさんが　100人も　来るそうです。<br/>
+    Bửa tiệc ngày mai hình như số khách hàng đến là 100 người.<br/><br/>
+
+<b>意味2：</b><br/>
+only, no more than, no ～but <used with negative forms><br/><br/>
+
+<b>接続：</b>
+numeral/noun しか<br/><br/>
+
+<b>用例：</b><br/>
+    私は　ゆうべ　3時間lしか　ねられませんでした。<br/>
+    Tối qua tôi chỉ ngủ được có 3 tiếng.<br/><br/>
+
+    さとうさんは　肉しか　食べないそうです。<br/>
+    Mr.Sato hình như chỉ ăn thịt thôi.<br/><br/>
+
+<b>意味3：</b>
+for, in<br/><br/>
+
+<b>接続：</b>
+numeral で<br/><br/>
+
+<b>用例：</b><br/>
+    ここから　駅まで　5分で　行けます。<br/>
+    Từ đây đến ga có thể đi mất 5 phút.<br/><br/>
+
+    ヤンさんは　この　つくえを　1，000円で　買ったんですよ。<br/>
+    Mr.Jan đã mua cái bàn này giá 1000 yen.<br/>
+
+"},
+
+{"grammar":"まで・までに","meanJP":"",
+"meanEN":"till, as far as, up to, until",
+"meanVN":"Cho đến, đến, tận đến…",
+"detail":"<p style='font-size:22px; text-align:center'><b>まで・までに</b></p> 
+<b>意味：</b><br/>
+till, as far as, up to, until<br/>
+くindicates a spatial, temporal or quantitative limit><br/>
+Cho đến, đến, tận đến…<br/><br/>
+
+<b>接続：</b>
+N (time/place), numeral＋ まで　<br/><br/>
+
+<b>用例：</b><br/>
+    うちから　学校まで　1時間30分　かかります。<br/>
+    Từ nhà đến trường mất 1giờ 30phút.<br/><br/>
+
+    この　エレべ一ターは　10人まで　乗れるようです。<br/>
+    Thang máy này chỉ đi được 10 người.<br/><br/>
+
+<b>意味2：</b><br/>
+by, by the time <indicates a time limit〉<br/><br/>
+
+<b>用例：</b><br/>
+    レポートは　あしたまでに　出して　ください。<br/>
+    Hãy nộp báo cáo đến hết ngày mai.<br/><br/>
+
+    こ出発の　2時間前までに　くうこうに　行かなければ　なりません。<br/>
+    Phải đến sân bay trước 2 tiếng trước khi xuất phát.
+"},
+
+{"grammar":"を","meanJP":"",
+"meanEN":"along, over, across",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>を</b></p> 
+<b>意味：</b><br/>
+  along, over, across<br/>
+くindicates the place where a person or a thing passes〉<br/><br/>
+
+<b>接続：</b>
+～　を　～　<br/><br/>
+
+<b>用例：</b><br/>
+    家を　出て まっすぐ　行くと、はしが　あリます。<br/>
+    Ra khỏi nhà, đi thẳng sẽ có cái cầu.<br/><br/>
+
+    その　はしを　わたって　5分ぐらい　歩いて　行くと、こうえんに　着きます。<br/>
+    Qua cầu đó, đi bộ 5 phút sẽ thấy công viên.<br/>
+"},
+
+{"grammar":"に","meanJP":"",
+"meanEN":"in, at, on",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>に</b></p> 
+<b>意味：</b><br/>
+in, at, on<br/>
+くindicates the location where someone or something exists〉<br/>
+Trong, tại, trên.<br/><br/>
+
+<b>接続：</b>
+～　に　～　<br/><br/>
+
+<b>用例：</b><br/>
+    こうえんに　ベンチが　あります。<br/>
+    Có ghế ở công viên.<br/><br/>
+
+    エレべ一ターの　前に　いる人が　田中さんです。<br/>
+    Người ở trước thang máy đó là Mr.Tanaka.<br/><br/>
+
+    この　作文には　漢字の　まちがいが　たくさん　あリますよ。<br/>
+    Ở bài luận này chữ Kanji sai nhiều quá.<br/><br/>
+
+<b>意味2：</b><br/>
+to, on, toward<br/>
+くindicates the place where an action is directed or reaches〉<br/><br/>
+
+<b>用例：</b><br/>
+    はしを　わたると、こうえんに　つ•きます。<br/>
+    Qua cầu thì sẽ đến công viên.<br/><br/>
+
+    くさの　上に　すわって　空を　見るのは　気持ちが　いいです。<br/>
+    Ngồi trên cỏ nhìn trời cảm giác thật thỏai mái.<br/><br/>
+
+    ごみは　ごみばこに　すてなければ　なりません。<br/>
+    Phải bỏ rác vào thùng rác.
+"},
+
+{"grammar":"で","meanJP":"",
+"meanEN":"at, in",
+"meanVN":"Trong, tại",
+"detail":"<p style='font-size:22px; text-align:center'><b>で</b></p> 
+<b>意味：</b><br/>
+at, in くindicates the place where an action takes place〉<br/>
+Trong, tại<br/><br/>
+
+<b>接続：</b>
+～　で　～<br/>
+
+<b>用例：</b><br/>
+    こうえんで　テニスを　しませんか。<br/>
+    Chơi tennis ở công viên nhé?<br/><br/>
+
+    田中さんは　ゆうびんきょくで　働いています。<br/>
+    Mr.Tanaka làm việc ở bưu điện.<br/><br/>
+
+    あしたの　牛後　6時に　東京駅の　前で　会いましょう<br/>
+    Chiều mai lúc 6giờ gặp nhau ở trước ga Tokyo nhé.
+"},
+
+{"grammar":"お/ご～ください","meanJP":"",
+"meanEN":"Please do ～ <polite form of \"～て く ださい\"",
+"meanVN":"Thể lịch sự của \"～て く ださい\"",
+"detail":"<p style='font-size:22px; text-align:center'><b>お～ございます</b></p> 
+<b>意味：</b><br/>
+Please do ～.<polite form of \"～て く ださい\" ><br/>
+Thể lịch sự của  \"～て く ださい\"<br/><br/>
+
+<b>接続：</b><br/>
+おV(Group I & II)-ます＋ください<br/>
+ごV(Group III)-ます＋ ください<br/><br/>
+
+<b>用例：</b><br/>
+    どうぞ　お入り　ください。<br/>
+    Xin mời vào.<br/><br/>
+
+    この　薬は　ねる前に　お飲み　ください。<br/>
+    Vui lòng uống thuốc trước khi đi ngủ.<br/><br/>
+
+    エレベーターが　こしょうして　いるので、かいだんを ごりよう　ください。<br/>
+    Bởi vì thang máy hư nên vui lòng sử dụng thang bộ.
+"},
+
+{"grammar":"お～ございます","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>お/ご～ください</b></p> 
+<b>接続：</b>
+お～ございます<br/><br/>
+
+<b>用例：</b><br/>
+    毎日　お厚う　ございますね。<br/>
+    こちらの　店の　ステーキは　たいへん　おいしゅう　ございます<br/>
+    こちらの　品物は　少し　おたこう　ございます。
+
+"},
+
+
+{"grammar":"～でございます","meanJP":"",
+"meanEN":"polite form of \"です\" ",
+"meanVN":"Thể lịch sự của \"です\"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～でございます</b></p> 
+<b>意味：</b><br/>
+くpolite form of \"です\" ><br/>
+Thể lịch sự của \"です\"<br/><br/>
+
+<b>接続：</b> ～でございます<br/><br/>
+
+<b>用例：</b><br/>
+    お手洗いは　あちらで　ございます。<br/>
+    Tolet ở đằng kia.<br/><br/>
+
+    田中で　ございます。どうぞ　よろしく　おねがいいたします。<br/>
+    Tôi là Tanaka, rất vui được gặp ông!<br/><br/>
+
+    こちらは　うけつけでは　ございません。<br/>
+    うけつけは　2かいで　ございます。<br/>
+    Đây không phải là chổ tiếp tân. Tiếp tân ở trên tầng 2.
+"},
+
+{"grammar":"～ございます","meanJP":"",
+"meanEN":"polite form of \"あります\" ",
+"meanVN":"Thể lịch sự của \"あります\"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ございます</b></p> 
+<b>意味：</b><br/>
+くpolite form of “あります”〉<br/>
+Thể lịch sự của “あります”<br/><br/>
+
+<b>接続：</b>～ございます<br/><br/>
+
+<b>用例：</b><br/>
+    お手洗いは　あちらに　ございます。<br/>
+    Có tolet ở đằng kia.<br/>
+    この　ビルの　屋上に　プールが　ございます。<br/>
+    Trên đỉnh của tòa nhà đó có hồ bơi.<br/>
+    きゃく 「りんごジュース、あリますか。」<br/>
+    Khách hàng: Có nước táo không?<br/>
+    店員「りんごジュースは　ございませんが、 オレンジジュースならございます。」<br/>
+    Phục vụ: Không có nước táo nhưng có nước cam.
+"},
+
+{"grammar":"お/ご～する(謙譲語))","meanJP":"",
+"meanEN":"",
+"meanVN":"Hình thức này không được dùng cho các động từ chỉ có một âm tiết trước \"ます\".",
+"detail":"<p style='font-size:22px; text-align:center'><b>お/ご～する(謙譲語：Khiêm nhường ngữ)</b></p> 
+<b>意味：</b><br/>
+Hình thức này không được dùng cho các động từ chỉ có một âm tiết trước \"ます\".<br/>
+Xお見します（身ます）<br/>
+xお来します（来ます）<br/><br/>
+
+Có một số động từ Group III được dùng với “お” thay cho “ ご”.<br/>
+こんばん　先生に　お電話する　つもりです。<br/><br/>
+
+<b>接続：</b><br/>
+おV(Group I & II)-ます、<br/>
+ごV(Group III)-dictionary＋する<br/><br/>
+
+<b>用例：</b><br/>
+    おきゃくさまに　品物を　おわたししました。<br/>
+    Đã đưa hàng cho khách hàng.<br/><br/>
+
+    A 「その　にもつ、お持ちしましょうか。」<br/>
+    Tôi xách hành lý đó cho nhé?<br/>
+    B「あリがとう　ございます。おねがいいたします。」<br/>
+    Cám ơn, giúp tôi nhé.<br/><br/>
+
+    かいぎの　時間が　きまったら、ごれんらくします。<br/>
+    Nếu có quyết định giờ họp thì liên lạc tôi nhé.
+"},
+
+{"grammar":"～（ら)れる(尊敬語)","meanJP":"",
+"meanEN":"",
+"meanVN":"Tôn kính",
+"detail":"<p style='font-size:22px; text-align:center'><b>～（ら)れる(尊敬語：Tôn trọng ngữ)</b></p> 
+<b>意味：</b><br/>
+Tôn kính<br/><br/>
+
+<b>接続：</b>
+～（ら)れる（尊敬 - Tôn kính)<br/><br/>
+
+<b>用例：</b><br/><br/>
+    おきゃくさまは　もう　帰られました。<br/>
+    Khách hàng đã về rồi.<br/>
+    田中先生は　もう　すぐ　この　学校を　やめられるそうです。<br/>
+    Nghe đồn là Mr. Tanaka sắp nghỉ dạy ở trường này.<br/>
+    おじょうさんは　いつ　けっこんされたんですか。<br/>
+    Con gái ông khi nào kết hôn?
+"},
+
+{"grammar":"お～になる(尊敬語)","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>お～になる(尊敬語))</b></p> 
+<b>意味：</b><br/>
+Hình thức này không được dùng cho các động từ sau:<br/>
+① Group III verbs<br/>
+xお来になります(来ます)<br/>
+xお食事になります（食事します）<br/><br/>
+
+② Các dộng từ chỉ có một âm tiết trước \"ます\"<br/>
+xお見になります（見ます）<br/>
+Xおねになります（ねます）<br/><br/>
+
+<b>接続：</b> おV-ます＋になる<br/><br/>
+
+<b>用例：</b><br/>
+    先生は　何時ごろ　おもどりに　なリますか。<br/>
+    Khoảng mấy giờ giáo viên quay lại?<br/><br/>
+
+    社長は　ぜんぜん　おさけを　お飲みに　なりません。<br/>
+    Giám đốc không bao giờ uốn bia.
+"},
+
+{"grammar":"～のに","meanJP":"",
+"meanEN":"Even though ～，In spite of ～",
+"meanVN":"Dùng khi muốn diễn đạt việc không đạt được kết qủa như mong đợi trong một tình huống nào đó.",
+"detail":"<p style='font-size:22px; text-align:center'><b>～のに</b></p> 
+
+<b>意味：</b><br/>
+Even though ～，In spite of ～<br/>
+くindicates something contrary to the speaker's expectation〉<br/>
+Dùng khi muốn diễn đạt việc không đạt được kết qủa như mong đợi trong một tình huống nào đó.<br/>
+Điểm khác biệt với [～が]、[～でも] là nó bao gồm cả tình cảm, cảm giác mạnh mẽ của người nói như sự bất mãn, không ngờ.<br/><br/>
+
+<b>接続：</b>
+V、い－adj、な－adj（xだ→な）、N（xだ→な）＋ のに<br/>
+
+※usage: plain form　<br/><br/>
+
+<b>用例：</b><br/>
+    山田さんは　いつも　たくさん　食べるのに、ぜんぜん　太りません。<br/>
+    Mặc dù Mr.Yamada lúc nào cũng ăn rất nhiều, nhưng chẳng bao giờ mập.<br/><br/>
+
+    きょうは　寒いのに、子どもたちは　外で　元気に　あそんで　います。<br/>
+    Mặc dù hôm nay trời lạnh, nhưng bên ngòai tụi trẻ vui vẻ chơi đùa.<br/><br/>
+
+    ヤンさんは　日本語が　上手なのに、あまり　日本語で　話しません。<br/>
+    Mặc dù Mr. Jan giỏi tiếng Nhật, nhưng ít khi nói (tiếng Nhật)<br/><br/>
+
+    冬なのに、きょうは　とても　あたたかいです。<br/>
+    Mặc dù là mùa đông, nhưng rất là ấm áp.<br/><br/>
+
+    ※A sentence that ends with のに show the speaker's strong feeling<br/>
+    例：もっと　早く　うちを出れば、間に合ったのに。<br/>
+     Nếu ra khỏi nhà sớm thì kịp rồi...
+
+"},
+
+{"grammar":"～ても/でも","meanJP":"",
+"meanEN":"Even if ～",
+"meanVN":"Thậm chí, ngay cả～",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ても/でも</b></p> 
+<b>意味：</b><br/>
+Even if ～<br/>
+Thậm chí, ngay cả～<br/><br/>
+
+<b>接続：</b><br/>
+Vて、い－adj（xい→く）、な－adj（xな）、N＋ ても/でも<br/>
+
+※usage: plain form　<br/><br/>
+
+<b>用例：</b><br/>
+    ヤンさんは　ねつが　あっても、学校を　休みません。<br/>
+    Mr.Jan ngay cả bị cảm cũng không nghĩ học.<br/>
+    いくら　考えても、答えが　わかりませんでした。<br/>
+    Dù suy nghĩ cở nào đi nữa cũng không hiểu câu trả lời.<br/>
+    どんなに　いそがしくても、毎日　新聞を　読みます。<br/>
+    Dù có bận rộn đến mức nào hàng ngày cũng đọc báo.<br/>
+    日本語が　上手じゃ　なくても、この　仕事は　だいじょうぶです。<br/>
+    Cho dù tiếng nhật không giỏi đi chăng nữa, công việc này cũng có thể làm được.<br/>
+    ここは　夏でも　すずしいです。<br/>
+      Ở đây dù là mùa hè nhưng mát mẻ.
+"},
+
+{"grammar":"～なら","meanJP":"",
+"meanEN":"If that is the case ～くsupposition〉",
+"meanVN":"Nếu  ～",
+"detail":"<p style='font-size:22px; text-align:center'><b>～なら</b></p> 
+<b>意味：</b><br/>
+If that is the case ～くsupposition〉<br/>
+Nếu  ～<br/><br/>
+
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ）、N（xだ）＋なら<br/>
+
+※usage: plain form　<br/>
+
+<b>用例：</b><br/>
+    店の人「この魚、ほんとうに　おいしいんですよ。ほかの おきゃくさんも　みんな　そう　言って　います。」<br/>
+    Phục vụ quán: Cá này ngon thật đó. Khách hàng cũng nói vậy.<br/>
+    きゃく 「そう？そんなに　おいしいなら、買いましょう。」<br/>
+    Khách hàng: Thế à? Ngon như thế thì mua thôi.<br/><br/>
+
+    体が　じょうぶなら、この　任事は　できると　思います。<br/>
+    Nếu khõe mạnh thì tôi nghĩ có thể làm công việc này.<br/><br/>
+
+    ひっこすなら、どんな　所に　住みたいですか。<br/>
+    Nếu chuyển nhà thì muốn sống ở đâu?
+
+<b>意味2：</b>
+as for～　(used to take up a topic)<br/>
+Nếu nói (về)～<br/><br/>
+
+<b>接続：</b> N＋なら<br/><br/>
+
+<b>用例：</b><br/>
+    ステーキなら、駅前の　レストランが　おいしいですよ。<br/>
+    Thịt nướng thì nhà hàng ở trước ga ngon đấy.<br/><br/>
+
+    カメラなら、日本せいが　いいと　思います。<br/>
+    Máy ảnh thì tôi nghĩ hàng Nhật là tốt.
+"},
+
+{"grammar":"～たら","meanJP":"",
+"meanEN":"If <supposition>",
+"meanVN":"Nếu (giả định)",
+"detail":"<p style='font-size:22px; text-align:center'><b>～たら</b></p> 
+<b>意味：</b><br/>
+If <supposition><br/>
+Nếu (giả định)<br/><br/>
+
+<b>接続：</b><br/>
+V、い－adj、な－adj、N＋たら (non-past)<br/>
+
+※usage: plain form　（past）<br/><br/>
+
+<b>用例：</b><br/>
+    あした　はれたら、せんたくを　しようと　思って　います。<br/>
+    Nếu ngày mai trời nắng, sẽ giặt áo quần.<br/><br/>
+
+    もし休みが　1か月　あったら、何が　したいですか。<br/>
+    Nếu được nghỉ 1 tháng, ban thích làm gì?<br/><br/>
+
+    A「こんばん　見に　行く　映画、おもしろいの？」<br/>
+    Tối nay phim mình đi xem có hay không?<br/><br/>
+    B「さあ、わからない。もし　おもしろく　なかったら、 とちゅうで　帰ろう。」<br/>
+    KHông biết nữa, nếu không hay thì nữa chừng có thể về.<br/><br/>
+
+    カメラが　ひつようだったら、私のを　貸してあげますよ。<br/>
+    Vì cần máy ảnh nên tôi cho mượn máy tôi.<br/>
+    ⑤あした、雨じゃ　なかったら、近くの　こうえんで　コンサートが　あリます。<br/>
+    VÌ ngày mai không mưa nên có buổi hòa nhạc ỏ công viên gần nhà.<br/><br/>
+
+<b>意味2：</b><br/>
+When～, after～ <action in sequence><br/>
+Khi～, sau khi～<br/><br/>
+
+<b>接続：</b> Vた＋たら(non-past)<br/>
+
+※usage: plain form　（non-past）<br/><br/>
+
+<b>用例：</b><br/>
+    2時に　なったら、出かけます。<br/>
+    Đến 2 giờ sẽ ra ngòai.<br/><br/>
+
+    駅に　着いたら、電話を　ください。<br/>
+    Nếu đến ga thì hãy điện thoai.<br/><br/>
+
+<b>意味3：</b><br/>
+When～, then～ (discovery)<br/>
+Khi～, thế thì～<br/><br/>
+
+<b>接続：</b>
+Vた＋たら(past tense)<br/>
+
+※usage: plain form　（non-past）<br/><br/>
+
+<b>用例：</b><br/>
+    まどを　開けたら、みずうみが　見えます。<br/>
+    Khi mở cửa sổ thì có thể nhìn thấy hồ.<br/><br/>
+
+    外に　出たら、強い　風が　ふいて　いました。<br/>
+    Gió thổi mạnh khi ra ngoài.
+"},
+
+{"grammar":"～と","meanJP":"",
+"meanEN":"When～、If ～<inevitable condition〉",
+"meanVN":"Khi, nếu (điều kiện không thể tránh khỏi)",
+"detail":"<p style='font-size:22px; text-align:center'><b>～と</b></p> 
+<b>意味：</b><br/>
+When～、If ～<inevitable condition〉<br/>
+Khi, nếu (điều kiện không thể tránh khỏi)<br/><br/>
+
+<b>接続：</b><br/>
+V、い－adj、な－adj、N＋ と (non-past)<br/>
+
+※usage: plain form　（non-past）<br/><br/>
+
+<b>用例：</b><br/>
+    まっすぐ　行くと、右に銀行が　あリます。<br/>
+    Nếu đi thẳng thì ngân hàng ở bên tay phải<br/><br/>
+
+    パスポー卜が　ないと、外国へ　行けません。<br/>
+    Nếu không có hộ chiếu thì không thể ra nước ngoài được.<br/><br/>
+
+    駅から　遠いと、不便です。<br/>
+    Néu xa ga thì bất tiện.<br/><br/>
+
+    まわリが　しずかだと、よく勉強できます。<br/>
+    Nếu xung quanh yên tĩnh thì dễ học.<br/><br/>
+
+    A「日本の　映画館は　高いですね。」<br/>
+    Xem phim rạp ỏ Nhật mắc nhỉ<br/>
+    B「ええ。でも、学生だと、少し　安く　なリますよ。」<br/>
+    Ừ, nhưng nếu là học sinh thì được giảm chút đỉnh đó.<br/><br/>
+
+    ※Expresstions that convey the speaker's volition (intentions, invitations, requests, etc…) can't use after \"～と\"<br/><br/>
+
+<b>意味2：</b><br/>
+When～、then～<discovery〉<br/>
+Khi～thế thì～(khám phá)<br/><br/>
+
+<b>接続：</b><br/>
+V dictionary　＋と (past tense)<br/>
+※usage: plain form　（non-past）<br/><br/>
+
+<b>用例：</b><br/>
+    まどを　開けると、みずうみが　見えます。<br/>
+    Khi mở cửa sổ thì có thể nhìn thấy hồ.<br/><br/>
+
+    外に　出ると、強い　風が　ふいて　いました。<br/>
+    Nếu ra ngoài thì thổi mạnh.
+"},
+
+{"grammar":"～ため（に)","meanJP":"",
+"meanEN":"Because～, due to～<cause, reason>",
+"meanVN":"Vì～, do ～",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ため（に)</b></p> 
+<b>意味：</b><br/>
+Because～, due to～<cause, reason><br/>
+Vì～, do ～<br/><br/>
+
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ→な）、N（xだ→の）＋ため（に)<br/>
+
+※usage: plain form<br/><br/>
+
+<b>用例：</b><br/>
+    父は　たばこを　すいすぎた　ために、病気に　なりました。<br/>
+    Vì bố hút thuốc nhiều quá nên lâm bệnh.<br/><br/>
+
+    私の　うちは、大きい通りに近い　ため、車の　音が　うるさいです。<br/>
+    Vì nhà tôi ở gần đường lớn nên rất ồn.<br/><br/>
+
+    この　工場の　中は　きけんな　ために、入ることが　できません。<br/>
+    Vì bên trong công trình nguy hiểm nên không được vào.<br/><br/>
+
+    長く　つづいた　せんそうの　ため、おおぜいの　人が　なくなりました。<br/>
+    Bởi vì cuộc chiến kéo dài nên nhiều người chết.<br/><br/>
+
+<b>意味2：</b><br/>
+In order to～, for (the benefit of), ～(purpose)<br/>
+Để ～<br/>
+Thể hiện mục đích.<br/><br/>
+
+<b>接続：</b>
+V dictionary、Nの＋ ため（に)<br/><br/>
+
+※usage: plain form<br/>
+
+<b>用例：</b><br/>
+    日本の　大学に　入る　ために、日本語を　勉強して　います。<br/>
+    Học tiếng Nhật để vào đại học ở Nhật.<br/><br/>
+
+    家族の　ために、いっしょうけんめい　働きます。<br/>
+    Làm việc chăm chỉ vì gia đình.
+"},
+
+{"grammar":"～し","meanJP":"",
+"meanEN":"and ～くoften used to list reasons〉",
+"meanVN":"Và ～",
+"detail":"<p style='font-size:22px; text-align:center'><b>～し</b></p> 
+<b>意味：</b><br/>
+and ～くoften used to list reasons〉<br/>
+Và ～<br/>
+Thường sử dụng để liệt kê các lý do<br/><br/>
+
+<b>接続：</b>
+V、い－adj、な－adj、N＋ し<br/>
+
+※usage: plain form<br/><br/>
+
+<b>用例：</b><br/>
+    つかれたし、のどが　かわいたし、少し　休みたいです。<br/>
+    Vì mệt và khát nước nên muốn nghỉ chút.<br/><br/>
+
+    この　かばんは、軽いし、じょうぶなので、使いやすいです。<br/>
+    Vì cái cặp này nhẹ và tốt nên sử dụng dể dàng.<br/><br/>
+
+    店員が　親切だし、品物が　多いから、いつも　この店で　買い物します。<br/>
+    Phục vụ quán thân thiện và nhìêu hàng nên tôi mua hàng ở đây.<br/><br/>
+
+    きょうは　日曜日だったし、天気が　よかったので、どうぶつえんは　人が　多かったです。<br/>
+    Hôm nay chủ nhật và trời đẹp nên ở sở thú đông người.<br/><br/>
+
+    この　花びんは、色も　きれいだし、かたちも　いいです。（ですから、買いたいです。）<br/>
+    Cái bình hoa này vừa có màu đẹp vừa có hình thức (nên mua)
+"},
+
+{"grammar":"～て/で","meanJP":"",
+"meanEN":"as ～，since ～，so ～",
+"meanVN":"Khi ～, vì ～",
+"detail":"<p style='font-size:22px; text-align:center'><b>～て/で</b></p> 
+<b>意味：</b><br/>
+as ～，since ～，so ～<br/>
+Khi ～, vì ～<br/><br/>
+
+<b>接続：</b>
+Vて、Vない（xい→くて）、い－adj（xい→くて）、な－adj（xな→で）＋ て/で<br/>
+
+※usage: plain form/polite form<br/><br/>
+
+<b>用例：</b><br/>
+    その　ニュースを　聞いて、おどろきました。<br/>
+    Rất ngạc nhiên khi nghe tin đó.<br/><br/>
+
+    お金が　なくて、旅行に　行けませんでした。<br/>
+    Vì không có tiền nên không thể đi du lịch.<br/><br/>
+
+    この　はこは　重くて、1人では　持てません。<br/>
+    Vì cái thùng này nặng quá, 1 người không mang nổi.<br/><br/>
+
+    この　地図は　ふくざつで、わかりにくいです。<br/>
+    Vì bản đồ này phức tạp quá rất khó hiểu.<br/><br/>
+
+    ※Expresstions that convey the speaker's volition (intentions, invitations, requests, etc…) can't use after \"～て\"
+"},
+
+{"grammar":"～ので","meanJP":"",
+"meanEN":"since ～，because ～",
+"meanVN":"Vì～, bởi vì～",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ので</b></p> 
+<b>意味：</b><br/>
+since ～，because ～<br/>
+Vì～, bởi vì～<br/>
+Biểu hiện trình bày một cách khách quan về liên hệ giữa nguyên nhân và kết quả theo diễn biến tự nhiên.<br/>
+Sử dụng ので để làm cho sự chủ quan của người nói nhẹ nhành đi khiến người nghe không có cảm thấy bị ép buộc, nó cũng thường được trình bày một cách nhẹ nhàng về lý do khi xin phép.<br/><br/>
+
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ→な）、N（xだ→な）＋ので<br/>
+
+※usage: plain form/polite form<br/><br/>
+
+<b>用例：</b><br/>
+    漢字が　わからないので、ひらがなで　書いても　いいですか。<br/>
+    Bởi vì không hiểu kanji nên viết bằng hiragana được không?<br/><br/>
+
+    ゆうべは　とても　ねむかったので、早く　ねました。<br/>
+    Vì tối hôm qua rất bùon ngủ nên đã ngủ rất ngon.<br/><br/>
+
+    この　きっさてんは　しずかなので、よく　ここで　本を　読みます。<br/>
+    Vì quán đó yên tĩnh nên tôi thườnh đọc sách ở đó.<br/><br/>
+
+    きょうは　日曜日なので、銀行は　休みです。<br/>
+    Vì hôm nay chủ nhật nên ngân hàng nghỉ.<br/><br/>
+
+    ※The polite form can be used before \"ので\" in order to make the sentence very polite.<br/>
+    例：うかがいたいことが　ありますので、あとで　お電話します。<br/>
+    ※から　vs　ので： Unlike with から. It is impossible to end a sentence with のでです。"},
+
+{"grammar":"～から","meanJP":"",
+"meanEN":"Because～",
+"meanVN":"Bởi vì～",
+"detail":"<p style='font-size:22px; text-align:center'><b>～から</b></p> 
+<b>意味：</b><br/>
+Because～<br/>
+Bởi vì～<br/>
+Nhấn mạnh nguyên nhân, lý do một cách chủ quan.<br/><br/>
+
+<b>接続：</b><br/>
+V、い－adj、な－adj、N + から<br/>
+
+※usage: plain form/polite form<br/><br/>
+
+<b>用例：</b><br/>
+    ゆうべ　よく　ねましたから、きょうは　元気です。<br/>
+    Vì hôm qua ngũ ngon nên hôm nay khõe khoắn.<br/><br/>
+
+    ここは　あぶないですから、気をつけて　ください。<br/>
+    Ở đây nguy hiển nên hãy chú ý.<br/><br/>
+
+    学生の　とき、英語が　好きだったから、英語の　先生に　なりました。<br/>
+    Bởi vì thích tiếng Anh khi còn là học sinh, nên đã trở thành giáo viên tiếng Anh<br/><br/>
+
+    きょうは　子どもの　たんじょうびだから、ケーキを　作ろうと思います。<br/>
+    Vì hôm nay là ngày sinh nhật con, nên tôi sẽ làm bánh.
+"},
+
+{"grammar":"～はずがない","meanJP":"",
+"meanEN":"have no expectation that～",
+"meanVN":"Hiển nhiên ～không, chắc chắn không ～",
+"detail":"<p style='font-size:22px; text-align:center'><b>～はずがない</b></p> 
+<b>意味：</b><br/>
+have no expectation that～<br/>
+Hiển nhiên ～không, chắc chắn không ～<br/><br/>
+
+<b>接続：</b> <br/>
+V、い－adj、な－adj（xだ）、N（xだ）＋はずがない<br/>
+
+※usage: plain form<br/><br/>
+
+<b>用例：</b><br/>
+    そんな　たいへんな　仕事が　子どもに　できる　はずがありません。<br/>
+    Công việc cực nhọc như vậy thì hiển nhiên là trẻ con không làm được.<br/>
+    ２さいの　子どもでも　できる　テストなら、おとなにむずかしい　はずが　ありません。<br/>
+    Bài kiểm tra mà trẻ em 2 tuối cũng làm được thì chẳng khó khăn gì với người lớn là tất nhiên rồi.<br/>
+    あの　人は　いい　人です。悪い人の　はずが　ありません。<br/>
+    Người ấy là người tốt. Không phải người xấu là chắc rồi.
+"},
+
+{"grammar":"～はずだ","meanJP":"",
+"meanEN":"should ～，ought to ～",
+"meanVN":"Chắc chắn, không thể khác được",
+"detail":"<p style='font-size:22px; text-align:center'><b>～はずだ</b></p> 
+<b>意味：</b><br/>
+should ～，ought to ～
+Chắc chắn, không thể khác được
+
+<b>接続：</b>
+V、い－adj、な－adj（xだ）、N（xだ）＋はずだ
+
+※usage: plain form
+
+<b>用例：</b><br/>
+    きょう、手紙を　出せば、あした　そちらに　着く　はずです。
+    Hôm nay nếu gửi thư thì ngày mai chắc chắn sẽ đến bên đó.
+
+    田中さんの　会社は　社員が　少ないのに、3人も　休んで　いるので、いそがしい　はずです。
+    Mặc dù công ty Mr.Tanaka ít người và 3 người đang nghỉ, chắc chắn là bận rôn lắm.
+
+    小林さんの　おくさんは　料理の　先生だから、料理が　上手な　はずです。
+    Vì vợ của Mr.Kobayashi là giáo viên dạy nấu ăn nên nấu ăn giỏi là chắc rồi.
+
+    きょうは　日曜日だから、会社は　休みの　はずです。
+    Hôm nay chủ nhật, nên công ty nghỉ là hiển nhiên.
+
+"},
+
+{"grammar":"～ようだ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ようだ</b></p> 
+
+"},
+
+{"grammar":"～らしい","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～らしい</b></p> 
+
+"},
+
+{"grammar":"～らしい","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～らしい</b></p> 
+
+"},
+
+{"grammar":"～かもしれない","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～かもしれない</b></p> 
+
+"},
+
+{"grammar":"～だろうとおもう","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～だろうとおもう</b></p> 
+
+"},
+
+{"grammar":"～だろう","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～だろう</b></p> 
+
+"},
+
+{"grammar":"～にする","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～にする</b></p> 
+
+"},
+
+{"grammar":"～ことにする","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ことにする</b></p> 
+
+"},
+
+{"grammar":"～つもりだ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～つもりだ</b></p> 
+
+"},
+
+{"grammar":"～ようにする","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ようにする</b></p> 
+
+"},
+
+{"grammar":"～(よ）うとする","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～(よ）うとする</b></p> 
+
+"},
+
+{"grammar":"～(よ)うとおもう","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～(よ)うとおもう</b></p> 
+
+"},
+
+{"grammar":"意向形","meanJP":"",
+"meanEN":"",
+"meanVN":"Thể ý hướng",
+"detail":"<p style='font-size:22px; text-align:center'><b>意向形 Thể ý hướng</b></p> 
+
+"},
+
+{"grammar":"～てくる/いく","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てくる/いく</b></p> 
+
+"},
+
+{"grammar":"～く/にする","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～く/にする</b></p> 
+
+"},
+
+{"grammar":"～ことになる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ことになる</b></p> 
+
+"},
+
+{"grammar":"～ようになる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ようになる</b></p> 
+
+"},
+
+{"grammar":"～く/になる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～く/になる</b></p> 
+
+"},
+
+{"grammar":"AとBと、どちらが～","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>AとBと、どちらが～</b></p> 
+
+"},
+
+{"grammar":"AはBほど～ない","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>AはBほど～ない</b></p> 
+
+"},
+
+{"grammar":"BよりAのほうが～","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>BよりAのほうが～</b></p> 
+
+"},
+
+{"grammar":"AはBより","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>AはBより</b></p> 
+
+"},
+
+{"grammar":"～てはいけない","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てはいけない</b></p> 
+
+"},
+
+{"grammar":"禁止形 Thể cấm đoán","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>禁止形 Thể cấm đoán</b></p> 
+
+"},
+
+{"grammar":"～なさい","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～なさい</b></p> 
+
+"},
+
+{"grammar":"命令形","meanJP":"",
+"meanEN":"",
+"meanVN":"Thể mệnh lệnh",
+"detail":"<p style='font-size:22px; text-align:center'><b>命令形　Thể mệnh lệnh</b></p> 
+
+"},
+
+{"grammar":"～てさしあげる/あげる/やる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てさしあげる/あげる/やる</b></p> 
+
+"},
+
+{"grammar":"～ていただ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ていただ</b></p> 
+
+"},
+
+{"grammar":"～て<ださる/<れる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～て<ださる/<れる</b></p> 
+
+"},
+
+{"grammar":"いただ<・もらう","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>いただ<・もらう</b></p> 
+
+"},
+
+{"grammar":"さしあげる・やる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>さしあげる・やる</b></p> 
+
+"},
+
+{"grammar":"くださる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>くださる</b></p> 
+
+"},
+
+{"grammar":"くれる・あげる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>くれる・あげる</b></p> 
+
+"},
+
+{"grammar":"みえる・きこえる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>みえる・きこえる</b></p> 
+
+"},
+
+{"grammar":"～（こと）ができる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～（こと）ができる</b></p> 
+
+"},
+
+{"grammar":"可能","meanJP":"",
+"meanEN":"",
+"meanVN":"Khả năng",
+"detail":"<p style='font-size:22px; text-align:center'><b>可能 Khả năng</b></p> 
+
+"},
+
+{"grammar":"使役受身","meanJP":"",
+"meanEN":"",
+"meanVN":"Bị động sai khiến",
+"detail":"<p style='font-size:22px; text-align:center'><b>使役受身　Bị động sai khiến</b></p> 
+
+"},
+
+{"grammar":"使役","meanJP":"",
+"meanEN":"",
+"meanVN":"Sai khiến",
+"detail":"<p style='font-size:22px; text-align:center'><b>使役　Sai khiến</b></p> 
+
+"},
+
+{"grammar":"受身","meanJP":"",
+"meanEN":"",
+"meanVN":"Bị động",
+"detail":"<p style='font-size:22px; text-align:center'><b>受身 Bị động</b></p> 
+
+"},
+
+{"grammar":"(まるで)～ようだ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>(まるで)～ようだ</b></p> 
+
+"},
+
+{"grammar":"～ばかり","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ばかり</b></p> 
+
+"},
+
+{"grammar":"～あとで","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～あとで</b></p> 
+
+"},
+
+{"grammar":"～前に","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～前に</b></p> 
+
+"},
+
+{"grammar":"～にいく/くる/かえる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～にいく/くる/かえる</b></p> 
+
+"},
+
+{"grammar":"～（た）がっている","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～（た）がっている</b></p> 
+
+"},
+
+{"grammar":"～そうだ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～そうだ</b></p> 
+
+"},
+
+{"grammar":"～すぎる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～すぎる</b></p> 
+
+"},
+
+{"grammar":"～ところだ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ところだ</b></p> 
+
+"},
+
+{"grammar":"～かどうか","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～かどうか</b></p> 
+
+"},
+
+{"grammar":"～か","meanJP":"",
+"meanEN":"",
+"meanVN":"Trợ từ nghi vấn",
+"detail":"<p style='font-size:22px; text-align:center'><b>～か Trợ từ nghi vấn</b></p> 
+
+"},
+
+{"grammar":"～そうだ","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～そうだ</b></p> 
+
+"},
+
+{"grammar":"～んですが","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～んですが</b></p> 
+
+"},
+
+{"grammar":"～んです","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～んです</b></p> 
+
+"},
+
+{"grammar":"～ことがある","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ことがある</b></p> 
+
+"},
+
+{"grammar":"～た/ないほうがいい","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～た/ないほうがいい</b></p> 
+
+"},
+
+{"grammar":"～ずに","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ずに</b></p> 
+
+"},
+
+{"grammar":"～な<てもかまわない","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～な<てもかまわない</b></p> 
+
+"},
+
+{"grammar":"～なくてもいい","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～なくてもいい</b></p> 
+
+"},
+
+{"grammar":"～なくてはいけない","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～なくてはいけない</b></p> 
+
+"},
+
+{"grammar":"～なければならない","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～なければならない</b></p> 
+
+"},
+
+{"grammar":"～たまま","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～たまま</b></p> 
+
+"},
+
+{"grammar":"～たことがある","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～たことがある</b></p> 
+
+"},
+
+{"grammar":"～たり、～たりする","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～たり、～たりする</b></p> 
+
+"},
+
+{"grammar":"～ておく","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ておく</b></p> 
+
+"},
+
+{"grammar":"～てしまう","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てしまう</b></p> 
+
+"},
+
+{"grammar":"～てみる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てみる</b></p> 
+
+"},
+
+{"grammar":"～てもかまわない","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てもかまわない</b></p> 
+
+"},
+
+{"grammar":"～てもいい","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てもいい</b></p> 
+
+"},
+
+{"grammar":"～てある","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てある</b></p> 
+
+"},
+
+{"grammar":"～ている","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ている</b></p> 
+
+"},
+
+{"grammar":"～てから","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～てから</b></p> 
+
+"},
+
+{"grammar":"～おわる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～おわる</b></p> 
+
+"},
+
+{"grammar":"～つづける","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～つづける</b></p> 
+
+"},
+
+{"grammar":"～だす","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～だす</b></p> 
+
+"},
+
+{"grammar":"～はじめる","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～はじめる</b></p> 
+
+"},
+
+{"grammar":"～ながら","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～ながら</b></p> 
+
+"},
+
+{"grammar":"～たい","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～たい</b></p> 
+
+"},
+
+{"grammar":"～やすい・～にくい","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～やすい・～にくい</b></p> 
+
+"},
+
+{"grammar":"～かた","meanJP":"",
+"meanEN":"",
+"meanVN":"",
+"detail":"<p style='font-size:22px; text-align:center'><b>～かた</b></p> 
+
+"}
+]
+}
+	
