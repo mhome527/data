@@ -2,12 +2,12 @@ package puzzle.slider.vn;
 
 import java.text.DecimalFormat;
 
-import puzzle.jigsaw.vn.util.Constant;
-import puzzle.jigsaw.vn.util.ShowLog;
-import puzzle.jigsaw.vn.util.Utility;
-import puzzle.jigsaw.vn.view.CongratulationView;
-import puzzle.jigsaw.vn.view.CongratulationView.FinishType;
-import puzzle.jigsaw.vn.view.CongratulationView.GameType;
+import puzzle.slider.vn.util.Constant;
+import puzzle.slider.vn.util.ShowLog;
+import puzzle.slider.vn.util.Utility;
+import puzzle.slider.vn.view.CongratulationView;
+import puzzle.slider.vn.view.CongratulationView.FinishType;
+import puzzle.slider.vn.view.CongratulationView.GameType;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;

@@ -15,12 +15,12 @@
  */
 package puzzle.slider.vn;
 
-import puzzle.jigsaw.vn.dao.RegisterDeviceDao;
-import puzzle.jigsaw.vn.gcm.GCMBaseIntentService;
-import puzzle.jigsaw.vn.util.Constant;
-import puzzle.jigsaw.vn.util.CustomSharedPreferences;
-import puzzle.jigsaw.vn.util.ShowLog;
-import puzzle.jigsaw.vn.util.Utility;
+
+import puzzle.slider.vn.gcm.GCMBaseIntentService;
+import puzzle.slider.vn.util.Constant;
+import puzzle.slider.vn.util.CustomSharedPreferences;
+import puzzle.slider.vn.util.ShowLog;
+import puzzle.slider.vn.util.Utility;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
@@ -65,7 +65,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 	@Override
 	protected void onError(Context arg0, String arg1) {
 		// TODO Auto-generated method stub
-		ShowLog.showLogError(TAG, "onError: "+arg1);
+		ShowLog.e(TAG, "onError: "+arg1);
 	}
 
 	@Override
@@ -88,7 +88,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 			
 		} catch (Exception e) {
 			if(CustomSharedPreferences.getPreferences("isShowPrintstacktrace", false)){
-				ShowLog.showLogError(TAG, "receiver error :"+e.getMessage());
+				ShowLog.e(TAG, "receiver error :"+e.getMessage());
 				e.printStackTrace();
 			}
 			
@@ -100,8 +100,8 @@ public class GCMIntentService extends GCMBaseIntentService {
 	protected void onRegistered(Context arg0, String arg1) {
 		// TODO Auto-generated method stub
 		ShowLog.showLogDebug(TAG, "onRegistered = "+arg1);
-		RegisterDeviceDao dao = new RegisterDeviceDao(getApplicationContext());
-		dao.regist(arg1);
+//		RegisterDeviceDao dao = new RegisterDeviceDao(getApplicationContext());
+//		dao.regist(arg1);
 	}
 
 	@Override

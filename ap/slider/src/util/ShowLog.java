@@ -33,7 +33,7 @@ public class ShowLog {
 	 */
 	public static void showLogDebug(final String tag, final String message) {
 		if (IS_FLAG_DEBUG) {
-			Log.d(tag, message);
+			Log.d(tag + "YGO", message);
 		}
 	}
 
@@ -45,9 +45,9 @@ public class ShowLog {
 	 * @param message
 	 *            Debug message
 	 */
-	public static void showLogError(final String tag, final String message) {
+	public static void e(final String tag, final String message) {
 		if (IS_FLAG_ERROR) {
-			Log.e(tag, message);
+			Log.e(tag + "YGO", message);
 		}
 	}
 
@@ -59,9 +59,9 @@ public class ShowLog {
 	 * @param message
 	 *            Debug message
 	 */
-	public static void showLogInfo(final String tag, final String message) {
+	public static void i(final String tag, final String message) {
 		if (IS_FLAG_INFO) {
-			Log.i(tag, message);
+			Log.i(tag + "YGO", message);
 		}
 	}
 

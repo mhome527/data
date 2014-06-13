@@ -10,17 +10,9 @@ public class Constant {
 	public static final String WIDTH_SCREEN = "WIDTH_SCREEN";
 	public static final String HEIGHT_SCREEN = "HEIGHT_SCREEN";
 
-	// server
-	public static final String DEV_HOST = "http://118.69.38.241/ifreek/puzzle/";
-	public static final String REAL_ADHOC_HOST = "http://puzzledaisuki.jp/adhoc/";
-	public static final String REAL_HOST = "http://puzzledaisuki.jp/";
-	public static final String GCM_HOST = "http://118.69.38.241/ifreek/puzzle/cms/api/token_entry.php";//?token=xxx&type=2
-	//http://118.69.38.241/ifreek/puzzle/cms/api/token_entry.php
-	public static final String HOST = DEV_HOST;
 	// api url
 	public static final String API_URL_ITEMS = "items.json";
 	public static final String API_URL_NOTICE = "notice.json";
-	public static final String API_URL_INFO = HOST + "html/puzzle_info/info.html";
 
 	public static final boolean IS_TRUST_ALL_HOST = true;
 	public static final boolean IS_PrintStackTrace = true;
@@ -31,7 +23,6 @@ public class Constant {
 	public static final int CONNECTION_TIMEOUT = 60000;
 	public static final String FOLDER_SAVE_DATA = "PuzzleData";
 
-	public static final String FOLDER_IMAGE = "PuzzleDaisuki";
 	public static final String FOLDER_TEMPLATE = "templates";	
 	public static final String FOLDER_SLIDER = "sliders";
 	public static final String FOLDER_BOARD = "boards";

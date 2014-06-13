@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.http.impl.cookie.DateParseException;
 
+import puzzle.slider.vn.Entity.Size;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
@@ -15,6 +16,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -37,34 +39,34 @@ import android.widget.RelativeLayout;
 
 public class Utility {
 	private static String TAG = "Utility";
-	public static String getPathImg(Context contect, String name) {
-
-		String extStorageDirectory = Environment.getExternalStorageDirectory().toString();
-		String imgDir = "";
-		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-			File dir = new File(extStorageDirectory + "/" + Constant.FOLDER_IMAGE);
-			if (dir.exists() && dir.isDirectory()) {
-
-			}
-			else {
-				if (!dir.mkdir()) {
-					return "";
-				}
-			}
-			imgDir = extStorageDirectory + "/" + Constant.FOLDER_IMAGE + "/" + name;
-		}
-		else {
-			File basedirectory = contect.getFileStreamPath("");
-			File subdirectory = new File(basedirectory, "/" + Constant.FOLDER_IMAGE);
-			if (!subdirectory.exists() || !subdirectory.isDirectory()) {
-				subdirectory.mkdirs();
-			}
-
-			imgDir = basedirectory.toString() + "/" + Constant.FOLDER_IMAGE + "/" + name;
-		}
-
-		return imgDir;
-	}
+//	public static String getPathImg(Context contect, String name) {
+//
+//		String extStorageDirectory = Environment.getExternalStorageDirectory().toString();
+//		String imgDir = "";
+//		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+//			File dir = new File(extStorageDirectory + "/" + Constant.FOLDER_IMAGE);
+//			if (dir.exists() && dir.isDirectory()) {
+//
+//			}
+//			else {
+//				if (!dir.mkdir()) {
+//					return "";
+//				}
+//			}
+//			imgDir = extStorageDirectory + "/" + Constant.FOLDER_IMAGE + "/" + name;
+//		}
+//		else {
+//			File basedirectory = contect.getFileStreamPath("");
+//			File subdirectory = new File(basedirectory, "/" + Constant.FOLDER_IMAGE);
+//			if (!subdirectory.exists() || !subdirectory.isDirectory()) {
+//				subdirectory.mkdirs();
+//			}
+//
+//			imgDir = basedirectory.toString() + "/" + Constant.FOLDER_IMAGE + "/" + name;
+//		}
+//
+//		return imgDir;
+//	}
 
 	public static Bitmap decodeBitmapFromFile(String path, int reqWidth, int reqHeight) {
 		// Bitmap bmp = BitmapFactory.decodeFile(path);
@@ -101,6 +103,45 @@ public class Utility {
 		return bmp1;
 	}
 
+	
+	public static Bitmap decodeBitmapFromResource(Resources res, int id, int reqWidth, int reqHeight) {
+		int MAX_SIZE = 960;
+		Bitmap bmp = null;
+		Bitmap bmp1 = null;
+		try {
+			BitmapFactory.Options o = new BitmapFactory.Options();
+			o.inJustDecodeBounds = true;
+//			BitmapFactory.decodeFile(path, o);
+			BitmapFactory.decodeResource(res, id, o);
+
+			// Find the correct scale value. It should be the power
+			// of 2.
+			int maxSize = o.outWidth > o.outHeight ? o.outWidth : o.outHeight;
+			int scale = 1;
+			int newMaxsize = MAX_SIZE;
+			if (newMaxsize != -1 && newMaxsize < maxSize) {
+				scale = (int) android.util.FloatMath.floor(maxSize / (float) newMaxsize);
+			}
+
+			o.inJustDecodeBounds = false;
+			o.inSampleSize = scale;
+//			bmp = BitmapFactory.decodeFile(path, o);
+			bmp = BitmapFactory.decodeResource(res, id, o);
+
+			// Log.i("HuynhTD-Utility", "decodeBitmapFromFile before: " + bmp.getByteCount());
+			bmp1 = getResizedBitmap(bmp, reqWidth, reqHeight, true);
+			// bmp1 = getResizedBitmap(bmp.copy(bmp.getConfig(), true), reqWidth, reqHeight, true);
+			// bmp.recycle();
+			bmp = null;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		// Log.i("HuynhTD-Utility", "decodeBitmapFromFile after : " + bmp1.getByteCount());
+		return bmp1;
+	}
+
+	
 	public static Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight, boolean isRecycle) {
 
 		int width = bm.getWidth();
@@ -178,16 +219,16 @@ public class Utility {
 	 * @param ratio
 	 * @return
 	 */
-//	public static Size getSize(DisplayMetrics displaymetrics, double ratio){
-//		int height = displaymetrics.heightPixels;
-//    	int width = displaymetrics.widthPixels;
-//		Size size = new Size();
-//		
-//		size.setHeight((int) (height*ratio));
-//		size.setWidth((int) (width*ratio));
-//		
-//		return size;
-//	}
+	public static Size getSize(DisplayMetrics displaymetrics, double ratio){
+		int height = displaymetrics.heightPixels;
+    	int width = displaymetrics.widthPixels;
+		Size size = new Size();
+		
+		size.setHeight((int) (height*ratio));
+		size.setWidth((int) (width*ratio));
+		
+		return size;
+	}
 	
 	/**
 	 * convert String to Date
@@ -327,7 +368,7 @@ public class Utility {
 				}
 				return outputName;
 			} catch (final Exception ex) {
-				ShowLog.showLogError("Utility", "getPath() Error:" + ex.toString());
+				ShowLog.e("Utility", "getPath() Error:" + ex.toString());
 				return "";
 			}
 		}

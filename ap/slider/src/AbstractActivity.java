@@ -37,7 +37,7 @@ public abstract class AbstractActivity extends Activity {
 	 */
 	@Override
 	protected final void onCreate(final Bundle savedInstanceState) {
-		ShowLog.showLogInfo(tag,"onCreate....");
+		ShowLog.i(tag,"onCreate....");
 		ShowLog.showLogDebug(tag, "<< onCreate " + savedInstanceState + " " + getClass().getSimpleName());
 
 		super.onCreate(savedInstanceState);
@@ -171,7 +171,7 @@ public abstract class AbstractActivity extends Activity {
 	@Override
 	public void startActivity(final Intent intent) {
 		super.startActivity(intent);
-		ShowLog.showLogInfo(tag,"startActivity....");
+		ShowLog.i(tag,"startActivity....");
 
 	}
 
@@ -184,7 +184,7 @@ public abstract class AbstractActivity extends Activity {
 	@Override
 	public void startActivityForResult(Intent intent, int requestCode) {
 		super.startActivityForResult(intent, requestCode);
-		ShowLog.showLogInfo(tag,"startActivityForResult....");
+		ShowLog.i(tag,"startActivityForResult....");
 
 	}
 

@@ -1,17 +1,23 @@
 package puzzle.slider.vn;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import puzzle.slider.vn.util.Constant;
+import puzzle.slider.vn.util.CustomSharedPreferences;
+import puzzle.slider.vn.util.ShowLog;
+import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 /**
  * select image
@@ -19,178 +25,73 @@ import android.widget.LinearLayout;
  * @author huynhtran
  * 
  */
-public class SliderImageActivity extends AbstractContentsActivity {
+public class SliderImageActivity extends AbstractContentsActivity implements OnClickListener {
 	String tag = "HuynhTD-" + SliderImageActivity.class.getSimpleName();
-	private GridView myGrid;
-	private ImageView imgBack;
-	private ImageView imgStore;
-	private LinearLayout lnProgressBar;
-	private List<JigsawImageEntity> lstImage;
-	public SliderImageAdapter gridSliderAdapter;
 	public int width = 100, height = 100;
 	boolean isClick = false;
-
+	private GridView gridView;
+	int[] arrImg = { R.drawable.blank, R.drawable.blank, R.drawable.blank, R.drawable.blank, R.drawable.blank, R.drawable.blank };
 	@Override
 	protected int getViewLayoutId() {
 		return R.layout.slider_select_image;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	protected void initView(final Bundle savedInstanceState) {
 		int widthScr;
-		LinearLayout.LayoutParams param;
+
 		super.initView(savedInstanceState);
 		try {
+			gridView = (GridView) findViewById(R.id.gridView);
 
-			myGrid = ViewHelper.findView(this, R.id.myGrid);
-			imgBack = ViewHelper.findView(this, R.id.imgBack);
-			imgStore = ViewHelper.findView(this, R.id.imgStore);
+			DisplayMetrics dm = new DisplayMetrics();
+			getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-			lnProgressBar = ViewHelper.findView(this, R.id.lnProgressBar);
-
-			widthScr = CustomSharedPreferences.getPreferences(Constant.WIDTH_SCREEN, 480);
-			width = widthScr / 5;
-//			switch (widthScr) {
-//			case 1280:
-//				width = widthScr / 5 + 25;
-//				break;
-//			default:
-//				width = widthScr / 5;
-//				break;
-//			}
-
-			// testData();
-			// loadImage();
-
-			ShowLog.showLogInfo(tag, "initView width screen: " + width);
-
-			imgBack.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View view) {
-					try {
-						if (isClick)
-							return;
-						isClick = true;
-						
-						Intent intent = new Intent(SliderImageActivity.this, StartupApp.class);
-						intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-						startActivity(intent);
-						SoundManager.playSound(Constant.SOUND_D, false);
-						SoundManager.isLEFT =3;
-						finish();
-					}
-					catch (Exception e) {
-						ShowLog.showLogError(tag, "back error: " + e.getMessage());
-					}
-				}
-			});
-
-			imgStore.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View view) {
-					if (isClick)
-						return;
-					isClick = true;
-					Intent intent = new Intent(SliderImageActivity.this, PuzzlesStoreActivity.class);
-					SoundManager.playSound(Constant.SOUND_C, false);
-					startActivity(intent);
-				}
-			});
-
-			param = new LinearLayout.LayoutParams((int) (width * 3.5), LinearLayout.LayoutParams.FILL_PARENT);
-			myGrid.setColumnWidth(width + 50);
+			CustomSharedPreferences.init(getApplicationContext());
+			CustomSharedPreferences.setPreferences(Constant.WIDTH_SCREEN, dm.widthPixels);
+			CustomSharedPreferences.setPreferences(Constant.HEIGHT_SCREEN, dm.heightPixels);
 			
-			myGrid.setLayoutParams(param);
-			// gridSliderAdapter = new SliderImageAdapter(this, lstImage);
-			//
-			// myGrid.setAdapter(gridSliderAdapter);
-			myGrid.setOnItemClickListener(new OnItemClickListener() {
+			width = dm.widthPixels / 5;
+			// switch (widthScr) {
+			// case 1280:
+			// width = widthScr / 5 + 25;
+			// break;
+			// default:
+			// width = widthScr / 5;
+			// break;
+			// }
+			ImageAdapter adapter = new ImageAdapter(this, arrImg);
+			gridView.setAdapter(adapter);
+			gridView.setOnItemClickListener(new OnItemClickListener() {
 
 				@Override
-				public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-					JigsawImageEntity item;
-					try {
-						if (isClick)
-							return;
-						isClick = true;
-						
-						item = lstImage.get(position);
-						ShowLog.showLogInfo(tag, "click img position: " + position + "; gameId:" + item.getGameId() + "; pathName;" + item.getPathName());
-						Intent intent = new Intent(SliderImageActivity.this, SliderMainActivity.class);
-						intent.putExtra(Constant.GAME_ID, item.getGameId());
-						intent.putExtra(Constant.PATH_NAME, item.getPathName());
-						intent.putExtra(Constant.FINISH_GAME, item.isFinish());
-						startActivity(intent);
-						SoundManager.playSound(Constant.SOUND_B, false);
-						// /
-						finish();
-					}
-					catch (Exception e) {
-						ShowLog.showLogError(tag, "item click error: " + e.getMessage());
-					}
+				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+					Intent intent = new Intent(SliderImageActivity.this, SliderMainActivity.class);
+//					Intent intent = new Intent(SliderImageActivity.this, TestAct.class);
+					intent.putExtra(Constant.GAME_ID, arrImg[position]);
+					startActivity(intent);
+					
 				}
 			});
 
-			new LoadData().execute();
-			ShowLog.showLogInfo(tag, "initView");
-		}
-		catch (Exception e) {
-			ShowLog.showLogError(tag, "initData error" + e);
+			ShowLog.i(tag, "initView width screen: " + width);
+		} catch (Exception e) {
+			ShowLog.e(tag, "initView error" + e);
 		}
 	}
 
-	private void loadImage() {
-		JigsawImageEntity entityImg;
-		List<GameHistory> arrGame;
-		GameHistoryDataHelper dataHelper;
-		try {
-			lstImage = new ArrayList<JigsawImageEntity>();
-			dataHelper = new GameHistoryDataHelper(getApplicationContext());
-			String[] whrepras = null;
-			arrGame = dataHelper.find(" " + DatabaseConnection.GameHistorySchema.TYPE + "=1", null, whrepras);
-			if (arrGame == null) {
-				return;
-			}
+	@Override
+	public void onClick(View v) {
+		Intent intent;
+		super.onClick(v);
+//		switch (v.getId()) {
+//		case R.id.img1:
+//			intent = new Intent(SliderImageActivity.this, SliderMainActivity.class);
+//			intent.putExtra(Constant.GAME_ID, R.id.img1);
+//			startActivity(intent);
+//			break;
+//		}
 
-			for (GameHistory entity : arrGame) {
-				entityImg = new JigsawImageEntity(entity.getIdGame(), entity.getFolderPath() + "/" + entity.getImageName(), entity.isFinish());
-				lstImage.add(entityImg);
-			}
-
-//			// ///////test
-//			for (GameHistory entity : arrGame) {
-//				entityImg = new JigsawImageEntity(entity.getIdGame(), entity.getFolderPath() + "/" + entity.getImageName(), entity.isFinish());
-//				lstImage.add(entityImg);
-//			}
-//			for (GameHistory entity : arrGame) {
-//				entityImg = new JigsawImageEntity(entity.getIdGame(), entity.getFolderPath() + "/" + entity.getImageName(), entity.isFinish());
-//				lstImage.add(entityImg);
-//			}
-//			for (GameHistory entity : arrGame) {
-//				entityImg = new JigsawImageEntity(entity.getIdGame(), entity.getFolderPath() + "/" + entity.getImageName(), entity.isFinish());
-//				lstImage.add(entityImg);
-//			}
-//			for (GameHistory entity : arrGame) {
-//				entityImg = new JigsawImageEntity(entity.getIdGame(), entity.getFolderPath() + "/" + entity.getImageName(), entity.isFinish());
-//				lstImage.add(entityImg);
-//			}
-//			for (GameHistory entity : arrGame) {
-//				entityImg = new JigsawImageEntity(entity.getIdGame(), entity.getFolderPath() + "/" + entity.getImageName(), entity.isFinish());
-//				lstImage.add(entityImg);
-//			}
-//			for (GameHistory entity : arrGame) {
-//				entityImg = new JigsawImageEntity(entity.getIdGame(), entity.getFolderPath() + "/" + entity.getImageName(), entity.isFinish());
-//				lstImage.add(entityImg);
-//			}
-//			// ////
-
-		}
-		catch (Exception e) {
-			ShowLog.showLogError(tag, "LoadImage" + e.getMessage());
-		}
 	}
 
 	@Override
@@ -198,52 +99,70 @@ public class SliderImageActivity extends AbstractContentsActivity {
 		super.onResume();
 		isClick = false;
 	}
-	
-	private class LoadData extends AsyncTask<Object, Object, Object> {
 
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-			lnProgressBar.setVisibility(View.VISIBLE);
+	private class ImageAdapter extends BaseAdapter {
+		private int[] arrImage;
+		private Context mContext;
+
+		public ImageAdapter(Context mContext, int[] arrImage) {
+			this.arrImage = arrImage;
+			this.mContext = mContext;
 		}
 
 		@Override
-		protected Object doInBackground(Object... params) {
-			try {
-				ShowLog.showLogInfo(tag, "loaddata............");
-				loadImage();
-				System.gc();
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return arrImage.length;
+		}
+
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
 			return null;
 		}
 
 		@Override
-		protected void onPostExecute(Object result) {
-			super.onPostExecute(result);
-			gridSliderAdapter = new SliderImageAdapter(SliderImageActivity.this, lstImage);
-			myGrid.setAdapter(gridSliderAdapter);
-			lnProgressBar.setVisibility(View.GONE);
-
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return 0;
 		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+			View grid;
+			LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			if (convertView == null) {
+				grid = new View(mContext);
+				grid = inflater.inflate(R.layout.slider_item, null);
+				ImageView imageView = (ImageView) grid.findViewById(R.id.imgShow);
+				imageView.setImageResource(arrImage[position]);
+				imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+//				imageView.setAdjustViewBounds(true);
+
+
+			} else {
+				grid = (View) convertView;
+			}
+			return grid;
+		}
+
 	}
 
-	@Override
-	public void onBackPressed() {
-		try {
-			SoundManager.playSound(Constant.SOUND_D, false);
-			Intent intent = new Intent(SliderImageActivity.this, StartupApp.class);
-			intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-			SoundManager.isLEFT =3;
-			startActivity(intent);
-			finish();
-		}
-		catch (Exception e) {
-			ShowLog.showLogError(tag, "back error: " + e.getMessage());
-		}
-	}
+	// @Override
+	// public void onBackPressed() {
+	// try {
+	// SoundManager.playSound(Constant.SOUND_D, false);
+	// Intent intent = new Intent(SliderImageActivity.this, StartupApp.class);
+	// intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+	// SoundManager.isLEFT =3;
+	// startActivity(intent);
+	// finish();
+	// }
+	// catch (Exception e) {
+	// ShowLog.showLogError(tag, "back error: " + e.getMessage());
+	// }
+	// }
 
 	@Override
 	protected void onDestroy() {

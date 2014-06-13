@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import jp.sun_star_st.Puzzledaisuki.util.ShowLog;
-
+import puzzle.slider.vn.util.ShowLog;
 import android.app.Activity;
 
 
@@ -150,7 +149,7 @@ public class ActivityHistoryManager {
 		int i = 0 ;
 		for (Activity activity : ActivityHistory) {
 			i += 1;
-			ShowLog.showLogInfo("ActivityHistoryManager", "backActivity name " + i + " : " + activity.getClass().getSimpleName());
+			ShowLog.i("ActivityHistoryManager", "backActivity name " + i + " : " + activity.getClass().getSimpleName());
 		}
 		
 	}
@@ -171,7 +170,7 @@ public class ActivityHistoryManager {
 		if (null != removeActivity) {
 			ActivityHistory.remove(removeActivity);
 			removeActivity.finish();
-			ShowLog.showLogInfo("ActivityHistoryManager", "removeActivity name " + removeActivity);
+			ShowLog.i("ActivityHistoryManager", "removeActivity name " + removeActivity);
 		}
 	}
 }

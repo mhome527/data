@@ -90,13 +90,13 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
-		ShowLog.showLogInfo(tag, "onResume - activity history size ="+ActivityHistoryManager.ActivityHistory.size());
+		ShowLog.i(tag, "onResume - activity history size ="+ActivityHistoryManager.ActivityHistory.size());
 		PlaysoundA();
 		if (
 //				this instanceof StartupApp 
 //				|| this instanceof PuzzleOptionActivity
 //				|| this instanceof PuzzleImageActivity || 
-				this instanceof SliderImageActivity
+				this instanceof SliderImageActivity)
 //				|| this instanceof PuzzlesStoreActivity) 
 				{
 			if (SoundManager.isLEFT ==2) {
@@ -119,8 +119,6 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 	private void PlaysoundA(){
 		if (this instanceof SliderMainActivity || this instanceof WinnerActivity) { //this instanceof JigsawMainActivityV2 || 
 			SoundManager.isPause = true;
-			SoundManager.pauseSound(Constant.SOUND_A);
-		}else if (this instanceof JigsawMainActivityV2 && SoundManager.isPause) {
 			SoundManager.pauseSound(Constant.SOUND_A);			
 		} else {
 			SoundManager.isPause = false;
@@ -182,7 +180,7 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 
 	@Override
 	protected void onStop() {
-		ShowLog.showLogInfo(tag, "onStop");
+		ShowLog.i(tag, "onStop");
 		if(Utility.isApplicationSentToBackground(getApplicationContext())){
 			SoundManager.isPause = true;
 			SoundManager.pauseSound(Constant.SOUND_A);
@@ -192,9 +190,9 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 
 	@Override
 	protected void onDestroy() {
-		ShowLog.showLogInfo(tag, "onDestroy - activity history size ="+ActivityHistoryManager.ActivityHistory.size());
+		ShowLog.i(tag, "onDestroy - activity history size ="+ActivityHistoryManager.ActivityHistory.size());
 //		logHeap("DESTROY");
-		if (this instanceof StartupApp || ActivityHistoryManager.ActivityHistory.size()==1) {
+		if ( ActivityHistoryManager.ActivityHistory.size()==1) {
 			SoundManager.stopSound(Constant.SOUND_A);
 			SoundManager.clearAllSound();
 		}

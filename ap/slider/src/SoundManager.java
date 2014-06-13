@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import puzzle.jigsaw.vn.util.Constant;
-import puzzle.jigsaw.vn.util.ShowLog;
+import puzzle.slider.vn.util.Constant;
+import puzzle.slider.vn.util.ShowLog;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
@@ -133,7 +133,7 @@ public class SoundManager {
 				mp.release();
 				mp = null;
 				map.remove(name);
-				ShowLog.showLogInfo("SoundManager", "stopSound!!!!!! name: " + name);
+				ShowLog.i("SoundManager", "stopSound!!!!!! name: " + name);
 			}
 		}
 	}
