@@ -1,0 +1,1840 @@
+{
+    "list":[
+        {
+            "name":"trường cao đẳng Điện Lực",
+            "key":"truong cao dang dien luc"
+        },
+        {
+            "name":"Đỗ Văn Dậy",
+            "key":"do van day"
+        },  
+        {
+            "name":"Nguyễn Biểu",
+            "key":"nguyen bieu"
+        }, 
+        {
+            "name":"Âu Dương Lân",
+            "key":"au duong lan"
+        }, 
+        {
+            "name":"Rừng Sát",
+            "key":"rung sat"
+        }, 
+        {
+            "name":"Lý Nhơn",
+            "key":"ly nhon"
+        }, 
+         {
+            "name":"Dương Văn Hạnh",
+            "key":"duong van hanh"
+        }, 
+        {
+            "name":"Nguyễn Cao Nam",
+            "key":"nguyen cao nam"
+        }, 
+        {
+            "name":"Hà Huy Tập",
+            "key":"ha huy tap"
+        }, 
+         {
+            "name":"Nguyễn Cửu Phú",
+            "key":"nguyen cuu phu"
+        }, 
+        {
+            "name":"Bùi Thanh Thiết",
+            "key":"bui thanh thiet"
+        }, 
+        {
+            "name":"Phan Văn Bảy (khu B KCN Hiệp Phước)",
+            "key":"phan van bay"
+        }, 
+ 		{
+            "name":"Nguyễn Văn Tạo",
+            "key":"nguyen van tao"
+        }, 
+        {
+            "name":"Nguyễn Hữu Thọ",
+            "key":"nguyen huu tho"
+        },
+        {
+            "name":"bệnh viện 115",
+            "key":"benh vien 115"
+        },
+        {
+            "name":"bệnh viện 115",
+            "key":"bv"
+        },
+        {
+            "name":"bệnh viện Chợ Rẫy",
+            "key":"benh vien cho ray"
+        },
+        {
+            "name":"bệnh viện Chợ Rẫy",
+            "key":"bv cho ray"
+        },
+        {
+            "name":"bệnh viện Chợ Rẫy",
+            "key":"cho ray"
+        },
+        {
+            "name":"Dương Đình Hội",
+            "key":"duong dinh hoi"
+        },
+        {
+            "name":"Ngã tư Đông Thạnh",
+            "key":"nga 4 dong thanh"
+        },
+        {
+            "name":"Ngã tư Đông Thạnh",
+            "key":"nga 4 dong thanh"
+        },
+        {
+            "name":"Hồ Con Rùa",
+            "key":"ho con rua"
+        },
+        {
+            "name":"Bàu Cát",
+            "key":"bau cat"
+        },
+        {
+            "name":"truong Đại Học Khoa Học Tự Nhiên",
+            "key":"truong dai hoc khoa hoc tu nhien"
+        },
+        {
+            "name":"truong Đại Học Khoa Học Tự Nhiên",
+            "key":"dh khoa hoc tu nhien"
+        },
+        {
+            "name":"trường Đại học Tôn Đức Thắng",
+            "key":"truong dai hoc ton duc thang"
+        },
+        {
+            "name":"trường Đại học Tôn Đức Thắng",
+            "key":"dh ton duc thang"
+        },
+        {
+            "name":"trường Đại học Giao thông vận tải (Quận 9)",
+            "key":"truong dai hoc giao thong van tai"
+        },
+        {
+            "name":"Trường Đại học Giao thông vận tải (Quận 9)",
+            "key":"dh giao thong van tai"
+        },
+        {
+            "name":"Thị trấn Tân Túc",
+            "key":"thi tran tan tuc"
+        },
+        {
+            "name":"Bến xe Hậu Nghĩa",
+            "key":"ben xe hau nghia"
+        },
+        {
+            "name":"Bến xe Hậu Nghĩa",
+            "key":"bx hau nghia"
+        },
+        {
+            "name":"Thành Thái",
+            "key":"thanh thai"
+        },
+        {
+            "name":"Tam Đảo",
+            "key":"tam dao"
+        },
+        {
+            "name":"Đồng Nai",
+            "key":"dong nai"
+        },
+        {
+            "name":"Trường Sơn",
+            "key":"truong son"
+        },
+        {
+            "name":"Hồng Hà",
+            "key":"hong ha"
+        },
+        {
+            "name":"Trần Quý",
+            "key":"tran quy"
+        },
+        {
+            "name":"Hoàng Hữu Nam",
+            "key":"hoang huu nam"
+        },
+        {
+            "name":"Chùa Phật Cô Đơn",
+            "key":"chua phat co don"
+        },
+        {
+            "name":"Mai Bá Hương",
+            "key":"mai ba huong"
+        },
+        {
+            "name":"Đề Thám",
+            "key":"de tham"
+        },
+        {
+            "name":"Công trường Mê Linh",
+            "key":"cong truong me linh"
+        },
+        {
+            "name":"Tôn Đức Thắng",
+            "key":"ton duc thang"
+        },
+        {
+            "name":"Nguyễn Huệ",
+            "key":"nguyen hue"
+        },
+        {
+            "name":"Trạm Bến Thành",
+            "key":"tram ben thanh"
+        },
+        {
+            "name":"Trạm Bến Thành",
+            "key":"ben thanh"
+        },
+        {
+            "name":"Lê Thánh Tôn",
+            "key":"le thanh ton"
+        },
+        {
+            "name":"Trần Hưng Đạo",
+            "key":"tran hung dao"
+        },
+        {
+            "name":"Trần Phú",
+            "key":"tran phu"
+        },
+        {
+            "name":"Châu Văn Liêm",
+            "key":"chau van liem"
+        },
+        {
+            "name":"Hải Thượng Lãn Ông",
+            "key":"hai thuong lan ong"
+        },
+        {
+            "name":"Trang Tử",
+            "key":"trang tu"
+        },
+        {
+            "name":"Thi Sách",
+            "key":"thi sach"
+        },
+        {
+            "name":"Phạm Hồng Thái",
+            "key":"pham hong thai"
+        },
+        {
+            "name":"Nguyễn Trãi",
+            "key":"nguyen trai"
+        },
+        {
+            "name":"Cống Quỳnh",
+            "key":"cong quynh"
+        },
+        {
+            "name":"Nguyễn Thiện Thuật",
+            "key":"nguyen thien thuat"
+        },
+        {
+            "name":"Cao Thắng",
+            "key":"cao thang"
+        },
+        {
+            "name":"Minh Phụng",
+            "key":"minh phung"
+        },
+        {
+            "name":"Hậu Giang",
+            "key":"hau giang"
+        },
+        {
+            "name":"Kinh Dương Vương",
+            "key":"kinh duong vuong"
+        },
+        {
+            "name":"Hai Bà Trưng",
+            "key":"hai ba trung"
+        },
+        {
+            "name":"Phan Đình Phùng",
+            "key":"phan dinh phung"
+        },
+        {
+            "name":"Nguyễn Thái Sơn",
+            "key":"nguyen thai son"
+        },
+        {
+            "name":"Nguyễn Oanh",
+            "key":"nguyen oanh"
+        },
+        {
+            "name":"Hà Huy Giáp",
+            "key":"ha huy giap"
+        },
+        {
+            "name":"Thạnh Lộc 30",
+            "key":"thanh loc"
+        },
+        {
+            "name":"Hàm Nghi",
+            "key":"ham nghi"
+        },
+        {
+            "name":"Pasteur",
+            "key":"pasteur"
+        },
+        {
+            "name":"Nam Kỳ Khởi Nghĩa",
+            "key":"nam ky khoi nghia"
+        },
+        {
+            "name":"Nguyễn Văn Trỗi",
+            "key":"nguyen van troi"
+        },
+        {
+            "name":"Phan Thúc Duyện",
+            "key":"phan thuc duyen"
+        },
+        {
+            "name":"Trần Quốc Hoàn",
+            "key":"tran quoc hoan"
+        },
+        {
+            "name":"Cộng Hòa",
+            "key":"cong hoa"
+        },
+        {
+            "name":"Ngã tư An Sương",
+            "key":"nga 4 an suong"
+        },
+        {
+            "name":"Ngã tư An Sương",
+            "key":"nga tu an suong"
+        },
+        {
+            "name":"Quốc lộ 22",
+            "key":"quoc lo 22"
+        },
+        {
+            "name":"Võ Thị Sáu",
+            "key":"vo thi sau"
+        },
+        {
+            "name":"Tháp Mười",
+            "key":"thap muoi"
+        },
+        {
+            "name":"Nguyễn Chí Thanh",
+            "key":"nguyen chi thanh"
+        },
+        {
+            "name":"Ngô Gia Tự",
+            "key":"ngo gia tu"
+        },
+        {
+            "name":"Vĩnh Viễn",
+            "key":"vinh vien"
+        },
+        {
+            "name":"Lê Hồng Phong",
+            "key":"le hong phong"
+        },
+        {
+            "name":"Quốc lộ 1K",
+            "key":"quoc lo 1"
+        },
+        {
+            "name":"Bến xe Biên Hòa",
+            "key":"ben xe bien hoa"
+        },
+        {
+            "name":"Bến xe Biên Hòa",
+            "key":"bx bien hoa"
+        },
+        {
+            "name":"Nguyễn Thị Nhỏ",
+            "key":"nguyen thi nho"
+        },
+        {
+            "name":"An Dương Vương",
+            "key":"an duong vuong"
+        },
+        {
+            "name":"Nguyễn Văn Cừ",
+            "key":"nguyen van cu"
+        },
+        {
+            "name":"Nguyễn Văn Bá",
+            "key":"nguyen van ba"
+        },
+        {
+            "name":"Đặng Văn Bi",
+            "key":"dang van bi"
+        },
+        {
+            "name":"Nguyễn Kiệm",
+            "key":"nguyen kiem"
+        },
+        {
+            "name":"trường Đại học Nông Lâm",
+            "key":"truong dai hoc nong lam"
+        },
+        {
+            "name":"trường Đại học Nông Lâm",
+            "key":"dh nong lam"
+        },
+        {
+            "name":"Nguyễn Hữu Thận",
+            "key":"nguyen huu than"
+        },
+        {
+            "name":"đường 3/2",
+            "key":"duong 3/2"
+        },
+        {
+            "name":"đường 3/2",
+            "key":"3/2"
+        },
+        {
+            "name":"đường 3/2",
+            "key":"3-2"
+        },
+        {
+            "name":"Lý Chính Thắng",
+            "key":"ly chien thang"
+        },
+        {
+            "name":"Nguyễn Thông",
+            "key":"nguyen thong"
+        },
+        {
+            "name":"Kỳ Đồng",
+            "key":"ky dong"
+        },
+        {
+            "name":"Trần Quốc Thảo",
+            "key":"tran quoc thao"
+        },
+        {
+            "name":"Lê Văn Sỹ",
+            "key":"le van sy"
+        },
+        {
+            "name":"Trần Quang Diệu",
+            "key":"tran quang dieu"
+        },
+        {
+            "name":"Phan Đình Giót",
+            "key":"phan dinh giot"
+        },
+        {
+            "name":"Phổ Quang",
+            "key":"pho quang"
+        },
+        {
+            "name":"Hoàng Minh Giám",
+            "key":"hoang minh giam"
+        },
+        {
+            "name":"Phan Văn Trị",
+            "key":"phan van tri"
+        },
+        {
+            "name":"cầu Nhị Thiên Đường",
+            "key":"cau nhi thien duong"
+        },
+        {
+            "name":"Tùng Thiện Vương",
+            "key":"tung thien vuong"
+        },
+        {
+            "name":"cầu Chà Và",
+            "key":"cau cha va"
+        },
+        {
+            "name":"Lý Thường Kiệt",
+            "key":"li thuong kiet"
+        },
+        {
+            "name":"Phan Đăng Lưu",
+            "key":"phan dang luu"
+        },
+        {
+            "name":"Bạch Đằng",
+            "key":"bach dang"
+        },
+        {
+            "name":"Kha Vạn Cân",
+            "key":"kha van can"
+        },
+        {
+            "name":"Võ Văn Ngân",
+            "key":"vo van ngan"
+        },
+        {
+            "name":"Quốc lộ 52",
+            "key":"quoc lo 52"
+        },
+        {
+            "name":"Lê Lai",
+            "key":"le lai"
+        },
+        {
+            "name":"Đường 621",
+            "key":"duong 621"
+        },
+        {
+            "name":"BX buýt A Khu ĐH Quốc Gia TP.HCM",
+            "key":"bx buyt a khu dh quoc gia tp.hcm"
+        },
+        {
+            "name":"Đinh Đức Thiện(Tĩnh lộ 18)",
+            "key":"dinh duoc thien"
+        },
+        {
+            "name":"Hương lộ 11",
+            "key":"huong lo 11"
+        },
+        {
+            "name":"Bến Hưng Long",
+            "key":"ben hung long"
+        },
+        {
+            "name":"Thuận Kiều",
+            "key":"thuan kieu"
+        },
+        {
+            "name":"Lê Đại Hành",
+            "key":"le dai hanh"
+        },
+        {
+            "name":"Lãnh Binh Thăng",
+            "key":"lanh binh thang"
+        },
+        {
+            "name":"Ông Ích Khiêm",
+            "key":"ong ich khiem"
+        },
+        {
+            "name":"Hòa Bình",
+            "key":"hoa binh"
+        },
+        {
+            "name":"Công viên Đầm Sen",
+            "key":"cong vien dam sen"
+        },
+        {
+            "name":"Công viên Đầm Sen",
+            "key":"cv dam sen"
+        },
+        {
+            "name":"Thác Giang Điền",
+            "key":"thac giang dien"
+        },
+        {
+            "name":"Phạm Ngũ Lão",
+            "key":"pham ngu lao"
+        },
+		{
+            "name":"Phạm Ngũ Lão (Q.Gò Vấp)",
+            "key":"pham ngu lao go vap"
+        },
+        {
+            "name":"Công trường Quách Thị Trang",
+            "key":"cong truong quach thi trang"
+        },
+        {
+            "name":"Cách Mạng Tháng 8",
+            "key":"cach mang thang tam"
+        },
+        {
+            "name":"Cách Mạng Tháng 8",
+            "key":"cmt8"
+        },
+        {
+            "name":"Xuân Diệu",
+            "key":"xuan dieu"
+        },
+        {
+            "name":"BX Củ Chi",
+            "key":"bx cu chi"
+        },
+        {
+            "name":"Đinh Bộ Lĩnh",
+            "key":"dinh bo linh"
+        },
+        {
+            "name":"Ung Văn Khiêm",
+            "key":"ung van khiem"
+        },
+        {
+            "name":"Đường D2",
+            "key":"duong d2"
+        },
+        {
+            "name":"Vòng xoay Hàng Xanh",
+            "key":"vong xoay hang xanh"
+        },
+        {
+            "name":"Phùng Khắc Khoan",
+            "key":"phung khac khoan"
+        },
+        {
+            "name":"Trần Cao Vân",
+            "key":"tran cao van"
+        },
+        {
+            "name":"Võ Văn Tần",
+            "key":"vo van tan"
+        },
+        {
+            "name":"Bà Huyện Thanh Quan",
+            "key":"ba huyen tham quan"
+        },
+        {
+            "name":"Bến xe Miền Tây",
+            "key":"ben xe mien tay"
+        },
+        {
+            "name":"Bến xe Miền Tây",
+            "key":"bx mien tay"
+        },
+        {
+            "name":"Vòng xoay Phú Lâm",
+            "key":"vong xoay phu lam"
+        },
+        {
+            "name":"Tân Hòa Đông",
+            "key":"tan hoa dong"
+        },
+        {
+            "name":"Trương Phước Phan",
+            "key":"truong phuoc phan"
+        },
+        {
+            "name":"Ấp Chiến Lược",
+            "key":"ap chien luoc"
+        },
+        {
+            "name":"Đất Mới",
+            "key":"dat moi"
+        },
+        {
+            "name":"Lê Văn Quới",
+            "key":"le van quoi"
+        },
+        {
+            "name":"Hương lộ 2",
+            "key":"huong lo 2"
+        },
+        {
+            "name":"Ngô Nhân Tịnh",
+            "key":"ngo nhan tinh"
+        },
+        {
+            "name":"Phú Hữu",
+            "key":"phu huu"
+        },
+        {
+            "name":"Hùng Vương",
+            "key":"hung vuong"
+        },
+        {
+            "name":"Nguyễn Tri Phương",
+            "key":"nguyen tri phuong"
+        },
+        {
+            "name":"cầu Nguyễn Tri Phương",
+            "key":"cau nguyen tri phuong"
+        },
+        {
+            "name":"cầu Chánh Hưng",
+            "key":"cau chanh hung"
+        },
+        {
+            "name":"Phạm Hùng",
+            "key":"pham hung"
+        },
+        {
+            "name":"Nguyễn Văn Linh",
+            "key":"nguyen van linh"
+        },
+        {
+            "name":"Đường số 9A",
+            "key":"duong so 9a"
+        },
+        {
+            "name":"cầu kênh Xáng",
+            "key":"cau kenh xang"
+        },
+        {
+            "name":"Dương Bá Trạc",
+            "key":"duong ba trac"
+        },
+        {
+            "name":"Phạm Thế Hiển",
+            "key":"pham the hien"
+        },
+        {
+            "name":"Trần Xuân Soạn",
+            "key":"tran xuan soan"
+        },
+        {
+            "name":"Cư xá Ngân Hàng",
+            "key":"cu xa ngan hang"
+        },
+        {
+            "name":"Lê Duẩn",
+            "key":"le duan"
+        },
+        {
+            "name":"Nơ Trang Long",
+            "key":"no trang long"
+        },
+        {
+            "name":"Nguyễn Văn Nghi",
+            "key":"nguyen van nghi"
+        },
+        {
+            "name":"Quang Trung",
+            "key":"quang trung"
+        },
+        {
+            "name":"Tô Ký",
+            "key":"to ky"
+        },
+        {
+            "name":"Nguyễn Ảnh Thủ",
+            "key":"nguyen anh thu"
+        },
+        {
+            "name":"Chợ Hiệp Thành",
+            "key":"cho hiep thanh"
+        },
+        {
+            "name":"Hồ Tùng Mậu",
+            "key":"ho tung mau"
+        },
+        {
+            "name":"đường nhánh S2",
+            "key":"duong nhanh s2"
+        },
+        {
+            "name":"Quốc lộ 13",
+            "key":"quoc lo 13"
+        },
+        {
+            "name":"Bến xe buýt A Khu đô thị ĐH Quốc Gia TP.HCM",
+            "key":"ben xe buyt a khu do thi dh quoc gia"
+        },
+        {
+            "name":"Bến xe buýt A Khu đô thị ĐH Quốc Gia TP.HCM",
+            "key":"bx buyt a khu do thi dh quoc gia"
+        },
+        {
+            "name":"cầu Khánh Hội",
+            "key":"cau khanh hoi"
+        },
+        {
+            "name":"Nguyễn Tất Thành",
+            "key":"nguyen tat thanh"
+        },
+        {
+            "name":"cầu Tân Thuận 2",
+            "key":"cau tan thuan 2"
+        },
+        {
+            "name":"Huỳnh Tấn Phát",
+            "key":"huynh tan phat"
+        },
+        {
+            "name":"Bến Mũi Nhà Bè",
+            "key":"nha be"
+        },
+        {
+            "name":"Chợ đầu mối Bình Điền",
+            "key":"cho dau moi binh dien"
+        },
+        {
+            "name":"Nguyễn Hữu Trí",
+            "key":"nguyen huu tri"
+        },
+        {
+            "name":"Cầu Chợ Đệm",
+            "key":"cau cho dem"
+        },
+        {
+            "name":"Thế Lữ",
+            "key":"the lu"
+        },
+        {
+            "name":"Khu di tích Láng Le Bàu Cò",
+            "key":"khu di tich lang le bau co"
+        },
+        {
+            "name":"Láng Le Bàu Cò",
+            "key":"lang le bau co"
+        },
+        {
+            "name":"Khu Công nghiệp Lê Minh Xuân",
+            "key":"khu cong nghiep le minh xuan"
+        },
+        {
+            "name":"Tạ Uyên",
+            "key":"ta uyen"
+        },
+        {
+            "name":"Tuệ Tĩnh",
+            "key":"tue tinh"
+        },
+        {
+            "name":"Khuông Việt",
+            "key":"khuon viet"
+        },
+        {
+            "name":"Âu Cơ",
+            "key":"au co"
+        },
+        {
+            "name":"Nguyễn Hồng Đào",
+            "key":"nguyen hong dao"
+        },
+        {
+            "name":"Phan Văn Hớn",
+            "key":"phan van hon"
+        },
+        {
+            "name":"Ngã ba Giồng (Khu di tích lịch sử Ngã 3 Giồng)",
+            "key":"nga ba giong"
+        },
+        {
+            "name":"Ngã ba Giồng (Khu di tích lịch sử Ngã 3 Giồng)",
+            "key":"nga 3 giong"
+        },
+        {
+            "name":"Đầu bến khu vực Cầu Lớn",
+            "key":"dau ben khu vuc cau lon"
+        },
+        {
+            "name":"Nguyễn Thị Minh Khai",
+            "key":"nguyen thi minh khai"
+        },
+        {
+            "name":"Bạch Đằng",
+            "key":"bach dang"
+        },
+        {
+            "name":"Lê Quang Định",
+            "key":"le quang dinh"
+        },
+        {
+            "name":"Tỉnh lộ 15",
+            "key":"tinh lo 15"
+        },
+        {
+            "name":"Hương lộ 60B",
+            "key":"huong lo 60b"
+        },
+        {
+            "name":"Bến 19/5",
+            "key":"ben 19/5"
+        },
+        {
+            "name":"Quốc lộ 50",
+            "key":"quoc lo 50"
+        },
+        {
+            "name":"Đường số 22",
+            "key":"duong so 22"
+        },
+        {
+            "name":"Đường số 40",
+            "key":"duong so 40"
+        },
+        {
+            "name":"Tỉnh lộ 10",
+            "key":"tinh lo 10"
+        },
+        {
+            "name":"Lý Thái Tổ",
+            "key":"ly thai to"
+        },
+        {
+            "name":"Tây Lân",
+            "key":"tay lan"
+        },
+        {
+            "name":"Bến Lội",
+            "key":"ben loi"
+        },
+        {
+            "name":"Liên ấp 123",
+            "key":"lien ap 123"
+        },
+        {
+            "name":"Võ Văn Vân",
+            "key":"vo van van"
+        },
+        {
+            "name":"Hương lộ 80",
+            "key":"huong lo 80"
+        },
+        {
+            "name":"Khu dân cư Vĩnh Lộc A",
+            "key":"khu dan cu vinh loc a"
+        },
+        {
+            "name":"Nguyễn Xí",
+            "key":"nguyen xi"
+        },
+        {
+            "name":"Quốc lộ 1 A",
+            "key":"quoc lo 1 a"
+        },
+        {
+            "name":"Lê Văn Khương",
+            "key":"le van khuong"
+        },
+        {
+            "name":"Tân Chánh Hiệp 21",
+            "key":"tan chanh hiep 21"
+        },
+        {
+            "name":"Tân Chánh Hiệp 10",
+            "key":"tan chanh hiep 10"
+        },
+        {
+            "name":"Bến xe An sương",
+            "key":"ben xe an suong"
+        },
+        {
+            "name":"Bến xe An sương",
+            "key":"bx an suong"
+        },
+        {
+            "name":"Lạc Long Quân",
+            "key":"lac long quan"
+        },
+        {
+            "name":"Ngã tư Bảy Hiền",
+            "key":"nga tu bay hien"
+        },
+        {
+            "name":"Trường Chinh",
+            "key":"truong chinh"
+        },
+        {
+            "name":"Xuân Hồng",
+            "key":"xuan hong"
+        },
+        {
+            "name":"Nguyễn Duy Trinh",
+            "key":"nguyen duy trinh"
+        },
+        {
+            "name":"Nguyễn Thị Nghĩa",
+            "key":"nguyen thi nghia"
+        },
+        {
+            "name":"Lê Quý Đôn",
+            "key":"le quy don"
+        },
+        {
+            "name":"Lê Trọng Tấn",
+            "key":"le trong tan"
+        },
+        {
+            "name":"Ngã tư Vĩnh Lộc",
+            "key":"ngha tu vinh loc"
+        },
+        {
+            "name":"Nguyễn Thị Tú",
+            "key":"nguyen thi tu"
+        },
+        {
+            "name":"Vĩnh Lộc",
+            "key":"vinh loc"
+        },
+        {
+            "name":"Quách Điêu",
+            "key":"quach dieu"
+        },
+        {
+            "name":"Dương Công Khi",
+            "key":"duong cong khi"
+        },
+        {
+            "name":"Chợ Xuân Thới Thượng (vị trí đậu xe trên Đường tuyến 1)",
+            "key":"cho xuan thoi thuong"
+        },
+        {
+            "name":"Nguyễn Thị Định",
+            "key":"nguyen thi dinh"
+        },
+        {
+            "name":"Bến phà Cát Lái",
+            "key":"ben pha cat lai"
+        },
+        {
+            "name":"Liên tỉnh lộ 25B (cầu Mỹ Thủy 2)",
+            "key":"lien tinh lo 25b"
+        },
+        {
+            "name":"Lê Văn Thịnh",
+            "key":"len thi dinh"
+        },
+        {
+            "name":"chung cư Bình Trưng",
+            "key":"chung cu binh trung"
+        },
+        {
+            "name":"Đỗ Xuân Hợp",
+            "key":"do xuan hop"
+        },
+        {
+            "name":"ngã tư Bình Thái",
+            "key":"nga tu binh thai"
+        },
+        {
+            "name":"Tô Ngọc Vân",
+            "key":"to ngoc van"
+        },
+        {
+            "name":"Tam Hà",
+            "key":"tam ha"
+        },
+        {
+            "name":"Phú Châu",
+            "key":"phu chau"
+        },
+        {
+            "name":"Gò Dưa",
+            "key":"go dua"
+        },
+        {
+            "name":"cầu vượt Gò Dưa",
+            "key":"cau vuot go dua"
+        },
+        {
+            "name":"Tỉnh lộ 43",
+            "key":"tinh lo 43"
+        },
+        {
+            "name":"Chợ nông sản Thủ Đức",
+            "key":"cho nong san thu duc"
+        },
+        {
+            "name":"Bến xe buýt Cư xá Nhiêu Lộc",
+            "key":"ben xe buyt cu xa nhieu loc"
+        },
+        {
+            "name":"Bến xe buýt Cư xá Nhiêu Lộc",
+            "key":"bx buyt cu xa nhieu loc"
+        },
+        {
+            "name":"Lê Thúc Hoạch",
+            "key":"le thuc hoach"
+        },
+        {
+            "name":"Bình Long",
+            "key":"binh long"
+        },
+        {
+            "name":"Độc Lập",
+            "key":"doc lap"
+        },
+        {
+            "name":"Lũy Bán Bích",
+            "key":"luy ban bich"
+        },
+        {
+            "name":"Ba Vân",
+            "key":"ba van"
+        },
+        {
+            "name":"Trương Công Định",
+            "key":"truong cong dinh"
+        },
+        {
+            "name":"Phạm Ngọc Thạch",
+            "key":"pham ngoc thach"
+        },
+        {
+            "name":"Nguyễn Hữu Cảnh",
+            "key":"nguyen huu canh"
+        },
+        {
+            "name":"Cầu Sài gòn",
+            "key":"cau sai gon"
+        },
+        {
+            "name":"Lê Lợi",
+            "key":"le loi"
+        },
+        {
+            "name":"Trần Huy Liệu",
+            "key":"tran huy lieu"
+        },
+        {
+            "name":"Hoàng Văn Thụ",
+            "key":"hoang van thu"
+        },
+        {
+            "name":"Nguyễn Đình Chiểu",
+            "key":"nguyen dinh chieu"
+        },
+        {
+            "name":"Lý Tự Trọng",
+            "key":"ly tu trong"
+        },
+        {
+            "name":"Nguyễn Thị Thập",
+            "key":"nguyen thi thap"
+        },
+        {
+            "name":"Khu dân cư Tân Quy",
+            "key":"khu dan cu tan quy"
+        },
+        {
+            "name":"Đặng Nguyên Cẩn",
+            "key":"dang nguyen can"
+        },
+        {
+            "name":"Tân Hóa",
+            "key":"tan hoa"
+        },
+        {
+            "name":"Tô Hiệu",
+            "key":"to hieu"
+        },
+        {
+            "name":"Nguyễn Lý",
+            "key":"nguyen ly"
+        },
+        {
+            "name":"Lê Khôi",
+            "key":"le khoi"
+        },
+        {
+            "name":"Nguyễn Sơn",
+            "key":"nguyen son"
+        },
+        {
+            "name":"Văn Cao",
+            "key":"van co"
+        },
+        {
+            "name":"Tân Hương",
+            "key":"tan huong"
+        },
+        {
+            "name":"Tân Qúy",
+            "key":"tan quy"
+        },
+        {
+            "name":"Tân Kỳ Tân Qúy",
+            "key":"tan ky tan quy"
+        },
+        {
+            "name":"Dương Đức Hiền",
+            "key":"duong duc hien"
+        },
+        {
+            "name":"Chế Lan Viên",
+            "key":"che lan vien"
+        },
+        {
+            "name":"Đường D9",
+            "key":"duong d9"
+        },
+        {
+            "name":"Tây Thạnh",
+            "key":"tay thanh"
+        },
+        {
+            "name":"Phan Huy Ích",
+            "key":"phan huy ich"
+        },
+        {
+            "name":"Phạm Văn Chiêu",
+            "key":"pham van chieu"
+        },
+        {
+            "name":"Thống Nhất",
+            "key":"thong nhat"
+        },
+        {
+            "name":"Lê Đức Thọ",
+            "key":"le duc tho"
+        },
+        {
+            "name":"Cầu vượt Ngã tư Ga",
+            "key":"cau vuot nga tu ga"
+        },
+        {
+            "name":"Cầu vượt Ngã tư Ga",
+            "key":"cau vuot nga 4 ga"
+        },
+        {
+            "name":"Điện Biên Phủ",
+            "key":"dien bien phu"
+        },
+        {
+            "name":"Bến xe Ngã tư Ga",
+            "key":"ben xe nga tu ga"
+        },
+        {
+            "name":"Bến xe Ngã tư Ga",
+            "key":"bx nga 4 ga"
+        },
+        {
+            "name":"Khu du lịch Suối Tiên",
+            "key":"khu du lich suoi tien"
+        },
+        {
+            "name":"Đường trục chính số 1",
+            "key":"duong truc chinh so 1"
+        },
+        {
+            "name":"Nguyễn Thái Học",
+            "key":"nguyen thai hoc"
+        },
+        {
+            "name":"Phó Đức Chính",
+            "key":"pho duc chinh"
+        },
+        {
+            "name":"Lê Thị Hồng Gấm",
+            "key":"le thi hong gam"
+        },
+        {
+            "name":"Calmette",
+            "key":"calmette"
+        },
+        {
+            "name":"cầu Calmette",
+            "key":"cau calmette"
+        },
+        {
+            "name":"Hoàng Diệu",
+            "key":"hoang dieu"
+        },
+        {
+            "name":"Lê Văn Lương",
+            "key":"le van luong"
+        },
+        {
+            "name":"Mai Văn Vĩnh",
+            "key":"mai van vinh"
+        },
+        {
+            "name":"Tân Mỹ",
+            "key":"tan my"
+        },
+        {
+            "name":"Nguyễn Lương Bằng",
+            "key":"nguyen luong bang"
+        },
+        {
+            "name":"đường 204 Cao Lỗ",
+            "key":"duong 204 cao lo"
+        },
+        {
+            "name":"Trường đại học Công nghệ Sài Gòn (Công viên Đồng Diều)",
+            "key":"truong dai hoc cong nghe sai gon"
+        },
+        {
+            "name":"Trường đại học Công nghệ Sài Gòn (Công viên Đồng Diều)",
+            "key":"dh cong nghe sai gon"
+        },
+        {
+            "name":"Tôn Thất Tùng",
+            "key":"ton that tung"
+        },
+        {
+            "name":"Bùi Thị Xuân",
+            "key":"bui thi xuan"
+        },
+        {
+            "name":"Hồ Hảo Hớn",
+            "key":"ho hao hon"
+        },
+        {
+            "name":"Cô Bắc",
+            "key":"co bac"
+        },
+        {
+            "name":"Ký Con",
+            "key":"ky con"
+        },
+        {
+            "name":"Nguyễn Công Trứ",
+            "key":"nguyen cong tru"
+        },
+        {
+            "name":"Nguyễn Du",
+            "key":"nguyen du"
+        },
+        {
+            "name":"Công xã Paris",
+            "key":"cong xa paris"
+        },
+        {
+            "name":"Đinh Tiên Hoàng",
+            "key":"dinh tien hoang"
+        },
+        {
+            "name":"Nguyễn Bỉnh Khiêm",
+            "key":"nguyen binh khiem"
+        },
+        {
+            "name":"Bến xe Buýt đường Hoàng Sa",
+            "key":"ben xe buyt duong hoang sa"
+        },
+        {
+            "name":"Bến xe Buýt đường Hoàng Sa",
+            "key":"bx buyt duong hoang sa"
+        },
+        {
+            "name":"Bố Heo",
+            "key":"bo heo"
+        },
+        {
+            "name":"Ngã ba Lộc Hưng",
+            "key":"nga ba loc hung"
+        },
+        {
+            "name":"Ngã ba Lộc Hưng",
+            "key":"nga 3 loc hung"
+        },
+        {
+            "name":"Khách sạn New World",
+            "key":"khach san new world"
+        },
+        {
+            "name":"Lăng Cha Cả",
+            "key":"lang cha ca"
+        },
+        {
+            "name":"Bà Quẹo",
+            "key":"ba queo"
+        },
+        {
+            "name":"Gò Dầu",
+            "key":"go dau"
+        },
+        {
+            "name":"Mộc Bài",
+            "key":"moc bai"
+        },
+        {
+            "name":"Bến xe Chợ Lớn",
+            "key":"ben xe cho lon"
+        },
+        {
+            "name":"Bến xe Chợ Lớn",
+            "key":"bx cho lon"
+        },
+        {
+            "name":"Đường nông thôn ấp An Thành",
+            "key":"duong nong thon ap an thanh"
+        },
+        {
+            "name":"Trưng Trắc",
+            "key":"trung trac"
+        },
+        {
+            "name":"Đặng Văn Trước",
+            "key":"dang van truoc"
+        },
+        {
+            "name":"Nguyễn Văn Rốp",
+            "key":"nguyen van rop"
+        },
+        {
+            "name":"Đường tỉnh 782",
+            "key":"duong tinh 782"
+        },
+        {
+            "name":"Đường tỉnh 784",
+            "key":"duong tinh 784"
+        },
+        {
+            "name":"Ngã ba cầu K13",
+            "key":"nga ba cau k13"
+        },
+        {
+            "name":"Ngã ba cầu K13",
+            "key":"nga 3 cau k13"
+        },
+        {
+            "name":"Bến xe Hòa Thành",
+            "key":"ben xe hoa thanh"
+        },
+        {
+            "name":"Bến xe Hòa Thành",
+            "key":"bx hoa thanh"
+        },
+        {
+            "name":"Bến xe Trảng Bàng",
+            "key":"ben xe trang bang"
+        },
+        {
+            "name":"Bến xe Trảng Bàng",
+            "key":"bx trang bang"
+        },
+        {
+            "name":"Bến xe Gò Dầu",
+            "key":"ben xe go dau"
+        },
+        {
+            "name":"Bến xe Gò Dầu",
+            "key":"bx go dau"
+        },
+        {
+            "name":"Hồng Bàng",
+            "key":"hong bang"
+        },
+        {
+            "name":"Bình Phú",
+            "key":"binh phu"
+        },
+        {
+            "name":"Đường 26",
+            "key":"duong 26"
+        },
+        {
+            "name":"Nguyễn Văn Luông",
+            "key":"nguyen van luon"
+        },
+        {
+            "name":"Phạm Văn Chí",
+            "key":"pham van chi"
+        },
+        {
+            "name":"Cao văn Lầu",
+            "key":"cao van lau"
+        },
+        {
+            "name":"Võ Văn Kiệt",
+            "key":"vo van kiet"
+        },
+        {
+            "name":"Cao Xuân Dục",
+            "key":"cao xuan duc"
+        },
+        {
+            "name":"Bến xe Quận 8",
+            "key":"ben xe quan 8"
+        },
+        {
+            "name":"Bến xe Quận 8",
+            "key":"bx quan 8"
+        },
+        {
+            "name":"Liên tỉnh lộ 19",
+            "key":"lien tinh lo 19"
+        },
+        {
+            "name":"Bến xe Tân Tập",
+            "key":"ben xe tan tap"
+        },
+        {
+            "name":"Bến xe Tân Tập",
+            "key":"bx tan tap"
+        },
+        {
+            "name":"Phạm Đình Hổ",
+            "key":"pham dinh ho"
+        },
+        {
+            "name":"Hùng Vương (Tỉnh Long An)",
+            "key":"hung vuong tinh long an"
+        },
+        {
+            "name":"Ngã tư Phú Long",
+            "key":"nga tu phu long"
+        },
+        {
+            "name":"Ngã tư Phú Long",
+            "key":"nga 4 phu long"
+        },
+        {
+            "name":"Tỉnh lộ 827A",
+            "key":"tinh lo 827a"
+        },
+        {
+            "name":"Bến xe Thanh Vĩnh Đông",
+            "key":"ben xe thanh vinh dong"
+        },
+        {
+            "name":"Bến xe Thanh Vĩnh Đông",
+            "key":"bx thanh vinh dong"
+        },
+        {
+            "name":"Bến Cầu Nổi",
+            "key":"ben cau noi"
+        },
+        {
+            "name":"Bến xe Miền Đông",
+            "key":"ben xe mien dong"
+        },
+        {
+            "name":"Bến xe Miền Đông",
+            "key":"bx mien dong"
+        },
+        {
+            "name":"Bến xe Bình Dương",
+            "key":"ben xe binh duong"
+        },
+        {
+            "name":"Bến xe Bình Dương",
+            "key":"bx binh duong"
+        },
+        {
+            "name":"QL 1A",
+            "key":"quoc lo 1a"
+        },
+        {
+            "name":"Bến xe Tân An",
+            "key":"ben xe tan an"
+        },
+        {
+            "name":"Bến xe Tân An",
+            "key":"bx tan an"
+        },
+        {
+            "name":"Bà Hom",
+            "key":"ba hom"
+        },
+        {
+            "name":"Đường tỉnh 825",
+            "key":"duong tinh 825"
+        },
+        {
+            "name":"Bến xe Đức Huệ (Long An)",
+            "key":"ben xe duc hue"
+        },
+        {
+            "name":"Bến xe Đức Huệ (Long An)",
+            "key":"bx duc hue"
+        },
+        {
+            "name":"Bà Triệu",
+            "key":"ba trieu"
+        },
+        {
+            "name":"Nguyễn Văn Bứa",
+            "key":"nguyen van bua"
+        },
+        {
+            "name":"Phan Văn Hớn",
+            "key":"pham van hon"
+        },
+        {
+            "name":"Đường tỉnh 824",
+            "key":"tinh lo 824"
+        },
+        {
+            "name":"Ngã ba Mỹ Hạnh",
+            "key":"nga ba my hanh"
+        },
+        {
+            "name":"Ngã tư Đức Lập",
+            "key":"nga tu duc lap"
+        },
+        {
+            "name":"Tỉnh lộ 823 (tỉnh lộ 8)",
+            "key":"tinh lo 823"
+        },
+        {
+            "name":"Tỉnh lộ 825",
+            "key":"tinh lo 825"
+        },
+        {
+            "name":"BX Hậu Nghĩa (Long An)",
+            "key":"bx hau nghia"
+        },
+        {
+            "name":"Lê Quang Sung",
+            "key":"le quan sung"
+        },
+        {
+            "name":"Đinh Đức Thiện",
+            "key":"dinh duc thien"
+        },
+        {
+            "name":"Ngã tư Long Đinh",
+            "key":"nga tu long dinh"
+        },
+        {
+            "name":"Ngã tư Long Đinh",
+            "key":"nga 4 long dinh"
+        },
+        {
+            "name":"Đường tỉnh 826",
+            "key":"duong tinh 826"
+        },
+        {
+            "name":"Chợ Rạch Kiến",
+            "key":"cho rach kien"
+        },
+        {
+            "name":"Ngã ba Tân Lân",
+            "key":"nga ba tan lan"
+        },
+        {
+            "name":"Ngã ba Tân Lân",
+            "key":"nga 3 tan lan"
+        },
+        {
+            "name":"Long An)",
+            "key":"long an"
+        },
+        {
+            "name":"Tên Lửa",
+            "key":"ten lua"
+        },
+        {
+            "name":"Mã Lò",
+            "key":"ma lo"
+        },
+        {
+            "name":"Ao Đôi",
+            "key":"ao doi"
+        },
+        {
+            "name":"Ngã tư Gò Mây",
+            "key":"nga tu go may"
+        },
+        {
+            "name":"Ngã tư Gò Mây",
+            "key":"nga 4 go may"
+        },
+        {
+            "name":"Nguyễn Văn Quá",
+            "key":"nguyen van qua"
+        },
+        {
+            "name":"Đại lộ Bình Dương",
+            "key":"dai lo binh duong"
+        },
+        {
+            "name":"Khu Du lịch Đại Nam",
+            "key":"khu du lich dai nam"
+        },
+        {
+            "name":"Bến đò Bình Mỹ",
+            "key":"ben do binh my"
+        },
+        {
+            "name":"Cầu Phú Cường",
+            "key":"cau phu cuong"
+        },
+        {
+            "name":"Huỳnh Văn Cù",
+            "key":"huynh van cu"
+        },
+        {
+            "name":"Chùa Bà Bình Dương",
+            "key":"chua ba binh duong"
+        },
+        {
+            "name":"Ngã tư Sân Banh",
+            "key":"nga tu san banh"
+        },
+        {
+            "name":"Ngã tư Sân Banh",
+            "key":"nga 4 san banh"
+        },
+        {
+            "name":"Ngã ba Suối Giữa",
+            "key":"nga ba suoi giua"
+        },
+        {
+            "name":"Ngã ba Suối Giữa",
+            "key":"nga 3 suoi giua"
+        },
+        {
+            "name":"Ngã tư Sở Sao",
+            "key":"nga tu so sao"
+        },
+        {
+            "name":"Ngã tư Sở Sao",
+            "key":"nga 4 so sao"
+        },
+        {
+            "name":"Lê Chí Dân",
+            "key":"le chi dan"
+        },
+        {
+            "name":"Văn Hiến",
+            "key":"van hien"
+        },
+        {
+            "name":"Xô Viết Nghệ Tĩnh",
+            "key":"xo viet nghe tinh"
+        },
+        {
+            "name":"Ngã tư Bình Phước",
+            "key":"nga tu binh phuoc"
+        },
+        {
+            "name":"Ngã tư Bình Phước",
+            "key":"nga 4 binh phuoc"
+        },
+        {
+            "name":"ĐT 743",
+            "key":"dt 743"
+        },
+        {
+            "name":"Lê Thị Trung",
+            "key":"le thi trung"
+        },
+        {
+            "name":"Huỳnh Văn Lũy",
+            "key":"huynh van luy"
+        },
+        {
+            "name":"Nguyễn Văn Tiết",
+            "key":"nguyen van tiet"
+        },
+        {
+            "name":"Đường 30/4",
+            "key":"duong 30/4"
+        },
+        {
+            "name":"Đường 30/4",
+            "key":"30/4"
+        },
+        {
+            "name":"Bến xe Thủ Dầu Một",
+            "key":"ben xe thu dau mot"
+        },
+        {
+            "name":"Bến xe Thủ Dầu Một",
+            "key":"bx thu dau mot"
+        },
+        {
+            "name":"Trạm cấp nước sạch Long Bình (Quận 9)",
+            "key":"tram cap nuoc sach long binh quan 9"
+        },
+        {
+            "name":"Nguyễn Xiển",
+            "key":"nguyen xien"
+        },
+        {
+            "name":"Nguyễn Văn Tăng",
+            "key":"nguyen van tang"
+        },
+        {
+            "name":"Lê Văn Việt",
+            "key":"le van viet"
+        },
+        {
+            "name":"Quốc lộ 1K (Bình Dương)",
+            "key":"quoc lo 1k"
+        },
+        {
+            "name":"ĐT 743",
+            "key":"dt 743"
+        },
+        {
+            "name":"ĐT 43",
+            "key":"dt 43"
+        },
+        {
+            "name":"Bến xe Tân Đông Hiệp",
+            "key":"ben xe tan dong hiep"
+        },
+        {
+            "name":"Bến xe Tân Đông Hiệp",
+            "key":"bx tan dong hiep"
+        },
+        {
+            "name":"Bến xe Hố Nai",
+            "key":"ben xe ho nai"
+        },
+        {
+            "name":"Bến xe Hố Nai",
+            "key":"bx ho nai"
+        },
+        {
+            "name":"Công viên 30/4",
+            "key":"cong vien 30/4"
+        },
+        {
+            "name":"Xa lộ Hà Nội",
+            "key":"xa lo ha noi"
+        },
+        {
+            "name":"Đồng Khởi",
+            "key":"dong khoi"
+        },
+        {
+            "name":"Ngã tư Hàng Xanh",
+            "key":"nga tu hang xanh"
+        },
+        {
+            "name":"Ngã tư Hàng Xanh",
+            "key":"nga 4 hang xanh"
+        },
+        {
+            "name":"Bạch Đằng",
+            "key":"bach dang"
+        },
+        {
+            "name":"Cầu Đồng Nai",
+            "key":"cau dong nai"
+        },
+        {
+            "name":"Ngã ba Vũng Tàu",
+            "key":"nga ba vung tau"
+        },
+        {
+            "name":"Ngã ba Vũng Tàu",
+            "key":"nga 3 vung tau"
+        },
+        {
+            "name":"Quốc lộ 51",
+            "key":"quoc lo 51"
+        },
+        {
+            "name":"Khu Công nghiệp Nhơn Trạch",
+            "key":"khu cong nghiep nhon trach"
+        },
+        {
+            "name":"Siêu thị Big C An Lạc",
+            "key":"sieu thi big c an lac"
+        },
+        {
+            "name":"Ngã tư Tân Phong",
+            "key":"nga tu tan phong"
+        },
+        {
+            "name":"Ngã tư Tân Phong",
+            "key":"nga 4 tan phong"
+        },
+        {
+            "name":"Ngã ba Vườn Mít",
+            "key":"nga ba vuon mit"
+        },
+        {
+            "name":"Ngã ba Vườn Mít",
+            "key":"nga 3 vuon mit"
+        },
+        {
+            "name":"Trường PTTH Ngô Quyền",
+            "key":"truong ptth ngo quyen"
+        },
+        {
+            "name":"Bến xe TP Biên Hòa",
+            "key":"ben xe tp bien hoa"
+        },
+        {
+            "name":"Bến xe TP Biên Hòa",
+            "key":"bx tp bien hoa"
+        }
+    ]
+}

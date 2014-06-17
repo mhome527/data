@@ -47,11 +47,35 @@ public class Common {
 		}
 		return obj;
 	}
+	
+	public static clsListData getDataBus(Context context, String name) {
+		clsListData obj = null;
+		try {
+			Reader reader = new InputStreamReader(context.getAssets().open(name));
+			Gson gson = new Gson();
+			obj = gson.fromJson(reader, clsListData.class);
+		} catch (Exception e) {
+			LogUtil.e("Common", "getObjectJson 2 Error:" + e.getMessage());
+		}
+		return obj;
+	}
 
 	public static clsListName getNameHCM(Context context) {
 		clsListName obj = null;
 		try {
 			Reader reader = new InputStreamReader(context.getAssets().open("listStreet"));
+			Gson gson = new Gson();
+			obj = gson.fromJson(reader, clsListName.class);
+		} catch (Exception e) {
+			LogUtil.e("Common", "getObjectJson 2 Error:" + e.getMessage());
+		}
+		return obj;
+	}
+	
+	public static clsListName getListName(Context context, String listStreet) {
+		clsListName obj = null;
+		try {
+			Reader reader = new InputStreamReader(context.getAssets().open(listStreet));
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, clsListName.class);
 		} catch (Exception e) {

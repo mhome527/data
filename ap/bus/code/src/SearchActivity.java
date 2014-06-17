@@ -16,10 +16,12 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import app.infobus.adapter.NumAdapter;
 import app.infobus.entity.Node;
 import app.infobus.entity.clsListName;
@@ -27,6 +29,7 @@ import app.infobus.entity.clsNameStreet;
 import app.infobus.entity.clsPathBus;
 import app.infobus.entity.searchEntity;
 import app.infobus.utils.Common;
+import app.infobus.utils.Constant;
 import app.infobus.utils.LogUtil;
 
 public class SearchActivity extends AbstractActivity {
@@ -42,15 +45,11 @@ public class SearchActivity extends AbstractActivity {
 	private ArrayList<searchEntity> arrStreet;
 
 	private AutoCompleteTextView edtAuto1, edtAuto2;
-	// private boolean isCheck = false;
-	// private ArrayList<String> listPath = new ArrayList<String>();
-	// private ArrayList<String> listPathAll = new ArrayList<String>();
-	// private HashMap<String, String> mapName = new HashMap<String, String>();
-
 	private AutoCompleteAdapter adapter;
 
 	private ArrayList<String> listSearched;
 	ArrayList<Node> listFound = new ArrayList<Node>();
+	private String cty = "";
 
 	// public SearchActivity(){
 	//
@@ -70,12 +69,12 @@ public class SearchActivity extends AbstractActivity {
 			btnSearch = (Button) findViewById(R.id.btnSearch);
 			listSearch = (ListView) findViewById(R.id.listSearch);
 
+			cty = getIntent().getStringExtra(Constant.KEY_CITY);
 			// ///////ad
 			AdView adView = (AdView) this.findViewById(R.id.adView);
-			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-					.addTestDevice("sony-so_04d-CB5A1KBLPT").build();
+			AdRequest adRequest = new AdRequest.Builder().build();
 			adView.loadAd(adRequest);
-			
+
 			imgChange.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -96,15 +95,33 @@ public class SearchActivity extends AbstractActivity {
 					endPath = edtAuto2.getText().toString().trim();
 					if (beginPath.equals("") && endPath.equals("")) {
 						showMsg("Vui lòng nhập tên đường");
-					}
-					else if (!beginPath.equals("") && !endPath.equals("")) {
+					} else if (!beginPath.equals("") && !endPath.equals("")) {
 						getBusPathInit();
-					}
-					else {
+					} else {
 						searchBus();
 					}
 
 				}
+			});
+			
+			rbtnHcm.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					new LoadData(SearchActivity.this).execute();
+
+				}
+
+			});
+
+			rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					new LoadData(SearchActivity.this).execute();
+
+				}
+
 			});
 
 			// edtAuto1.setText("Bùi Công Trừng");
@@ -116,8 +133,7 @@ public class SearchActivity extends AbstractActivity {
 			// adapter = new AutoCompleteAdapter(this);
 			// edtAuto1.setAdapter(adapter);
 			// edtAuto2.setAdapter(adapter);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -145,12 +161,10 @@ public class SearchActivity extends AbstractActivity {
 				if (listSearched != null && listSearched.size() > 0)
 					listSearch.setAdapter(new NumAdapter(this, listSearched));
 
-			}
-			else
+			} else
 				showMsg("Không tìm thấy tên đường nào");
 
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -168,11 +182,9 @@ public class SearchActivity extends AbstractActivity {
 		if (checkBus1()) {
 			// have bus
 
-		}
-		else if (checkPathBegin()) {
+		} else if (checkPathBegin()) {
 			// have bus
-		}
-		else {
+		} else {
 			for (int i = 0; i < InfoBusActivity.arrPathBus.size() / 2; i++) {
 				if (getListPath())
 					break;
@@ -238,8 +250,7 @@ public class SearchActivity extends AbstractActivity {
 					if (nodetmp.getCount() < 2) {
 						nodetmp.setBefore("");
 						nodetmp.setNum("");
-					}
-					else
+					} else
 						nodetmp.setCount(nodetmp.getCount() - 1);
 					return " - " + num + " - " + getPath(tmp);
 				}
@@ -544,8 +555,8 @@ public class SearchActivity extends AbstractActivity {
 	}
 
 	/*
-	 * private boolean comparePath(String[] path1, String[] path2) { for (String pathA : path1) { for (String pathB : path2) { if (pathA.equals(pathB)) return
-	 * true; } }
+	 * private boolean comparePath(String[] path1, String[] path2) { for (String pathA : path1) { for (String pathB : path2) { if
+	 * (pathA.equals(pathB)) return true; } }
 	 * 
 	 * return false; }
 	 */
@@ -571,28 +582,7 @@ public class SearchActivity extends AbstractActivity {
 			super(context, android.R.layout.simple_dropdown_item_1line);
 			LogUtil.i("SearchActivity", "adapter ");
 			myFilter = new CusFilter(this);
-			/*
-			 * myFilter = new Filter() {
-			 * 
-			 * @Override protected FilterResults performFiltering(CharSequence constraint) { // kindList = new ArrayList<KindDataEntity>(); FilterResults
-			 * filterResults = null; arrFilter = new ArrayList<String>(); String key; try { for (searchEntity entity : arrStreet) { key = entity.getKey(); if
-			 * (constraint != null && key != null && (key.contains(constraint.toString()))) { // || constraint.toString().contains(str)) { if
-			 * (!checkExist(entity.getName(), arrFilter)) arrFilter.add(entity.getName()); } }
-			 * 
-			 * filterResults = new FilterResults(); filterResults.values = arrFilter; filterResults.count = arrFilter.size(); } catch (Exception e) {
-			 * e.printStackTrace(); }
-			 * 
-			 * return filterResults; }
-			 * 
-			 * @Override protected void publishResults(final CharSequence constraint, final FilterResults results) {
-			 * 
-			 * clear(); try { Log.i("SearchActivity-HuynhTD", "publishResults add data size: " + arrFilter.size()); // Add data to AutoCompleteTextView (have to
-			 * add) for (int i = 0; i < arrFilter.size(); i++) { add(arrFilter.get(i)); }
-			 * 
-			 * } catch (final Exception e) { Log.e(tag, "publishResults error:" + e.getMessage()); } }
-			 * 
-			 * };
-			 */
+			
 		}
 
 		@Override
@@ -640,8 +630,7 @@ public class SearchActivity extends AbstractActivity {
 				// adapterAuto.notifyAll();
 				arrFilter = null;
 
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				LogUtil.e(tag, "publishResults error:" + e.getMessage());
 			}
 		}
@@ -663,8 +652,7 @@ public class SearchActivity extends AbstractActivity {
 				filterResults.values = arrFilter;
 				filterResults.count = arrFilter.size();
 
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -724,13 +712,12 @@ public class SearchActivity extends AbstractActivity {
 			});
 			alert.setCanceledOnTouchOutside(false);
 			alert.show();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			LogUtil.e(tag, "confirmReceive error:" + e);
 		}
 	}
 
-	private class LoadData extends AsyncTask<Object, Object, Object> {
+	private class LoadData extends AsyncTask<Object, Object, Boolean> {
 		clsListName clsList;
 		private Activity activity;
 
@@ -745,30 +732,34 @@ public class SearchActivity extends AbstractActivity {
 		}
 
 		@Override
-		protected Object doInBackground(Object... params) {
+		protected Boolean doInBackground(Object... params) {
 
 			try {
 				// arrPathBus = ReadData.getPathData(activity);
-				clsList = Common.getNameHCM(activity);
+				// clsList = Common.getNameHCM(activity);
+				if (rbtnHcm.isChecked())
+					clsList = Common.getListName(activity, Constant.LIST_STREET_HCM);
+				else if (rbtnHN.isChecked())
+					clsList = Common.getListName(activity, Constant.LIST_STREET_HN);
+				else
+					clsList = Common.getListName(activity, Constant.LIST_STREET_HCM);
+
 				if (clsList == null)
 					return false;
 				else
 					return true;
 				// return getPathData(activity);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
 			}
 		}
 
 		@Override
-		protected void onPostExecute(Object result) {
+		protected void onPostExecute(Boolean result) {
 			searchEntity entity;
 			super.onPostExecute(result);
-			boolean b = false;
-			b = (Boolean) result;
-			if (b) {
+			if (result) {
 				arrStreet = new ArrayList<searchEntity>();
 				for (clsNameStreet item : clsList.list) {
 					entity = new searchEntity(item.getName(), item.getKey());
@@ -779,8 +770,7 @@ public class SearchActivity extends AbstractActivity {
 				edtAuto1.setAdapter(adapter);
 				edtAuto2.setAdapter(adapter);
 
-			}
-			else
+			} else
 				LogUtil.i(tag, "Loading-PostExecute Load fail");
 			LogUtil.i(tag, "Loading-PostExecute done");
 		}

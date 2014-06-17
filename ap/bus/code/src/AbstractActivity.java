@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import app.infobus.utils.LogUtil;
 
 public abstract class AbstractActivity extends Activity {
@@ -17,6 +20,9 @@ public abstract class AbstractActivity extends Activity {
 	private ImageView imgHome;
 	private boolean isClick = false;
 	private Activity mActivity;
+	public RadioButton rbtnHcm;
+	public RadioButton rbtnHN;
+
 	@Override
 	protected final void onCreate(final Bundle savedInstanceState) {
 		// ShowLog.showLogDebug(""+tag, "<< onCreate "
@@ -25,7 +31,7 @@ public abstract class AbstractActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		try {
-			LogUtil.i(tag, "class: " + this.getClass().getSimpleName());
+			LogUtil.i(tag, "======class: " + this.getClass().getSimpleName());
 			mActivity = this;
 			// //////////
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -39,11 +45,12 @@ public abstract class AbstractActivity extends Activity {
 				frmMain.removeAllViews();
 				frmMain.addView(mainView);
 			}
-
+			
+			initView();
 			initView(savedInstanceState);
+
 			setAction();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		// ////////////////////////
@@ -56,17 +63,22 @@ public abstract class AbstractActivity extends Activity {
 		super.onResume();
 		isClick = false;
 	}
-	
-	private void setAction() {
+
+	private void initView() {
+		rbtnHN = (RadioButton) findViewById(R.id.rbtnHN);
+		rbtnHcm = (RadioButton) findViewById(R.id.rbtnHcm);
 		imgHome = (ImageView) findViewById(R.id.imgHome);
+	}
+
+	private void setAction() {
 
 		imgHome.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				if(mActivity.getClass().isAssignableFrom(InfoBusActivity.class))
+				if (mActivity.getClass().isAssignableFrom(InfoBusActivity.class))
 					return;
-				
+
 				if (isClick)
 					return;
 				isClick = true;
@@ -82,14 +94,14 @@ public abstract class AbstractActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				if(mActivity.getClass().isAssignableFrom(SearchActivity.class))
+				if (mActivity.getClass().isAssignableFrom(SearchActivity.class))
 					return;
-				
+
 				if (isClick)
 					return;
 				isClick = true;
 				Intent i = new Intent(AbstractActivity.this, SearchActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);				
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(i);
 			}
 		});

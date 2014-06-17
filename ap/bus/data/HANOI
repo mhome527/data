@@ -1,0 +1,684 @@
+{
+"list":[										
+
+{"num":"01", "name":"BX Gia Lâm - BX Yên Nghĩa", 
+"start":"Bến xe Gia Lâm - Ngô Gia Khảm - Ngọc Lâm - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Nhật Duật - Yên Phụ - Điểm trung chuyển Long Biên - Hàng Đậu - Hàng Cót - Hàng Gà - Hàng Điếu - Đường Thành - Phủ Doãn - Triệu Quốc Đạt - Hai Bà Trưng - Lê Duẩn - Khâm Thiên - Đường mới  (Vành đai 1) - Quay đầu tại điểm mở dải phân cách - Đường mới (Vành đai 1)- Nguyễn Lương Bằng - Tây Sơn - Ngã tư Sở - Nguyễn Trãi - Trần Phú (Hà Đông) - Quang Trung (Hà Đông) - Ba La - Quốc lộ 6 - Bến xe Yên Nghĩa",
+ "back":"Bến xe Yên Nghĩa - Quốc lộ 6 - Ba La - Quang Trung (Hà Đông) - Trần Phú (Hà Đông) - Nguyễn Trãi - Ngã tư Sở - Tây Sơn - Nguyễn Lương Bằng - Xã Đàn - Quay đầu tại đối diện ngõ Xã Đàn 2 - Xã Đàn - Khâm Thiên - Nguyễn Thượng Hiền - Yết Kiêu - Trần Hưng Đạo - Quán Sứ - Hàng Da - Đường Thành - Phùng Hưng - Lê Văn Linh - Phùng Hưng (đường trong) - Phan Đình Phùng - Hàng Đậu - Trần Nhật Duật - Cầu Chương Dương - Nguyễn Văn Cừ - Nguyễn Sơn - Ngọc Lâm - Ngô Gia Khảm - Bến xe Gia Lâm", 
+"info":"BX Gia Lâm - BX Yên Nghĩa
+<br/><br/>5h00 - 21h00
+<br/>10 -15 phút/chuyến
+"}, 
+
+{"num":"02", "name":"Bác Cổ - BX Yên Nghĩa", 
+"start":"Bác Cổ (Bãi đỗ xe Trần Khánh Dư) - Trần Khánh Dư (đường dưới) - Trần Hưng Đạo - Lê Thánh Tông - Tràng Tiền - Hàng Khay - Tràng Thi - Điện Biên Phủ - Trần Phú - Chu Văn An - Tôn Đức Thắng - Đường mới (Vành đai 1) - Quay đầu tại điểm mở dải phân cách - Đường mới (Vành đai 1) - Nguyễn Lương Bằng - Tây Sơn - Ngã tư Sở - Nguyễn Trãi - Trần Phú (Hà Đông) - Quang Trung (Hà Đông) - Ba La - Quốc Lộ 6 - Bến xe Yên Nghĩa.",
+ "back":"Bến xe Yên Nghĩa - Quốc Lộ 6 - Ba La - Quang Trung (Hà Đông) - Trần Phú (Hà Đông) - Nguyễn Trãi - Ngã tư Sở - Tây Sơn - Nguyễn Lương Bằng - Xã Đàn - Quay đầu tại đối diện ngõ Xã Đàn 2 - Xã Đàn - Tôn Đức Thắng - Nguyễn Thái Học - Phan Bội Châu - Hai Bà Trưng - Phan Chu Trinh - Tràng Tiền - Bác Cổ (Bãi đỗ xe Trần Khánh Dư).", 
+"info":"Bác Cổ - BX Yên Nghĩa
+<br/><br/>5h05 -22h30
+<br/>5- 10-15 phút/chuyến
+"}, 
+
+{"num":"03", "name":"Bến xe Giáp Bát - Bến xe Gia Lâm", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Lê Duẩn - Nguyễn Thượng Hiền - Yết Kiêu - Trần Hưng Đạo - Trần Khánh Dư - Trần Quang Khải - Trần Nhật Duật - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Trần Nhật Duật - Cầu Chương Dương - Nguyễn Văn Cừ - Nguyễn Sơn - Ngọc Lâm - Ngô Gia Khảm - Bến xe Gia Lâm",
+ "back":"Bến xe Gia Lâm - Ngô Gia Khảm - Ngọc Lâm - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Nhật Duật - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Trần Nhật Duật - Trần Quang Khải - Trần Khánh Dư - Trần Hưng Đạo - Lê Duẩn - Giải Phóng - Ngã 3 Đuôi Cá - Bến xe Giáp Bát.", 
+"info":"Bến xe Giáp Bát - Bến xe Gia Lâm
+<br/><br/>5h03 - 21h03
+<br/>10- 15 phút/chuyến
+"}, 
+
+{"num":"03B", "name":"Bến xe Giáp Bát - TTTM Vincom", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Lê Duẩn - Nguyễn Thượng Hiền - Yết Kiêu - Trần Hưng Đạo - Trần Khánh Dư - Trần Quang Khải - Trần Nhật Duật - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Trần Nhật Duật - Cầu Chương Dương - Nguyễn Văn Cừ - Ngô Gia Tự - Nguyễn Cao Luyện (KĐT Việt Hưng) - Rẽ trái trước tòa nhà Green House - Khu nhà Happy House - Rẽ phải ra đường Trường Lâm - Trường Lâm - TT thương mại Vincom Center",
+ "back":"TT thương mại Vincom Center - Trường Lâm - Rẽ phải vào khu nhà Happy House - Khu nhà Happy House - Khu nhà Green House - Nguyễn Cao Luyện (KĐT Việt Hưng) - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Nhật Duật - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Trần Nhật Duật - Trần Quang Khải - Trần Khánh Dư - Trần Hưng Đạo - Lê Duẩn - Giải Phóng - Ngã 3 Đuôi Cá - Bến xe Giáp Bát", 
+"info":"Bến xe Giáp Bát - TTTM Vincom
+<br/>6h00 - 08h20
+<br/>11h-13h15
+<br/>16h30-20h00
+<br/>30 phút/chuyến 
+
+"}, 
+
+{"num":"04", "name":"Long Biên - BX Nước Ngầm", 
+"start":"Long Biên (Yên Phụ - đoạn Hàng Than đến Hòe Nhai) - quay đầu tại đối diện phố Hàng Than - Yên Phụ - Điểm trung chuyển Long Biên - Trần Nhật Duật - Nguyễn Hữu Huân - Lý Thái Tổ - Ngô Quyền - Hai Bà Trưng - Lê Thánh Tông - Trần Thánh Tông - Tăng Bạt Hổ - Yecxanh - Lò Đúc - Trần Khát Chân - Quay đầu tại đối diện số nhà 274 Trần Khát Chân - Trần Khát Chân - Kim Ngưu - Nguyễn Tam Trinh - Đường Lĩnh Nam - Đường dẫn cầu Thanh Trì - Pháp Vân - Rẽ trái tại nút giao đường vành đai 3 và đường Ngọc Hồi (gần BX Nước Ngầm) - Ngọc Hồi - Quay đầu tại công ty ABB - Ngọc Hồi - BX Nước Ngầm",
+ "back":"BX Nước Ngầm - Giải Phóng - Pháp Vân - Đường dẫn cầu Thanh Trì - Đường Lĩnh Nam - Nguyễn Tam Trinh - Kim Ngưu - Lò Đúc - Phan Chu Trinh - Lý Thái Tổ - Ngô Quyền - Hàng Vôi - Hàng Tre - Hàng Muối - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ - Long Biên (Yên Phụ - đoạn Hàng Than đến Hòe Nhai)", 
+"info":"Long Biên - BX Nước Ngầm
+<br/><br/>5h00 - 21h00
+<br/>12 - 20 phút/chuyến "}, 
+
+{"num":"05", "name":"KĐT Linh Đàm - Phú Diễn", 
+"start":"Khu đô thị Linh Đàm - Nguyễn Duy Trinh - Nguyễn Hữu Thọ - Cầu Dậu - Kim Giang - Khương Đình - Nguyễn Trãi - Quay đầu tại 177 Nguyễn Trãi - Nguyễn Trãi - Nguyễn Tuân - Hoàng Minh Giám - Nguyễn Chánh - Vũ Phạm Hàm - Trung Kính - Trần Thái Tông - Tôn Thất Thuyết - Phạm Hùng - Hồ Tùng Mậu - Cầu Diễn - Đường K1 Cầu Diễn - Ga Phú Diễn - Trại Gà",
+ "back":"Trại Gà - Đường K1 Cầu Diễn - Ga Phú Diễn - Cầu Diễn - Quay đầu Doanh trại quân đội nhân dân (nhà máy Z157) - Hồ Tùng Mậu - Phạm Hùng - Tôn Thất Thuyết - Trần Thái Tông - Trung Kính - Vũ Phạm Hàm - Nguyễn Chánh - Hoàng Minh Giám - Nguyễn Tuân - Nguyễn Trãi - quay đầu tại 277 Nguyễn Trãi - Nguyễn Trãi - Khương Đình - Kim Giang - Cầu Dậu - Nguyễn Hữu Thọ - Nguyễn Duy Trinh - Khu đô thị Linh Đàm", 
+"info":"KĐT Linh Đàm - Phú Diễn
+<br/><br/>5h00 - 21h05
+<br/>15-20  phút/chuyến
+"}, 
+
+{"num":"06A", "name":"BX Giáp Bát - Cầu Giẽ", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Kim Đồng - Giải Phóng - Ngọc Hồi - Quốc Lộ 1 - Liên Ninh - Quán Gánh - Thị trấn Thường Tín - Tía - Đỗ Xá - Nghệ - Thị trấn Phú Xuyên - Guột - Cầu Giẽ (Ngã 3 đường ra cao tốc Pháp Vân - Cầu Giẽ)",
+ "back":"Cầu Giẽ (Ngã 3 đường ra cao tốc Pháp Vân - Cầu Giẽ) - Quốc Lộ 1 - Guột - Thị trấn Phú Xuyên - Nghệ - Đỗ Xá - Tía - Thị trấn Thường Tín - Quán Gánh - Liên Ninh - Ngọc Hồi - Giải Phóng - Bến xe Giáp Bát.", 
+"info":"BX Giáp Bát - Cầu Giẽ
+<br/><br/>5h00 - 20h00 
+<br/>10-15 phút/chuyến 
+
+"}, 
+
+{"num":"06B", "name":"BX Giáp Bát - Thường tín", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Kim Đồng - Giải Phóng - Ngọc Hồi - Văn Điển - Quốc Lộ 1 (cũ) - Liên Ninh - Quán Gánh - Bến xe Thường Tín ",
+ "back":"Bến xe Thường Tín - Quốc Lộ 1 (cũ) - Quán Gánh - Liên Ninh - Văn Điển - Ngọc Hồi - Giải Phóng - Bến xe Giáp Bát ", 
+"info":"BX Giáp Bát - Thường tín
+<br/><br/>5h00 - 20h10
+<br/>20-30 phút/chuyến
+
+"}, 
+
+{"num":"07", "name":"BĐX Cầu Giấy - Sân bay Nội Bài", 
+"start":"Bãi đỗ xe Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy - Trần Đăng Ninh - Nguyễn Khánh Toàn - Nguyễn Văn Huyên - Hoàng Quốc Việt - Phạm Văn Đồng - Cầu Thăng Long - Đường Bắc Thăng Long Nội Bài - Quay đầu tại đối diện ga hàng hóa Nội Bài - đường trục nội cảng - Sân bay Nội Bài (sân đỗ P2)",
+ "back":"Sân bay Nội Bài (sân đỗ P2) - đường trục nội cảng - Đường Bắc Thăng Long Nội Bài - Cầu Thăng Long - Phạm Văn Đồng - Hoàng Quốc Việt - Nguyễn Văn Huyên - Nguyễn Khánh Toàn - Trần Đăng Ninh - Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy (đường trên) - Cầu Giấy (đường dưới) - Bãi đỗ xe Cầu Giấy", 
+"info":"BĐX Cầu Giấy - Sân bay Nội Bài
+<br/><br/>5h00 - 21h30 
+<br/>9 -15 - 20 phút/chuyến"}, 
+
+{"num":"08", "name":"Long Biên - Đông Mỹ", 
+"start":"Long Biên (Yên Phụ - Khoang 2) - Yên Long Biên (Yên Phụ - đoạn Hàng Than đến Hòe Nhai) - quay đầu tại đối diện phố Hàng Than - Yên Phụ - Điểm trung chuyển Long Biên - Trần Nhật Duật - Nguyễn Hữu Huân - Lý Thái Tổ - Ngô Quyền - Lý Thường Kiệt - Bà Triệu - Lê Đại Hành - Bạch Mai - Lê Thanh Nghị - Trần Đại Nghĩa - Đại La - Trường Chinh - Ngã tư Vọng - Giải Phóng - Đường Ngọc Hồi - Ngũ Hiệp - Sân vận động Đông Mỹ",
+ "back":"Sân vận động Đông Mỹ - Ngũ Hiệp - Đường Ngọc Hồi - Giải Phóng - Quảng trường Bến xe Giáp Bát - Giải Phóng - Trường Chinh - Ngã tư Vọng - Đại La - Trần Đại Nghĩa - Lê Thanh Nghị - Bạch Mai - Phố Huế - Hàng Bài - Đinh Tiên Hoàng - Trần Nguyên Hãn - Ngô Quyền - Hàng Tre - Hàng Muối - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ - Long Biên (Yên Phụ - đoạn Hàng Than đến Hòe Nhai)", 
+"info":"Long Biên - Đông Mỹ
+<br/><br/>5h06 - 22h39
+<br/>7- 15 - 20 phút/chuyến"}, 
+
+{"num":"09", "name":"BĐX Bờ Hồ - BĐX Bờ Hồ", 
+"start":"Bãi đỗ xe Bờ Hồ - Đinh Tiên Hoàng - Lê Thái Tổ - Bà Triệu - Hồ Xuân Hương - Nguyễn Bỉnh Khiêm - Trần Nhân Tông - Lê Duẩn - Khâm Thiên - Đường mới (Vành đai 1) - Quay đầu tại điểm mở dải phân cách - Đường mới (Vành đai 1) - Nguyễn Lương Bằng - Tây Sơn - Thái Thịnh - Láng Hạ - Huỳnh Thúc Kháng - Nguyễn Chí Thanh - Quay đầu tại đối diện số nhà 56 Nguyễn Chí Thanh - Nguyễn Chí Thanh - Chùa Láng - Đường Láng - Điểm trung chuyển Cầu Giấy - Kim Mã - Liễu Giai - Văn Cao - Hoàng Hoa Thám - Ngọc Hà - Lê Hồng Phong - Điện Biên Phủ - Phan Bội Châu - Hai Bà Trưng - Hàng Bài - Đinh Tiên Hoàng - Bãi đỗ xe Bờ Hồ",
+ "back":"Bãi đỗ xe Bờ Hồ - Lê Thái Tổ - Tràng Thi - Điện Biên Phủ - Lê Hồng Phong - Đội Cấn - Liễu Giai - Kim Mã - Điểm trung chuyển Cầu Giấy - Đường Láng - Chùa Láng - Nguyễn Chí Thanh - Quay đầu tại gầm cầu vượt Nguyễn Chí Thanh - Nguyễn Chí Thanh - Huỳnh Thúc Kháng - Láng Hạ - Quay đầu tại số 48 Láng Hạ - Láng Hạ - Thái Thịnh - Tây Sơn - Nguyễn Lương Bằng - Xã Đàn - Quay đầu tại đối diện ngõ Xã Đàn 2 - Xã Đàn - Khâm Thiên - Lê Duẩn - Trần Nhân Tông - Phố Huế - Hàng Bài - Đinh Tiên Hoàng - Bãi đỗ xe Bờ Hồ", 
+"info":"BĐX Bờ Hồ - BĐX Bờ Hồ
+<br/><br/>5h00 - 21h00
+15 - 20 phút/chuyến"}, 
+
+{"num":"10A", "name":"Long Biên - Từ Sơn", 
+"start":"Long Biên (đối diện Đội CSGT số 1 Hà Nội - số 3 Trần Nhật Duật) - Trần Nhật Duật - Yên Phụ - Quay đầu tại đối diện 92 Yên Phụ - Điểm trung chuyển Long Biên - Trần Nhật Duật - Cầu Chương Dương - Nguyễn Văn Cừ - Ngô Gia Tự - Cầu Đuống - Hà Huy Tập - Quốc lộ 1A - Dốc Lã - Đình Bảng - Trần Phú (Từ Sơn) - Minh Khai (Từ Sơn) - Từ Sơn (Cổng bệnh viện đa khoa Từ Sơn)",
+ "back":"Từ Sơn (Cổng bệnh viện đa khoa Từ Sơn) - Minh Khai (Từ Sơn) - Trần Phú (Từ Sơn) - Dốc Lã - Hà Huy Tập - Cầu Đuống - Ngô Gia Tự - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Nhật Duật - Yên Phụ - Điểm trung chuyển Long Biên - Yên Phụ - Quay đầu tại đối diện 92 Yên Phụ - Trần Nhật Duật - Long Biên (đối diện Đội CSGT số 1 Hà Nội - số 3 Trần Nhật Duật)", 
+"info":"Long Biên - Từ Sơn
+<br/><br/>5h05- 21h00
+10 - 15 -20 phút/chuyến
+
+"}, 
+
+{"num":"10B", "name":"Long Biên - Trung Mầu", 
+"start":"Bến xe Lương Yên - Nguyễn Khoái - Quay đầu tại dốc Minh Khai - Nguyễn Khoái -Trần Khánh Dư - Trần Quang Khải - Cầu Chương Dương - Nguyễn Văn Cừ - Ngô Gia Tự - Cầu Đuống - Hà Huy Tập - Thị trấn Yên Viên - Quốc lộ 1A - Dốc Lã - Trường Yên - Chợ vải Ninh Hiệp - Phù Đổng - Trung Mầu (Gia Lâm)",
+ "back":"Trung Mầu (Gia Lâm) - Phù Đổng - Chợ vải Ninh Hiệp - Trường Yên - Dốc Lã - Thị trấn Yên Viên - Hà Huy Tập - Cầu Đuống - Ngô Gia Tự - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Quang Khải - Trần Khánh Dư - Nguyễn Khoải - Bến xe Lương Yên", 
+"info":"Long Biên - Trung Mầu <br/><br/>5h20- 20h00 20 - 30  phút/chuyến   	"}, 
+
+{"num":"11", "name":"CV Thống Nhất - ĐH Nông Nghiệp HN", 
+"start":"Công viên Thống Nhất - Trần Nhân Tông - Quang Trung - Trần Hưng Đạo - Phan Chu Trinh - Lý Thái Tổ - Ngô Quyền - Hàng Vôi - Hàng Tre - Hàng Muối - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Trần Nhật Duật - Cầu Chương Dương - Đê Ngọc Thụy - Ngọc Lâm - Nguyễn Văn Cừ - Nguyễn Văn Linh - Nguyễn Đức Thuận - Ngô Xuân Quảng - Đại học Nông nghiệp Hà Nội",
+ "back":"Đại học Nông nghiệp Hà Nội - Ngô Xuân Quảng - Nguyễn Đức Thuận - Nguyễn Văn Linh - Nguyễn Văn Cừ - Ngọc Lâm - Đê Ngọc Thụy - Cầu Chương Dương - Trần Nhật Duật - Long Biên (Điểm quay đầu tại phố Hàng Khoai) - Trần Nhật Duật - Nguyễn Hữu Huân - Lý Thái Tổ - Ngô Quyền - Trần Hưng Đạo - Lê Duẩn - Trần Nhân Tông - Công viên Thống Nhất", 
+"info":"CV Thống Nhất - ĐH Nông Nghiệp HN
+<br/><br/>5h00 - 20h30
+10 - 15 phút/chuyến
+
+"}, 
+
+{"num":"12", "name":"CV Nghĩa Đô - Đại Áng", 
+"start":"Công viên Nghĩa Đô - Nguyễn Văn Huyên - Nguyễn Khánh Toàn - Đào Tấn - Liễu Giai - Nguyễn Chí Thanh - Quay đầu tại gầm cầu vượt Nguyễn Chí Thanh - Nguyễn Chí Thanh - Huỳnh Thúc Kháng - Thái Hà - Chùa Bộc - Tôn Thất Tùng - Lê Trọng Tấn - Trần Điền - Định Công - Đại Kim - Nguyễn Cảnh Dị - Nguyễn Hữu Thọ - KĐT Linh Đàm - Đường Hoàng Liệt - Ngọc Hồi - Quốc lộ 1 - Cầu Ngọc Hồi - Xã Ngọc Hồi - Đường mới - Đại Áng (cổng UBND xã Đại Áng)",
+ "back":"Đại Áng (Cổng UBND xã Đại Áng) - Đường mới - Xã Ngọc Hồi - Cầu Ngọc Hồi - Quốc lộ 1 - Ngọc Hồi - Giải Phóng - Quay đầu tại chùa Pháp Vân - Giải Phóng - Đường Hoàng Liệt - KĐT Linh Đàm - Nguyễn Hữu Thọ - Nguyễn Cảnh Dị - Đại Kim - Đường Định Công - Trần Điền - Lê Trọng Tấn - Tôn Thất Tùng - Chùa Bộc - Thái Hà - Huỳnh Thúc Kháng - Nguyễn Chí Thanh - Liễu Giai - Đào Tấn - Nguyễn Khánh Toàn - Nguyễn Văn Huyên - Quay đầu tại cổng Công viên Nghĩa Đô - Công viên Nghĩa Đô", 
+"info":"CV Nghĩa Đô - Đại Áng
+<br/><br/>5h00 - 21h00
+12 - 18- 20  phút/chuyến
+
+"}, 
+
+{"num":"13", "name":"CVN Hồ Tây - Cổ Nhuế (HVCSND)", 
+"start":"CV Nước Hồ Tây - Lạc Long Quân - Hoàng Quốc Việt - Nguyễn Văn Huyên - Tô Hiệu - Trần Quốc Hoàn - Phạm Văn Đồng - Hồ Tùng Mậu - Cầu Diễn - Đường K3 Cầu Diễn - Cầu Noi - Học viện Cảnh sát nhân dân - Cổ Nhuế (Thôn Trù 2)",
+ "back":"Cổ Nhuế (Thôn Trù 2) - Học viện Cảnh sát nhân dân - Cầu Noi - Đường K3 Cầu Diễn - Cầu Diễn - Quay đầu tại Trung tâm kiểm định xe máy Cầu Diễn (Đối diện chợ Cầu Diễn) - Cầu Diễn - Hồ Tùng Mậu - Phạm Văn Đồng - Trần Quốc Hoàn - Tô Hiệu - Nguyễn Văn Huyên - Hoàng Quốc Việt - Đường Bưởi (đường dưới) - Đường Bưởi (đường trên) - Lạc Long Quân - CV Nước Hồ Tây", 
+"info":"CVN Hồ Tây - Cổ Nhuế (HVCSND)
+<br/><br/>5h00 - 21h05
+15-20 phút/chuyến
+
+"}, 
+
+{"num":"14", "name":"BĐX Bờ Hồ - Cổ Nhuế", 
+"start":"Bẫi đỗ xe Bờ Hồ - Cầu Gỗ - Hàng Thùng - Hàng Tre - Hàng Muối - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ (Quay đầu tại số nhà 92 Yên Phụ) - Hàng Đậu - Quán Thánh - Thụy Khuê - Bưởi - Hoàng Quốc Việt - Phạm Văn Đồng - Nam Thăng Long - Đường dẫn Chân cầu Thăng Long qua KĐT Ciputra - Cổ Nhuế (Cạnh đường vào làng Nhật Tảo)",
+ "back":"Cổ Nhuế (Cạnh đường vào làng Nhật Tảo) - Đường Chân cầu Thăng Long - Đường mới Chân Cầu Thăng Long (Đối diện KĐT Ciputra) - Phạm Văn Đồng - Bãi đỗ xe Nam Thăng Long - Phạm Văn Đồng - Hoàng Quốc Việt - Bưởi (đường dưới) - Quay đầu tại số nhà 424 Bưởi (đường trên) - Hoàng Hoa Thám - cầu vượt Hoàng Hoa Thám - Hoàng Hoa Thám - Phan Đình Phùng - Hàng Đậu - Trần Nhật Duật - Nguyễn Hữu Huân - Lò Sũ - Đinh Tiên Hoàng - Bãi đỗ xe Bờ Hồ", 
+"info":"BĐX Bờ Hồ - Cổ Nhuế
+<br/><br/>5h00 - 21h00
+10 - 20 phút/chuyến
+
+"}, 
+
+{"num":"15", "name":"BX Gia Lâm - Phố Nỉ", 
+"start":"BX Gia Lâm - Ngô Gia Khảm - Ngọc Lâm - Nguyễn Văn Cừ - Ngô Gia Tự - Cầu Đuống - Quốc Lộ 3 - Dốc Vân - Cổ Loa - Đông Anh - Nguyên Khê - Phủ Lỗ - Đa Phúc - Phố Nỉ (Trung tâm thương mại Bình An Plaza).",
+ "back":"Phố Nỉ (Trung tâm thương mại Bình An Plaza) - Đa Phúc - Phủ Lỗ - Nguyên Khê - Đông Anh - Cổ Loa - Dốc Vân - Quốc lộ 3 - Cầu Đuống - Ngô Gia Tự - Nguyễn Văn Cừ - Ngô Gia Khảm - BX Gia Lâm", 
+"info":"BX Gia Lâm - Phố Nỉ
+<br/><br/>5h00 - 19h30 
+10 -20 phút/chuyến
+
+"}, 
+
+{"num":"16", "name":"BX Giáp Bát - BX Mỹ Đình", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Phố Vọng - Ngã tư Vọng - Trường Chinh - Ngã tư Sở - Đường Láng - Cầu Giấy - Xuân Thuỷ - Phạm Hùng - Bến xe Mỹ Đình",
+ "back":"Bến xe Mỹ Đình - Phạm Hùng - Quay đầu tại Đình Thôn - Phạm Hùng - Xuân Thuỷ - Cầu Giấy - Đường Láng - Ngã tư Sở - Trường Chinh - Ngã tư Vọng - Giải Phóng - Ngã 3 Đuôi Cá - Bến xe Giáp Bát", 
+"info":"BX Giáp Bát - BX Mỹ Đình
+<br/><br/>5h00 - 21h00
+9- 15 - 20 phút/chuyến
+
+"}, 
+
+{"num":"17", "name":"Long Biên - Sân Bay Nội Bài", 
+"start":"Long Biên (đối diện Đội CSGT số 1 Hà Nội - số 3 Trần Nhật Duật) - Trần Nhật Duật - Yên Phụ - Quay đầu tại đối diện 92 Yên Phụ - Điểm trung chuyển Long Biên - Trần Nhật Duật - Cầu Chương Dương - Nguyễn Văn Cừ - Ngô Gia Tự - Cầu Đuống - Quốc Lộ 3 - Dốc Vân - Cổ Loa - Đông Anh - Nguyên Khê - Phủ Lỗ - Quốc lộ 2 - Đường trục nội cảng - Sân bay Nội Bài (sân đỗ P2)",
+ "back":"Sân bay Nội Bài (Sân đỗ P2) - đường trục nội cảng - Quay đầu tại trạm thu phí sân bay Nội Bài - Quốc lộ 2 - Phủ Lỗ - Nguyên Khê - Đông Anh - Cổ Loa - Dốc Vân - Quốc lộ 3 - Cầu Đuống - Ngô Gia Tự - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ - Quay đầu tại đối diện 92 Yên Phụ - Trần Nhật Duật - Long Biên (đối diện Đội CSGT số 1 Hà Nội - số 3 Trần Nhật Duật)", 
+"info":"Long Biên - Sân Bay Nội Bài
+<br/><br/>5h00 - 20h30
+10 - 15 phút/chuyến
+
+"}, 
+
+{"num":"18", "name":"Bách Khoa - Bách Khoa", 
+"start":"Bách Khoa (vị trí đỗ tuyến 31) - Trần Đại Nghĩa - Lê Thanh Nghị - Giải Phóng - Phương Mai - Lương Định Của - Đông Tác - Chùa Bộc - Tây Sơn - Thái Thịnh - Láng Hạ - Giảng Võ - Giang Văn Minh - Kim Mã - Nguyễn Thái Học - Lê Duẩn - Trần Phú - Phùng Hưng - Lê Văn Linh - Phùng Hưng (đường trong) - Phan Đình Phùng - Hàng Đậu - Long Biên - Trần Nhật Duật - Nguyễn Hữu Huân - Lý Thái Tổ - Ngô Quyền - Hai Bà Trưng - Lê Thánh Tông - Tăng Bạt Hổ - Nguyễn Công Trứ - Lò Đúc - Trần Khát Chân - Võ Thị Sáu - Thanh Nhàn - Lê Thanh Nghị - Trần Đại Nghĩa - Bách Khoa (vị trí đỗ tuyến 31)",
+ "back":"Bách Khoa (vị trí đỗ tuyến 31) - Trần Đại Nghĩa - Lê Thanh Nghị - Thanh Nhàn - Võ Thị Sáu - Trần Khát Chân - Lò Đúc - Yecxanh - Trần Thánh Tông - Lê Thánh Tông - Lý Thái Tổ - Ngô Quyền - Hàng Tre - Hàng Muối - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ - Quay đầu tại số nhà 92 Yên Phụ - Hàng Đậu - Quán Thánh - Hoè Nhai - Phan Đình Phùng - Lý Nam Đế - Trần Phú - Điện Biên Phủ - Lê Hồng Phong - Ông Ích Khiêm - Sơn Tây - Nguyễn Thái Học - Giảng Võ - Láng Hạ - Quay đầu tại 48 Láng Hạ - Láng Hạ - Thái Thịnh - Tây Sơn - Chùa Bộc - Phạm Ngọc Thạch - Lương Định Của - Phương Mai - Giải Phóng - Quay đầu tại gầm cầu vượt Ngã Tư Vọng - Giải Phóng - Lê Thanh Nghị - Trần Đại Nghĩa - Bách Khoa (vị trí đỗ tuyến 31)", 
+"info":"Bách Khoa - Bách Khoa
+<br/><br/>5h00 - 21h05
+15 phút/chuyến
+"}, 
+
+{"num":"19", "name":"Trần Khánh Dư - BX Yên Nghĩa", 
+"start":"Bãi đỗ xe Trần Khánh Dư - Trần Khánh Dư (đường dưới) - Bệnh viện Việt Xô - Trần Khánh Dư (đường trên) - Nguyễn Khoái - Dốc cầu Vĩnh Tuy - Vĩnh Tuy - Minh Khai - Đại La - Ngã tư Vọng - Trường Chinh - Đường Láng - Quay đầu tại đối diến số nhà 124 đường Láng - Đường Láng - Ngã tư Sở - Nguyễn Trãi - Trần Phú (Hà Đông) - Quang Trung (Hà Đông) - Ba La - Quốc Lộ 6 - Bến xe Yên Nghĩa.",
+ "back":"Bến xe Yên Nghĩa - Quốc Lộ 6 - Ba La - Quang Trung (Hà Đông) - Trần Phú (Hà Đông) - Nguyễn Trãi - Ngã Tư Sở - Trường Chinh - Ngã tư Vọng - Đại La - Minh Khai - Vĩnh Tuy - quay đầu tại nút giao Vĩnh Tuy và đường dẫn lên đê Nguyễn Khoái - Vĩnh Tuy - Minh Khai - Nguyễn Khoái - Trần Khánh Dư (đường dưới) - Bệnh viện Việt Xô - Trần Khánh Dư (đường trên) - Bãi đỗ xe Trần Khánh Dư", 
+"info":"Trần Khánh Dư - BX Yên Nghĩa
+<br/><br/>5h05 - 21h03
+11 - 15 - 20 phút/chuyến"}, 
+
+{"num":"20A", "name":"Cầu Giấy - Phùng (BX Đan Phượng)", 
+"start":"Bãi đỗ xe Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy - Xuân Thuỷ - Hồ Tùng Mậu - Diễn - Nhổn - Quốc lộ 32 - Trôi - Phùng (Bến xe Đan Phượng).",
+ "back":"Phùng (Bến xe Đan Phượng) - Quốc Lộ 32 - Quay đầu tại ngã 3 tượng đài Phụ nữ 3 đảm đang - Quốc lộ 32 - Trôi - Nhổn - Diễn - Hồ Tùng Mậu - Xuân Thuỷ - Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy (đường trên) - Cầu Giấy (đường dưới) - Bãi đỗ xe Cầu Giấy", 
+"info":"Cầu Giấy - Phùng (BX Đan Phượng)
+<br/><br/>5h00 - 20h00
+20 phút/chuyến
+
+"}, 
+
+{"num":"20C ", "name":"Cầu Giấy - Võng Xuyên (Phúc Thọ)", 
+"start":"Bãi đỗ xe Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy - Xuân Thuỷ - Hồ Tùng Mậu - Diễn - Nhổn - Quốc lộ 32 - Trôi - Thị trấn Phùng - Bến xe Đan Phượng - Cầu Phùng - Hiệp Thuận - Tam Hiệp - Ngọc Tảo - Phụng Thượng - Đại Đồng - Thị trấn Phúc Thọ - Ngã 4 Gạch - Tỉnh lộ 418 - Võng Xuyên (Phúc Thọ)",
+ "back":"Võng Xuyên (Phúc Thọ) - Tỉnh lộ 418 - Ngã 4 Gạch - Quốc lộ 32 - Thị trấn Phúc Thọ - Đại Đồng - Phụng Thượng - Ngọc Tảo - Tam Hiệp - Hiệp Thuận - Cầu Phùng - Thị trấn Phùng - Bến xe Đan Phượng - Trôi - Quốc Lộ 32 - Nhổn - Diễn - Hồ Tùng Mậu - Xuân Thuỷ - Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy (đường trên) - Cầu Giấy (đường dưới) - Bãi đỗ xe Cầu Giấy", 
+"info":"Cầu Giấy - Võng Xuyên (Phúc Thọ) <br/><br/>5h25 - 18h25 30 phút/chuyến
+"}, 
+
+{"num":"20B ", "name":"BĐX Cầu Giấy - Tam Hiệp (Phúc Thọ)", 
+"start":"Bãi đỗ xe Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy - Xuân Thuỷ - Hồ Tùng Mậu - Diễn - Nhổn - Quốc lộ 32 - Lai Xá - Trôi - Thị trấn Phùng - Bến xe Đan Phượng - Cầu Phùng - Hiệp Thuận - Tam Hiệp (Phúc Thọ)",
+ "back":"Tam Hiệp (Phúc Thọ) - Quốc lộ 32 - Hiệp Thuận - Cầu Phùng - Thị trấn Phùng - Bến xe Đan Phượng - Trôi - Lai Xá - Nhổn - Diễn - Hồ Tùng Mậu - Xuân Thuỷ - Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy (đường trên) - Cầu Giấy (đường dưới) - Bãi đỗ xe Cầu Giấy", 
+"info":"BĐX Cầu Giấy - Tam Hiệp (Phúc Thọ) <br/><br/>5h10 - 20h45 20 phút/chuyến   	"}, 
+
+{"num":"21", "name":"BX Giáp Bát - BX Yên Nghĩa", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Phố Vọng - Giải Phóng - Xã Đàn - Phạm Ngọc Thạch - Chùa Bộc - Tây Sơn - Ngã tư Sở - Nguyễn Trãi - Trần Phú (Hà Đông) - Quang Trung (Hà Đông) - Ba La - Quốc Lộ 6 - Bến xe Yên Nghĩa.",
+ "back":"Bến xe Yên Nghĩa - Quốc Lộ 6 - Ba La - Quang Trung (Hà Đông) - Trần Phú (Hà Đông) - Nguyễn Trãi - Ngã tư Sở - Tây Sơn - Chùa Bộc - Phạm Ngọc Thạch - Đào Duy Anh - Giải Phóng - Ngã tư Vọng - Ngã 3 Đuôi Cá - Bến xe Giáp Bát", 
+"info":"BX Giáp Bát - BX Yên Nghĩa
+<br/><br/>5h05 - 21h02
+7- 15 phút/chuyến
+
+"}, 
+
+{"num":"22", "name":"BX Gia Lâm - Viện 103", 
+"start":"Bến xe Gia Lâm - Ngô Gia Khảm - Ngọc Lâm - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Nhật Duật - Yên Phụ (Quay đầu tại đối diện số nhà 92 Yên Phụ) - Điểm trung chuyển Long Biên - Hàng Đậu - Quán Thánh - Nguyễn Biểu - Hoàng Diệu - Trần Phú - Sơn Tây - Kim Mã - Giảng Võ - Láng Hạ - Lê Văn Lương - Khuất Duy Tiến - Nguyễn Trãi - Trần Phú (Hà Đông) - Phùng Hưng (Hà Đông) - Cổng Bệnh viện 103",
+ "back":"Cổng Bệnh viện 103 - Phùng Hưng (Hà Đông) - Trần Phú (Hà Đông) - Nguyễn Trãi - Khuất Duy Tiến - Lê Văn Lương - Láng Hạ - Giảng Võ - Giang Văn Minh - Kim Mã - Nguyễn Thái Học - Hoàng Diệu - Phan Đình Phùng - Hàng Đậu - Long Biên - Trần Nhật Duật - Cầu Chương Dương - Nguyễn Văn Cừ - Nguyễn Sơn - Ngọc Lâm - Ngô Gia Khảm - Bến xe Gia Lâm", 
+"info":"BX Gia Lâm - Viện 103
+<br/><br/>5h00 - 22h30
+8 - 10 phút/chuyến
+
+"}, 
+
+{"num":"23", "name":"Nguyễn Công Trứ - Nguyễn Công Trứ", 
+"start":"Điểm đỗ xe buýt 32 Nguyễn Công Trứ - Nguyễn Công Trứ - Phố Huế - Tuệ Tĩnh - Bà Triệu - Lê Đại Hành - Hoa Lư - Đại Cồ Việt - Quay đầu tại đối diện số nhà 100 Đại Cồ Việt - Đại Cồ Việt - Tạ Quang Bửu - Lê Thanh Nghị - Giải Phóng - Phương Mai - Lương Định Của - Đông Tác - Chùa Bộc - Tây Sơn - Quay đầu tại đối diện số nhà 127 Tây Sơn - Tây Sơn - Đặng Tiến Đông - Trần Quang Diệu - Hoàng Cầu - Đê La Thành - Giảng Võ - Cát Linh - Tôn Đức Thắng - Nguyễn Thái Học - Cửa Nam - Phùng Hưng - Lê Văn Linh - Phùng Hưng (đường trong) - Phan Đình Phùng - Hàng Đậu - Long Biên - Trần Nhật Duật - Nguyễn Hữu Huân - Lý Thái Tổ - Ngô Quyền - Hai Bà Trưng - Lê Thánh Tông - Trần Hưng Đạo - Phan Huy Chú - Hàn Thuyên - Lê Văn Hưu - Ngô Thì Nhậm - Điểm đỗ xe buýt 32 Nguyễn Công Trứ",
+ "back":"Điểm đỗ xe buýt 32 Nguyễn Công Trứ - Nguyễn Công Trứ - Lò Đúc - Phan Chu Trinh - Trần Hưng Đạo - Lê Thánh Tông - Lý Thái Tổ - Ngô Quyền - Hàng Vôi - Hàng Tre - Hàng Muối - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ - Hàng Than - Quán Thánh - Hoè Nhai - Phan Đình Phùng - Lý Nam Đế - Trần Phú - Chu Văn An - Tôn Đức Thắng - Cát Linh - Giảng Võ - Đê La Thành - Hoàng Cầu - Trần Quang Diệu - Đặng Tiến Đông - Tây Sơn - Chùa Bộc - Phạm Ngọc Thạch - Lương Định Của - Phương Mai - Giải Phóng - Quay đầu tại gầm cầu vượt Ngã Tư Vọng - Lê Thanh Nghị - Tạ Quang Bửu - Đại Cồ Việt - Quay đầu tại đối diện số nhà 36 Đại Cồ Việt - Đại Cồ Việt - Hoa Lư - Thái Phiên - Phố Huế - Nguyễn Công Trứ - Điểm đỗ xe buýt 32 Nguyễn Công Trứ", 
+"info":"Nguyễn Công Trứ - Nguyễn Công Trứ 
+<br/><br/>5h00 - 21h00
+10 -15 - 20 phút/chuyến
+
+"}, 
+
+{"num":"24", "name":"Long Biên - BĐX Cầu Giấy", 
+"start":"BX Lương Yên - Nguyễn Khoái - Minh Khai - Đại La - Trường Chinh - Đường Láng - Điểm trung chuyển Cầu Giấy - Cầu Giấy (đường trên) - Cầu Giấy (đường dưới) - Bãi đỗ xe Cầu Giấy",
+ "back":"Bãi đỗ xe Cầu Giấy - Điểm trung chuyển Cầu Giấy - Đường Láng - Trường Chinh - Đại La - Minh Khai - Nguyễn Khoái - BX Lương Yên", 
+"info":"Long Biên - BĐX Cầu Giấy
+<br/><br/>5h05 - 22h00
+11-15 -30 phút/chuyến
+
+"}, 
+
+{"num":"25", "name":"Nam Thăng Long - BX Giáp Bát", 
+"start":"Bãi đỗ xe Nam Thăng Long - Phạm Văn Đồng - Nguyễn Hoàng Tôn - Lạc Long Quân - Bưởi - Đào Tấn - Liễu Giai - Kim Mã - Giảng Võ - Quay đầu tại 138 Giảng Võ - Giảng Võ - Cát Linh - Tôn Đức Thắng - Đường mới (Vành đai 1) - Quay đầu tại điểm mở dải phân cách - Đường mới (Vành đai 1) - Xã Đàn - Phạm Ngọc Thạch - Đào Duy Anh - Giải Phóng - Ngã 3 Đuôi Cá - Giải Phóng - Bến xe Giáp Bát",
+ "back":"Bến xe Giáp Bát - Giải Phóng - Xã Đàn - Nguyễn Lương Bằng - Ô chợ Dừa - Tôn Đức Thắng - Cát Linh - Giảng Võ - Núi Trúc - Kim Mã - Kim Mã (đường dưới - cạnh bãi đỗ xe Ngọc Khánh) - Đào Tấn - Bưởi - Lạc Long Quân - Nguyễn Hoàng Tôn - Phạm Văn Đồng - Gầm cầu Thăng Long - Xóm 1 Đông Ngạc - Tân Xuân - Phạm Văn Đồng - Bãi đỗ xe Nam Thăng Long", 
+"info":"Nam Thăng Long - BX Giáp Bát
+<br/><br/>5h09 - 21h00
+11 - 25 - 30 phút/chuyến
+
+"}, 
+
+{"num":"26", "name":"Mai Động - SVĐ Quốc Gia", 
+"start":"Mai Động (Bãi đỗ xe Kim Ngưu I) - Nguyễn Tam Trinh - Kim Ngưu - Thanh Nhàn - Lê Thanh Nghị - Giải Phóng - Xã Đàn - Phạm Ngọc Thạch - Chùa Bộc - Thái Hà - Huỳnh Thúc Kháng - Nguyễn Chí Thanh - Đê La Thành - Cầu Giấy - Xuân Thuỷ - Hồ Tùng Mậu - Quay đầu tại cổng nghĩa trang Mai Dịch - Hồ Tùng Mậu - Lê Đức Thọ - Sân vận động Quốc Gia",
+ "back":"Sân vận động Quốc Gia - Lê Đức Thọ - Hồ Tùng Mậu - Xuân Thủy - Cầu Giấy - Đê La Thành - Nguyễn Chí Thanh - Quay đầu tại gầm cầu vượt Nguyễn Chí Thanh_Trần Duy Hưng - Nguyễn Chí Thanh - Huỳnh Thúc Kháng - Thái Hà - Chùa Bộc - Phạm Ngọc Thạch - Xã Đàn - Hầm Kim Liên - Đại Cồ Việt - Tạ Quang Bửu - Lê Thanh Nghị - Thanh Nhàn - Kim Ngưu - Tam Trinh - Cầu Voi - Nguyễn Tam Trinh - Mai Động (Bãi đỗ xe Kim Ngưu I)", 
+"info":"Mai Động - SVĐ Quốc Gia
+<br/><br/>5h00 - 22h30
+5- 10 - 15 phút/chuyến
+
+"}, 
+
+{"num":"27", "name":"BX Yên Nghĩa - Nam Thăng Long", 
+"start":"Bến xe Yên Nghĩa - Quốc Lộ 6 - Ba La - Quang Trung (Hà Đông) - Trần Phú (Hà Đông) - Nguyễn Trãi - Trường Chinh - Quay đầu tại đối diện số nhà 228 Trường Chinh - Trường Chinh - Đường Láng - Nguyễn Chí Thanh - Kim Mã - Cầu Giấy - Xuân Thủy - Phạm Văn Đồng - Đỗ Nhuận - nút giao Phạm Văn Đồng, Đỗ Nhuận - Bãi đỗ xe Nam Thăng Long",
+ "back":"Bãi đỗ xe Nam Thăng Long - Phạm Văn Đồng - Xuân Thủy - Cầu Giấy - Kim Mã - Nguyễn Chí Thanh - Đường Láng - Ngã Tư Sở - Nguyễn Trãi - Trần Phú (Hà Đông) - Quang Trung (Hà Đông) - Ba La - Quốc Lộ 6 - Bến xe Yên Nghĩa.", 
+"info":"BX Yên Nghĩa - Nam Thăng Long
+<br/><br/>5h00 - 21h00
+7-8-10 phút/chuyến
+
+"}, 
+
+{"num":"28", "name":"Bến xe Giáp Bát - Ðông Ngạc", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Xã Đàn - Đường mới (Vành đai 1) - Hoàng Cầu - Đê La Thành - Giảng Võ - Ngọc Khánh - Nguyễn Công Hoan - Nguyễn Chí Thanh - Kim Mã - Điểm trung chuyển xe buýt Cầu Giấy - Cầu Giấy - Trần Đăng Ninh - Chùa Hà - Tô Hiệu - Nguyễn Phong Sắc - Trần Cung - Phạm Văn Đồng - Tân Xuân - Chân Cầu Thăng Long - Hoàng Tăng Bí - Đông Ngạc",
+ "back":"Đông Ngạc - Hoàng Tăng Bí (Xóm 2 Đông Ngạc (Đường đê bờ giàn)) - Chân Cầu Thăng Long - Tân Xuân - Phạm Văn Đồng - Bãi đỗ xe Nam Thăng Long - Phạm Văn Đồng - Trần Cung - Nguyễn Phong Sắc - Tô Hiệu - Chùa Hà - Trần Đăng Ninh - Cầu Giấy - Điểm trung chuyển xe buýt Cầu Giấy - Kim Mã - Ngọc Khánh - Giảng Võ - Đê La Thành - Hoàng Cầu - Đường mới (Vành đai 1) - Xã Đàn - Phạm Ngọc Thạch - Đào Duy Anh - Giải Phóng - Ngã 3 Đuôi Cá - Giải Phóng - Bến xe Giáp Bát", 
+"info":"Bến xe Giáp Bát - Ðông Ngạc
+<br/><br/>5h00 - 21h00
+10 - 20 phút/chuyến
+
+"}, 
+
+{"num":"29", "name":"BX Giáp Bát - Tân Lập", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Kim Đồng - Giải Phóng - Nguyễn Hữu Thọ - Cầu Dậu - Nghiêm Xuân Yêm - Nguyễn Xiển - Nguyễn Trãi - Quay đầu tại đối diện ngõ 241 Nguyễn Trãi - Nguyễn Trãi - Nguyễn Tuân - Hoàng Minh Giám - Nguyễn Chánh - Dương Đình Nghệ - Phạm Hùng - Hồ Tùng Mậu - Đường Cầu Diễn - Quốc lộ 32 - Nhổn - Quốc lộ 32 - Ngã 4 Trạm Trôi - Tân Lập - Tân Lập (Sân bóng xã Tân Lập)",
+ "back":"Tân Lập (Sân bóng xã Tân Lập) - Tân Lập - Ngã 4 Trạm Trôi - Quốc lộ 32 - Nhổn - Quốc lộ 32 - Đường Cầu Diễn - Hồ Tùng Mậu - Phạm Hùng - Quay đầu tại Landmark 72 - Phạm Hùng - Dương Đình Nghệ - Nguyễn Chánh - Hoàng Minh Giám - Lê Văn Lương - Hoàng Đạo Thúy - Ngụy Như Kom Tum - Vũ Trọng Phụng - Nguyễn Trãi - Nguyễn Xiển - Nghiêm Xuân Yêm - Cầu Dậu - Nguyễn Hữu Thọ - Giải Phóng - Quay đầu tại chùa Pháp Vân - Giải Phóng - Bến xe Giáp Bát", 
+"info":"BX Giáp Bát - Tân Lập
+<br/><br/>5h02 - 21h01
+11 - 15 - 19 phút/chuyến
+
+"}, 
+
+{"num":"30", "name":"Mai Động - BX Mỹ Đình", 
+"start":"Mai Động (bãi đỗ xe Kim Ngưu I) - Nguyễn Tam Trinh - Kim Ngưu - Lò Đúc - Trần Xuân Soạn - Trần Nhân Tông - Lê Duẩn - Khâm Thiên - Đường mới (Vành đai 1) - Quay đầu tại điểm mở dải phân cách - Đường mới (Vành đai 2) - Nguyễn Lương Bằng - Tây Sơn - Thái Hà - Láng Hạ - Lê Văn Lương - Hoàng Minh Giám - Nguyễn Chánh - Dương Đình Nghệ - Phạm Hùng - Quay đầu trước BX Mỹ Đình - Bến xe Mỹ Đình",
+ "back":"Bến xe Mỹ Đình - Phạm Hùng - Quay đầu tại Landmark 72 - Phạm Hùng - Dương Đình Nghệ - Nguyễn Chánh - Hoàng Minh Giám - Lê Văn Lương - Láng Hạ - Thái Hà - Tây Sơn - Nguyễn Lương Bằng - Xã Đàn - Quay đầu tại đối diện ngõ Xã Đàn 2 - Xã Đàn - Khâm Thiên - Lê Duẩn - Trần Nhân Tông - Trần Xuân Soạn - Ngô Thì Nhậm - Nguyễn Công Trứ - Lò Đúc - Trần Khát Chân - Quay đầu tại đối diện số nhà 274 Trần Khát Chân - Trần Khát Chân - Kim Ngưu - Tam Trinh - Cầu Voi - Nguyễn Tam Trinh - Mai Động (Bãi đỗ xe Kim Ngưu I)", 
+"info":"Mai Động - BX Mỹ Đình
+<br/><br/>5h00 - 21h00
+10 - 20 phút/chuyến
+
+"}, 
+
+{"num":"31", "name":"Bách Khoa - Đại Học Mỏ (Chèm)", 
+"start":"Đại học Bách Khoa - Trần Đại Nghĩa - Lê Thanh Nghị - Tạ Quang Bửu - Đại Cồ Việt - Phố Huế - Hàng Bài - Đinh Tiên Hoàng - Trần Nguyên Hãn - Hàng Vôi - Hàng Tre - Hàng Muối - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ - Nghi Tàm - Âu Cơ - Nhật Tân - An Dương Vương - Phú Thượng - Dốc Chèm - Đường Đông Ngạc (69) - Chèm (Đại học Mỏ)",
+ "back":"Chèm (Đại học Mỏ) - Đường Đông Ngạc (69) - Dốc Chèm - Phú Thượng - An Dương Vương - Nhật Tân - Âu Cơ - Nghi Tàm - Yên Phụ - Hàng Than - Hàng Cót - Hàng Lược - Chả Cá - Hàng Cân - Lương Văn Can - Lê Thái Tổ - Bà Triệu - Đại Cồ Việt - Quay đầu tại đối diện số nhà 100 Đại Cồ Việt - Đại Cồ Việt - Tạ Quang Bửu - Lê Thanh Nghị - Trần Đại Nghĩa - Đại học Bách Khoa", 
+"info":"Bách Khoa - Đại Học Mỏ (Chèm)
+<br/><br/>5h05 - 21h00
+10 - 20 phút/chuyến
+
+"}, 
+
+{"num":"32", "name":"BX Giáp Bát - Nhổn", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Lê Duẩn - Trần Nhân Tông - Trần Bình Trọng - Trần Hưng Đạo - Quán Sứ - Hai Bà Trưng - Thợ Nhuộm - Tràng Thi - Điện Biên Phủ - Trần Phú - Lê Trực - Sơn Tây - Kim Mã - Cầu Giấy - Điểm trung chuyển Cầu Giấy - Cầu Giấy - Xuân Thuỷ - Hồ Tùng Mậu - Diễn - Đường 32 - Quay đầu tại điểm trung chuyển Nhổn - Nhổn (ĐH Công nghiệp Hà Nội)",
+ "back":"Nhổn (ĐH Công nghiệp Hà Nội) - Đường 32 - Diễn - Hồ Tùng Mậu - Xuân Thuỷ - Cầu Giấy - Điểm trung chuyển Cầu Giấy - Kim Mã - Nguyễn Thái Học - Lê Duẩn - Giải Phóng - Ngã 3 Đuôi Cá - Bến xe Giáp Bát ", 
+"info":"BX Giáp Bát - Nhổn
+<br/><br/>5h00 - 22h30
+5 - 10 - 15 phút/chuyến
+
+"}, 
+
+{"num":"33", "name":"BX Mỹ Đình - Xuân Đỉnh", 
+"start":"Bến xe Mỹ Đình - Phạm Hùng - Trần Duy Hưng - Nguyễn Chí Thanh - Huỳnh Thúc Kháng - Láng Hạ - Giảng Võ - Giang Văn Minh - Kim Mã - Nguyễn Thái Học - Hoàng Diệu - Nguyễn Biểu - Quán Thánh - Thanh Niên - Yên Phụ - Quay đầu tại đối diện Trường Mạc Đĩnh Chi - Yên Phụ - Nghi Tàm - Âu Cơ - Lạc Long Quân - Xuân La - Xuân Đỉnh (Trường CĐ Nội Vụ Hà Nội)",
+ "back":"Xuân Đỉnh (Trường ĐH Nội vụ Hà Nội) - Xuân La - Lạc Long Quân - Âu Cơ - Yên Phụ - Thanh Niên - Hùng Vương - Phan Đình Phùng - Hoàng Diệu - Lê Hồng Phong - Ông Ích Khiêm - Sơn Tây - Kim Mã - Giảng Võ - Láng Hạ - Huỳnh Thúc Kháng - Nguyễn Chí Thanh - Trần Duy Hưng - Phạm Hùng - quay đầu tại trước Bến xe Mỹ Đình - Bến xe Mỹ Đình", 
+"info":"BX Mỹ Đình - Xuân Đỉnh
+<br/><br/>5h06 - 21h00
+16 - 20 phút/chuyến
+
+"}, 
+
+{"num":"34", "name":"BX Mỹ Đình - BX Gia Lâm", 
+"start":"Bến xe Mỹ Đình - Phạm Hùng - Quay đầu tại ngã 3 Đình Thôn - Phạm Hùng - Xuân Thủy - Cầu Giấy - Kim Mã - Nguyễn Thái Học - Phan Bội Châu - Lý Thường Kiệt - Quang Trung - Hai Bà Trưng - Phan Chu Trinh - Lý Thái Tổ - Ngô Quyền - Hàng Vôi - Hàng Tre - Hàng Muối - Trần Nhật Duật - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Nguyễn Văn Cừ - Nguyễn Sơn - Ngọc Lâm - Ngô Gia Khảm - Bến xe Gia Lâm",
+ "back":"Bến xe Gia Lâm - Ngô Gia Khảm - Ngọc Lâm - Nguyễn Văn Cừ - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Trần Nhật Duật - Trần Quang Khải - Tràng Tiền - Ngô Quyền - Hai Bà Trưng - Thợ Nhuộm - Điện Điên Phủ - Trần Phú - Lê Trực - Sơn Tây - Kim Mã - Cầu Giấy - Xuân Thủy - Phạm Hùng - Bến xe Mỹ Đình", 
+"info":"BX Mỹ Đình - BX Gia Lâm
+<br/><br/>5h07 - 21h05
+10-15 phút/chuyến
+
+"}, 
+
+{"num":"35", "name":"Trần Khánh Dư - Mê Linh (BV Đa khoa Mê Linh)", 
+"start":"Bãi đỗ xe Trần Khánh Dư - Trần Hưng Đạo - Bà Triệu - Đại Cồ Việt - Hầm Kim Liên - Xã Đàn - Phạm Ngọc Thạch - Chùa Bộc - Thái Hà - Huỳnh Thúc Kháng - Nguyễn Chí Thanh - Quay đầu tại đối diện số nhà 56 Nguyễn Chí Thanh - Nguyễn Chí Thanh - Chùa Láng - Đường Láng - Cầu Giấy - Trần Đăng Ninh - Nguyễn Phong Sắc - Hoàng Quốc Việt - Phạm Văn Đồng - Cầu Thăng Long - Đường Bắc Thăng Long Nội Bài - Ngã Tư Nam Hồng - rẽ phải vào QL23B - quay đầu tại đảo tròn phía Đông Anh - cầu vượt Nam Hồng - Quốc Lộ 23B - Xã Đại Thịnh - Trung tâm huyện Mê Linh - Cổng bệnh viện đa khoa huyện Mê Linh",
+ "back":"Cổng bệnh viện đa khoa huyện Mê Linh - Trung tâm huyện Mê Linh - Xã Đại Thịnh - Quốc lộ 23 - Tiền Phong - Ngã tư Nam Hồng - Đường Bắc Thăng Long Nội Bài - Cầu Thăng Long - Phạm Văn Đồng - Bãi đỗ xe Nam Thăng Long - Phạm Văn Đồng - Hoàng Quốc Việt - Nguyễn Phong Sắc - Trần Đăng Ninh - Cầu Giấy - Đường Láng - Chùa Láng - Nguyễn Chí Thanh - Quay đầu tại gầm cầu vượt Nguyễn Chí Thanh_Trần Duy Hưng - Nguyễn Chí Thanh - Huỳnh Thúc Kháng - Thái Hà - Chùa Bộc - Phạm Ngọc Thạch - Đào Duy Anh - Hoàng Tích Trí - Xã Đàn - Hầm Kim Liên - Đại Cồ Việt - Phố Huế - Hàng Bài - Trần Hưng Đạo - Phan Chu Trinh - Tràng Tiền - Bãi đỗ xe Trần Khánh Dư.", 
+"info":"Trần Khánh Dư - Mê Linh (BV Đa khoa Mê Linh)
+<br/><br/>5h05 - 21h00
+15-20 -25 phút/chuyến
+
+"}, 
+
+{"num":"36", "name":"Yên Phụ - KĐT Linh Đàm", 
+"start":"Yên Phụ (Điểm trung chuyển Long Biên) - Trần Nhật Duật - Nguyễn Hữu Huân - Lò Sũ - Lê Thái Tổ - Bà Triệu - Hai Bà Trưng - Lê Thánh Tông - Tăng Bạt Hổ - Yecxanh - Lò Đúc - Trần Khát Chân - Quay đầu tại đối diện số nhà 274 Trần Khát Chân - Trần Khát Chân - Kim Ngưu - Minh Khai - Trương Định - Giải Phóng - Nguyễn Hữu Thọ - Nguyễn Duy Trinh - Khu đô thị Linh Đàm",
+ "back":"Khu đô thị Linh Đàm - Nguyễn Duy Trinh - Nguyễn Hữu Thọ - Giải Phóng - Quay đầu tại chùa Pháp Vân - Giải Phóng - Trương Định - Minh Khai - Kim Ngưu - Lò Đúc - Yecxanh - Trần Thánh Tông - Lê Thánh Tông - Hai Bà Trưng - Hàng Bài - Đinh Tiên Hoàng - Trần Nguyễn Hãn - Ngô Quyền - Hàng Vôi - Hàng Tre - Hàng Muối - Trần Nhật Duật - Điểm trung chuyển Long Biên - Quay đầu tại đối diện 92 Yên Phụ - Yên Phụ - Yên Phụ (điểm trung chuyển Long Biên)", 
+"info":"Yên Phụ - KĐT Linh Đàm
+<br/><br/>5h00 - 21h03
+14 - 20 - 25 phút/chuyến
+
+"}, 
+
+{"num":"37", "name":"BX Giáp Bát - Chương Mỹ", 
+"start":"Bến xe Giáp Bát - Giải Phóng - Kim Đồng - quay đầu tại phố Kim Đồng - Giải Phóng - đường Hoàng Liệt - KĐT Linh Đàm - Nguyễn Duy Trinh - Nguyễn Hữu Thọ - Cầu Dậu - Kim Giang - Đường Cầu Bươu - Viện 103 - Phùng Hưng (Hà Đông) - Cầu Đen - Tô Hiệu - Quang Trung (Hà Đông) - Ba La - Quốc Lộ 6 - Yên Nghĩa - Đồng Mai - Cầu Mai Lĩnh - Biên Giang - Chương Mỹ (Cổng Công ty Gốm sứ Văn Minh - Xã Ngọc Hòa)",
+ "back":"Chương Mỹ (Cổng Công ty Gốm sứ Văn Minh - Xã Ngọc Hòa) - Biên Giang - Cầu Mai Lĩnh - Đồng Mai - Yên Nghĩa - Quốc lộ 6 - Ba La - Quang Trung (Hà Đông) - Tô Hiệu - Cầu Đen - Phùng Hưng (Hà Đông) - Viện 103 - Đường Cầu Bươu - Kim Giang - Cầu Dậu - Nguyễn Hữu Thọ - Nguyễn Duy Trinh - Khu đô thị Linh Đàm - đường Hoàng Liệt - Ngọc Hồi - Quay đầu tại cty ABB - Ngọc Hồi - Giải Phóng - Bến xe Giáp Bát", 
+"info":"BX Giáp Bát - Chương Mỹ
+<br/><br/>5h06 - 21h01
+11 - 20 phút/chuyến
+
+"}, 
+
+{"num":"38", "name":"Nam Thăng Long - Mai Động", 
+"start":"Bãi đỗ xe Nam Thăng Long - Phạm Văn Đồng - Hoàng Quốc Việt - Nguyễn Văn Huyên - Nguyễn Khánh Toàn - Bưởi - Đào Tấn - Liễu Giai - Kim Mã - Nguyễn Thái Học - Lê Duẩn - Trần Hưng Đạo - Bà Triệu - Lê Đại Hành - Bạch Mai - Minh Khai - Tam Trinh - Cầu Voi - Nguyễn Tam Trinh - Mai Động (Bãi đỗ xe Kim Ngưu I)",
+ "back":"Mai Động (Bãi đỗ xe Kim Ngưu I) - Nguyễn Tam Trinh - Minh Khai - Bạch Mai - Phố Huế - Trần Nhân Tông - Quang Trung - Hai Bà Trưng - Nguyễn Khuyến - Văn Miếu - Quốc Tử Giám - Cát Linh - Giảng Võ - Núi Trúc - Kim Mã - Cầu Giấy - Bưởi - Đào Tấn - Quay đầu đối diện số 90 Đào Tấn - Đào Tấn - Nguyễn Khánh Toàn - Nguyễn Văn Huyên - Hoàng Quốc Việt - Phạm Văn Đồng - Đỗ Nhuận - nút giao Phạm Văn Đồng, Đỗ Nhuận - Bãi đỗ xe Nam Thăng Long", 
+"info":"Nam Thăng Long - Mai Động
+<br/><br/>5h05 - 21h00
+15-20 phút/chuyến
+
+"}, 
+
+{"num":"39", "name":"Công viên Nghĩa Đô - Tứ Hiệp ( BV Nội Tiết TW)", 
+"start":"Công viên Nghĩa Đô - Nguyễn Văn Huyên - Nguyễn Khánh Toàn - Trần Đăng Ninh - Nguyễn Phong Sắc - Trần Thái Tông - Tôn Thất Thuyết - Phạm Hùng - Khuất Duy Tiến - Nguyễn Trãi - Trần Phú (Hà Đông) - Phùng Hưng (Hà Đông) - Cầu Bươu - Phan Trọng Tuệ - Ngọc Hồi - Đường vào Bệnh viện Nội tiết trung ương cơ sở Tứ Hiệp - Tứ Hiệp (đối diện cổng Bệnh viện Nội tiết Trung ương cơ sở Tứ Hiệp)",
+ "back":"Tứ Hiệp (đối diện cổng Bệnh viện Nội tiết Trung ương cơ sở Tứ Hiệp) - Đường vào Bệnh viện Nội tiết trung ương cơ sở Tứ Hiệp - Ngọc Hồi - Quay đầu tại cổng Công ty cơ khí điện Thủy lợi - Ngọc Hồi - Phan Trọng Tuệ - Cầu Bươu - Phùng Hưng (Hà Đông) - Trần Phú (Hà Đông) - Nguyễn Trãi - Khuất Duy Tiến - Phạm Hùng - Tôn Thất Thuyết - Trần Thái Tông - Nguyễn Phong Sắc - Trần Đăng Ninh - Nguyễn Khánh Toàn - Nguyễn Văn Huyên - Công viên Nghĩa Đô", 
+"info":"Công viên Nghĩa Đô - Tứ Hiệp ( BV Nội Tiết TW)
+<br/><br/>5h00 - 21h00
+8- 15 phút/chuyến
+
+"}, 
+
+{"num":"40", "name":"CV Thống Nhất - Như Quỳnh", 
+"start":"Công viên Thống Nhất - Trần Nhân Tông - Quang Trung - Trần Hưng Đạo - Quán Sứ - Hai Bà Trưng - Phan Chu Trinh - Lý Thái Tổ - Ngô Quyền - Hàng Vôi - Hàng Tre - Hàng Muối - Trần Nhật Duật - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Cầu Chương Dương - Nguyễn Văn Cừ - Nguyễn Văn Linh - Nguyễn Đức Thuận - Quốc lộ 5 - ngã tư Phú Thị - Như Quỳnh",
+ "back":"Như Quỳnh - ngã tư Phú Thị - Quốc lộ 5 - Nguyễn Bình - Nguyễn Đức Thuận - cổng chính của khu đô thị Đặng Xá - đường vành đai trong của khu đô thị (ĐX 1- ĐX3 - đường trục giữa của khu đô thị Đặng Xá 1 và Đặng Xá 2 - ĐX3 - ĐX1) - cổng chính của khu đô thị Đặng Xá - Nguyễn Đức Thuận - Nguyễn Văn Linh - Nguyễn Văn Cừ - Cầu Chương Dương - Long Biên (Điểm quay đầu trước phố Hàng Khoai) - Trần Nhật Duật - Nguyễn Hữu Huân - Lý Thái Tổ - Ngô Quyền - Hai Bà Trưng - Ga Hà Nội - Lê Duẩn - Trần Nhân Tông - Công viên Thống Nhất", 
+"info":"CV Thống Nhất - Như Quỳnh
+<br/><br/>5h- 22h35
+10 - 15 - 20 phút/chuyến
+
+"}, 
+
+{"num":"41", "name":"Nghi Tàm - BX Giáp Bát", 
+"start":"Chợ Quảng An - Đường Âu Cơ - Nghi Tàm - Yên Phụ - Cửa Bắc - Nguyễn Tri Phương - Điện Biên Phủ - Chu Văn An - Tôn Đức Thắng - Khâm Thiên - Lê Duẩn - Giải Phóng - Bến xe Giáp Bát.",
+ "back":"Bến xe Giáp Bát - Giải Phóng - Lê Duẩn - Trần Nhân Tông - Quang Trung - Nguyễn Du - Lê Duẩn - Khâm Thiên - Tôn Đức Thắng - Chu Văn An - Lê Hồng Phong - Nguyễn Tri Phương - Cửa Bắc - Yên Phụ - Nghi Tàm - Âu Cơ - Chợ Quảng An.", 
+"info":"Nghi Tàm - BX Giáp Bát
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"42", "name":"BX Kim Ngưu - Đức Giang", 
+"start":"Điểm đỗ xe Kim Ngưu - Nguyễn Tam Trinh - Kim Ngưu - Lò Đúc - Yecxanh - Trần Nhân Tông - Trần Hưng Đạo - Trần Quang Khải - Cầu Chương Dương - Nguyễn Văn Cừ - Ngô Gia Tự - Đức Giang -Nhà Máy Cáp điện.",
+ "back":"Nhà máy Cáp điện - Đức Giang - Ngô Gia Tự - Nguyễn văn Cừ - Cầu Chương Dương - Trần Quang Khải - Trần Hưng Đạo - Tăng Bạt Hổ - Lò Đúc - Trần Khát Chân - Quay đầu tại đối diện số nhà 274 Trần Khát Chân - Trần Khát Chân - Kim Ngưu - Nguyễn Tam Trinh - Điểm đỗ xe Kim Ngưu.", 
+"info":"BX Kim Ngưu - Đức Giang
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"43", "name":"Ga Hà Nội - TT Đông Anh", 
+"start":"Công viên Thống Nhất - Trần Nhân Tông - Quang Trung - Trần Hưng Đạo - Trần Khánh Dư - Trần Quang Khải - Nguyễn Văn Cừ - Ngô Gia Tự - Cầu Đuống - Quốc lộ 3 - Đường Cao Lỗ - Ngã ba xay sát Đông Quan.",
+ "back":"Ngã ba xay sát Đông Quan - Đường Cao Lỗ - Quốc lộ 3 - Cầu Đuống - Ngô Gia Tự - Nguyễn Văn Cừ - Trần Quang Khải - Trần Hưng Đạo - Quán Sứ - Lý Thường Kiệt - Lê Duẩn - Trần Nhân Tông - Công viên Thống Nhất", 
+"info":"Ga Hà Nội - TT Đông Anh
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"44", "name":"Trần Khánh Dư - BX Mỹ Đình", 
+"start":"Trần Khánh Dư - Trần Hưng Đạo - Tăng Bạt Hổ - Nguyễn Công Trứ - Lò Đúc - Trần Khát Chân - Đại Cồ Việt - Đào Duy Anh - Phạm Ngọc Thạch - Chùa Bộc - Tây Sơn - Nguyễn Trãi - Nguyễn Tuân - Hoàng Minh Giám - Nguyễn Chánh - Dương Đình Nghệ - Phạm Hùng - Quay đầu tại Phạm Hùng, Tôn Thất Thuyết - Phạm Hùng - BX Mỹ Đình.",
+ "back":"BX Mỹ Đình - Phạm Hùng - Quay đầu tại Land Mark 72 - Phạm Hùng - Dương Đình Nghệ - Nguyễn Chánh - Hoàng Minh Giám - Lê Văn Lương - Vũ Trọng Phụng - Nguyễn Trãi - Quay đầu tại đối diện ngõ 241 Nguyễn Trãi - Nguyễn Trãi - Tây Sơn - Chùa Bộc - Phạm Ngọc Thạch - Đào Duy Anh - Đại Cồ Việt - Trần Khát Chân - Lò Đúc - Yecxanh - Trần Nhân Tông - Trần Hưng Đạo - Trần Khánh Dư.", 
+"info":"Trần Khánh Dư - BX Mỹ Đình
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"45", "name":"Trần Khánh Dư - Đông Ngạc", 
+"start":"Times city (Bệnh viện Vinmec) - Minh Khai - Nguyễn Khoái - Trần Khánh Dư (đường dưới) - Trần Hưng Đạo - Lê Thánh Tông - Lý Thường Kiệt - Quang Trung - Tràng Thi - Điện Biên Phủ - Hoàng Diệu - Nguyễn Biểu - Quán Thánh - Thuỵ Khuê - Hoàng Quốc Việt - Phạm Văn Đồng - Đỗ Nhuận - Bãi đỗ xe Nam Thăng Long. ",
+ "back":"Bãi đỗ xe Nam Thăng Long. - Phạm Văn Đồng - Hoàng Quốc Việt - Bưởi (đường dưới) - Quay đầu tại số nhà 424 đường Bưởi - Bưởi (đường trên) - Hoàng Hoa Thám Phan Đình Phùng - Hoàng Diệu - Nguyễn Thái Học - Phan Bội Châu - Lý Thường Kiệt - Lê Thánh Tông - Trần Hưng Đạo - Trần Khánh Dư (đường dưới) - Nguyễn Khoái - BX Lương Yên - Minh Khai - Times city (Bệnh viện Vinmec).", 
+"info":"Trần Khánh Dư - Đông Ngạc
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"46", "name":"BX Mỹ Đình - Khu di tích Cổ Loa", 
+"start":"BX Mỹ Đình - Phạm Hùng - Phạm Văn Đồng - Cao Tốc Bắc Thăng Long - Vĩnh Ngọc - Quốc lộ 3 - Cổ Loa",
+ "back":"Cổ Loa - Quốc lộ 3 - Vĩnh Ngọc - Cao Tốc Bắc Thăng Long - Phạm Văn Đồng - Phạm Hùng - BX Mỹ Đình", 
+"info":"BX Mỹ Đình - Khu di tích Cổ Loa
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"47A", "name":"Long Biên - Chợ gốm Bát Tràng", 
+"start":"Long Biên (Điểm trung chuyển Long Biên) - Yên Phụ - Điểm trung chuyển Long Biên - Trần Nhật Duật - Cầu Chương Dương - Đê Long Biên Xuân Quan - Bồ Đề - Tư Đình - Cự Khối - Đông Dư - Bát Tràng (cách cổng Chợ Gốm Bát Tràng 100)",
+ "back":"Bát Tràng (cách cổng Chợ Gốm Bát Tràng 100) - Đông Dư - Cự Khối - Tư Đình - Bồ Đề - Đường Long Biên Xuân Quan - Cầu Chương Dương - Trần Nhật Duật - Điểm trung chuyển Long Biên - Quay đầu tại 92 Yên Phụ - Yên Phụ - Long Biên (Điểm trung chuyển Long Biên)", 
+"info":"Long Biên - Chợ gốm Bát Tràng
+<br/><br/>5h00 - 19h56 
+10-15 phút/chuyến
+
+"}, 
+
+{"num":"47B", "name":"Long Biên - Kim Lan", 
+"start":"Long Biên (Điểm trung chuyển Long Biên) - Yên Phụ - Trần Nhật Duật - Cầu Chương Dương - Đê Long Biên Xuân Quan - Bồ Đề - Tư Đình - Cự Khối - Đông Dư - qua ngã ba đi Bát Tràng - đường liên xã Kim Lan, Văn Đức - Bãi đỗ xe Kim Lan (cạnh nhà văn hóa thông Hồng Long, Kim Lan, Gia Lâm)",
+ "back":"Bát Tràng (cách cổng Chợ Gốm Bát Tràng Bãi đỗ xe Kim Lan (cạnh nhà văn hóa thông Hồng Long, Kim Lan, Gia Lâm) - đường liên xã Kim Lan, Văn Đức - qua ngã ba đi Bát Tràng - Đông Dư - Cự Khối - Tư Đình - Bồ Đề - Đường Long Biên Xuân Quan - Cầu Chương Dương - Trần Nhật Duật - Điểm trung chuyển Long Biên - Quay đầu tại 92 Yên Phụ - Yên Phụ - Long Biên (Điểm trung chuyển Long Biên)", 
+"info":"Long Biên - Kim Lan
+<br/><br/>5h14 - 20h10 
+10-15 phút/chuyến
+
+"}, 
+
+{"num":"48", "name":"Trần Khánh Dư - Vạn Phúc", 
+"start":"BĐX Trần Khánh Dư - Nguyễn Khoái - BX Lương Yên - Cầu Vĩnh Tuy - Đê Hữu Hồng - Khuyến Lương - Yên Sở - Ngũ Hiệp - Đông Mỹ - Cổng thôn 3 (Vạn Phúc - Thanh Trì)",
+ "back":"Cổng thôn 3 (Vạn Phúc - Thanh Trì) - Đê Hữu Hồng - Đông Mỹ - Ngũ Hiệp - Yên Sở - Khuyến Lương - Cầu Vĩnh Tuy - Nguyễn Khoái - BX Lương Yên - BĐX Trần Khánh Dư", 
+"info":"Trần Khánh Dư - Vạn Phúc
+<br/><br/>5h00-21h00
+10 - 15 phút/chuyến
+
+"}, 
+
+{"num":"49", "name":"Trần Khánh Dư - KĐT Mỹ Đình II", 
+"start":"Trần Khánh Dư - Trần Hưng Đạo - Lê Thánh Tông - Lý Thường Kiệt - Lê Duẩn - Khâm Thiên - Đường mới (Vành đai I) - Hoàng Cầu - La Thành - Nguyễn Chí Thanh - Quay đầu tại Đài truyền hình Việt Nam - Nguyễn Chí Thanh - La Thành - Điểm trung chuyển Cầu Giấy - Cầu Giấy - Xuân Thủy - Hồ Tùng Mậu - Quay đầu tại cổng nghĩa trang Mai Dịch - Hồ Tùng Mậu - Lê Đức Thọ - Khu đô thị Mỹ Đình II",
+ "back":"Khu đô thị Mỹ Đình II - Lê Đức Thọ - Hồ Tùng Mậu - Xuân Thủy - Cầu Giấy - Điểm trung chuyển Cầu Giấy - La Thành - Thành Công - Láng Hạ - Giảng Võ - Cát Linh - Tôn Đức Thắng - Khâm Thiên - Nguyễn Thượng Hiền - Yết Kiêu - Trần Hưng Đạo - Quán Sứ - Lý Thường Kiệt - Phan Chu Trinh - Tràng Tiền - Trần Khánh Dư", 
+"info":"Trần Khánh Dư - KĐT Mỹ Đình II
+<br/><br/>5h00-21h00
+ 
+10 - 15phút/chuyến
+
+"}, 
+
+{"num":"50", "name":"Long Biên - SVĐ Quốc Gia", 
+"start":"Long Biên (trạm trung chuyển Long Biên) - Yên Phụ - Đường Thanh Niên - Hùng Vương - Phan Đình Phùng - Hoàng Diệu - Trần Phú - Lê Trực - Sơn Tây - Kim Mã - Nguyễn Chí Thanh - Trần Duy Hưng - Phạm Hùng - Quay đầu tại đối diện toà nhà CT5 KĐT Mỹ Đình - Phạm Hùng - Mễ Trì - Lê Quang Đạo - Lê Đức Thọ - Sân vận động Quốc Gia",
+ "back":"Sân vận động Quốc Gia - Lê Đức Thọ - Lê Quang Đạo - Mễ Trì - Phạm Hùng - Trần Duy Hưng - Nguyễn Chí Thanh - Kim Mã - Nguyễn Thái Học - Hoàng Diệu - Nguyễn Biểu - Quán Thánh - Đường Thanh Niên - Yên Phụ - Trần Nhật Duật (Quay đầu tại phố Hàng Khoai) - Điểm trung chuyển Long Biên", 
+"info":"Long Biên - SVĐ Quốc Gia
+<br/><br/>5h00 - 21h90
+17 phút/chuyến
+
+"}, 
+
+{"num":"51", "name":"Trần Khánh Dư - KĐT Trung Yên", 
+"start":"Bãi đỗ xe Trần Khánh Dư - Nguyễn Khoái - Dốc Vĩnh Tuy - Minh Khai - Lạc Trung - Thanh Nhàn - Võ Thị Sáu - Đại Cồ Việt - Đào Duy Anh - Phạm Ngọc Thạch - Chùa Bộc - Tây Sơn - Thái Thịnh - Láng Hạ - Quay đầu tại gầm cầu vượt Láng Hạ - Láng Hạ - Lê Văn Lương - Hoàng Đạo Thúy - Trần Duy Hưng - Quay đầu tại gầm cầu vượt Nguyễn Chí Thanh - Trần Duy Hưng - Trung Hòa - Khu đô thị Trung Yên - Vũ Phạm Hàm - Trung Kính- Trần Thái Tông - Duy Tân - CV Cầu Giấy",
+ "back":"CV Cầu Giấy - Duy Tân - Trần Thái Tông - - Trung Kính - Vũ Phạm Hàm - Trung Hòa - Trần Duy Hưng - Quay đầu tại Cục Tần số - Trần Duy Hưng - Hoàng Đạo Thúy - Lê Văn Lương - Láng Hạ - Thái Thịnh - Tây Sơn - Chùa Bộc - Phạm Ngọc Thạch - Đào Duy Anh - Đại Cồ Việt - Võ Thị Sáu - Thanh Nhàn - Lạc Trung - Minh Khai - Dốc Vĩnh Tuy - Nguyễn Khoái - Bãi đỗ xe Trần Khánh Dư ", 
+"info":"Trần Khánh Dư - KĐT Trung Yên
+<br/><br/>5h00 - 21h00
+10-15 phút/chuyến
+
+"}, 
+
+{"num":"52A", "name":"CV Thống Nhất - Lệ Chi (Gia Lâm)", 
+"start":"Công viên Thống Nhất - Trần Nhân Tông - Bà Triệu - Lê Đại Hành - Bạch Mai - Minh Khai - Cầu Mai Động - Minh Khai - Cầu Vĩnh Tuy - đường dẫn cầu Vĩnh Tuy - Nguyễn Văn Linh - Nguyễn Đức Thuận - Cầu vượt Phú Thụy - Đường Ỷ Lan - Dương Xá - Ngã 4 Sủi - Đường 181 - Phú Thị - Keo - Kim Sơn - Lệ Chi (Gia Lâm) - Rẽ phải vào trường CĐ Dệt may Hà Nội (cơ sở 2) - Quay đầu trường CĐ Dệt may Hà Nội (cơ sở 2) - Cửa hàng Hapromart (Lệ Chi - Gia Lâm)",
+ "back":"Cửa hàng Hapromart (Lệ Chi - Gia Lâm) - Đường 181 - Kim Sơn - Keo - Phú Thị - Ngã 4 Sủi - Đường Ỷ Lan - Dương Xá - Cầu vượt Phú Thụy - Nguyễn Đức Thuận - Nguyễn Văn Linh - đường dẫn cầu Vĩnh Tuy - Cầu Vĩnh Tuy - Minh Khai - Cầu Mai Động - Minh Khai - Bạch Mai - Phố Huế - Trần Nhân Tông - Công viên Thống Nhất", 
+"info":"CV Thống Nhất - Lệ Chi (Gia Lâm)
+<br/><br/>5h05 - 21h04 
+10-15-20 phút/chuyến
+
+"}, 
+
+{"num":"52B", "name":"CV Thống Nhất - Đặng Xá", 
+"start":"Công viên Thống Nhất - Trần Nhân Tông - Bà Triệu - Lê Đại Hành - Bạch Mai - Minh Khai - Cầu Mai Động - Minh Khai - Cầu Vĩnh Tuy - đường dẫn cầu Vĩnh Tuy - Nguyễn Văn Linh - Nguyễn Đức Thuận - Cầu vượt Phú Thị - Đường Ỷ Lan - Ngã 4 Sủi - đường Ỷ Lan - Đặng Xá (bãi đỗ xe xã Đặng Xá)",
+ "back":"Đặng Xá (bãi đỗ xe xã Đặng Xá) - đường Ỷ Lan - Ngã 4 Sủi - Đường Ỷ Lan - Cạnh cầu vượt Phú Thụy - Nguyễn Đức Thuận - Nguyễn Văn Linh - đường dẫn cầu Vĩnh Tuy - Cầu Vĩnh Tuy - Minh Khai - Cầu Mai Động - Minh Khai - Bạch Mai - Phố Huế - Trần Nhân Tông - Công viên Thống Nhất", 
+"info":"CV Thống Nhất - Đặng Xá
+<br/><br/>5h05 - 21h04 
+10-15-20 phút/chuyến
+
+"}, 
+
+{"num":"53", "name":"Hoàng Quốc Việt - Đông Anh", 
+"start":"Điểm đỗ xe buýt Hoàng Quốc Việt - Phạm Văn Đồng - Cầu Thăng Long - Đường Bắc Thăng Long Nội Bài - Đường 6 km (Vĩnh Ngọc) - Thôn Phương Trạch - Thôn Vân Nội - Thôn Vân Trì - Cầu tránh Vân Trì - Quốc lộ 23B - Đường Cao Lỗ - Chợ Tó - Ngã 3 xay xát Đông Quan",
+ "back":"Ngã 3 xay xát Đông Quan - Chợ Tó - Đường Cao Lỗ - Quốc lộ 23B - Ngã 3 Vân Trì - Cầu tránh Vân Trì - Thôn Vân Trì - Thôn Vân Nội - Ngã 4 thôn Phương Trạch - đường 6 km (Vĩnh Ngọc) - Đường Bắc Thăng Long Nội Bài - Cầu Thăng Long - Phạm Văn Đồng - Quảng trường BĐX Nam Thăng Long - Phạm Văn Đồng - Hoàng Quốc Việt - Điểm đỗ xe buýt Hoàng Quốc Việt", 
+"info":"Hoàng Quốc Việt - Đông Anh
+<br/><br/>5h00-20h02
+12 - 14- 20 phút/chuyến
+
+"}, 
+
+{"num":"54", "name":"Long Biên - Bắc Ninh", 
+"start":"Long Biên (Yên Phụ - đoạn Hàng Than đến Hòe Nhai) - quay đầu tại đối diện phố Hàng Than - Yên Phụ - Điểm trung chuyển Long Biên - Trần Nhật Duật - Cầu Chương Dương - Nguyễn Văn Cừ - Ngô  Gia  Tự - Cầu Đuống - Hà Huy Tập - Quốc lộ 1A - Dốc Lã - Đình Bảng - Từ Sơn - Đồng Nguyên - Viềng - Tương Giang - Nội Duệ - Lim - Ó - Võ Cường - Hòa Đình - Nguyễn Văn Cừ (Bắc Ninh) - Ngô Gia Tự (Bắc Ninh) - Suối Hoa - Đường Kinh Dương Vương - Thành phố Bắc Ninh",
+ "back":"Thành phố Bắc Ninh - Đường Kinh Dương Vương - Suối Hoa - Ngô Gia Tự (Bắc Ninh) - BX Bắc Ninh - Nguyễn Văn Cừ (Bắc Ninh) - Hòa Đình - Võ Cường - Ó - Lim - Nội Duệ - Tương Giang - Viềng - Đồng Nguyên - Từ Sơn - Dốc Lã - Hà Huy Tập - Cầu Đuống - Ngô Gia Tự - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ - Điểm trung chuyển Long Biên - Long Biên (Yên Phụ - đoạn Hàng Than đến Hòe Nhai)", 
+"info":"Long Biên - Bắc Ninh
+<br/><br/>5h00 - 19h45
+15  phút/chuyến
+
+"}, 
+
+{"num":"55", "name":"Long Biên - Bưởi - Cầu Giấy", 
+"start":"BX Lương Yên - Nguyễn Khoái - quay đầu tại dốc Minh Khai - Nguyễn Khoái -Trần Khánh Dư - Trần Quang Khải - Trần Nhật Duật - Điểm trung chuyển Long Biên - Yên Phụ - Nghi Tàm - Âu Cơ - Lạc Long Quân - Bưởi - Điểm trung chuyển Cầu Giấy - Cầu Giấy (đường trên) - Cầu Giấy (đường dưới) - Bãi đỗ xe Cầu Giấy",
+ "back":"Bãi đỗ xe Cầu Giấy - Điểm trung chuyển xe buýt Cầu Giấy - Bưởi - Lạc Long Quân - Âu Cơ - Nghi Tàm - Yên Phụ - Điểm trung chuyển Long Biên - Trần Nhật Duật - Trần Quang Khải - Trần Khánh Dư - Nguyễn khoái - Bx Lương Yên.", 
+"info":"Long Biên - Bưởi - Cầu Giấy
+<br/><br/>5h05 - 22h00
+11 - 15 - 20 phút/chuyến
+
+"}, 
+
+{"num":"56A", "name":"Nam Thăng Long - Núi Đôi", 
+"start":"Bãi đỗ xe Nam Thăng Long - Phạm Văn Đồng - Cầu Thăng Long - Đường Bắc Thăng Long Nội Bài - Quốc lộ 2 - đường mới dọc hầm chui QL2 - Tỉnh lộ 131 - KCN Nội Bài - Thị trấn Sóc Sơn - Đường Núi Đôi - Núi Đôi (ngã tư đường Núi Đôi - lối rẽ vào Đại học Điện Lực)",
+ "back":"Núi Đôi (ngã tư đường Núi Đôi - lối rẽ vào Đại học Điện Lực) - Đường Núi Đôi - Thị trấn Sóc Sơn - KCN Nội Bài - Tỉnh lộ 131- đường mới dọc hầm chui QL2 - Quốc Lộ 2 - Đường Bắc Thăng Long Nội Bài - Cầu Thăng Long - Phạm Văn Đồng - Bãi đỗ xe Nam Thăng Long", 
+"info":"Nam Thăng Long - Núi Đôi
+4h35 - 21h35
+15 - 20 phút/chuyến
+
+"}, 
+
+{"num":"56B", "name":"Nam Thăng Long - Xuân Giang (Sóc Sơn)", 
+"start":"Bãi đỗ xe Nam Thăng Long - Phạm Văn Đồng - Cầu Thăng Long - Đường Bắc Thăng Long Nội Bài - Quốc lộ 2 - đường mới dọc hầm chui QL2 - Tỉnh lộ 131 - KCN Nội Bài - Thị trấn Sóc Sơn - Đường Núi Đôi - Đan Tảo (Tân Minh, Sóc Sơn) - Xuân Giang (Trường THPT Xuân Giang)",
+ "back":"Xuân Giang (Trường THPT Xuân Giang) - Đan Tảo (Tân Minh, Sóc Sơn) - Đường Núi Đôi - Thị trấn Sóc Sơn - KCN Nội Bài - Tỉnh lộ 131- đường mới dọc hầm chui QL2 - Quốc Lộ 2 - Đường Bắc Thăng Long Nội Bài - Cầu Thăng Long - Phạm Văn Đồng - Bãi đỗ xe Nam Thăng Long", 
+"info":"Nam Thăng Long - Xuân Giang (Sóc Sơn)
+4h35 - 21h35
+15 - 20 phút/chuyến
+
+"}, 
+
+{"num":"57", "name":"Khu đô thị Mỹ Đình II - BX Hà Đông", 
+"start":"Khu đô thị Mỹ Đình II - Nguyễn Cơ Thạch - Hồ Tùng Mậu - Quốc lộ 32 - Ngã tư Xuân Phương - Cầu vượt TL 70 - Tây Mỗ - Ngọc Trục( Đường 70) -Vạn Phúc - Chu Văn An (Hà Đông) - Quang Trung (Hà Đông) - Ba La - Quốc Lộ 6 - Yên Nghĩa - Đồng Mai - Cầu Mai Lĩnh - Biên Giang - Chúc Sơn - Khu công nghiệp Phú Nghĩa (đường nội bộ KCN Phú Nghĩa)",
+ "back":"Khu công nghiệp Phú Nghĩa (đường nội bộ KCN Phú Nghĩa) - Chúc Sơn - Biên Giang - Cầu Mai Lĩnh - Đồng Mai - Quốc Lộ 6 -Yên Nghĩa - Ba La - Quang Trung (Hà Đông) - Vạn Phúc - Đại Mỗ - Tây Mỗ -Xuân Phương - Ngã tư Xuân Phương - Quốc lộ 32 - Hồ Tùng Mậu - Nguyễn Cơ Thạch - Khu đô thị Mỹ Đình II.", 
+"info":"Khu đô thị Mỹ Đình II - BX Hà Đông
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"58", "name":"Yên Phụ - TTTM Mê Linh Plaza", 
+"start":"Long Biên (Yên Phụ - đoạn từ Hàng Than đến Hoè Nhai) - Quay đầu đối diện Hàng Than - Yên Phụ - Điểm trung chuyển Long Biên (tuyến đường 3) - Trần Nhật Duật (Quay đầu tại phố Hàng Khoai) - Yên Phụ - Nghi Tàm - Âu Cơ - An Dương Vương - đường gầm cầu Thăng Long - Cầu Thăng Long - Cao tốc Bắc Thăng Long Nội Bài - Trạm thu phí Thăng Long - Ngã tư Quốc lộ 2 Cao tốc Thăng Long Nội Bài- Quốc Lộ 2 - Trạm thu phí số 1 QL2- Hai Bà Trưng(Phúc Yên-Vĩnh Phúc)- Nguyễn Trãi (Phúc Yên-Vĩnh Phúc) - Cây đa Thanh Tước- QL 23B - Mê Linh (Trước cổng Bệnh viện Đa khoa Mê Linh).",
+ "back":"Mê Linh (Trước cổng Bệnh viện Đa khoa Mê Linh) - QL 23B - Cây đa Thanh Tước - Nguyễn Trãi (Phúc Yên-Vĩnh Phúc) - Hai Bà Trưng(Phúc Yên-Vĩnh Phúc)-Trạm thu phí số 1 QL2 - Quốc Lộ 2 - Ngã tư Quốc lộ 2 Cao tốc Thăng Long Nội Bài - Trạm thu phí Thăng Long - Cao tốc Bắc Thăng Long Nội Bài - Cầu Thăng Long - đường gầm cầu Thăng Long - An Dương Vương - Âu Cơ - Nghi Tàm - Yên Phụ - Trần Nhật Duật (Quay đầu tại phố Hàng Khoai) - Điểm trung chuyển Long Biên (tuyến đường 2) - Yên Phụ - Long Biên (Yên Phụ - đoạn từ Hàng Than đến Hoè Nhai).", 
+"info":"Yên Phụ - TTTM Mê Linh Plaza
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"59", "name":"Đông Anh - ĐH Nông Nghiệp I", 
+"start":"Ngã ba xay sát Đông Quan - Đường Cao Lỗ - Quốc lộ 3 - Ngô Gia Tự - Nguyễn Cao Luyện- Trường Lâm - Lệ Mật - ViỆT Hưng - Nguyễn Văn Linh - Quốc lộ 5 - Ngô Xuân Quảng - Đại học Nông nghiệp Hà Nội.",
+ "back":"Đại học Nông nghiệp Hà Nội - Ngô Xuân Quảng - Quốc lộ 5 - Nguyễn Văn Linh - Việt Hưng - Lệ Mật - Trường Lâm - Nguyễn Cao Luyện - Ngô Gia Tự - Quốc lộ 3 - Đường Cao Lỗ - Ngã ba xay sát Đông Quan.", 
+"info":"Đông Anh - ĐH Nông Nghiệp I
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"60", "name":"Công Viên Nghĩa Đô - BX Nước Ngầm", 
+"start":"BĐX Nam Thăng Long - Phạm Văn Đồng - Phạm Hùng - Trần Duy Hưng - Hoàng Đạo Thuý - Lê Văn Lương - Nguyễn Tuân - Nguyễn Trãi - Nguyễn Xiển - Nghiêm Xuân Yêm - Cầu Dậu - Nguyễn Hữu Thọ - Giải Phóng - đường Ngọc Hồi - quay đầu tại NMBiến thế ABB - Ngọc Hồi - BX Nước Ngầm",
+ "back":"BX Nước ngầm - Giải Phóng - Nguyễn Hữu Thọ - Cầu Dậu - Nghiêm Xuân Yêm - Nguyễn Xiển - Nguyễn Trãi - quay đầu tại đối diện ngõ 241 Nguyễn Trãi - Nguyễn Trãi - Nguyễn Tuân - Lê văn Lương - Hoàng Đạo Thuý - Trần Duy Hưng - Quay đầu tại 92 Trần Duy Hưng - Trần Duy Hưng - Phạm Hùng - Phạm Văn Đồng - Đỗ Nhuận - BĐX Nam Thăng Long", 
+"info":"Công Viên Nghĩa Đô - BX Nước Ngầm
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"61", "name":"Vân Hà (Đông Anh) - Mê Linh (BV Đa Khoa)", 
+"start":"Bãi Đỗ xe Vân Hà - KĐT Liên Hà - Việt Hùng - Cao Lỗ - Vân Trì - Cầu vượt Vân Trì - Quốc lộ 23 - Tiền Phong - Mê Linh (BVĐK Mê Linh) ",
+ "back":"Mê Linh (BVĐK Mê Linh) - Tiền Phong - Quốc lộ 23 - cầu vượt Vân Trì - Vân Trì - Cao Lỗ - Việt Hùng - KĐT Liên Hà - Bãi đỗ xe Liên Hà.", 
+"info":"Vân Hà (Đông Anh) - Mê Linh (BV Đa Khoa)
+
+
+ (Tuyến không thuộc TRANSERCO)"}, 
+
+{"num":"62", "name":"BX Yên Nghĩa - BX Thường Tín", 
+"start":"  
+Bến xe Yên Nghĩa - Quốc lộ 6 - Ba La - Quang Trung (Hà Đông) - Tô Hiệu (Hà Đông) - Cầu Đen - Phùng Hưng (Hà Đông) - Đường Cầu Bươu - Đường 70 - Phan Trọng Tuệ - Ngọc Hồi - Quốc Lộ 1 - Liên Ninh - Quán Gánh - Bến xe Thường Tín",
+ "back":"  
+Bến xe Thường Tín - Quốc lộ 1 - Quán Gánh - Liên Ninh - Ngọc Hồi - Phan Trọng Tuệ - Đường 70 - Đường Cầu Bươu - Phùng Hưng (Hà Đông) - Cầu Đen - Tô Hiệu (Hà Đông) - Quang Trung (Hà Đông) - Ba La - Quốc lộ 6 - Bến xe Yên Nghĩa", 
+"info":"BX Yên Nghĩa - BX Thường Tín
+<br/><br/>5h00 - 21h00
+10 - 15 phút/chuyến
+
+
+ "}, 
+
+{"num":"63", "name":"KCN Bắc Thăng Long - Tiến Thịnh Mê Linh", 
+"start":"KCN Bắc Thăng Long - Đại Mạch - Yên Nhân - Quốc lộ 23B - Trần Nguyên Hãn - Quốc lộ 2 - Đạm Nội - Bạch Trữ - Tự Lập - Liên Mạc - Tiến Thịnh (Mê Linh)",
+ "back":"Tiến Thịnh (Mê Linh) - Liên Mạc - Tự Lập - Bạch Trữ - Đạm Nội - Quốc lộ 2 - Trần Nguyên Hãn - Quốc Lộ 23B - Yên Nhân - Đại Mạch- KCN Bắc Thăng Long", 
+"info":"KCN Bắc Thăng Long - Tiến Thịnh Mê Linh
+<br/><br/>5h00 - 21h00
+20 - 30 phút/chuyến
+
+"}, 
+
+{"num":"71", "name":"BX Mỹ Đình - Đại lộ Thăng Long - BX Sơn Tây", 
+"start":" Bến Xe Mỹ Đình - Phạm Hùng - Đường Mễ Trì - Đại lộ Thăng Long - Quốc lộ 21 - Chùa Thông - Bến xe Sơn Tây ",
+ "back":"Bến xe Sơn Tây - quay đầu tại ngã ba Nghệ - Chùa Thông - Quốc lộ 21 - Đại lộ Thăng Long - Đường Mễ Trì - Quay đầu tại khách sạn Keangnam - Phạm Hùng - Quay đầu tại bưu điện Phạm Hùng - Bến xe Mỹ Đình", 
+"info":"BX Mỹ Đình - Đại lộ Thăng Long - BX Sơn Tây
+<br/><br/>5h00 - 19h10
+10-15-20  phút/chuyến
+- Giá vé tuyến: 20.000đ/HK/lượt
+- Giá vé chặng: 8.000;14.000đHK/lượt"}, 
+
+{"num":"73", "name":"BX Mỹ Đình - Chùa Thầy", 
+"start":"Bến Xe Mỹ Đình - Phạm Hùng - Hồ Tùng Mậu - Quốc lộ 32 - Thị trấn Trôi (Huyện Hoài Đức) - Đường 422 - Đường 421 - Chùa Thầy (Huyện Quốc Oai)",
+ "back":"Chùa Thầy (Huyện Quốc Oai) - Đường 421 - Đường 422 - Thị trấn Trôi (Huyện Hoài Đức) -  Quốc lộ 32 - Hồ Tùng Mậu - Phạm Hùng - Bến Xe Mỹ Đình  ", 
+"info":"BX Mỹ Đình - Chùa Thầy
+<br/><br/>5h30 - 17h30
+30 phút/chuyến 
+- Giá vé tuyến: 10.000đ/HK/lượt
+- Giá vé chặng: 5.000đHK/lượt"}, 
+
+{"num":"79", "name":"BX Sơn Tây- Đá Chông", 
+"start":"Bến xe Sơn Tây - quay đầu tại ngã ba Nghệ - Chùa Thông - Đường 414 (Xuân Khanh, Tản Lĩnh, Đá Chông - Đường 414 - Đá Chông",
+ "back":"Đá Chông - Đường 414 - (Đá Chông, Tản Lĩnh, Xuân Khanh) - Chùa Thông - Bến xe Sơn Tây  ", 
+"info":"BX Sơn Tây- Đá Chông
+<br/><br/>5h30 - 17h30
+30  phút/chuyến
+- Giá vé tuyến: 10.000đ/HK/lượt
+- Giá vé chặng: 5.000đHK/lượt"}, 
+
+{"num":"202", "name":"Hà Nội - Hải Dương", 
+"start":"BX Gia Lâm - Ngô Gia Khảm - Ngọc Lâm - Nguyễn Văn Cừ - Cầu Chui - Nguyễn Văn Linh - Như Quỳnh - Bần - Phố Nối - Quán Gỏi - ngã ba Hoàng Long - ngã tư Máy Sứ - Lê Thanh Nghị - Thống Nhất - Bạch Đằng - Trần Hưng Đạo - Hồng Quang - BX Hải Dương.",
+ "back":"BX Hải Dương - Hồng Quang - Trần Hưng Đạo - Bạch Đằng - Thống Nhất - Lê Thanh Nghị - ngã tư Máy Sứ - ngã ba Hoàng Long - Quán gỏi - Phố Nối - Bần - Như Quỳnh - Nguyễn Văn Linh - Cầu Chui - Nguyễn Văn Cừ - Ngô Gia Khảm - BX Gia Lâm.", 
+"info":"Hà Nội - Hải Dương
+<br/><br/>5h14 - 19h02
+15 phút/chuyến
+Giá vé lượt:
+- Giá vé tuyến: 25.000đ/HK/lượt
+(Liên Hệ: 04.38567567)"}, 
+
+{"num":"204", "name":"Hà Nội - Thuận Thành (Bắc Ninh)", 
+"start":"BX Lương Yên - Nguyễn Khoái (dốc Minh Khai)- Trần Khánh Dư - Trần Quang Khải - Cầu Chương Dương - Nguyễn Văn Cừ - Nguyễn Văn Linh - Quốc Lộ 5 - Ngã 4 Phú Thị - Đường 181 - Phố Sủi - Keo - Kim Sơn - Chùa Keo - Phố Toàn Thắng(KCN Hapro) - Đức Hiệp - Xuân Lâm - Hà Mãn - Chùa Dâu - Thanh Hoài (Thanh Khương) - Tám Á(Gia Đông) - Phố Khám(Gia Đông) - Thị trấn Hồ(Thuận Thành).",
+ "back":"Thị trấn Hồ(Thuận Thành) - Phố Khám(Gia Đông) - Tam Á(Gia Đông) - Thanh Hoài(Thanh Khương) - Chùa Dâu - Hà Mãn - Xuân Lâm - Đức Hiệp - Phố Toàn Thắng(KCN Hapro) - Chùa Keo - Kim Sơn - Keo - Phố Sủi - Đường 181 - Ngã 4 Phú Thị - Quốc Lộ 5 - Nguyễn Văn Linh - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Quang Khải - Trần Khánh Dư - Nguyễn Khoái - BX Lương Yên.", 
+"info":"Hà Nội - Thuận Thành (Bắc Ninh)
+<br/><br/>5h00-20h00
+15 phút/chuyến
+Giá vé lượt:
+-Giá vé chặng: 6.000đ/HK/lượt
+-Giá vé tuyến: 10.000đ/KH/lượt
+
+
+(Liên Hệ: 04.38584514)"}, 
+
+{"num":"205", "name":"BX Lương Yên - Hưng Yên", 
+"start":"BX Nước Ngầm - Pháp Vân - Nguyễn Tam Trinh - Minh Khai - Nguyễn Khoái - Trần Quang Khải - Cầu Chương Dương –Nguyễn Văn Cừ - Như Quỳnh - Quốc Lộ 5 - Phố Nối - Đường 39 - Tân Lập - Trung Hưng - Bô Thời - Bờ Hồ Bán Nguyệt - BX Hưng Yên.",
+ "back":"BX Hưng Yên - Bờ Hồ Bán Nguyệt - Bô Thời - Trung Hưng - Tân Lập - Đường 39 - Phố Nối - Quốc Lộ 5 - Như Quỳnh - Nguyễn Văn Cừ - Cầu Chương Dương - Trần Quang Khải - Nguyễn Khoái - Minh Khai - Nguyễn Tam Trinh - Pháp Vân - Giải Phóng - BX Nước Ngầm.", 
+"info":"BX Lương Yên - Hưng Yên
+<br/><br/>5h00 - 19h15
+20 phút/chuyến
+Giá vé lượt:
+-Giá vé tuyến: 34.000đ/HK/lượt
+(Liên Hệ:04.38567567)"}, 
+
+{"num":"209", "name":"Giáp Bát - Hưng Yên", 
+"start":"BX Giáp Bát - Giải Phóng - Pháp Vân - Văn Điển - Ngọc Hồi - Thường Tín - Đỗ Xá - Phú Xuyên - Cầu Giẽ - Đồng Văn - Duy Tiên - QL 38 - Hòa Mạc - Cầu Yên Lệnh - TX Hưng Yên - BX Hưng Yên.",
+ "back":"BX Hưng Yên - TX Hưng Yên - Cầu Yên Lệnh  - Hòa Mạc - QL 38 - Duy Tiên - Đồng Văn - Cầu Giẽ - Phú Xuyên - Đỗ Xá - Thường Tín - Ngọc Hồi - Văn Điển - Pháp Vân - Giải Phóng - BX Giáp Bát", 
+"info":"Giáp Bát - Hưng Yên
+0<br/><br/>5h17 - 18h57
+20 phút /chuyến
+Giá vé lượt: 
+-Giá vé tuyến: 28.000đ/KH/lượt
+(Liên Hệ: 04.38567567)"}
+										
+]
+}									
+

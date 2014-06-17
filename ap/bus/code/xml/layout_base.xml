@@ -21,15 +21,50 @@
             android:layout_marginLeft="5dp"
             android:background="@drawable/home" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Xe Buýt HCM"
-            android:textColor="@color/green"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Thong Tin Xe Buýt"
+                android:textColor="@color/green"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <RadioGroup
+                    android:id="@+id/groupRadio"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rbtnHcm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:checked="true"
+                        android:text="HCM" />
+
+                    <RadioButton
+                        android:id="@+id/rbtnHN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ha Noi" />
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/search"

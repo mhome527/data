@@ -11,22 +11,26 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import app.infobus.adapter.BusAdapter;
 import app.infobus.entity.clsItem;
 import app.infobus.entity.clsListData;
 import app.infobus.entity.clsPathBus;
 import app.infobus.utils.Common;
+import app.infobus.utils.Constant;
 import app.infobus.utils.LogUtil;
 import app.infobus.utils.Utility;
 
 public class InfoBusActivity extends AbstractActivity {
 
 	String tag = InfoBusActivity.class.getSimpleName();
-	ListView lstBus;
-	LinearLayout lnSearch;
+	private ListView lstBus;
+	private LinearLayout lnSearch;
 
 	public static ArrayList<clsPathBus> arrPathBus = null;
 
@@ -40,13 +44,6 @@ public class InfoBusActivity extends AbstractActivity {
 		try {
 			LogUtil.i(tag, "initView....");
 			lstBus = (ListView) findViewById(R.id.lstBus);
-			/*
-			 * lnSearch = (LinearLayout) findViewById(R.id.search);
-			 * 
-			 * lnSearch.setOnClickListener(new View.OnClickListener() {
-			 * 
-			 * @Override public void onClick(View v) { Intent i = new Intent(InfoBusActivity.this, SearchActivity.class); startActivity(i); } });
-			 */
 
 			lstBus.setOnItemClickListener(new OnItemClickListener() {
 
@@ -62,15 +59,36 @@ public class InfoBusActivity extends AbstractActivity {
 					startActivity(intent);
 				}
 			});
+
+			rbtnHcm.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					new LoadData(InfoBusActivity.this).execute();
+
+				}
+
+			});
+
+			rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					new LoadData(InfoBusActivity.this).execute();
+
+				}
+
+			});
+
 			new LoadData(this).execute();
-			
+
 			// ///////ad
 			AdView adView = (AdView) this.findViewById(R.id.adView);
-			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("sony-so_04d-CB5A1KBLPT").build();
+			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+					.addTestDevice("sony-so_04d-CB5A1KBLPT").build();
 			adView.loadAd(adRequest);
 			// //////////////////
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -94,14 +112,18 @@ public class InfoBusActivity extends AbstractActivity {
 
 			try {
 				// arrPathBus = ReadData.getPathData(activity);
-				clsList = Common.getDataHCM(activity);
+				// clsList = Common.getDataHCM(activity);
+				if (rbtnHcm.isChecked())
+					clsList = Common.getDataBus(activity, Constant.HCM);
+				else
+					clsList = Common.getDataBus(activity, Constant.HANNOI);
+
 				if (clsList == null)
 					return false;
 				else
 					return true;
 				// return getPathData(activity);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
 			}
@@ -130,8 +152,7 @@ public class InfoBusActivity extends AbstractActivity {
 
 				}
 				lstBus.setAdapter(new BusAdapter(activity, arrPathBus));
-			}
-			else
+			} else
 				LogUtil.i(tag, "Loading-PostExecute Load fail");
 			LogUtil.i(tag, "Loading-PostExecute done");
 		}
