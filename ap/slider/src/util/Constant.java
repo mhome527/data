@@ -33,6 +33,8 @@ public class Constant {
 	public static final String IMAGE_PATH = "ImagePath";
 //	public static final String IMAGE_ID = "ImageID";
 	public static final String GAME_ID = "GameID";
+	public static final String GAME_ID_S = "GameIDSmall";
+
 	public static final String GOOGLE_ID = "GoogleId";
 
 	public static final String LEVEL_TIME = "time";

@@ -1,34 +1,28 @@
 package puzzle.slider.vn.view;
 
 import java.util.ArrayList;
-import java.util.Random;
-
-import puzzle.slider.vn.SliderMainActivity;
-import puzzle.slider.vn.SoundManager;
-import puzzle.slider.vn.util.Constant;
-import puzzle.slider.vn.util.CustomSharedPreferences;
-import puzzle.slider.vn.util.ShowLog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.media.MediaPlayer;
 import android.view.MotionEvent;
+import java.util.Random;
+import puzzle.slider.vn.SliderMainActivity;
+import puzzle.slider.vn.SoundManager;
+import puzzle.slider.vn.util.Constant;
+import puzzle.slider.vn.util.CustomSharedPreferences;
+import puzzle.slider.vn.util.ShowLog;
+
 import android.view.ViewParent;
 import android.view.animation.TranslateAnimation;
 import android.widget.RelativeLayout;
 
-/**
- * show game
- * 
- * @author huynhtran
- * 
- */
 public class PluzzleView extends RelativeLayout {
 
 	private String tag = "HuynhTD-" + PluzzleView.class.getSimpleName();
-	TileImage[][] dataTile;
-	TileImage currTile;
-	ArrayList<TileImage> arrTile;
+	private TileImage[][] dataTile;
+	private TileImage currTile;
+	private ArrayList<TileImage> arrTile;
 	// boolean isCheck = true;
 	public boolean isTime = false;
 	int widthTile;
@@ -47,8 +41,7 @@ public class PluzzleView extends RelativeLayout {
 		super(context);
 		try {
 
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 
 		}
 	}
@@ -80,11 +73,7 @@ public class PluzzleView extends RelativeLayout {
 			ShowLog.i(tag, "init()  width tile: " + widthTile);
 
 			scaleBmp = Bitmap.createScaledBitmap(bmp, widthTile * column, widthTile * row, true);
-			// this.blank = Bitmap.createScaledBitmap(blank, widthTile, widthTile, true);
 
-			// ShowLog.showLogInfo(tag, "init()  bitmap scale  (width,height)= " + scaleBmp.getWidth() + ", " + scaleBmp.getHeight() + " ; blank w,y=" +
-			// this.blank.getWidth()
-			// + ", " + this.blank.getHeight());
 
 			for (int i = 0; i < row; i++) {
 				for (int j = 0; j < column; j++) {
@@ -128,8 +117,7 @@ public class PluzzleView extends RelativeLayout {
 			scaleBmp = null;
 			tileBmp = null;
 
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			ShowLog.e(tag, "init error: " + e.getMessage());
 			if (Constant.IS_PrintStackTrace)
 				e.printStackTrace();
@@ -140,7 +128,7 @@ public class PluzzleView extends RelativeLayout {
 		MediaPlayer mPlayer;
 		TileImage tile;
 		tile = getTile(x, y);
-		if (tile == null){
+		if (tile == null) {
 			ShowLog.i(tag, "moveTileXY: tile NULL");
 			return false;
 		}
@@ -151,8 +139,7 @@ public class PluzzleView extends RelativeLayout {
 				if (mPlayer != null && mPlayer.isPlaying()) {
 					SoundManager.playSound(Constant.SOUND_L2, false);
 					ShowLog.i(tag, "moveTile 1");
-				}
-				else {
+				} else {
 					SoundManager.playSound(Constant.SOUND_L, false);
 					ShowLog.i(tag, "moveTile 2");
 				}
@@ -175,8 +162,7 @@ public class PluzzleView extends RelativeLayout {
 
 			// isCheck = true;
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -203,8 +189,7 @@ public class PluzzleView extends RelativeLayout {
 				break;
 			}
 
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			ShowLog.e(tag, "init error: " + e.getMessage());
 			if (Constant.IS_PrintStackTrace)
 				e.printStackTrace();
@@ -217,7 +202,7 @@ public class PluzzleView extends RelativeLayout {
 	public boolean dispatchTouchEvent(MotionEvent event) {
 		TileImage tile;
 		super.dispatchTouchEvent(event);
-		ShowLog.i(tag, "dispatchTouchEvent....");
+		ShowLog.i(tag, "dispatchTouchEvent....isTime: " + isTime);
 		// ShowLog.showLogInfo(tag, "dispatchTouchEvent dispatch: " + dispatch);
 		// ShowLog.showLogInfo(tag, "dispatchTouchEvent  check: " + "; x,y= " + event.getX() + ", " + event.getY());
 		if (isTime) {
@@ -236,8 +221,7 @@ public class PluzzleView extends RelativeLayout {
 		tile = getTile((int) event.getX(), (int) event.getY());
 		if (tile != null) {
 			return true;
-		}
-		else {
+		} else {
 			// isCheck = true;
 			return false;
 		}
@@ -264,8 +248,7 @@ public class PluzzleView extends RelativeLayout {
 						changeItem(tile);
 					}
 					arrTile.add(currTile);
-				}
-				else if (currY < tileImage.getLocY()) {
+				} else if (currY < tileImage.getLocY()) {
 					// ShowLog.showLogInfo(tag, "moveDataTile bottom => top");
 					for (int i = currY + 1; i <= tileImage.getLocY(); i++) {
 						tile = getDataLoc(currX, i);
@@ -275,8 +258,7 @@ public class PluzzleView extends RelativeLayout {
 					arrTile.add(currTile);
 				}
 
-			}
-			else if (currTile.getLocY() == tileImage.getLocY()) {
+			} else if (currTile.getLocY() == tileImage.getLocY()) {
 				currX = currTile.getLocX();
 				currY = currTile.getLocY();
 				if (currX > tileImage.getLocX()) {
@@ -287,8 +269,7 @@ public class PluzzleView extends RelativeLayout {
 						changeItem(tile);
 					}
 					arrTile.add(currTile);
-				}
-				else if (currX < tileImage.getLocX()) {
+				} else if (currX < tileImage.getLocX()) {
 					// ShowLog.showLogInfo(tag, "moveDataTile right => left");
 					for (int i = currX + 1; i <= tileImage.getLocX(); i++) {
 						tile = getDataLoc(i, currY);
@@ -401,7 +382,7 @@ public class PluzzleView extends RelativeLayout {
 		tile = getTile(dataTile[1][1].getAreaNew().left + 10, dataTile[1][1].getAreaNew().top + 10);
 		moveDataTile(tile);
 
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 20; i++) {
 			// for (int i = 0; i < 300; i++) {
 			rand = new Random();
 			rX = rand.nextInt(4) + 1;
@@ -447,8 +428,7 @@ public class PluzzleView extends RelativeLayout {
 			// mSlider.release();
 			// if (mSlider2 != null)
 			// mSlider2.release();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			ShowLog.e(tag, "onDestroy");
 			if (Constant.IS_PrintStackTrace)
 				e.printStackTrace();

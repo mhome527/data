@@ -9,15 +9,12 @@ import puzzle.slider.vn.util.Utility;
 import puzzle.slider.vn.util.ViewHelper;
 import puzzle.slider.vn.view.CongratulationView;
 import puzzle.slider.vn.view.CongratulationView.CongratulationClickListener;
-import puzzle.slider.vn.view.CongratulationView.FinishType;
 import puzzle.slider.vn.view.CongratulationView.GameType;
 import puzzle.slider.vn.view.PluzzleView;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,10 +27,10 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
+import android.widget.TextView;
 
 /**
  * Pluzzle Main
@@ -46,23 +43,24 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 	// AbstractContentsActivity {
 
 	private String tag = "HuynhTD-" + SliderMainActivity.class.getSimpleName();
-	private Bitmap bmpOrg = null;
+//	private Bitmap bmpOrg = null;
 
 	private int widthTile;
 	private int scnWidth, scnHeight;
 
 	private ImageView imgShow;
-//	private ImageView imgArea;
-//	private Button btnChoice;
+	// private ImageView imgArea;
+	// private Button btnChoice;
 	private Button btnReplay;
 	private RelativeLayout rlRoots;
 	private LinearLayout lnProgressBar;
 	private RelativeLayout lnPluzzle;
-//	private LinearLayout lnControl;
+	// private LinearLayout lnControl;
 	private PluzzleView pluzz;
 	private RelativeLayout llBg1;
 	private LinearLayout llBg2;
 	private LinearLayout llBg3;
+	private TextView tvTime;
 	// public String pathName = "";
 	// private String id = "";
 	// private ImageView imgBack;
@@ -73,6 +71,14 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 	protected MyGestureListener myGestureListener;
 
 	private int idGame;
+	private int idGameS;
+
+	// time
+	private long startTime = 0L;
+	private Handler customHandler = new Handler();
+	private int mins = 0;
+	private int hours = 0;
+	private int secs = 0;
 
 	@Override
 	protected int getViewLayoutId() {
@@ -87,16 +93,17 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			rlRoots = ViewHelper.findView(this, R.id.rlRoots);
 			lnProgressBar = ViewHelper.findView(this, R.id.lnProgressBar);
 			lnPluzzle = ViewHelper.findView(this, R.id.lnPluzzle);
-//			lnControl = ViewHelper.findView(this, R.id.lnControl);
+			// lnControl = ViewHelper.findView(this, R.id.lnControl);
 			imgShow = ViewHelper.findView(this, R.id.imgShow);
-//			btnChoice = ViewHelper.findView(this, R.id.btnChoice);
+			// btnChoice = ViewHelper.findView(this, R.id.btnChoice);
 			btnReplay = ViewHelper.findView(this, R.id.btnReplay);
-//			imgArea = ViewHelper.findView(this, R.id.imgArea);
+			// imgArea = ViewHelper.findView(this, R.id.imgArea);
 			// imgBack = ViewHelper.findView(this, R.id.imgBack);
 			llBg1 = ViewHelper.findView(this, R.id.llBg1);
 			llBg2 = ViewHelper.findView(this, R.id.llBg2);
 			llBg3 = ViewHelper.findView(this, R.id.llBg3);
 
+			tvTime = ViewHelper.findView(this, R.id.tvTime);
 			initData();
 
 			// createLayout();
@@ -114,14 +121,13 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 
 	@SuppressWarnings("deprecation")
 	private void initData() {
-		Drawable dbmp;
-		Bitmap bmpTmp1, bmpTmp2;
+		Bitmap bmpTmp2;
 		Intent intent;
 		int imgW = 100;
 		int wArea = 200;
 		int hArea = 200;
 		int h_llBg2 = 100;
-		int gameW = 100, controlW = 100, controlH = 100;
+		int gameW = 100;
 		try {
 			System.gc();
 			intent = this.getIntent();
@@ -130,12 +136,13 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			finish = intent.getBooleanExtra(Constant.FINISH_GAME, false);
 
 			idGame = intent.getIntExtra(Constant.GAME_ID, -1);
+			idGameS = intent.getIntExtra(Constant.GAME_ID_S, -1);
 
 			cgview = new CongratulationView(this);
-			if (!finish)
-				cgview.setFinishType(FinishType.finish1);
-			else
-				cgview.setFinishType(FinishType.finish2);
+			// if (!finish)
+			// cgview.setFinishType(FinishType.finish1);
+			// else
+			// cgview.setFinishType(FinishType.finish2);
 			cgview.setVisibility(View.GONE);
 			rlRoots.addView(cgview);
 
@@ -161,23 +168,23 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			} else if (scnHeight >= 480 && scnHeight < 720) {
 				h_llBg2 = widthTile * 4 + 150;
 				gameW = (int) (widthTile * 1.4);
-//				controlW = (int)(widthTile * 1.5);
+				// controlW = (int)(widthTile * 1.5);
 			}
 			switch (scnHeight) {
 			case 480:
 				imgW = (int) (widthTile * 1.4) + 10;
-//				gameW = (int) (widthTile * 1.2) - 5;
-//				controlW = (int) (widthTile / 1.8) + 10;
-				controlH = (int) (widthTile * 1.3) + 10;
+				// gameW = (int) (widthTile * 1.2) - 5;
+				// controlW = (int) (widthTile / 1.8) + 10;
+				// controlH = (int) (widthTile * 1.3) + 10;
 				wArea = (int) (widthTile * 5.5);
 				hArea = widthTile * 4 + 42;
 				widthTile = widthTile + 5;
 				break;
 			case 540:
 				imgW = (int) (widthTile * 1.5) + 15;
-//				gameW = (int) (widthTile * 1.5);
-//				controlW = widthTile - 10;
-				controlH = (int) (widthTile * 1.3) + 10;
+				// gameW = (int) (widthTile * 1.5);
+				// controlW = widthTile - 10;
+				// controlH = (int) (widthTile * 1.3) + 10;
 				wArea = (int) (widthTile * 5.5) + 8;
 				hArea = widthTile * 4 + 55;
 				widthTile = widthTile + 8;
@@ -186,45 +193,28 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			case 720:
 			default:
 				imgW = (int) (widthTile * 1.5) + 15;
-//				gameW = (int) (widthTile * 1.5);
-//				controlW = widthTile - 15;
-				controlH = (int) (widthTile * 1.3) + 10;
+				// gameW = (int) (widthTile * 1.5);
+				// controlW = widthTile - 15;
+				// controlH = (int) (widthTile * 1.3) + 10;
 				widthTile = widthTile + 11;
 				hArea = widthTile * 4 + 30;
 				wArea = (int) (widthTile * 5) + 28;
-//				ShowLog.i(tag, "initData widthW: " + gameW + "; controlW=" + controlW);
+				// ShowLog.i(tag, "initData widthW: " + gameW + "; controlW=" + controlW);
 				break;
 			}
 
-			// get default bitmap
-			// dbmp = getResources().getDrawable(R.drawable.miss);
-			// bmpOrg = ((BitmapDrawable) dbmp).getBitmap();
-
-			// pathName = Utility.getPathImg(this, "miss.jpg");
-			// ShowLog.showLogInfo(tag, "initData Path name: " + pathName);
-			// if (pathName.equals("")) {
-			// ShowLog.showLogError(tag, "initData can't get file name");
-			// return;
-			// }
-			// bmpOrg = Utility.decodeBitmapFromFile(pathName, widthTile * 4, widthTile * 4);
-			bmpOrg = Utility.decodeBitmapFromResource(this.getResources(), idGame, widthTile * 4, widthTile * 4);
+//			bmpOrg = Utility.decodeBitmapFromResource(this.getResources(), idGame, widthTile * 4, widthTile * 4);
 
 			// Layout game
 			RelativeLayout.LayoutParams layout_param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 			layout_param.setMargins(gameW, 0, 0, 0);
 			lnPluzzle.setLayoutParams(layout_param);
 
-			// //////
-//			layout_param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.FILL_PARENT);
-//			layout_param.setMargins(controlW, controlH, 5, 5);
-//			lnControl.setLayoutParams(layout_param);
-		
 			System.gc();
-			dbmp = getResources().getDrawable(R.drawable.slider_area);
-			bmpTmp1 = ((BitmapDrawable) dbmp).getBitmap();
+			// dbmp = getResources().getDrawable(R.drawable.slider_area);
+			// bmpTmp1 = ((BitmapDrawable) dbmp).getBitmap();
 			// bmpTmp2 = Utility.getResizedBitmap(bmpTmp1, wArea, wArea, true);
 			// bmpTmp2 = Utility.getResizedBitmap(bmpTmp1, 100, 100, true);
-		
 
 			llBg1.getLayoutParams().width = wArea;
 			llBg1.getLayoutParams().height = hArea;
@@ -240,32 +230,30 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			llBg3.setLayoutParams(param3);
 			llBg3.getLayoutParams().width = widthTile + 6;
 
-
 			// //////
-			bmpTmp2 = Utility.getResizedBitmap(bmpOrg, imgW, imgW, false);
+//			bmpTmp2 = Utility.getResizedBitmap(bmpOrg, imgW, imgW, false);
 			// ShowLog.showLogInfo(tag, "initData size: gc imgShow2=" + bmpTmp2.getByteCount() + "; bmpOrg=" + bmpOrg.getByteCount());
 			// bmpTmp2 = bmpTmp1;
 			// imgShow.setImageBitmap(bmpOrg);
-			
+
 			btnReplay.getLayoutParams().width = widthTile;
 			btnReplay.getLayoutParams().height = widthTile;
-			
-			imgShow.setImageBitmap(bmpTmp2);
 
-			imgShow.getLayoutParams().width = (int)(imgW * 1.4);
-			imgShow.getLayoutParams().height = (int)(imgW * 1.4);
+//			imgShow.setImageBitmap(bmpTmp2);
+			imgShow.setImageResource(idGameS);
+
+			imgShow.getLayoutParams().width = (int) (imgW * 1.3);
+			imgShow.getLayoutParams().height = (int) (imgW * 1.3);
 			// imgShow.setScaleType(ScaleType.FIT_XY);
 
 			// ////////
 			CustomSharedPreferences.setPreferences(Constant.WIDTH_TILE, widthTile);
 
 			// ////////music
-			SoundManager.initSounds(this);
-//			SoundManager.playSound(Constant.SOUND_E, true);
+			// SoundManager.initSounds(this);
+			// SoundManager.playSound(Constant.SOUND_E, true);
 			// ////////////
 
-			dbmp = null;
-			bmpTmp1 = null;
 			bmpTmp2 = null;
 			System.gc();
 			// bmpOrg = null;
@@ -276,20 +264,27 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 		}
 	}
 
-	private void setListenerControl() {		
+	private void setListenerControl() {
 
 		btnReplay.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
+				ShowLog.i(tag, "btnReplay click");
 
-				pluzz.setClickable(false);
+				// pluzz.setClickable(false);
 				pluzz.sortData();
-				pluzz.isTime = true;
+				pluzz.isTime = false;
+
+				// reset time
+				mins = 0;
+				hours = 0;
+				secs = 0;
+				// customHandler.postDelayed(updateTimerThread, 0);
 				// pluzz.playMusicBackground();
-				SoundManager.playSound(Constant.SOUND_E, true);
-				SoundManager.playSound(Constant.SOUND_C, false);
-				startAnimationView.Start();
+				// SoundManager.playSound(Constant.SOUND_E, true);
+				// SoundManager.playSound(Constant.SOUND_C, false);
+				// startAnimationView.Start();
 			}
 		});
 
@@ -298,7 +293,6 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			@Override
 			public void animaitonFinish() {
 				pluzz.isTime = false;
-
 			}
 		});
 	}
@@ -306,14 +300,14 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 	@Override
 	protected void onStart() {
 		super.onStart();
-		SoundManager.playSound(Constant.SOUND_E, true);
+		// SoundManager.playSound(Constant.SOUND_E, true);
 		ShowLog.i(tag, "onStart");
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
-		SoundManager.stopSound(Constant.SOUND_E);
+		// SoundManager.stopSound(Constant.SOUND_E);
 		ShowLog.i(tag, "onPause");
 	}
 
@@ -331,16 +325,18 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 		try {
 
 			ShowLog.i(tag, "onDestroy.... ");
-			if (bmpOrg != null) {
-				bmpOrg.recycle();
-				bmpOrg = null;
-				ShowLog.i(tag, "onDestroy recycle bmpOrg ");
-			}
-			SoundManager.stopSound(Constant.SOUND_E);
+//			if (bmpOrg != null) {
+//				bmpOrg.recycle();
+//				bmpOrg = null;
+//				ShowLog.i(tag, "onDestroy recycle bmpOrg ");
+//			}
+
+			// SoundManager.stopSound(Constant.SOUND_E);
 			if (pluzz != null)
 				pluzz.onDestroy();
 			unbindDrawables(findViewById(R.id.lnRoot));
 
+			customHandler.removeCallbacks(updateTimerThread);
 			System.gc();
 			super.onDestroy();
 		} catch (Exception e) {
@@ -398,10 +394,12 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 
 		@Override
 		protected Object doInBackground(Object... params) {
+			Bitmap bmp;
 			if (!isFinishing()) {
+				bmp = Utility.decodeBitmapFromResource(SliderMainActivity.this.getResources(), idGame, widthTile * 4, widthTile * 4);
 				pluzz = new PluzzleView(SliderMainActivity.this);
-				pluzz.init(4, 4, bmpOrg);
-				bmpOrg = null;
+				pluzz.init(4, 4, bmp);
+				bmp = null;
 				// //////test
 				ShowLog.i(tag, "doInBackground set on Touch....");
 				pluzz.setOnTouchListener(myGestureListener);
@@ -418,14 +416,41 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 				// pluzz.isTime = true;
 				lnPluzzle.addView(pluzz);
 				lnProgressBar.setVisibility(View.GONE);
+
+				customHandler.postDelayed(updateTimerThread, 0);
 			}
 		}
 
 	}
 
+	private boolean checkTime(String newTime, String oldTime) {
+		try {
+			int newT = Integer.parseInt(newTime.replace(":", ""));
+			int oldT = Integer.parseInt(oldTime.replace(":", ""));
+			if (oldT == 0)
+				return true;
+			if (newT < oldT)
+				return true;
+			else
+				return false;
+		} catch (Exception e) {
+		}
+		return true;
+	}
+
 	public void showWin() {
 		// cgview = new CongratulationView(this);
+		String time;
 		try {
+			// //////////////
+			CustomSharedPreferences.init(getApplicationContext());
+
+			time = CustomSharedPreferences.getPreferences(idGame + "", "00:00:00") + "";
+			if (checkTime(tvTime.getText().toString(), time))
+				CustomSharedPreferences.setPreferences(idGame + "", tvTime.getText().toString());
+			customHandler.removeCallbacks(updateTimerThread);
+
+			// //////
 			// System.gc();
 			Handler handler = new Handler();
 			handler.postDelayed(new Runnable() {
@@ -435,23 +460,17 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 
 					cgview.Start();
 					// savePlayed();
-					SoundManager.stopSound(Constant.SOUND_E);
+					// SoundManager.stopSound(Constant.SOUND_E);
 				}
-			}, 1000);
+			}, 800);
 
 			// cgview.setVisibility(View.VISIBLE);
 			if (cgview.getPathImage() == null || cgview.getPathImage().equals("")) {
 				// cgview.setPathImage(pathName);
 				cgview.setGameType(GameType.Slider);
-				cgview.setFinishType(FinishType.finish2);
+				// cgview.setFinishType(FinishType.finish2);
 				cgview.setControlsClickListener(this);
 			}
-			//
-			// // pluzz.stopMusicBackground();
-			// // SoundManager.stopSound(Constant.SOUND_E);
-			// // pluzzleMain.setContentView(cgview);
-			// cgview.Start();
-			// savePlayed();
 			System.gc();
 		} catch (Exception e) {
 
@@ -467,12 +486,20 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 		// rlRoots.removeView(cgview);
 		cgview.setVisibility(View.GONE);
 		pluzz.sortData();
-		SoundManager.playSound(Constant.SOUND_E, true);
-		SoundManager.playSound(Constant.SOUND_C, false);
-		pluzz.isTime = true;
+		// SoundManager.playSound(Constant.SOUND_E, true);
+		// SoundManager.playSound(Constant.SOUND_C, false);
+		pluzz.isTime = false;
+
+		// pluzz.setClickable(false);
+
+		// reset time
+		mins = 0;
+		hours = 0;
+		secs = 0;
+		customHandler.postDelayed(updateTimerThread, 0);
 
 		// /start animation
-		startAnimationView.Start();
+		// startAnimationView.Start();
 		// waitTimer.start();
 		// rlRoots.invalidate();
 		// initData();
@@ -486,10 +513,9 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			if (isClick)
 				return;
 			isClick = true;
-			SoundManager.stopSound(Constant.SOUND_E);
-			SoundManager.playSound(Constant.SOUND_D, false);
+			// SoundManager.stopSound(Constant.SOUND_E);
+			// SoundManager.playSound(Constant.SOUND_D, false);
 			Intent intent = new Intent(this, SliderImageActivity.class);
-			intent.putExtra(Constant.FLAG_ANIM_ISLEFT, false);
 			startActivity(intent);
 			finish();
 		} catch (Exception e) {
@@ -497,25 +523,26 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 		}
 	}
 
-	@Override
-	public void OnClickButtonBack() {
-		ShowLog.i(tag, "button back...");
-		if (isClick)
-			return;
-		isClick = true;
-		SoundManager.stopSound(Constant.SOUND_E);
-		SoundManager.playSound(Constant.SOUND_D, false);
-		SoundManager.isLEFT = 3;
-		// Intent intent = new Intent(SliderMainActivity.this, StartupApp.class);
-		// intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-		// startActivity(intent);
-		finish();
-	}
+	// @Override
+	// public void OnClickButtonBack() {
+	// ShowLog.i(tag, "button back...");
+	// if (isClick)
+	// return;
+	// isClick = true;
+	// SoundManager.stopSound(Constant.SOUND_E);
+	// SoundManager.playSound(Constant.SOUND_D, false);
+	// SoundManager.isLEFT = 3;
+	// // Intent intent = new Intent(SliderMainActivity.this, StartupApp.class);
+	// // intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+	// // startActivity(intent);
+	// finish();
+	// }
 
 	@Override
 	public void onBackPressed() {
-		// TODO Auto-generated method stub
-		super.onBackPressed();
+		Intent intent = new Intent(this, SliderImageActivity.class);
+		startActivity(intent);
+		finish();
 	}
 
 	// @Override
@@ -537,11 +564,11 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 	public void onScreenOn(boolean isunlock) {
 
 		// super.onScreenOn(isunlock);
-		if (isunlock && !Utility.isApplicationSentToBackground(getApplicationContext())) {
-			SoundManager.playSound(Constant.SOUND_E, true);
-		} else {
-			SoundManager.pauseSound(Constant.SOUND_E);
-		}
+		// if (isunlock && !Utility.isApplicationSentToBackground(getApplicationContext())) {
+		// SoundManager.playSound(Constant.SOUND_E, true);
+		// } else {
+		// SoundManager.pauseSound(Constant.SOUND_E);
+		// }
 
 		ShowLog.i(tag, "onScreenOn is: " + isunlock);
 
@@ -552,6 +579,29 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 		super.onResume();
 		isClick = false;
 	}
+
+	// //////////////////////
+	private Runnable updateTimerThread = new Runnable() {
+
+		public void run() {
+
+			secs = secs + 1;
+			if (secs == 60) {
+				mins = mins + 1;
+				secs = 0;
+			}
+			if (mins == 60) {
+				mins = 0;
+				hours = hours + 1;
+			}
+
+			tvTime.setText(String.format("%02d", hours) + ":" + String.format("%02d", mins) + ":" + String.format("%02d", secs));
+			customHandler.postDelayed(this, 1000);
+			// ShowLog.i(tag, "==time " + mins + ":" + secs);
+
+		}
+
+	};
 
 	// /////////////////////////////////////////////////////////////////////////
 	class MyGestureListener extends SimpleOnGestureListener implements OnTouchListener {

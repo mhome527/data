@@ -1,12 +1,14 @@
 package puzzle.slider.vn;
 
-import java.util.ArrayList;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import puzzle.slider.vn.util.Constant;
 import puzzle.slider.vn.util.CustomSharedPreferences;
 import puzzle.slider.vn.util.ShowLog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -18,6 +20,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * select image
@@ -30,7 +33,11 @@ public class SliderImageActivity extends AbstractContentsActivity implements OnC
 	public int width = 100, height = 100;
 	boolean isClick = false;
 	private GridView gridView;
-	int[] arrImg = { R.drawable.blank, R.drawable.blank, R.drawable.blank, R.drawable.blank, R.drawable.blank, R.drawable.blank };
+	int[] arrImg = { R.drawable.jigsaw_image_01, R.drawable.jigsaw_image_02, R.drawable.jigsaw_image_03, R.drawable.jigsaw_image_04, R.drawable.jigsaw_image_05,
+			R.drawable.jigsaw_image_06 };
+	int[] arrImgSmall = { R.drawable.jigsaw_image_s_01, R.drawable.jigsaw_image_s_02, R.drawable.jigsaw_image_s_03, R.drawable.jigsaw_image_s_04, R.drawable.jigsaw_image_s_05,
+			R.drawable.jigsaw_image_s_06 };
+
 	@Override
 	protected int getViewLayoutId() {
 		return R.layout.slider_select_image;
@@ -38,11 +45,12 @@ public class SliderImageActivity extends AbstractContentsActivity implements OnC
 
 	@Override
 	protected void initView(final Bundle savedInstanceState) {
-		int widthScr;
 
 		super.initView(savedInstanceState);
 		try {
 			gridView = (GridView) findViewById(R.id.gridView);
+
+			this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 			DisplayMetrics dm = new DisplayMetrics();
 			getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -50,7 +58,7 @@ public class SliderImageActivity extends AbstractContentsActivity implements OnC
 			CustomSharedPreferences.init(getApplicationContext());
 			CustomSharedPreferences.setPreferences(Constant.WIDTH_SCREEN, dm.widthPixels);
 			CustomSharedPreferences.setPreferences(Constant.HEIGHT_SCREEN, dm.heightPixels);
-			
+
 			width = dm.widthPixels / 5;
 			// switch (widthScr) {
 			// case 1280:
@@ -67,31 +75,25 @@ public class SliderImageActivity extends AbstractContentsActivity implements OnC
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 					Intent intent = new Intent(SliderImageActivity.this, SliderMainActivity.class);
-//					Intent intent = new Intent(SliderImageActivity.this, TestAct.class);
+					// Intent intent = new Intent(SliderImageActivity.this, TestAct.class);
 					intent.putExtra(Constant.GAME_ID, arrImg[position]);
+					intent.putExtra(Constant.GAME_ID_S, arrImgSmall[position]);
 					startActivity(intent);
-					
+					finish();
+
 				}
 			});
 
+			///////
+//			AdView adView = (AdView) this.findViewById(R.id.adView);
+//			AdRequest adRequest = new AdRequest.Builder().build();
+//			adView.loadAd(adRequest);
+			///////
+			
 			ShowLog.i(tag, "initView width screen: " + width);
 		} catch (Exception e) {
 			ShowLog.e(tag, "initView error" + e);
 		}
-	}
-
-	@Override
-	public void onClick(View v) {
-		Intent intent;
-		super.onClick(v);
-//		switch (v.getId()) {
-//		case R.id.img1:
-//			intent = new Intent(SliderImageActivity.this, SliderMainActivity.class);
-//			intent.putExtra(Constant.GAME_ID, R.id.img1);
-//			startActivity(intent);
-//			break;
-//		}
-
 	}
 
 	@Override
@@ -131,15 +133,22 @@ public class SliderImageActivity extends AbstractContentsActivity implements OnC
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// TODO Auto-generated method stub
 			View grid;
+			String time;
+			ImageView imgShow;
+
 			LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			if (convertView == null) {
 				grid = new View(mContext);
 				grid = inflater.inflate(R.layout.slider_item, null);
-				ImageView imageView = (ImageView) grid.findViewById(R.id.imgShow);
-				imageView.setImageResource(arrImage[position]);
-				imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-//				imageView.setAdjustViewBounds(true);
-
+				imgShow = (ImageView) grid.findViewById(R.id.imgShow);
+				TextView tvTime = (TextView) grid.findViewById(R.id.tvTime);
+				time = CustomSharedPreferences.getPreferences(arrImage[position] + "", "00:00:00") + "";
+				if (!time.equals("") && !time.equals("00:00:00"))
+					tvTime.setText(time + "");
+				// tvTime.setText(CustomSharedPreferences.getPreferences(Constant.HEIGHT_SCREEN,"00:00:00"));
+				imgShow.setImageResource(arrImgSmall[position]);
+				// imgShow.setScaleType(ImageView.ScaleType.FIT_XY);
+				// imageView.setAdjustViewBounds(true);
 
 			} else {
 				grid = (View) convertView;

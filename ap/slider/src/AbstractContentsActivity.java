@@ -24,54 +24,54 @@ import android.view.View.OnClickListener;
  *          used for other classes inherit
  * 
  */
-public abstract class AbstractContentsActivity extends AbstractActivity implements OnClickListener, OnScreenReceiverListenner,OnMessageComming{
+public abstract class AbstractContentsActivity extends AbstractActivity implements OnClickListener, OnScreenReceiverListenner, OnMessageComming {
 
 	private final String tag = AbstractContentsActivity.class.getSimpleName();
-	
+
 	@Override
 	public void onMessage(String mess) {
 		// TODO Auto-generated method stub
-//		Intent intent = new Intent(getApplicationContext(), MessageCameActivity.class);
-//		intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-//		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//		intent.putExtra(Constant.PUSH_MESS, mess);
-//		try {
-//			startActivity(intent);
-//		} catch (Exception e) {
-//			if (Constant.IS_PrintStackTrace) {
-//				e.printStackTrace();
-//			}
-//		}
-		
+		// Intent intent = new Intent(getApplicationContext(), MessageCameActivity.class);
+		// intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		// intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		// intent.putExtra(Constant.PUSH_MESS, mess);
+		// try {
+		// startActivity(intent);
+		// } catch (Exception e) {
+		// if (Constant.IS_PrintStackTrace) {
+		// e.printStackTrace();
+		// }
+		// }
+
 	}
-	
+
 	@Override
 	public void onScreenOn(boolean isunlock) {
 		// TODO Auto-generated method stub
-		ShowLog.showLogDebug("ScreenReceive", "onScreenOn is "+isunlock);
+		ShowLog.showLogDebug("ScreenReceive", "onScreenOn is " + isunlock);
 		if (!isunlock || Utility.isApplicationSentToBackground(getApplicationContext())) {
 			SoundManager.isPause = true;
 			SoundManager.pauseSound(Constant.SOUND_A);
-		}else{
+		} else {
 			PlaysoundA();
 		}
 	}
-	
+
 	@Override
 	protected void initView(final Bundle savedInstanceState) {
-//		logHeap("CREATE");
+		// logHeap("CREATE");
 		super.initView(savedInstanceState);
-		PlaysoundA();
-		ScreenReceiver.setOnScreenReceiverListenner(this);
-		GCMIntentService.setOnMessageComming(this);
-		if (
-//				!(this instanceof JigsawMainActivityV2) 
-//				&& 
-				!(this instanceof WinnerActivity)
-//				&& !(this instanceof StartupApp)
-				) {
-			startActivityAnim(savedInstanceState);
-		}
+//		PlaysoundA();
+//		ScreenReceiver.setOnScreenReceiverListenner(this);
+//		GCMIntentService.setOnMessageComming(this);
+//		if (
+//		// !(this instanceof JigsawMainActivityV2)
+//		// &&
+//		!(this instanceof WinnerActivity)
+//		// && !(this instanceof StartupApp)
+//		) {
+//			startActivityAnim(savedInstanceState);
+//		}
 	}
 
 	/*
@@ -86,46 +86,45 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 		return 0;
 	}
 
-	
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
-		ShowLog.i(tag, "onResume - activity history size ="+ActivityHistoryManager.ActivityHistory.size());
+		ShowLog.i(tag, "onResume - activity history size =" + ActivityHistoryManager.ActivityHistory.size());
 		PlaysoundA();
 		if (
-//				this instanceof StartupApp 
-//				|| this instanceof PuzzleOptionActivity
-//				|| this instanceof PuzzleImageActivity || 
-				this instanceof SliderImageActivity)
-//				|| this instanceof PuzzlesStoreActivity) 
-				{
-			if (SoundManager.isLEFT ==2) {
+		// this instanceof StartupApp
+		// || this instanceof PuzzleOptionActivity
+		// || this instanceof PuzzleImageActivity ||
+		this instanceof SliderImageActivity)
+		// || this instanceof PuzzlesStoreActivity)
+		{
+			if (SoundManager.isLEFT == 2) {
 				ShowLog.showLogWarn("ANIMATION", "left in ------------- left out");
-				SoundManager.isLEFT =1;
-				overridePendingTransition( R.anim.slide_in_left, R.anim.slide_out_left );
-			}else if (SoundManager.isLEFT ==3) {
+				SoundManager.isLEFT = 1;
+				overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+			} else if (SoundManager.isLEFT == 3) {
 				ShowLog.showLogWarn("ANIMATION", "right in ------------- right out");
-				SoundManager.isLEFT =1;
-				overridePendingTransition( R.anim.slide_in_right2, R.anim.slide_out_right );
+				SoundManager.isLEFT = 1;
+				overridePendingTransition(R.anim.slide_in_right2, R.anim.slide_out_right);
 			}
 		}
 		super.onResume();
 	}
-	
+
 	/**
 	 * @author thangtb
 	 * @since Apr 8, 2013 - 11:56:11 AM
 	 */
-	private void PlaysoundA(){
-		if (this instanceof SliderMainActivity || this instanceof WinnerActivity) { //this instanceof JigsawMainActivityV2 || 
+	private void PlaysoundA() {
+		if (this instanceof SliderMainActivity ) { // this instanceof JigsawMainActivityV2 ||
 			SoundManager.isPause = true;
-			SoundManager.pauseSound(Constant.SOUND_A);			
+			SoundManager.pauseSound(Constant.SOUND_A);
 		} else {
 			SoundManager.isPause = false;
-			SoundManager.playSound(Constant.SOUND_A, true);									
+			SoundManager.playSound(Constant.SOUND_A, true);
 		}
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -154,7 +153,7 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 
 	@Override
 	public boolean onKeyDown(final int keyCode, final KeyEvent event) {
-		ShowLog.showLogDebug("Abstract", "onkeydown -- keyCode:"+keyCode);
+		ShowLog.showLogDebug("Abstract", "onkeydown -- keyCode:" + keyCode);
 		return super.onKeyDown(keyCode, event);
 
 	}
@@ -181,7 +180,7 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 	@Override
 	protected void onStop() {
 		ShowLog.i(tag, "onStop");
-		if(Utility.isApplicationSentToBackground(getApplicationContext())){
+		if (Utility.isApplicationSentToBackground(getApplicationContext())) {
 			SoundManager.isPause = true;
 			SoundManager.pauseSound(Constant.SOUND_A);
 		}
@@ -190,9 +189,9 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 
 	@Override
 	protected void onDestroy() {
-		ShowLog.i(tag, "onDestroy - activity history size ="+ActivityHistoryManager.ActivityHistory.size());
-//		logHeap("DESTROY");
-		if ( ActivityHistoryManager.ActivityHistory.size()==1) {
+		ShowLog.i(tag, "onDestroy - activity history size =" + ActivityHistoryManager.ActivityHistory.size());
+		// logHeap("DESTROY");
+		if (ActivityHistoryManager.ActivityHistory.size() == 1) {
 			SoundManager.stopSound(Constant.SOUND_A);
 			SoundManager.clearAllSound();
 		}
@@ -205,7 +204,7 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 		ShowLog.showLogWarn(tag, "gc" + getClass().getSimpleName() + " onLowMemory");
 		super.onLowMemory();
 	}
-	
+
 	@SuppressLint("UseValueOf")
 	public void logHeap(String s) {
 		Double allocated = new Double(Debug.getNativeHeapAllocatedSize()) / new Double((1048576));
@@ -216,34 +215,33 @@ public abstract class AbstractContentsActivity extends AbstractActivity implemen
 		df.setMinimumFractionDigits(2);
 
 		ShowLog.showLogWarn("HEAP&MEM", "================ " + s + " =================" + getClass().getSimpleName());
-		ShowLog.showLogWarn("HEAP&MEM", "heap native: allocated " + df.format(allocated) + "MB of " + df.format(available) + "MB (" + df.format(free)
-				+ "MB free)");
+		ShowLog.showLogWarn("HEAP&MEM", "heap native: allocated " + df.format(allocated) + "MB of " + df.format(available) + "MB (" + df.format(free) + "MB free)");
 		ShowLog.showLogWarn(
 				"HEAP&MEM",
 				"memory: allocated: " + df.format(new Double(Runtime.getRuntime().totalMemory() / 1048576)) + "MB of "
-						+ df.format(new Double(Runtime.getRuntime().maxMemory() / 1048576)) + "MB ("
-						+ df.format(new Double(Runtime.getRuntime().freeMemory() / 1048576)) + "MB free)");
+						+ df.format(new Double(Runtime.getRuntime().maxMemory() / 1048576)) + "MB (" + df.format(new Double(Runtime.getRuntime().freeMemory() / 1048576))
+						+ "MB free)");
 		ShowLog.showLogWarn("HEAP&MEM", "====================================");
 	}
-	
+
 	/**
 	 * @author thangtb
 	 * @since Apr 12, 2013 - 9:27:05 AM
 	 * @param isLeft
 	 */
-	public void startActivityAnim(Bundle bundle){
+	public void startActivityAnim(Bundle bundle) {
 		boolean isLeft = true;
 		bundle = getIntent().getExtras();
 		if (null != bundle && bundle.containsKey(Constant.FLAG_ANIM_ISLEFT)) {
 			isLeft = bundle.getBoolean(Constant.FLAG_ANIM_ISLEFT, true);
 		}
-		
+
 		if (isLeft) {
 			ShowLog.showLogWarn("ANIMATION", "left in ------------- left out");
-			overridePendingTransition( R.anim.slide_in_left, R.anim.slide_out_left );
-		}else{
+			overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+		} else {
 			ShowLog.showLogWarn("ANIMATION", "right in ------------- right out");
-			overridePendingTransition( R.anim.slide_in_right2, R.anim.slide_out_right );
+			overridePendingTransition(R.anim.slide_in_right2, R.anim.slide_out_right);
 		}
 	}
 }

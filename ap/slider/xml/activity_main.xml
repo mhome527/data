@@ -4,4 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="puzzle.slider.vn.MainActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="242dp"
+        android:layout_height="170dp"
+        android:src="@drawable/jigsaw_image_01" />
+    
+    </FrameLayout>
