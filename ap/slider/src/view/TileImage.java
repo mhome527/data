@@ -17,7 +17,7 @@ import android.view.View;
  */
 public class TileImage extends View {
 
-	String tag = "HuynhTD-" + TileImage.class.getSimpleName();
+	private String tag = TileImage.class.getSimpleName();
 	private int locX;
 	private int locY;
 	private int orgLocX;

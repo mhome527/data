@@ -20,11 +20,11 @@ import java.util.List;
 import java.util.Random;
 
 import puzzle.slider.vn.util.Constant;
+import puzzle.slider.vn.util.ShowLog;
 import puzzle.slider.vn.util.Utility;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -40,12 +40,13 @@ import android.view.animation.TranslateAnimation;
  * @sine Mar 14, 2013
  */
 public class ParticleAnimationView extends View implements AnimationListener {
+	private String TAG = ParticleAnimationView.class.getSimpleName();
 	public interface ParticleListener {
 		public void ParticleCompleted();
 	}
 
 	// the count of snow
-	private int snow_flake_count = 70;
+	private int snow_flake_count = 80;
 	// list snow drawble
 	private List<AnimateDrawable> drawables = null;
 	//
@@ -166,7 +167,7 @@ public class ParticleAnimationView extends View implements AnimationListener {
 						Animation ani = drawable.getAnimation();
 						ani.setRepeatCount(0);
 					}
-					puzzle.slider.vn.util.ShowLog.i(ParticleAnimationView.class.getSimpleName(), "--+ end time ten ten +--");
+					ShowLog.i(ParticleAnimationView.class.getSimpleName(), "--+ end time ten ten +--");
 				}
 			}
 		}
@@ -205,12 +206,11 @@ public class ParticleAnimationView extends View implements AnimationListener {
 		invalidate();
 	}
 
+	@SuppressWarnings("deprecation")
 	public void initAllSnow() {
-
+		int size;
 		try {
 
-			this.ShowLog("init particle animation");
-			
 			ClearBitmapDrawbleList();
 
 			Random random = new Random(System.currentTimeMillis());
@@ -220,8 +220,8 @@ public class ParticleAnimationView extends View implements AnimationListener {
 			y_center = (height - item_size) / 2;
 
 			drawables = new ArrayList<AnimateDrawable>();
-			int size = (x_center > y_center ? x_center : y_center) + 10;
-			int flag=1;
+			size = (x_center > y_center ? x_center : y_center) + 10;
+
 			for (int i = 0; i < snow_flake_count; i++) {
 				size = random.nextInt(x_center/2)+ x_center/2;
 				Animation animation = null;
@@ -239,29 +239,9 @@ public class ParticleAnimationView extends View implements AnimationListener {
 
 				// my code, this is the time to wait next animation
 				animation.setStartOffset(random.nextInt(snow_flake_count * 25));
-				int R =255;
-				int G =255;
-				int B =255;
-				if (flag==1) {
-					R= 255;
-					G = random.nextInt(255);
-					B = random.nextInt(255);
-					flag=2;
-				}else if (flag==2) {
-					R= random.nextInt(255);
-					G = 255;
-					B = random.nextInt(255);
-					flag=3;
-				}else if (flag==3) {
-					R= random.nextInt(255);
-					G = random.nextInt(255);
-					B = 200;
-					flag=1;
-				}
-				
-				
-				
-				Drawable drb = ChangeColorDrawble(R, G, B);
+
+				Drawable drb  = new BitmapDrawable(snow_flake);
+				drb.setBounds(0, 0, drb.getIntrinsicWidth(), drb.getIntrinsicHeight());
 				AnimateDrawable aniDr = new AnimateDrawable(drb, animation);
 				// animation.startNow();
 
@@ -278,13 +258,10 @@ public class ParticleAnimationView extends View implements AnimationListener {
 
 	}
 
-	/*
-	 * public method
-	 */
-
+	
 	private void ClearBitmapDrawbleList() {
 
-		this.ShowLog("clear particle animation");
+		ShowLog.i(TAG, "clear particle animation");
 		if (drawables != null && drawables.size() > 0) {
 			for (int i = 0; i < snow_flake_count; i++) {
 				AnimateDrawable drawable = drawables.get(i);
@@ -300,62 +277,20 @@ public class ParticleAnimationView extends View implements AnimationListener {
 
 	}
 
-	private BitmapDrawable ChangeColorDrawble(int red, int green, int blue) {
 
-		Bitmap myBitmap = snow_flake;
-		Bitmap bitmap = Bitmap.createBitmap(myBitmap.getWidth(), myBitmap.getHeight(), Bitmap.Config.ARGB_8888);
-
-		int[] allpixels = new int[myBitmap.getHeight() * myBitmap.getWidth()];
-		myBitmap.getPixels(allpixels, 0, myBitmap.getWidth(), 0, 0, myBitmap.getWidth(), myBitmap.getHeight());
-
-		for (int i = 0; i < myBitmap.getHeight() * myBitmap.getWidth(); i++) {
-			if (allpixels[i] != Color.TRANSPARENT) {
-				int alpha = Color.alpha(allpixels[i]);
-				
-				int cl = Color.argb(alpha, red, green, blue);
-				allpixels[i] = cl;// Color.RED;
-			}
-		}
-		bitmap.setPixels(allpixels, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight());
-
-		/*
-		 * for (int i = 0; i < myBitmap.getWidth(); i++) { for (int j = 0; j < myBitmap.getHeight(); j++) { int pixel = myBitmap.getPixel(i, j); if (pixel !=
-		 * Color.TRANSPARENT) { bitmap.setPixel(i, j, color); } else { bitmap.setPixel(i, j, pixel); } } }
-		 */
-		BitmapDrawable drb = new BitmapDrawable(bitmap);
-		drb.setBounds(0, 0, drb.getIntrinsicWidth(), drb.getIntrinsicHeight());
-
-		/*
-		 * 
-		 * 
-		 * //colorFillter int iColor = Color.RED;
-		 * 
-		 * int red = (iColor & 0xFF0000) / 0xFFFF; int green = (iColor & 0xFF00) / 0xFF; int blue = iColor & 0xFF;
-		 * 
-		 * float[] matrix = { 0, 0, 0, 0, red , 0, 0, 0, 0, green , 0, 0, 0, 0, blue , 0, 0, 0, 1, 0 };
-		 * 
-		 * ColorFilter colorFilter = new ColorMatrixColorFilter(matrix);
-		 * 
-		 * drb.setColorFilter(colorFilter);
-		 */
-
-		return drb;
-	}
-
-	public void setStart(Boolean val) {
-		
-		this.ShowLog("start particle animation");
+	public void setStart(Boolean b) {		
+		ShowLog.i(TAG, "setStart b:" + b);
 		initAllSnow();
 		this.setVisibility(VISIBLE);
 		startTime = false;
-		start = val;
+		start = b;
 		this.invalidate();
 		
 	}
 
+	@SuppressWarnings("deprecation")
 	public void setDrawbleIcon(Bitmap bmp) {
-
-		this.ShowLog("set icon particle animation");
+		ShowLog.i(TAG, "setDrawbleIcon");
 		
 		if (snow_flake != null) {
 			if (!snow_flake.isRecycled()) {
@@ -398,8 +333,5 @@ public class ParticleAnimationView extends View implements AnimationListener {
 
 	}
 
-	private void ShowLog(String mess) {
-		puzzle.slider.vn.util.ShowLog.i(ParticleAnimationView.class.getSimpleName(), "--+ " + mess + " +--");
-	}
 	
 }

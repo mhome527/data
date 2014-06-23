@@ -17,8 +17,9 @@
 
         <ImageView
             android:id="@+id/imgShow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
             android:contentDescription="@string/app_name" />
     </LinearLayout>
 
@@ -26,7 +27,7 @@
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="00:00:00"
+        android:hint="@string/time_default"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold" />

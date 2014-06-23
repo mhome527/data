@@ -3,8 +3,6 @@ package puzzle.slider.vn;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import puzzle.slider.vn.util.Constant;
 import puzzle.slider.vn.util.ShowLog;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
@@ -111,11 +109,11 @@ public class SoundManager {
 		if (null!= map && null!= map.get(name)) {
 			MediaPlayer mp = map.get(name);
 			if (mp!=null && mp.isPlaying()) {
-				if (name.equals(Constant.SOUND_A) && isPause) {
+//				if (name.equals(Constant.SOUND_A) && isPause) {
+//					mp.pause();
+//				}else if(!name.equals(Constant.SOUND_A)){
 					mp.pause();
-				}else if(!name.equals(Constant.SOUND_A)){
-					mp.pause();
-				}
+//				}
 			}
 		}
 	}

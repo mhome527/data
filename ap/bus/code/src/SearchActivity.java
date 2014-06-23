@@ -49,7 +49,6 @@ public class SearchActivity extends AbstractActivity {
 
 	private ArrayList<String> listSearched;
 	ArrayList<Node> listFound = new ArrayList<Node>();
-	private String cty = "";
 
 	// public SearchActivity(){
 	//
@@ -62,6 +61,7 @@ public class SearchActivity extends AbstractActivity {
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
+		boolean isCheck = false;
 		try {
 			imgChange = (ImageView) findViewById(R.id.imgChange);
 			edtAuto1 = (AutoCompleteTextView) findViewById(R.id.edtAuto1);
@@ -69,7 +69,12 @@ public class SearchActivity extends AbstractActivity {
 			btnSearch = (Button) findViewById(R.id.btnSearch);
 			listSearch = (ListView) findViewById(R.id.listSearch);
 
-			cty = getIntent().getStringExtra(Constant.KEY_CITY);
+			// cty = getIntent().getStringExtra(Constant.KEY_CITY);
+			isCheck = getIntent().getBooleanExtra(Constant.KEY_CITY, true);
+			if(isCheck)
+				rbtnHcm.setChecked(true);
+			else
+				rbtnHN.setChecked(true);
 			// ///////ad
 			AdView adView = (AdView) this.findViewById(R.id.adView);
 			AdRequest adRequest = new AdRequest.Builder().build();
@@ -103,29 +108,24 @@ public class SearchActivity extends AbstractActivity {
 
 				}
 			});
-			
+
 			rbtnHcm.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					LogUtil.i(tag, "initView ...HCM");
 					new LoadData(SearchActivity.this).execute();
-
 				}
-
 			});
 
-			rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-				@Override
-				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					new LoadData(SearchActivity.this).execute();
-
-				}
-
-			});
-
-			// edtAuto1.setText("Bùi Công Trừng");
-			// edtAuto2.setText("Phú Hữu");
+			// rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			//
+			// @Override
+			// public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			// LogUtil.i(tag, "initView ...HN");
+			// new LoadData(SearchActivity.this).execute();
+			// }
+			// });
 			// //test
 			new LoadData(this).execute();
 
@@ -134,6 +134,7 @@ public class SearchActivity extends AbstractActivity {
 			// edtAuto1.setAdapter(adapter);
 			// edtAuto2.setAdapter(adapter);
 		} catch (Exception e) {
+			LogUtil.e(tag, "initView ...Error:" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -160,7 +161,8 @@ public class SearchActivity extends AbstractActivity {
 
 				if (listSearched != null && listSearched.size() > 0)
 					listSearch.setAdapter(new NumAdapter(this, listSearched));
-
+				else
+					showMsg("Không tìm thấy tên đường nào");
 			} else
 				showMsg("Không tìm thấy tên đường nào");
 
@@ -555,8 +557,7 @@ public class SearchActivity extends AbstractActivity {
 	}
 
 	/*
-	 * private boolean comparePath(String[] path1, String[] path2) { for (String pathA : path1) { for (String pathB : path2) { if
-	 * (pathA.equals(pathB)) return true; } }
+	 * private boolean comparePath(String[] path1, String[] path2) { for (String pathA : path1) { for (String pathB : path2) { if (pathA.equals(pathB)) return true; } }
 	 * 
 	 * return false; }
 	 */
@@ -582,7 +583,7 @@ public class SearchActivity extends AbstractActivity {
 			super(context, android.R.layout.simple_dropdown_item_1line);
 			LogUtil.i("SearchActivity", "adapter ");
 			myFilter = new CusFilter(this);
-			
+
 		}
 
 		@Override
@@ -735,18 +736,19 @@ public class SearchActivity extends AbstractActivity {
 		protected Boolean doInBackground(Object... params) {
 
 			try {
+				LogUtil.i(tag, "dataloading.....hcm:" + rbtnHcm.isChecked());
+
 				// arrPathBus = ReadData.getPathData(activity);
 				// clsList = Common.getNameHCM(activity);
 				if (rbtnHcm.isChecked())
 					clsList = Common.getListName(activity, Constant.LIST_STREET_HCM);
-				else if (rbtnHN.isChecked())
+				else
 					clsList = Common.getListName(activity, Constant.LIST_STREET_HN);
-				else
-					clsList = Common.getListName(activity, Constant.LIST_STREET_HCM);
 
-				if (clsList == null)
+				if (clsList == null) {
+					LogUtil.e(tag, "dataloading Load Error");
 					return false;
-				else
+				} else
 					return true;
 				// return getPathData(activity);
 			} catch (Exception e) {
@@ -760,6 +762,7 @@ public class SearchActivity extends AbstractActivity {
 			searchEntity entity;
 			super.onPostExecute(result);
 			if (result) {
+				LogUtil.i(tag, "postExe.....");
 				arrStreet = new ArrayList<searchEntity>();
 				for (clsNameStreet item : clsList.list) {
 					entity = new searchEntity(item.getName(), item.getKey());

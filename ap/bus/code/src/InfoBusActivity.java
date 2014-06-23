@@ -65,20 +65,17 @@ public class InfoBusActivity extends AbstractActivity {
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 					new LoadData(InfoBusActivity.this).execute();
-
 				}
 
 			});
 
-			rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-				@Override
-				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					new LoadData(InfoBusActivity.this).execute();
-
-				}
-
-			});
+//			rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+//
+//				@Override
+//				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//					new LoadData(InfoBusActivity.this).execute();
+//				}
+//			});
 
 			new LoadData(this).execute();
 

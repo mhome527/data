@@ -65,6 +65,7 @@ public class StartAnimationView extends RelativeLayout
 		Utility.unbindDrawables(this);
 	}
 	
+	@SuppressWarnings("deprecation")
 	private void inItAnimation(){
 		
 		imgViews = new ArrayList<ImageView>();

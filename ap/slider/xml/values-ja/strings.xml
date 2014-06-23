@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="replay">もういちど</string>
+    <string name="choice">パズルのえをかえる</string>
+    <string name="ok">はい</string>
+    <string name="cancel">いいえ</string>
+    <string name="level_easy">簡単</string>
+    <string name="level_difficult">難しい</string>
+</resources>

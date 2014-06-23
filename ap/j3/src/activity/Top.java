@@ -25,7 +25,9 @@ public class Top extends BaseAct implements OnClickListener {
 
 	private TextView tvTitle;
 	private TextView tvPart;
+	private TextView tvLanguage;
 	private ImageView imgLanguage;
+	private LinearLayout llLanguage;
 	private Button btnVocabulary;
 	private Button btnReading;
 	private Button btnGammer;
@@ -42,12 +44,16 @@ public class Top extends BaseAct implements OnClickListener {
 		lnProgressDialog = (LinearLayout) findViewById(R.id.content_progress_dialog);
 		tvTitle = (TextView) findViewById(R.id.tvTitle);
 		tvPart = (TextView) findViewById(R.id.tvPart);
+		tvLanguage = (TextView) findViewById(R.id.tvLanguage);
 		imgLanguage = (ImageView) findViewById(R.id.imgLanguage);
+		llLanguage = (LinearLayout) findViewById(R.id.llLanguage);
 		btnVocabulary = (Button) findViewById(R.id.btnVocabulary);
 		btnReading = (Button) findViewById(R.id.btnReading);
 		btnGammer = (Button) findViewById(R.id.btnGammer);
 
+		llLanguage.setOnClickListener(this);
 		imgLanguage.setOnClickListener(this);
+		tvLanguage.setOnClickListener(this);
 		btnVocabulary.setOnClickListener(this);
 		btnReading.setOnClickListener(this);
 		btnGammer.setOnClickListener(this);
@@ -59,11 +65,10 @@ public class Top extends BaseAct implements OnClickListener {
 		adView.loadAd(adRequest);
 		// //////////////////
 
-		if (pref.getBooleanValue(false, Constant.LANGUAGE)){
+		if (pref.getBooleanValue(false, Constant.LANGUAGE)) {
 			imgLanguage.setBackgroundResource(R.drawable.en);
 			Constant.english = false;
-		}
-		else{
+		} else {
 			imgLanguage.setBackgroundResource(R.drawable.vn);
 			Constant.english = true;
 		}
@@ -77,13 +82,14 @@ public class Top extends BaseAct implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		case R.id.llLanguage:
+		case R.id.tvLanguage:
 		case R.id.imgLanguage:
 			setLocle();
-			if (pref.getBooleanValue(false, Constant.LANGUAGE)){
+			if (pref.getBooleanValue(false, Constant.LANGUAGE)) {
 				imgLanguage.setBackgroundResource(R.drawable.en);
 				Constant.english = false;
-			}
-			else{
+			} else {
 				imgLanguage.setBackgroundResource(R.drawable.vn);
 				Constant.english = true;
 			}
@@ -117,6 +123,7 @@ public class Top extends BaseAct implements OnClickListener {
 	private void refreshLayout() {
 		tvTitle.setText(this.getResources().getString(R.string.top_title));
 		tvPart.setText(this.getResources().getString(R.string.top_part));
+		tvLanguage.setText(this.getResources().getString(R.string.language));
 		btnVocabulary.setText(this.getResources().getString(R.string.vocabulary));
 		btnReading.setText(this.getResources().getString(R.string.reading));
 		btnGammer.setText(this.getResources().getString(R.string.grammar));
@@ -138,7 +145,7 @@ public class Top extends BaseAct implements OnClickListener {
 		this.getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 		getWindow().getDecorView().findViewById(android.R.id.content).invalidate();
 	}
-	
+
 	private class LoadData extends AsyncTask<Void, Void, Integer> {
 
 		@Override

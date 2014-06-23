@@ -19,14 +19,12 @@ import android.content.res.TypedArray;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,14 +35,13 @@ import android.widget.TextView;
 
 public class ReadingPager extends BaseAct implements OnClickListener {
 
-	private static String TAG = ReadingPager.class.getSimpleName();
 	private LinearLayout lnProgressDialog;
 	private RelativeLayout rlReading;
 	private TextView tvDay;
 
 	private ImageView imgLeft;
 	private ImageView imgRight;
-//	private ScaleImageView imgReading;
+	// private ScaleImageView imgReading;
 	private ImageView imgClose;
 	private boolean isClick = false;
 	private CustomizePagerView myPager;
@@ -81,7 +78,7 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 		tvDay = (TextView) findViewById(R.id.tvDay);
 		imgLeft = (ImageView) findViewById(R.id.imgLeft);
 		imgRight = (ImageView) findViewById(R.id.imgRight);
-//		imgReading = (ScaleImageView) findViewById(R.id.imgReading);
+		// imgReading = (ScaleImageView) findViewById(R.id.imgReading);
 		imgClose = (ImageView) findViewById(R.id.imgClose);
 		myPager = (CustomizePagerView) findViewById(R.id.pagerReading);
 		btnShow = (Button) findViewById(R.id.btnShow);
@@ -92,6 +89,16 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 		imgClose.setOnClickListener(this);
 		imgLeft.setOnClickListener(this);
 		imgRight.setOnClickListener(this);
+
+		day = pref.getIntValue(1, Constant.DAY_READING_LEARN);
+		if (day <= 1) {
+			imgLeft.setVisibility(View.INVISIBLE);
+			day = 1;
+		} else if (day >= Constant.READING_DAY_MAX) {
+			imgRight.setVisibility(View.INVISIBLE);
+			day = Constant.READING_DAY_MAX;
+		}
+		tvDay.setText(this.getString(R.string.level) + " " + day);
 
 		myPager.setOnPageChangeListener(new OnPageChangeListener() {
 
@@ -119,14 +126,7 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 					imgRight.setVisibility(View.VISIBLE);
 					imgLeft.setVisibility(View.VISIBLE);
 				}
-				
-				//// set image
-//				ReadingModel model = allDay.day.get(position);
-//				int idReading = getResources().getIdentifier(model.img, "drawable", getPackageName());
-//				ImageView img = (ImageView) myPager.findViewWithTag("img" + (day - 1));
-//				img.setImageBitmap(BitmapUtil.decodeSampledBitmapFromResource2(getResources(), idReading, widthScreen - 10, widthScreen - 10));
-				///
-				
+
 				pref.putIntValue(day, Constant.DAY_READING_LEARN);
 
 			}
@@ -149,10 +149,9 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 		new LoadData().execute();
 
 		// ///////ad
-		// AdView adView = (AdView) this.findViewById(R.id.adView);
-		// AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-		// .addTestDevice("sony-so_04d-CB5A1KBLPT").build();
-		// adView.loadAd(adRequest);
+		AdView adView = (AdView) this.findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+		adView.loadAd(adRequest);
 
 	}
 
@@ -195,9 +194,11 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 		super.onResume();
 		isClick = false;
 		isShow = false;
+		isShow = false;
+		showImageZoom(false);
+
 	}
 
-	
 	private void showImageZoom(boolean show) {
 		ReadingModel model;
 		isShow = show;
@@ -207,6 +208,8 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 		// ULog.i(ReadingPager.class, "showImageZoom tv:" + tv.getText());
 		// //
 		ScaleImageView imgReading = (ScaleImageView) findViewById(R.id.imgReading);
+		if(allDay == null || allDay.day == null)
+			return;
 		model = allDay.day.get(day - 1);
 
 		if (show) {
@@ -220,7 +223,7 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 		} else {
 			rlReading.setVisibility(View.GONE);
 			imgReading.setImageBitmap(null);
-//			myPager.setEnabled(false);
+			// myPager.setEnabled(false);
 			myPager.setPagingEnabled(true);
 			int idReading = getResources().getIdentifier(model.img, "drawable", getPackageName());
 			ImageView img = (ImageView) myPager.findViewWithTag("img" + (day - 1));
@@ -249,9 +252,10 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 			super.onPostExecute(result);
 			lnProgressDialog.setVisibility(View.GONE);
 			if (allDay != null) {
+
 				adapter = new ReadingPagerAdapter(ReadingPager.this, allDay.day);
 				myPager.setAdapter(adapter);
-				myPager.setCurrentItem(0);
+				myPager.setCurrentItem(day - 1);
 
 				// slide menu
 				adapterMenu = new SlideMenuListAdapter(ReadingPager.this, allDay.day.get(0).readingList);
@@ -350,7 +354,7 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 
 	// /////
 	private void nextReading() {
-		if (isClick || day == Constant.READING_DAY_MAX)
+		if (isClick || day == Constant.READING_DAY_MAX || isShow)
 			return;
 
 		isClick = true;
@@ -373,7 +377,7 @@ public class ReadingPager extends BaseAct implements OnClickListener {
 	}
 
 	private void preReading() {
-		if (isClick || day == 1)
+		if (isClick || day == 1 || isShow)
 			return;
 		isClick = true;
 		day = day - 1;

@@ -9,7 +9,7 @@ import android.widget.TextView;
 /**
  * Get view
  * 
- * @author ThangTB
+ * @author 
  * @version 1.0
  */
 public final class ViewHelper {

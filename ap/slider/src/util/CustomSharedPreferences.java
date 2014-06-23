@@ -11,11 +11,6 @@ import android.content.SharedPreferences;
  * 1. String : null
  * 2. Boolean: false
  * 3. Integer, Long, Float: 0
- * </pre>
- * @author DucLH
- * @version 2011:0517
- * @since 2.1
- * 
  */
 
 public class CustomSharedPreferences {

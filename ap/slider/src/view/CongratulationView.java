@@ -4,13 +4,12 @@ import java.io.File;
 import java.util.ArrayList;
 
 import puzzle.slider.vn.R;
-import puzzle.slider.vn.SoundManager;
 import puzzle.slider.vn.animation.ParticleAnimationView;
 import puzzle.slider.vn.animation.ParticleAnimationView.ParticleListener;
 import puzzle.slider.vn.util.Constant;
 import puzzle.slider.vn.util.CustomSharedPreferences;
 import puzzle.slider.vn.util.ScaleImage;
-import puzzle.slider.vn.util.Utility;
+import puzzle.slider.vn.util.ShowLog;
 import puzzle.slider.vn.util.ViewHelper;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
@@ -31,51 +30,41 @@ import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 public class CongratulationView extends RelativeLayout implements ParticleListener {
 
-	private TextView txtTitle;
+	private static String TAG = CongratulationView.class.getSimpleName();
 	private Button btnReplay;
 	private Button btnChoice;
 	private ImageView imgItem;
-	private ImageView circleAni;
 	private LinearLayout layoutBottom;
 	private Bitmap bmpath;
 	private String path;
 	/*
 	 * 
 	 * */
-	MediaPlayer player_background = null;
-	MediaPlayer player1 = null;
-	MediaPlayer player2 = null;
-	MediaPlayer player3 = null;
-	GameType gameType;
-	FinishType finishType;
-	/*
-	 * config for Circle animation
-	 */
+	private MediaPlayer player_background = null;
+	private MediaPlayer player1 = null;
+	private MediaPlayer player2 = null;
+	private MediaPlayer player3 = null;
+
 	int max_circle_size = 0;
 	int bm_size;
 	/*
 	 * config for Text Animation
 	 */
-	int indexNumberText;
-	int NUMBER_TEXT_CONGRATULATION = 7;
-	int TEXT_WIDTH_NORMAL = 80;
-	int TEXT_HEIGHT_NORMAL = 80;
-	int SPACE_BETWEEN_TEXT = 0;// PIXEL
-	// kich thuoc text tang len 2 lan khi moi hien thi.
-	int CGL_TEXT_RATE = 2;
-	int SCALE_DELTA_X, SCALE_DELTA_Y;
-	int Y_TEXT_START, Y_TEXT_END;
-	int X_TEXT_START_POSITION;
-	ArrayList<ImageView> buttonsText;
-	RelativeLayout rltexts;
+	private int indexNumberText;
+	private int NUMBER_TEXT_CONGRATULATION = 1;
+	private int TEXT_WIDTH_NORMAL = 80;
+	private int TEXT_HEIGHT_NORMAL = 80;
+
+	private int CGL_TEXT_RATE = 2;
+	private int Y_TEXT_START;
+	private ArrayList<ImageView> buttonsText;
+	private RelativeLayout rltexts;
 
 	/*
 	 * 
@@ -89,17 +78,6 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 	ParticleAnimationView particle;
 	CongratulationClickListener controlsdelegate;
 
-	public enum GameType {
-		/*
-		 * slider: la dang di chuyen o^ tro^ng'. board: la dang keo' va tha.
-		 */
-		Slider, Board
-	}
-
-	public enum FinishType {
-		finish1, finish2, finish3, slider
-	}
-
 	public interface CongratulationClickListener {
 		public void OnClickButtonReplay();
 
@@ -112,43 +90,26 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.congratulation, this, true);
 
-		int width = CustomSharedPreferences.getPreferences(Constant.WIDTH_SCREEN, 480);
 		int height = CustomSharedPreferences.getPreferences(Constant.HEIGHT_SCREEN, 320);
 
-		txtTitle = (TextView) findViewById(R.id.txtMessage);
+		// txtTitle = (TextView) findViewById(R.id.txtMessage);
 		btnReplay = (Button) findViewById(R.id.btnReplay);
 		btnChoice = (Button) findViewById(R.id.btnChoice);
-//		circleAni = (ImageView) findViewById(R.id.imgCircle);
+		// circleAni = (ImageView) findViewById(R.id.imgCircle);
 		imgItem = (ImageView) findViewById(R.id.imgItem);
 		layoutBottom = (LinearLayout) findViewById(R.id.layout_bottom_control);
 		rltexts = ViewHelper.findView(this, R.id.rlTextanimation);
 
-		txtTitle.setVisibility(INVISIBLE);
+		// txtTitle.setVisibility(INVISIBLE);
 		layoutBottom.setVisibility(INVISIBLE);
 		rltexts.setVisibility(GONE);
-//		circleAni.setVisibility(GONE);
-//		circleAni.setImageBitmap(null);
-		/*
-		 * prepare for loadtext animation
-		 */
+		
 		indexNumberText = 0;
-		int allTextWidth = NUMBER_TEXT_CONGRATULATION * TEXT_WIDTH_NORMAL + (NUMBER_TEXT_CONGRATULATION - 1) * SPACE_BETWEEN_TEXT;
-		X_TEXT_START_POSITION = (width - allTextWidth) / 2;
-		Y_TEXT_END = (height - TEXT_HEIGHT_NORMAL) / 2;
 		Y_TEXT_START = height + 30;
-
-		/*
-		 * prepare for loadtext animation
-		 */
 
 		particle = (ParticleAnimationView) findViewById(R.id.particleAnimationView1);
 		particle.setParticleListener(this);
 
-		/*
-		 * media player
-		 */
-
-		// LoadAllSound();
 
 		btnReplay.setOnClickListener(new OnClickListener() {
 			@Override
@@ -175,7 +136,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 	@Override
 	public void destroyDrawingCache() {
 		super.destroyDrawingCache();
-		this.ShowLog("Congratulation destroyDrawingCache");
+		ShowLog.i(TAG, "Congratulation destroyDrawingCache");
 		StopAllSound();
 		if (null != bmpath && !bmpath.isRecycled()) {
 			bmpath.recycle();
@@ -189,7 +150,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 	@Override
 	protected void onDetachedFromWindow() {
 
-		this.ShowLog("onDetachedFromWindow");
+		ShowLog.i(TAG, "onDetachedFromWindow");
 		StopAllSound();
 		if (null != bmpath && !bmpath.isRecycled()) {
 			bmpath.recycle();
@@ -203,7 +164,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 	private void StopAllSound() {
 
-		ShowLog("Stop all sound");
+		ShowLog.i(TAG, "Stop all sound");
 		try {
 			if (player1 != null) {
 				player1.stop();
@@ -236,12 +197,11 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 		loadSound1();
 		loadSound2();
 		loadSound3();
-		loadSound4();
 	}
 
 	public void setPathImage(String path) {
 
-		this.ShowLog("setpath");
+		ShowLog.i(TAG, "setpath");
 
 		this.path = path;
 		File f = new File(path);
@@ -257,65 +217,12 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 			bmpath = scale.getResizedBitmap(path, 0.84f);
 			imgItem.setImageBitmap(bmpath);
 
-			int margin_top_bottom = ((display.getHeight() - bmpath.getHeight()) / 2) / 2;
-
-			FrameLayout.LayoutParams lp = (android.widget.FrameLayout.LayoutParams) layoutBottom.getLayoutParams();
-			// lp.width = bmpath.getWidth();
-			// lp.height = scale.getSizeScale(0.08).getHeight();// get layout bottom height
-			lp.bottomMargin = margin_top_bottom;
-
-			layoutBottom.setLayoutParams(lp);
-
-			lp = null;
-
-			/*
-			 * 
-			 * */
-			lp = (android.widget.FrameLayout.LayoutParams) txtTitle.getLayoutParams();
-			lp.height = scale.getSizeScale(0.08).getHeight();
-			// lp.width = bm.getWidth();
-			// lp.topMargin = scale.getSizeScale(0.015).getHeight();
-			lp.topMargin = margin_top_bottom;
-
-			lp = null;
-
 		} else {
-
-			puzzle.slider.vn.util.ShowLog.e(CongratulationView.class.getSimpleName(), "Error: path file not found!!! please check again.");
-
+			ShowLog.e(TAG, "Error: path file not found!");
 		}
 
 	}
 
-	public void setGameType(GameType gt) {
-		this.gameType = gt;
-	}
-
-	public void setFinishType(FinishType ft) {
-		this.finishType = ft;
-
-		if (gameType == GameType.Board) {
-			if (finishType == FinishType.finish1) {
-				txtTitle.setText(getResources().getText(R.string.congratulation1));
-			} else if (finishType == FinishType.finish2) {
-				txtTitle.setText(getResources().getText(R.string.congratulation2));
-			} else {
-				// (finishType == FinishType.finish3)
-				txtTitle.setText(getResources().getText(R.string.congratulation3));
-			}
-		} else {
-			/*
-			 * ben iOS dang slider chi thay co 2 trang thai finish
-			 */
-			if (finishType == FinishType.finish1) {
-				txtTitle.setText(getResources().getText(R.string.congratulation1_slider));
-			} else if (finishType == FinishType.finish2) {
-				txtTitle.setText(getResources().getText(R.string.congratulation2_slider));
-			}
-
-		}
-
-	}
 
 	public void setControlsClickListener(CongratulationClickListener listener) {
 		this.controlsdelegate = listener;
@@ -323,81 +230,42 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 	public void Start() {
 
-		this.ShowLog("start animaiton");
+		ShowLog.i(TAG, "start animaiton");
 
 		init();
 		// prepare for animation
-
 		startCircleAnimation();
 
 	}
 
 	public void Pause(Boolean isScreenOff) {
 
-		ShowLog("pause animaiton");
+		ShowLog.i(TAG, "pause animaiton");
 		this.screenOff = isScreenOff;
 		StopAllSound();
 
 	}
 
-	public void Resume() {
-
-		ShowLog("resume animaiton");
-		if (!SoundManager.isScreenOFF && !Utility.isApplicationSentToBackground(getContext())) {
-
-			LoadAllSound();
-
-			if (screenOff) {
-
-				screenOff = false;
-				if (step == 0) {
-					startCircleAnimation();
-				} else if (step == 1) {
-					StartAnimationLoadtext();
-				} else {
-					/*
-					 * checking sound background. step == 2
-					 */
-
-					CheckingSoundBackground();
-					if (!particleFinish) {
-						particle.setStart(true);
-					}
-
-				}
-
-			} else {
-				if (particleFinish) {
-					CheckingSoundBackground();
-				}
-			}
-
-		}
-
-	}
 
 	public void Stop() {
 
-		ShowLog("stop animaiton");
+		ShowLog.i(TAG, "stop animaiton");
 		StopAllSound();
 
 	}
 
 	private void init() {
-
-		this.ShowLog("init animation");
+		Bitmap bmp = null;
+		ShowLog.i(TAG, "init animation");
 		//
 		layoutBottom.setVisibility(INVISIBLE);
-		txtTitle.setVisibility(INVISIBLE);
 		//
 		step = 0;
-		/*
-		 * prepare for animation list.
-		 */
+
 		LoadAllSound();
-		/*
-		 * prepare for circle animation
-		 */
+		
+//		prepare for circle animation
+		 
 		int height = CustomSharedPreferences.getPreferences(Constant.HEIGHT_SCREEN, 320);
 		int width = CustomSharedPreferences.getPreferences(Constant.WIDTH_SCREEN, 480);
 
@@ -415,13 +283,6 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(bm_size, bm_size);
 		params.addRule(CENTER_IN_PARENT);
 
-//		circleAni.setLayoutParams(params);
-		// circleAni.setBackgroundResource(R.drawable.glow_circle);
-		Bitmap bmp = null;
-//		bmp = getResizedBitmap(R.drawable.top_bg, scaleDelta, scaleDelta);
-//		circleAni.setBackgroundDrawable(new BitmapDrawable(bmp));
-//		bmp = null;
-
 		/*
 		 * prepare data for text animation
 		 */
@@ -432,37 +293,11 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 		buttonsText = new ArrayList<ImageView>();
 		rltexts.setVisibility(VISIBLE);
 		//
-		int preId = 8000;
-		for (int i = 0; i < NUMBER_TEXT_CONGRATULATION; i++) {
-			// scale bitmap character
-			Bitmap bm = getImage("text" + i);
 
-			ImageView imgChar = new ImageView(getContext());
-			imgChar.setVisibility(INVISIBLE);
-			imgChar.setBackgroundDrawable(new BitmapDrawable(bm));
-			imgChar.setId(preId);
-
-			RelativeLayout.LayoutParams layoutParams;
-			layoutParams = new RelativeLayout.LayoutParams(TEXT_WIDTH_NORMAL, TEXT_HEIGHT_NORMAL);
-			if (i == 0) {
-				layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
-				layoutParams.setMargins(X_TEXT_START_POSITION, 0, 0, 0);
-			} else {
-				layoutParams.addRule(RelativeLayout.RIGHT_OF, preId - 1);
-				layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
-			}
-
-			imgChar.setLayoutParams(layoutParams);
-			bm = null;
-
-			this.rltexts.addView(imgChar);
-			buttonsText.add(imgChar);
-			preId++;
-		}
-
-		/*
-		 * particle animation
-		 */
+		ImageView imgChar = new ImageView(getContext());
+		this.rltexts.addView(imgChar);
+		buttonsText.add(imgChar);
+		
 		particleFinish = false;
 		bmp = BitmapFactory.decodeResource(getResources(), R.drawable.money);
 		particle.setDrawbleIcon(bmp);
@@ -473,29 +308,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 	private void Clear() {
 
-		this.ShowLog("clear");
-
-		/*
-		 * clear data of circle animation
-		 */
-//		if (circleAni != null) {
-//
-//			try {
-//				circleAni.setVisibility(GONE);
-//
-//				BitmapDrawable drb = (BitmapDrawable) circleAni.getBackground();
-//				if (drb != null) {
-//					drb.getBitmap().recycle();
-//					drb = null;
-//				}
-//
-//				circleAni.setBackgroundDrawable(null);
-//
-//			} catch (Exception e) {
-//
-//			}
-//
-//		}
+		ShowLog.i(TAG, "clear");
 
 		/*
 		 * clear data of texts animation
@@ -519,7 +332,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 				buttonsText.clear();
 				buttonsText = null;
 			} catch (Exception e) {
-
+				ShowLog.e(TAG,  "Clear error:" + e.getMessage());
 			}
 
 		}
@@ -528,7 +341,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 	public void startCircleAnimation() {
 
-		this.ShowLog("start circle animation");
+		ShowLog.i(TAG, "start circle animation");
 
 		AnimationSet aniSet = new AnimationSet(false);
 		aniSet.setAnimationListener(new AnimationListener() {
@@ -547,7 +360,8 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 				// dang thuc hien animation 1 da thuc hien xong. qua animation 2
 				step = 1;
-//				circleAni.setVisibility(ImageView.GONE);
+				// circleAni.setVisibility(ImageView.GONE);
+				ShowLog.i(TAG, "startCircleAnimation onAnimationEnd");
 				StartAnimationLoadtext();
 
 			}
@@ -573,14 +387,14 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 			}
 		}
 
-//		circleAni.setVisibility(ImageView.VISIBLE);
+		// circleAni.setVisibility(ImageView.VISIBLE);
 
 		if (screenOff) {
 			return;
 		}
 
 		CharacterAnimation();
-//		circleAni.startAnimation(aniSet);
+		// circleAni.startAnimation(aniSet);
 
 	}
 
@@ -589,7 +403,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 	 */
 	private void StartAnimationLoadtext() {
 
-		this.ShowLog("start animation text");
+		ShowLog.i(TAG, "start animation text");
 
 		/*
 		 * neu truoc do dang thuc hien ma event screenOff dc goi --> tam dung; khi resume dc goi --> thuc hien tiep. neu screenoff == false ---> truoc do phai la truong hop tren
@@ -599,25 +413,6 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 			indexNumberText = 0;
 		}
 
-		try {
-			if (player2 == null) {
-				loadSound2();
-			}
-			player2.start();
-		} catch (Exception e) {
-			ShowLog("load sound 2 err");
-		}
-
-		try {
-			if (player_background == null) {
-				loadSound4();
-			}
-			player_background.start();
-		} catch (Exception e) {
-			ShowLog("load sound backgrond err");
-		}
-
-		// go go..
 		CharacterAnimation();
 	}
 
@@ -625,12 +420,8 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 		if (indexNumberText == NUMBER_TEXT_CONGRATULATION) {
 
-			/*
-			 * animation load text is finish.
-			 */
-
 			if (!screenOff) {
-				// dang thuc hien animation 2, qua animation 3.
+				//dang thuc hien animation 2, qua animation 3.
 				step = 2;
 
 				try {
@@ -644,10 +435,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 					}
 				}
 
-				/*
-				 * checking sound background.
-				 */
-				CheckingSoundBackground();
+//				SoundManager.playSound(Constant.SOUND_A, true);
 				particle.setStart(true);
 			}
 
@@ -664,7 +452,6 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 	private void TransitionAnimationCharacter(ImageView img) {
 
 		AnimationSet aniSet = new AnimationSet(true);
-		// aniSet.setFillAfter(true);
 		aniSet.setAnimationListener(new AnimationListener() {
 			@Override
 			public void onAnimationStart(Animation animation) {
@@ -688,37 +475,28 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 			}
 		});
 
-		/*
-		 * --------------
-		 */
-
 		ScaleAnimation scale = new ScaleAnimation(CGL_TEXT_RATE, 1, CGL_TEXT_RATE, 1, TEXT_WIDTH_NORMAL, TEXT_HEIGHT_NORMAL);
 		scale.setDuration(180);
 
 		aniSet.addAnimation(scale);
 
-		/*
-		 * --------------
-		 */
 
 		TranslateAnimation trans = new TranslateAnimation(0, 0, Y_TEXT_START, 0);
 		trans.setDuration(160);
 		aniSet.addAnimation(trans);
 
-		/*
-		 * --------------
-		 */
+	
 		img.setVisibility(VISIBLE);
 		img.startAnimation(aniSet);
 	}
 
 	/*
-	 * ------------------------------------------ animation alpha
+	 * animation alpha
 	 */
 
 	private void startAlphaAnimationText() {
 
-		ShowLog("start animation hidden text");
+		ShowLog.i(TAG, "start animation hidden text");
 
 		AlphaAnimation alpha = new AlphaAnimation(1.0f, 0.0f);
 		alpha.setStartOffset(200);
@@ -752,27 +530,9 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 		alpha.setDuration(700);
 		// alpha.setFillAfter(true);
 
-		txtTitle.startAnimation(alpha);
-		txtTitle.setVisibility(VISIBLE);
-
 		layoutBottom.startAnimation(alpha);
 		layoutBottom.setVisibility(VISIBLE);
-
 	}
-
-	/*
-	 * ------------------------------------------ general method
-	 */
-
-	private Bitmap getImage(String name) {
-		int resID = getResources().getIdentifier(name, "drawable", getContext().getPackageName());
-		BitmapFactory.Options opt = new BitmapFactory.Options();
-		// opt.inMutable = true;
-		// opt.inSampleSize=2;
-		// opt.inScaled = true;
-		return BitmapFactory.decodeResource(getResources(), resID, opt);
-	}
-
 	public Bitmap getResizedBitmap(int res, float scale_width, float scale_height) {
 
 		Bitmap bm = BitmapFactory.decodeResource(getResources(), res);
@@ -820,11 +580,6 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 	}
 
-	// private void Log(String msg)
-	// {
-	// android.util.Log.d(CongratulationView.class.getSimpleName(), msg);
-	// }
-
 	private void loadSound1() {
 
 		try {
@@ -843,7 +598,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 			player1 = new MediaPlayer();
 
-			AssetFileDescriptor descriptor = getResources().getAssets().openFd("puzzule_j_kansei_fanfare.mp3");
+			AssetFileDescriptor descriptor = getResources().getAssets().openFd(Constant.SOUND_J);
 			player1.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
 			descriptor.close();
 
@@ -875,7 +630,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 			player2 = new MediaPlayer();
 
-			AssetFileDescriptor descriptor = getResources().getAssets().openFd("puzzule_i_kansei_applause.mp3");
+			AssetFileDescriptor descriptor = getResources().getAssets().openFd(Constant.SOUND_I);
 			player2.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
 			descriptor.close();
 
@@ -903,7 +658,7 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 			}
 
 			player3 = new MediaPlayer();
-			AssetFileDescriptor descriptor = getResources().getAssets().openFd("puzzule_k_kansei_kira.mp3");
+			AssetFileDescriptor descriptor = getResources().getAssets().openFd(Constant.SOUND_K);
 			player3.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
 			descriptor.close();
 
@@ -916,79 +671,19 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 		}
 	}
 
-	private void loadSound4() {
-		// sound background
-		try {
-
-			if (player_background != null) {
-				try {
-					if (player_background.isPlaying()) {
-						player_background.stop();
-					}
-					player_background.release();
-					player_background = null;
-				} catch (Exception e) {
-
-				}
-			}
-			player_background = new MediaPlayer();
-			AssetFileDescriptor descriptor = getResources().getAssets().openFd("puzzule_e_bgm2.mp3");
-			player_background.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
-			descriptor.close();
-
-			player_background.setLooping(true);
-			player_background.prepare();
-
-		} catch (Exception e) {
-
-			if (Constant.IS_PrintStackTrace) {
-				e.printStackTrace();
-			}
-
-		}
-	}
-
-	/*
-	 * 
-	 * */
 	@Override
 	public void ParticleCompleted() {
 
-		this.ShowLog("finish particle animation");
+		ShowLog.i(TAG, "finish particle animation");
 
 		// finish particle
 		step = 3;
 		particleFinish = true;
 		startAlphaAnimationText();
 		ShowButtonControls();
-		if (!screenOff) {
-			CheckingSoundBackground();
-		}
-
-	}
-
-	private void CheckingSoundBackground() {
-
-		/*
-		 * checking sound background.
-		 */
-		try {
-			if (player_background == null) {
-				loadSound4();
-			}
-			if (!player_background.isPlaying()) {
-				player_background.start();
-			}
-		} catch (Exception e) {
-			if (Constant.IS_PrintStackTrace) {
-				e.printStackTrace();
-			}
-		}
-
-	}
-
-	private void ShowLog(String mess) {
-		puzzle.slider.vn.util.ShowLog.i(CongratulationView.class.getSimpleName(), "--+ " + mess + " +--");
+//		if (!screenOff) {
+//			SoundManager.playSound(Constant.SOUND_A, true);
+//		}
 	}
 
 	public String getPathImage() {

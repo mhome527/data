@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Puzzle Slider</string>
+    <string name="replay">Chơi lại</string>
+    <string name="choice">Chọn hình</string>
+    <string name="ok">Chấp nhận</string>
+    <string name="cancel">Hủy</string>
+    <string name="configm_replay">Bạn có muốn chơi lại không ?</string>
+    <string name="level_easy">Đơn giản</string>
+    <string name="level_hard">khó</string>
+</resources>

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
+import app.infobus.utils.Constant;
 
 public class InfoDetailActivity extends AbstractActivity {
 
@@ -28,6 +29,12 @@ public class InfoDetailActivity extends AbstractActivity {
 			tvNamePath = (TextView) findViewById(R.id.tvNamePath);
 			tvNum = (TextView) findViewById(R.id.tvNum);
 
+			boolean isCheck = getIntent().getBooleanExtra(Constant.KEY_CITY, true);
+			if(isCheck)
+				rbtnHcm.setChecked(true);
+			else
+				rbtnHN.setChecked(true);
+			
 			// ///////ad
 			AdView adView = (AdView) this.findViewById(R.id.adView);
 			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)

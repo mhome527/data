@@ -1,41 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">JigsawPuzzle</string>
+    <string name="app_name">Puzzle Slider</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
-    <!--  Add -->
-    <string name="pluzzle_back">back</string>
-    <string name="pluzzle_choice">Choice</string>
-    <string name="pluzzle_replay">Replay</string>
-    <string name="pluzzle_news">パズルだいすき！公開開始！いろんなパズルであるそんじゃおう！ (Enterprise)</string>
-    <string name="pluzzle_ver">Ver 1.0.1d-130201-15</string>
-    <string name="congratulation_slider">やったね！ちゃんとクリアできたよ！</string>
-    <!--  End -->
-
-
-    <!--  Add -->
-    <string name="congratulation1">おめでとう！あたらしくバッジがもらえたよ！！</string>
-    <string name="congratulation2">やったね！ちゃんとクリアできたよ！</string>
-    <string name="congratulation3">じかん かかっちゃったけど、 つぎは がんばろう！</string>
-    <string name="congratulation1_slider">おめでとう！あたらしくバッジがもらえたよ！！</string>
-    <string name="congratulation2_slider">やったね！ちゃんとクリアできたよ！</string>
-    <!--  end -->
-    <!--  Add -->
-    <string name="text_dialog_download_title">ダウンロード中です</string>
-    <string name="text_dialog_download_body">3G回線の場合、ダウンロードに時間がかかる場合があります</string>
-    <string name="text_dialog_download_button">中断</string>
-    <string name="text_dialog_complete_unzip_title">新しいパズルが追加されました。</string>
-    <string name="text_dialog_complete_unzip_button">はい</string>
-    <string name="text_ok">はい</string>
-    <string name="text_cancel">いいえ</string>
-    <string name="text_network_title">接続エラー</string>
-    <string name="text_network_mess">インターネット接続がオフラインのようです。</string>
-    <string name="text_billing_title">再ダウンロード確認</string>
-    <string name="text_billing_mess">すでに購入されたパズルがある場合、再ダウンロードをおこないます。よろしいですか？</string>
-    <!--  End -->
-
-    <string name="adUnitId">a1534f4ee49f3b7</string>
-
+    <string name="replay">Replay</string>
+    <string name="choice">Choice</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="replay_game"></string>
+    <string name="adUnitId">ca-app-pub-2668784685856471/8295882340</string>
+    <string name="configm_replay">Do you want to replay?</string>
+    <string name="time_default">00:00:00</string>
+    
 </resources>

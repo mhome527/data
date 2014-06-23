@@ -8,20 +8,28 @@ import android.widget.Toast;
 /**
  * Show Log for debug
  * 
- * @author DucLH
+ * @author 
  * @version
  * @since
  */
 public class ShowLog {
 
 	// ShowLog Flag (Using turn on or turn off debug)
-	private static final boolean IS_FLAG_DEBUG = true;
+	private static final boolean IS_FLAG_DEBUG = false;
 	private static final boolean IS_FLAG_ERROR = true;
 	private static final boolean IS_FLAG_INFO = true;
-	private static final boolean IS_FLAG_VERBOSE = true;
-	private static final boolean IS_FLAG_WARN = true;
-	private static final boolean IS_FLAG_OS = true;
-	private static final boolean IS_FLAG_TOAST = true;
+	private static final boolean IS_FLAG_VERBOSE = false;
+	private static final boolean IS_FLAG_WARN = false;
+	private static final boolean IS_FLAG_OS = false;
+	private static final boolean IS_FLAG_TOAST = false;
+	
+//	private static final boolean IS_FLAG_DEBUG = true;
+//	private static final boolean IS_FLAG_ERROR = true;
+//	private static final boolean IS_FLAG_INFO = true;
+//	private static final boolean IS_FLAG_VERBOSE = true;
+//	private static final boolean IS_FLAG_WARN = true;
+//	private static final boolean IS_FLAG_OS = true;
+//	private static final boolean IS_FLAG_TOAST = true;
 
 	/**
 	 * Contact value is 3 Show Log Debug. Data note flow page.

@@ -36,10 +36,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 
-/**
- * @author ngant
- * @sine Mar 14, 2013
- */
+
 public class ParticleAnimationView extends View implements AnimationListener {
 	public interface ParticleListener {
 		public void ParticleCompleted();
@@ -322,6 +319,7 @@ public class ParticleAnimationView extends View implements AnimationListener {
 		 * for (int i = 0; i < myBitmap.getWidth(); i++) { for (int j = 0; j < myBitmap.getHeight(); j++) { int pixel = myBitmap.getPixel(i, j); if (pixel !=
 		 * Color.TRANSPARENT) { bitmap.setPixel(i, j, color); } else { bitmap.setPixel(i, j, pixel); } } }
 		 */
+		@SuppressWarnings("deprecation")
 		BitmapDrawable drb = new BitmapDrawable(bitmap);
 		drb.setBounds(0, 0, drb.getIntrinsicWidth(), drb.getIntrinsicHeight());
 
@@ -369,6 +367,7 @@ public class ParticleAnimationView extends View implements AnimationListener {
 		bmp.getPixels(pixels, 0, bmp.getWidth(), 0, 0, bmp.getWidth(), bmp.getHeight());
 		snow_flake.setPixels(pixels, 0, bmp.getWidth(), 0, 0, bmp.getWidth(), bmp.getHeight());
 
+		@SuppressWarnings("deprecation")
 		BitmapDrawable drb = new BitmapDrawable(snow_flake);
 
 		item_size = drb.getIntrinsicWidth();// snow_flake.getWidth();

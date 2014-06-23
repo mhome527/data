@@ -20,7 +20,7 @@
             android:src="@drawable/blank" 
             android:visibility="gone"/>
 
-        <TextView
+<!--         <TextView
             android:id="@+id/txtMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,14 +30,14 @@
             android:minWidth="404dp"
             android:text="@string/app_name"
             android:textColor="#154632"
-            android:visibility="gone" />
+            android:visibility="gone" /> -->
 
         <LinearLayout
             android:id="@+id/layout_bottom_control"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="40dp"
             android:gravity="center_horizontal" >
 
             <Button

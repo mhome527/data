@@ -12,6 +12,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import app.infobus.utils.Constant;
 import app.infobus.utils.LogUtil;
 
 public abstract class AbstractActivity extends Activity {
@@ -72,6 +74,11 @@ public abstract class AbstractActivity extends Activity {
 
 	private void setAction() {
 
+		if(mActivity.getClass().isAssignableFrom(SearchActivity.class)
+				|| mActivity.getClass().isAssignableFrom(InfoDetailActivity.class)){
+			RadioGroup groupRadio = (RadioGroup) findViewById(R.id.groupRadio);
+			groupRadio.setVisibility(View.GONE);
+		}
 		imgHome.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -102,6 +109,7 @@ public abstract class AbstractActivity extends Activity {
 				isClick = true;
 				Intent i = new Intent(AbstractActivity.this, SearchActivity.class);
 				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				i.putExtra(Constant.KEY_CITY, rbtnHcm.isChecked());
 				startActivity(i);
 			}
 		});

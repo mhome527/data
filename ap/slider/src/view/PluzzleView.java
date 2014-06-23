@@ -26,7 +26,7 @@ public class PluzzleView extends RelativeLayout {
 	// boolean isCheck = true;
 	public boolean isTime = false;
 	int widthTile;
-	int row = 8;
+	int row = 4;
 	int column = 4;
 	// private Bitmap scaleBmp;
 	// private Bitmap blank;
@@ -144,15 +144,6 @@ public class PluzzleView extends RelativeLayout {
 					ShowLog.i(tag, "moveTile 2");
 				}
 			}
-
-			// Handler handler = new Handler();
-			// handler.post(new Runnable() {
-			// @Override
-			// public void run() {
-			// moveTiles();
-			// postInvalidate();
-			// }
-			// });
 
 			moveTiles();
 			if (checkWin()) {
@@ -382,11 +373,11 @@ public class PluzzleView extends RelativeLayout {
 		tile = getTile(dataTile[1][1].getAreaNew().left + 10, dataTile[1][1].getAreaNew().top + 10);
 		moveDataTile(tile);
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 300; i++) {
 			// for (int i = 0; i < 300; i++) {
 			rand = new Random();
-			rX = rand.nextInt(4) + 1;
-			rY = rand.nextInt(4) + 1;
+			rX = rand.nextInt(row) + 1;
+			rY = rand.nextInt(row) + 1;
 			tile = dataTile[rY][rX];
 			moveDataTile(tile);
 		}
@@ -417,38 +408,5 @@ public class PluzzleView extends RelativeLayout {
 		}
 		return true;
 	}
-
-	public void onDestroy() {
-		try {
-			// if (mbackground != null) {
-			// mbackground.stop();
-			// mbackground.release();
-			// }
-			// if (mSlider != null)
-			// mSlider.release();
-			// if (mSlider2 != null)
-			// mSlider2.release();
-		} catch (Exception e) {
-			ShowLog.e(tag, "onDestroy");
-			if (Constant.IS_PrintStackTrace)
-				e.printStackTrace();
-		}
-	}
-
-	// /////////////////////
-	// /////////////////////////
-
-	// /////////////////////////////////////////////
-	// ///////////////////////////
-
-	// private class LoadData extends AsyncTask<Object, Object, Object>{
-	//
-	// @Override
-	// protected Object doInBackground(Object... params) {
-	// // TODO Auto-generated method stub
-	// return null;
-	// }
-	//
-	// }
 
 }
