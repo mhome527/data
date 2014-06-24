@@ -55,7 +55,7 @@ public class ShowLog {
 	 */
 	public static void e(final String tag, final String message) {
 		if (IS_FLAG_ERROR) {
-			Log.e(tag + "YGO", message);
+			Log.e(tag + "YYY", message);
 		}
 	}
 
@@ -69,7 +69,7 @@ public class ShowLog {
 	 */
 	public static void i(final String tag, final String message) {
 		if (IS_FLAG_INFO) {
-			Log.i(tag + "YGO", message);
+			Log.i(tag + "YYY", message);
 		}
 	}
 

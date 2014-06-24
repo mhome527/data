@@ -30,10 +30,15 @@ import android.widget.TextView;
  * 
  */
 public class SliderSelectActivity extends AbstractContentsActivity implements OnClickListener {
-	String tag = "HuynhTD-" + SliderSelectActivity.class.getSimpleName();
-	public int width = 100, height = 100;
-	boolean isClick = false;
+
+	private String tag = SliderSelectActivity.class.getSimpleName();
+	private RadioButton radioEasy;
+	private RadioButton radioDifficult;
+	public int width = 100;
+	public int height = 100;
+	private boolean isClick = false;
 	private GridView gridView;
+
 	private int[] arrImg = { R.drawable.jigsaw_image_01, R.drawable.jigsaw_image_02, R.drawable.jigsaw_image_03,
 			R.drawable.jigsaw_image_04, R.drawable.jigsaw_image_05, R.drawable.jigsaw_image_06 };
 	private int[] arrImgSmall = { R.drawable.jigsaw_image_s_01, R.drawable.jigsaw_image_s_02,
@@ -50,12 +55,19 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 
 		super.initView(savedInstanceState);
 		try {
+			ShowLog.i(tag, "initView......");
+
 			gridView = (GridView) findViewById(R.id.gridView);
 
 			this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 			DisplayMetrics dm = new DisplayMetrics();
 			getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+			radioEasy = (RadioButton) this.findViewById(R.id.radioEasy);
+			radioDifficult = (RadioButton) this.findViewById(R.id.radioDifficult);
+
+			
 
 			CustomSharedPreferences.init(getApplicationContext());
 			CustomSharedPreferences.setPreferences(Constant.WIDTH_SCREEN, dm.widthPixels);
@@ -70,12 +82,16 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 					Intent intent;
-					RadioButton radioEasy;
-					radioEasy = (RadioButton) SliderSelectActivity.this.findViewById(R.id.radioEasy);
+
+					if (isClick)
+						return;
+					isClick = true;
+
 					if (radioEasy.isChecked())
 						intent = new Intent(SliderSelectActivity.this, SliderMainEasyActivity.class);
 					else
 						intent = new Intent(SliderSelectActivity.this, SliderMainActivity.class);
+
 					intent.putExtra(Constant.GAME_ID, arrImg[position]);
 					intent.putExtra(Constant.GAME_ID_S, arrImgSmall[position]);
 					startActivity(intent);
@@ -94,6 +110,12 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 			adView.loadAd(adRequest);
 			// /////
 
+			Intent intent = getIntent();
+			Bundle extra = intent.getExtras();
+			if (extra != null && extra.getString(Constant.KEY_DIFFICULT)!= null && !extra.getString(Constant.KEY_DIFFICULT).equals(""))
+				radioDifficult.setChecked(true);
+			else
+				radioEasy.setChecked(true);
 			ShowLog.i(tag, "initView width screen: " + width);
 		} catch (Exception e) {
 			ShowLog.e(tag, "initView error" + e);
@@ -104,6 +126,8 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 	protected void onResume() {
 		super.onResume();
 		isClick = false;
+		ShowLog.i(tag, "onResume");
+
 		// SoundManager.playSound(Constant.SOUND_A, true);
 	}
 
@@ -159,6 +183,7 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+		ShowLog.i(tag, "onDestroy");
 	}
 
 	@Override

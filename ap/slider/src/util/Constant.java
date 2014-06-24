@@ -20,4 +20,10 @@ public class Constant {
 	public static final String SOUND_L = "puzzule_l_slider_piece.mp3";
 	public static final String SOUND_L2 = "puzzule_l_slider_piece2.mp3";
 	
+	public static final String KEY_LEVEL = "level";
+	public static final String KEY_EASY = "easy";
+	public static final String KEY_DIFFICULT = "difficult";
+
+
+	
 }

@@ -51,8 +51,8 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 	private MediaPlayer player2 = null;
 	private MediaPlayer player3 = null;
 
-	int max_circle_size = 0;
-	int bm_size;
+	private int max_circle_size = 50;
+	private int bm_size = 50;
 	/*
 	 * config for Text Animation
 	 */
@@ -264,28 +264,6 @@ public class CongratulationView extends RelativeLayout implements ParticleListen
 
 		LoadAllSound();
 		
-//		prepare for circle animation
-		 
-		int height = CustomSharedPreferences.getPreferences(Constant.HEIGHT_SCREEN, 320);
-		int width = CustomSharedPreferences.getPreferences(Constant.WIDTH_SCREEN, 480);
-
-		BitmapFactory.Options o = new BitmapFactory.Options();
-		o.inJustDecodeBounds = true;
-		BitmapFactory.decodeResource(getResources(), R.drawable.glow_circle, o);
-		// new size
-		height /= 3;
-		float scaleDelta = (float) ((height * 1.0) / o.outHeight);
-
-		bm_size = (int) (o.outWidth * scaleDelta);
-		max_circle_size = width / bm_size + 3;
-		o = null;
-
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(bm_size, bm_size);
-		params.addRule(CENTER_IN_PARENT);
-
-		/*
-		 * prepare data for text animation
-		 */
 		if (null != buttonsText) {
 			buttonsText.clear();
 			buttonsText = null;

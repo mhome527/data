@@ -58,7 +58,7 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 	private TextView tvTime;
 	private StartAnimationView startAnimationView;
 	private CongratulationView cgview;
-//	public boolean finish = false;
+	// public boolean finish = false;
 	private boolean isClick = false;
 	protected MyGestureListener myGestureListener;
 
@@ -70,7 +70,10 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 	private int mins = 0;
 	private int hours = 0;
 	private int secs = 0;
-	
+
+	private int row = 4;
+	private int column = 4;
+
 	private boolean isClickFinish = false;
 
 	@Override
@@ -114,10 +117,10 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 		int wArea = 200;
 		int hArea = 200;
 		int gameW = 100;
+		int wControl;
 		try {
 			System.gc();
 			intent = this.getIntent();
-//			finish = intent.getBooleanExtra(Constant.FINISH_GAME, false);
 
 			idGame = intent.getIntExtra(Constant.GAME_ID, -1);
 			idGameS = intent.getIntExtra(Constant.GAME_ID_S, -1);
@@ -135,41 +138,31 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			scnWidth = CustomSharedPreferences.getPreferences(Constant.HEIGHT_SCREEN, 480);
 			scnHeight = CustomSharedPreferences.getPreferences(Constant.WIDTH_SCREEN, 320);
 
-			widthTile = scnHeight / 4 * 87 / 100;
+			// widthTile = scnHeight / 4 * 87 / 100;
 
 			ShowLog.i(tag, "initData() screen width, height=" + scnWidth + ", " + scnHeight + "; widthTile:" + widthTile);
 
-			wArea = widthTile * 5 + 28;
-			hArea = widthTile * 4 + 25;
+//			wArea = widthTile * 5 + 28;
+//			hArea = widthTile * 4 + 25;
 
-			if (scnHeight >= 720) {
-				gameW = (int) (widthTile * 1.3);
-			} else if (scnHeight >= 480 && scnHeight < 720) {
+			if (scnHeight < 720) {
+				widthTile = scnHeight / row * 94 / 100;
 				gameW = (int) (widthTile * 1.4);
-			}
-			switch (scnHeight) {
-			case 480:
 				imgW = (int) (widthTile * 1.4) + 10;
-				wArea = (int) (widthTile * 5.5);
+				wArea = (int) (widthTile * (column + 1.3));
 				hArea = widthTile * 4 + 42;
-				widthTile = widthTile + 5;
-				break;
-			case 540:
-				imgW = (int) (widthTile * 1.5) + 15;
-				wArea = (int) (widthTile * 5.5) + 8;
-				hArea = widthTile * 4 + 55;
-				widthTile = widthTile + 8;
+				wControl = (int)( widthTile * 2.4);
+//				widthTile = widthTile + 5;
 
-				break;
-			case 720:
-			default:
-				imgW = (int) (widthTile * 1.5) + 15;
+			} else {
+				widthTile = scnHeight / row * 93 / 100;
 
-				widthTile = widthTile + 11;
-				hArea = widthTile * 4 + 30;
-				wArea = (int) (widthTile * 5) + 28;
-				// ShowLog.i(tag, "initData widthW: " + gameW + "; controlW=" + controlW);
-				break;
+				imgW = (int) (widthTile * 1.5) + 15;
+				gameW = (int) (widthTile * 1.3);
+//				widthTile = widthTile + 11;
+				wArea = (int) (widthTile * (column + 1.2));
+				hArea = widthTile * column + 30;
+				wControl = (int)( widthTile * 2.3);
 			}
 
 			// Layout game
@@ -177,12 +170,11 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			layout_param.setMargins(gameW, 0, 0, 0);
 			lnPluzzle.setLayoutParams(layout_param);
 
-//			System.gc();
+			// System.gc();
 			llBg1.getLayoutParams().width = wArea;
 			llBg1.getLayoutParams().height = hArea;
 
 			llBg2.getLayoutParams().width = widthTile + 8;
-			// llBg2.getLayoutParams().height= h_llBg2;
 			RelativeLayout.LayoutParams param2 = (RelativeLayout.LayoutParams) llBg2.getLayoutParams();
 			param2.setMargins(0, widthTile + 17, 0, 0);
 			llBg2.setLayoutParams(param2);
@@ -191,6 +183,11 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			param3.setMargins(0, widthTile + 19, 0, 0);
 			llBg3.setLayoutParams(param3);
 			llBg3.getLayoutParams().width = widthTile + 6;
+
+			LinearLayout lnControl = ViewHelper.findView(this, R.id.lnControl);
+			RelativeLayout.LayoutParams paramControl = (RelativeLayout.LayoutParams) lnControl.getLayoutParams();
+			paramControl.width = wControl;
+			lnControl.setLayoutParams(paramControl);
 
 			btnReplay.getLayoutParams().width = widthTile;
 			btnReplay.getLayoutParams().height = widthTile;
@@ -218,7 +215,7 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 
 			@Override
 			public void onClick(View arg0) {
-				if(isClick)
+				if (isClick)
 					return;
 				refreshGame();
 			}
@@ -260,7 +257,7 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 
 			ShowLog.i(tag, "onDestroy.... ");
 
-			// SoundManager.stopSound(Constant.SOUND_E);			
+			// SoundManager.stopSound(Constant.SOUND_E);
 			unbindDrawables(findViewById(R.id.lnRoot));
 
 			customHandler.removeCallbacks(updateTimerThread);
@@ -279,7 +276,7 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 		// ShowLog.i(tag, "onTouchEvent........................................................");
 		return myGestureListener.getDetector().onTouchEvent(event);
 	}
-	
+
 	private void refreshGame() {
 		showConfirmDialog(SliderMainActivity.this, "", SliderMainActivity.this.getString(R.string.configm_replay), new DialogInterface.OnClickListener() {
 
@@ -363,7 +360,7 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 				// pluzz.isTime = true;
 				lnPluzzle.addView(pluzz);
 				lnProgressBar.setVisibility(View.GONE);
-				
+
 				customHandler.postDelayed(updateTimerThread, 0);
 			}
 		}
@@ -398,7 +395,7 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 				CustomSharedPreferences.setPreferences(idGame + "", tvTime.getText().toString());
 			customHandler.removeCallbacks(updateTimerThread);
 
-//			SoundManager.pauseSound(Constant.SOUND_A);
+			// SoundManager.pauseSound(Constant.SOUND_A);
 			// //////
 			// System.gc();
 			Handler handler = new Handler();
@@ -415,7 +412,7 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 
 			// cgview.setVisibility(View.VISIBLE);
 			if (cgview.getPathImage() == null || cgview.getPathImage().equals("")) {
-//				cgview.setGameType(GameType.Slider);
+				// cgview.setGameType(GameType.Slider);
 				cgview.setControlsClickListener(this);
 			}
 			System.gc();
@@ -451,8 +448,11 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 				return;
 			isClickFinish = true;
 			Intent intent = new Intent(this, SliderSelectActivity.class);
+			intent.putExtra(Constant.KEY_LEVEL, Constant.KEY_DIFFICULT);
 			startActivity(intent);
 			finish();
+			ShowLog.i(tag, "OnClickButtonChoice ");
+
 		} catch (Exception e) {
 			ShowLog.e(tag, "back error: " + e.getMessage());
 		}
@@ -460,16 +460,17 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 
 	@Override
 	public void onBackPressed() {
-		if(cgview.getVisibility() == View.VISIBLE){
+		if (cgview.getVisibility() == View.VISIBLE) {
 			cgview.setVisibility(View.GONE);
 			isClick = false;
-			return;
 		}
 		Intent intent = new Intent(this, SliderSelectActivity.class);
+		intent.putExtra(Constant.KEY_LEVEL, Constant.KEY_DIFFICULT);
 		startActivity(intent);
 		finish();
-	}
+		ShowLog.i(tag, "onBackPressed ");
 
+	}
 
 	@Override
 	public void onScreenOn(boolean isunlock) {

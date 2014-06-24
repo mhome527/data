@@ -46,7 +46,6 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 	private int widthTile;
 	private int scnWidth, scnHeight;
 
-	private LinearLayout lnControl;
 	private ImageView imgShow;
 	private Button btnReplay;
 	private RelativeLayout rlRoots;
@@ -79,7 +78,6 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 		try {
 			rlRoots = ViewHelper.findView(this, R.id.rlRoots);
 			lnProgressBar = ViewHelper.findView(this, R.id.lnProgressBar);
-			lnControl = ViewHelper.findView(this, R.id.lnControl);
 			lnPluzzle = ViewHelper.findView(this, R.id.lnPluzzle);
 			imgShow = ViewHelper.findView(this, R.id.imgShow);
 			btnReplay = ViewHelper.findView(this, R.id.btnReplay);
@@ -112,6 +110,7 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 		int wArea = 200;
 		int hArea = 200;
 		int gameW = 100;
+		int wControl;
 		try {
 			System.gc();
 			intent = this.getIntent();
@@ -124,8 +123,7 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 			cgview.setVisibility(View.GONE);
 			rlRoots.addView(cgview);
 
-			RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT,
-					LayoutParams.FILL_PARENT);
+			RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 			startAnimationView = new StartAnimationView(this);
 			startAnimationView.setLayoutParams(param);
 			rlRoots.addView(startAnimationView);
@@ -134,32 +132,29 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 			scnWidth = CustomSharedPreferences.getPreferences(Constant.HEIGHT_SCREEN, 480);
 			scnHeight = CustomSharedPreferences.getPreferences(Constant.WIDTH_SCREEN, 320);
 
-			ShowLog.i(tag, "initData() screen width, height=" + scnWidth + ", " + scnHeight + "; widthTile:"
-					+ widthTile);
+			ShowLog.i(tag, "initData() screen width, height=" + scnWidth + ", " + scnHeight + "; widthTile:" + widthTile);
 
 			// wArea = widthTile * column + 28;
 			// hArea = widthTile * row + 25;
 
 			if (scnHeight < 720) {
-				widthTile = scnHeight / row * 90 / 100;
-
+				widthTile = scnHeight / row * 94 / 100;
 				gameW = (int) (widthTile);
-				imgW = (int) (widthTile * 1.4);
-				wArea = (int) (widthTile * column + 40);
+				imgW = (int) (widthTile * 1.5);
+				wArea = (int) (widthTile * column * 1.05);
 				hArea = widthTile * row + 42;
-				widthTile = widthTile + 5;
+				wControl = (int) (widthTile * 2.2);
 			} else {
 				widthTile = scnHeight / row * 93 / 100;
-
 				gameW = (int) (widthTile) * 4 / 5;
 				imgW = (int) (widthTile * 1.5);
-				wArea = (int) (widthTile * column + 40);
+				wArea = (int) (widthTile * column * 1.04);
 				hArea = widthTile * row + 30;
+				wControl = (int) (widthTile * 1.8);
 			}
 
 			// Layout game
-			RelativeLayout.LayoutParams layout_param = new RelativeLayout.LayoutParams(
-					LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+			RelativeLayout.LayoutParams layout_param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 			layout_param.setMargins(gameW, 0, 0, 0);
 			lnPluzzle.setLayoutParams(layout_param);
 
@@ -178,8 +173,10 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 			llBg3.setLayoutParams(param3);
 			llBg3.getLayoutParams().width = widthTile + 6;
 
+			LinearLayout lnControl = ViewHelper.findView(this, R.id.lnControl);
 			RelativeLayout.LayoutParams paramControl = (RelativeLayout.LayoutParams) lnControl.getLayoutParams();
-			paramControl.width = widthTile * 2 + 20;
+			paramControl.setMargins(0, 10, 0, 0);
+			paramControl.width = wControl;
 			lnControl.setLayoutParams(paramControl);
 
 			btnReplay.getLayoutParams().width = widthTile * 3 / 4;
@@ -269,23 +266,22 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 	}
 
 	private void refreshGame() {
-		showConfirmDialog(SliderMainEasyActivity.this, "",
-				SliderMainEasyActivity.this.getString(R.string.configm_replay), new DialogInterface.OnClickListener() {
+		showConfirmDialog(SliderMainEasyActivity.this, "", SliderMainEasyActivity.this.getString(R.string.configm_replay), new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						pluzz.sortData();
-						pluzz.isTime = false;
-						isClick = false;
-					}
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				pluzz.sortData();
+				pluzz.isTime = false;
+				isClick = false;
+			}
 
-				}, new DialogInterface.OnClickListener() {
+		}, new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+			}
 
-				});
+		});
 	}
 
 	private void unbindDrawables(View view) {
@@ -325,8 +321,7 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 		protected Object doInBackground(Object... params) {
 			Bitmap bmp;
 			if (!isFinishing()) {
-				bmp = Utility.decodeBitmapFromResource(SliderMainEasyActivity.this.getResources(), idGame,
-						widthTile * 4, widthTile * 4);
+				bmp = Utility.decodeBitmapFromResource(SliderMainEasyActivity.this.getResources(), idGame, widthTile * 4, widthTile * 4);
 				// pluzz = new PluzzleView(SliderMainEasyActivity.this);
 				pluzz = new PluzzleViewEasy(SliderMainEasyActivity.this);
 				// pluzz.init(4, 4, bmp);
@@ -404,6 +399,7 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 				return;
 			isClick = true;
 			Intent intent = new Intent(this, SliderSelectActivity.class);
+			intent.putExtra(Constant.KEY_LEVEL, Constant.KEY_EASY);
 			startActivity(intent);
 			finish();
 		} catch (Exception e) {
@@ -419,6 +415,7 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 			return;
 		}
 		Intent intent = new Intent(this, SliderSelectActivity.class);
+		intent.putExtra(Constant.KEY_LEVEL, Constant.KEY_EASY);
 		startActivity(intent);
 		finish();
 	}

@@ -7,7 +7,6 @@ import android.graphics.Rect;
 import android.media.MediaPlayer;
 import android.view.MotionEvent;
 import java.util.Random;
-import puzzle.slider.vn.SliderMainActivity;
 import puzzle.slider.vn.SliderMainEasyActivity;
 import puzzle.slider.vn.SoundManager;
 import puzzle.slider.vn.util.Constant;
@@ -20,31 +19,24 @@ import android.widget.RelativeLayout;
 
 public class PluzzleViewEasy extends RelativeLayout {
 
-	private String tag = "HuynhTD-" + PluzzleViewEasy.class.getSimpleName();
+	private String tag = PluzzleViewEasy.class.getSimpleName();
 	private TileImage[][] dataTile;
 	private TileImage currTile;
 	private ArrayList<TileImage> arrTile;
-	// boolean isCheck = true;
 	public boolean isTime = false;
-	int widthTile;
-	int row = 8;
-	int column = 4;
-	// private Bitmap scaleBmp;
-	// private Bitmap blank;
+	private int widthTile;
+	private int row = 3;
+	private int column = 3;
+
 	private SliderMainEasyActivity pluzzleMain;
 	public boolean moveEvent = false;
 	private float currX = 0, currY = 0;
 
-	// MediaPlayer mbackground;
-	// MediaPlayer mSlider, mSlider2;
+
 
 	public PluzzleViewEasy(Context context) {
 		super(context);
-		try {
-
-		} catch (Exception e) {
-
-		}
+		
 	}
 
 	public PluzzleViewEasy(SliderMainEasyActivity pluzzleMain) {
@@ -66,7 +58,6 @@ public class PluzzleViewEasy extends RelativeLayout {
 
 			arrTile = new ArrayList<TileImage>();
 			dataTile = new TileImage[row + 1][column + 1];
-			// widthTile = CustomSharedPreferences.getPreferences(Constant.HEIGHT_SCREEN, 0) / 4 * 80 / 100;
 			widthTile = CustomSharedPreferences.getPreferences(Constant.WIDTH_TILE, 0);
 
 			// widthTile = 100;
@@ -94,9 +85,6 @@ public class PluzzleViewEasy extends RelativeLayout {
 					tileImg.setAreaNew(area);
 
 					if (i == 0 && j == 0) {
-						// currTile = tileImg;
-						// tileImg.alpha = true;
-
 						// ////Tile left
 						area = new Rect(disX, disY, widthTile + disX - 1, widthTile + disY);
 						tileLeft = new TileImage(getContext(), j, i + 1, null);
@@ -195,15 +183,10 @@ public class PluzzleViewEasy extends RelativeLayout {
 		TileImage tile;
 		super.dispatchTouchEvent(event);
 		ShowLog.i(tag, "dispatchTouchEvent....isTime: " + isTime);
-		// ShowLog.showLogInfo(tag, "dispatchTouchEvent dispatch: " + dispatch);
-		// ShowLog.showLogInfo(tag, "dispatchTouchEvent  check: " + "; x,y= " + event.getX() + ", " + event.getY());
 		if (isTime) {
 			return false;
 		}
-		// if (!isCheck) {
-		// return false;
-		// }
-		// isCheck = false;
+
 		if (currX == event.getX() && currY == event.getY()) {
 			return false;
 		}
@@ -233,7 +216,6 @@ public class PluzzleViewEasy extends RelativeLayout {
 				currX = currTile.getLocX();
 				currY = currTile.getLocY();
 				if (currY > tileImage.getLocY()) {
-					// ShowLog.showLogInfo(tag, "moveDataTile top => bottom");
 					for (int i = currY - 1; i >= tileImage.getLocY(); i--) {
 						tile = getDataLoc(currX, i);
 						arrTile.add(tile);
