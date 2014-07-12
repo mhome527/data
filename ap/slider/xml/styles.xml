@@ -1,6 +1,0 @@
-<resources>
-    <style name="AppTheme">
-        <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@drawable/bg_main</item>
-    </style>
-</resources>

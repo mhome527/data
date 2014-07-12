@@ -308,7 +308,7 @@ public class SliderMainEasyActivity extends AbstractContentsActivity implements 
 		protected void onPreExecute() {
 			super.onPreExecute();
 			try {
-				if (isFinishing())
+				if (!isFinishing())
 					return;
 				lnProgressBar.setVisibility(View.VISIBLE);
 

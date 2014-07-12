@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,16 +35,13 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 	private String tag = SliderSelectActivity.class.getSimpleName();
 	private RadioButton radioEasy;
 	private RadioButton radioDifficult;
-	public int width = 100;
-	public int height = 100;
 	private boolean isClick = false;
 	private GridView gridView;
 
-	private int[] arrImg = { R.drawable.jigsaw_image_01, R.drawable.jigsaw_image_02, R.drawable.jigsaw_image_03,
-			R.drawable.jigsaw_image_04, R.drawable.jigsaw_image_05, R.drawable.jigsaw_image_06 };
-	private int[] arrImgSmall = { R.drawable.jigsaw_image_s_01, R.drawable.jigsaw_image_s_02,
-			R.drawable.jigsaw_image_s_03, R.drawable.jigsaw_image_s_04, R.drawable.jigsaw_image_s_05,
-			R.drawable.jigsaw_image_s_06 };
+	private int[] arrImg = { R.drawable.jigsaw_image_01, R.drawable.jigsaw_image_02, R.drawable.jigsaw_image_03, R.drawable.jigsaw_image_04, R.drawable.jigsaw_image_05,
+			R.drawable.jigsaw_image_06 };
+	private int[] arrImgSmall = { R.drawable.jigsaw_image_s_01, R.drawable.jigsaw_image_s_02, R.drawable.jigsaw_image_s_03, R.drawable.jigsaw_image_s_04,
+			R.drawable.jigsaw_image_s_05, R.drawable.jigsaw_image_s_06 };
 
 	@Override
 	protected int getViewLayoutId() {
@@ -52,10 +50,11 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 
 	@Override
 	protected void initView(final Bundle savedInstanceState) {
-
+		String difficult;
+		ImageAdapter adapter;
 		super.initView(savedInstanceState);
 		try {
-			ShowLog.i(tag, "initView......");
+//			ShowLog.i(tag, "initView......");
 
 			gridView = (GridView) findViewById(R.id.gridView);
 
@@ -67,15 +66,22 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 			radioEasy = (RadioButton) this.findViewById(R.id.radioEasy);
 			radioDifficult = (RadioButton) this.findViewById(R.id.radioDifficult);
 
-			
-
 			CustomSharedPreferences.init(getApplicationContext());
-			CustomSharedPreferences.setPreferences(Constant.WIDTH_SCREEN, dm.widthPixels);
+//			CustomSharedPreferences.setPreferences(Constant.WIDTH_SCREEN, dm.widthPixels);
 			CustomSharedPreferences.setPreferences(Constant.HEIGHT_SCREEN, dm.heightPixels);
 
-			width = dm.widthPixels / 5;
+//			width = dm.widthPixels / 5;
+			TelephonyManager manager = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
+			//if table
+	        if(manager.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE){
+	        	CustomSharedPreferences.setPreferences(Constant.WIDTH_SCREEN, dm.widthPixels - 50);
+	        	adapter = new ImageAdapter(this, arrImg);
+	        }
+	        else
+	        	adapter = new ImageAdapter(this, arrImgSmall);
 
-			ImageAdapter adapter = new ImageAdapter(this, arrImg);
+	        //			adapter = new ImageAdapter(this, arrImg);
+	        
 			gridView.setAdapter(adapter);
 			gridView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -110,13 +116,13 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 			adView.loadAd(adRequest);
 			// /////
 
-			Intent intent = getIntent();
-			Bundle extra = intent.getExtras();
-			if (extra != null && extra.getString(Constant.KEY_DIFFICULT)!= null && !extra.getString(Constant.KEY_DIFFICULT).equals(""))
+			difficult = getIntent().getStringExtra(Constant.KEY_LEVEL);
+
+			if (difficult != null && difficult.equals(Constant.KEY_DIFFICULT))
 				radioDifficult.setChecked(true);
 			else
 				radioEasy.setChecked(true);
-			ShowLog.i(tag, "initView width screen: " + width);
+//			ShowLog.i(tag, "initView width screen: " + width);
 		} catch (Exception e) {
 			ShowLog.e(tag, "initView error" + e);
 		}
@@ -130,6 +136,7 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 
 		// SoundManager.playSound(Constant.SOUND_A, true);
 	}
+	
 
 	private class ImageAdapter extends BaseAdapter {
 		private int[] arrImage;
@@ -170,7 +177,8 @@ public class SliderSelectActivity extends AbstractContentsActivity implements On
 				time = CustomSharedPreferences.getPreferences(arrImage[position] + "", "00:00:00") + "";
 				if (!time.equals("") && !time.equals("00:00:00"))
 					tvTime.setText(time + "");
-				imgShow.setImageResource(arrImgSmall[position]);
+				imgShow.setImageResource(arrImage[position]);
+//				imgShow.setImageResource(arrImgSmall[position]);
 
 			} else {
 				grid = (View) convertView;

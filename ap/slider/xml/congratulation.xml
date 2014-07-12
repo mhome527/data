@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/blank" 
             android:visibility="gone"/>
 
 <!--         <TextView
@@ -75,7 +74,6 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/top_bg"
             android:visibility="gone" /> 
 
         <puzzle.slider.vn.animation.ParticleAnimationView

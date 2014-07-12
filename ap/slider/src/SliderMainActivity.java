@@ -41,7 +41,6 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 	// AbstractContentsActivity {
 
 	private String tag = SliderMainActivity.class.getSimpleName();
-	// private Bitmap bmpOrg = null;
 
 	private int widthTile;
 	private int scnWidth, scnHeight;
@@ -141,9 +140,6 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 			// widthTile = scnHeight / 4 * 87 / 100;
 
 			ShowLog.i(tag, "initData() screen width, height=" + scnWidth + ", " + scnHeight + "; widthTile:" + widthTile);
-
-//			wArea = widthTile * 5 + 28;
-//			hArea = widthTile * 4 + 25;
 
 			if (scnHeight < 720) {
 				widthTile = scnHeight / row * 94 / 100;
@@ -327,7 +323,7 @@ public class SliderMainActivity extends AbstractContentsActivity implements Cong
 		protected void onPreExecute() {
 			super.onPreExecute();
 			try {
-				if (isFinishing())
+				if (!isFinishing())
 					return;
 				lnProgressBar.setVisibility(View.VISIBLE);
 

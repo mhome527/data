@@ -8,28 +8,13 @@ import android.widget.Toast;
 /**
  * Show Log for debug
  * 
- * @author 
+ * @author
  * @version
  * @since
  */
 public class ShowLog {
 
-	// ShowLog Flag (Using turn on or turn off debug)
-	private static final boolean IS_FLAG_DEBUG = false;
-	private static final boolean IS_FLAG_ERROR = true;
-	private static final boolean IS_FLAG_INFO = true;
-	private static final boolean IS_FLAG_VERBOSE = false;
-	private static final boolean IS_FLAG_WARN = false;
-	private static final boolean IS_FLAG_OS = false;
-	private static final boolean IS_FLAG_TOAST = false;
-	
-//	private static final boolean IS_FLAG_DEBUG = true;
-//	private static final boolean IS_FLAG_ERROR = true;
-//	private static final boolean IS_FLAG_INFO = true;
-//	private static final boolean IS_FLAG_VERBOSE = true;
-//	private static final boolean IS_FLAG_WARN = true;
-//	private static final boolean IS_FLAG_OS = true;
-//	private static final boolean IS_FLAG_TOAST = true;
+	private static final boolean IS_FLAG = false;
 
 	/**
 	 * Contact value is 3 Show Log Debug. Data note flow page.
@@ -40,8 +25,8 @@ public class ShowLog {
 	 *            Debug message
 	 */
 	public static void showLogDebug(final String tag, final String message) {
-		if (IS_FLAG_DEBUG) {
-			Log.d(tag + "YGO", message);
+		if (IS_FLAG) {
+			Log.d(tag + "YYY", message);
 		}
 	}
 
@@ -54,7 +39,7 @@ public class ShowLog {
 	 *            Debug message
 	 */
 	public static void e(final String tag, final String message) {
-		if (IS_FLAG_ERROR) {
+		if (IS_FLAG) {
 			Log.e(tag + "YYY", message);
 		}
 	}
@@ -68,7 +53,7 @@ public class ShowLog {
 	 *            Debug message
 	 */
 	public static void i(final String tag, final String message) {
-		if (IS_FLAG_INFO) {
+		if (IS_FLAG) {
 			Log.i(tag + "YYY", message);
 		}
 	}
@@ -82,7 +67,7 @@ public class ShowLog {
 	 *            Debug message
 	 */
 	public static void showLogVerbose(final String tag, final String message) {
-		if (IS_FLAG_VERBOSE) {
+		if (IS_FLAG) {
 			Log.i(tag, message);
 		}
 	}
@@ -96,7 +81,7 @@ public class ShowLog {
 	 *            Debug message
 	 */
 	public static void v(final String tag, final String message) {
-		if (IS_FLAG_VERBOSE) {
+		if (IS_FLAG) {
 			Log.v(tag, message);
 		}
 	}
@@ -110,7 +95,7 @@ public class ShowLog {
 	 *            Debug message
 	 */
 	public static void showLogWarn(final String tag, final String message) {
-		if (IS_FLAG_WARN) {
+		if (IS_FLAG) {
 			Log.i(tag, message);
 		}
 	}
@@ -138,7 +123,7 @@ public class ShowLog {
 	 *            Message show toast
 	 */
 	public static void showToast(final Context context, final String message) {
-		if (IS_FLAG_TOAST) {
+		if (IS_FLAG) {
 			Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 		}
 	}
@@ -158,7 +143,7 @@ public class ShowLog {
 
 		// String className = ShowLog.getClass().getName();
 
-		if (IS_FLAG_OS) {
+		if (IS_FLAG) {
 			final long allSize = Debug.getNativeHeapAllocatedSize() / 1048576L; // Origin is BYTES, print out is KB //1024
 			final long freeSize = Debug.getNativeHeapFreeSize() / 1048576L;
 			final long size = Debug.getNativeHeapSize() / 1048576L;
