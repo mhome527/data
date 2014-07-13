@@ -22,7 +22,7 @@ public abstract class BaseAct extends Activity {
 
     public int widthScreen;
     public int heightScreen;
-    public Prefs pref;
+    public static Prefs pref;
 
     abstract public int getContentViewID();
 

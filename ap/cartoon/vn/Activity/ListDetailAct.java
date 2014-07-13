@@ -10,10 +10,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
+import com.google.android.youtube.player.YouTubeIntents;
 
 import java.util.List;
 
@@ -35,6 +37,8 @@ public class ListDetailAct extends BaseAct {
 
     private AdapterCartoon adapter;
     private LoadMoreListView lstCartoon;
+    private static final String VIDEO_ID = "-Uwjt32NvVA";
+
 
     @Override
     public int getContentViewID() {
@@ -54,6 +58,22 @@ public class ListDetailAct extends BaseAct {
                 new LoadDataMoreTask().execute();
             }
         });
+
+        lstCartoon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Intent intent;
+                Cartoon cartoon = (Cartoon)lstCartoon.getAdapter().getItem(position);
+                ULog.i(ListDetailAct.class, "item: " + cartoon.getTitle() + "; youtube:" + cartoon.getYoutube());
+//                intent = new Intent(ListDetailAct.this, DetailAct.class);
+                intent = new Intent(ListDetailAct.this, WatchAct.class);
+                intent.putExtra(Constant.INTENT_DATA, cartoon.getYoutube());
+//                intent.putExtra(Constant.INTENT_DATA, cartoon.getYoutube());
+//                startActivity(intent);
+//                intent = YouTubeIntents.createPlayVideoIntentWithOptions(ListDetailAct.this, cartoon.getYoutube(), true, false);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -67,16 +87,6 @@ public class ListDetailAct extends BaseAct {
         super.onPause();
         unregisterReceiver(receiver);
     }
-
-//    private void loadJson() {
-//        File file = new File(Constant.JSON_FILE_NAME);
-//        ULog.i(this, "path file:" + file.getAbsolutePath());
-//        if (file.exists()) {
-//            ULog.i(this, "File exists");
-//        } else {
-//            ULog.i(this, "Load json local");
-//        }
-//    }
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
 
@@ -112,6 +122,7 @@ public class ListDetailAct extends BaseAct {
             View row;
             Cartoon cartoon;
             CartoonHolder cartoonHolder;
+            String thumbnail;
             if (convertView == null) {
                 LayoutInflater inflater = ((Activity) context).getLayoutInflater();
                 row = inflater.inflate(layoutResourceId, parent, false);
@@ -125,9 +136,11 @@ public class ListDetailAct extends BaseAct {
                 cartoonHolder = (CartoonHolder)row.getTag();
             }
             cartoon = getItem(position);
-            ULog.i(this, "data: title :" + cartoon.getTitle() + "; url:" + cartoon.getImg());
 
-            cartoonHolder.imgCartoon.setImageUrl(cartoon.getImg(), ImageCacheManager.getInstance().getImageLoader());
+            thumbnail = String.format(Constant.URL_THUMBNAIL, cartoon.getYoutube());
+            ULog.i(this, "data: title :" + thumbnail +"; youtube: " + cartoon.getYoutube());
+
+            cartoonHolder.imgCartoon.setImageUrl(thumbnail, ImageCacheManager.getInstance().getImageLoader());
             cartoonHolder.imgCartoon.setDefaultImageResId(R.drawable.conan_icon);
             cartoonHolder.tvTitle.setText(cartoon.getTitle());
             return row;

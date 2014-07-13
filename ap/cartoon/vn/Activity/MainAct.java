@@ -1,52 +1,48 @@
 package cartoon.youtube.vn.Activity;
 
-import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
-
-import com.android.volley.toolbox.NetworkImageView;
-
-import java.io.File;
-import java.util.List;
-
-import cartoon.youtube.vn.Cache.ImageCacheManager;
-import cartoon.youtube.vn.Cartoon;
-import cartoon.youtube.vn.CartoonDao;
-import cartoon.youtube.vn.Constant;
-import cartoon.youtube.vn.DaoMaster;
-import cartoon.youtube.vn.DaoSession;
-import cartoon.youtube.vn.DropBox.DownloadJson;
-import cartoon.youtube.vn.Entity.CartoonEntity;
-import cartoon.youtube.vn.MyApplication;
+import android.widget.ImageButton;
 import cartoon.youtube.vn.R;
-import cartoon.youtube.vn.Utils.Common;
-import cartoon.youtube.vn.Utils.ULog;
-import cartoon.youtube.vn.View.LoadMoreListView;
-import de.greenrobot.dao.query.QueryBuilder;
+
 
 /**
  * Created by huynhtran on 7/4/14.
  */
-public class MainAct extends BaseAct {
+public class MainAct extends BaseAct implements View.OnClickListener {
 
-
+    private ImageButton imgConan;
+    private ImageButton imgDoraemon;
+    private ImageButton imgTomJarry;
+    private ImageButton imgOther;
     @Override
     public int getContentViewID() {
-        return R.layout.list_cartoon;
+        return R.layout.activity_main;
     }
 
     @Override
     public void onAfterCreate(Bundle savedInstanceState) {
+        imgConan = (ImageButton)findViewById(R.id.imgConan);
+        imgDoraemon = (ImageButton)findViewById(R.id.imgDoraemon);
+        imgTomJarry = (ImageButton)findViewById(R.id.imgTomJarry);
+        imgOther = (ImageButton)findViewById(R.id.imgOther);
 
+        imgConan.setOnClickListener(this);
+        imgDoraemon.setOnClickListener(this);
+        imgTomJarry.setOnClickListener(this);
+        imgOther.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View view) {
+        
+        switch(view.getId()){
+            case R.id.imgConan:
+            case R.id.imgDoraemon:
+            case R.id.imgTomJarry:
+            case R.id.imgOther:
+                startActivityAct(ListDetailAct.class);
+                break;
+        }
+    }
 }

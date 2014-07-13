@@ -122,7 +122,7 @@ public class Test extends BaseAct {
             if (bundle != null) {
                 String filename = bundle.getString(Constant.INTENT_FILE);
                 ULog.i(MainAct.class, "Receiver filename:" + filename);
-                if(filename.equals(Constant.JSON_FILE_NAME)){
+                if (filename.equals(Constant.JSON_FILE_NAME)) {
                     new LoadData().execute();
                 }
             }
@@ -158,7 +158,7 @@ public class Test extends BaseAct {
                 row.setTag(cartoonHolder);
             } else {
                 row = convertView;
-                cartoonHolder = (CartoonHolder)row.getTag();
+                cartoonHolder = (CartoonHolder) row.getTag();
             }
             cartoon = getItem(position);
             ULog.i(this, "data: title :" + cartoon.getTitle() + "; url:" + cartoon.getImg());
@@ -170,7 +170,7 @@ public class Test extends BaseAct {
         }
     }
 
-    static class  CartoonHolder{
+    static class CartoonHolder {
         NetworkImageView imgCartoon;
         TextView tvTitle;
 
@@ -252,3 +252,7 @@ public class Test extends BaseAct {
             // Notify the loading more operation has finished
             ((LoadMoreListView) lstCartoon).onLoadMoreComplete();
         }
+
+    }
+
+}
