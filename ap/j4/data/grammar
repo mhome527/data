@@ -1046,109 +1046,238 @@ V、い－adj、な－adj（xだ）、N（xだ）＋はずがない<br/>
 "meanVN":"Chắc chắn, không thể khác được",
 "detail":"<p style='font-size:22px; text-align:center'><b>～はずだ</b></p> 
 <b>意味：</b><br/>
-should ～，ought to ～
-Chắc chắn, không thể khác được
+should ～，ought to ～<br/>
+Chắc chắn, không thể khác được<br/>
 
-<b>接続：</b>
-V、い－adj、な－adj（xだ）、N（xだ）＋はずだ
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ）、N（xだ）＋はずだ<br/>
 
-※usage: plain form
+※usage: plain form<br/><br/>
 
 <b>用例：</b><br/>
-    きょう、手紙を　出せば、あした　そちらに　着く　はずです。
-    Hôm nay nếu gửi thư thì ngày mai chắc chắn sẽ đến bên đó.
+    きょう、手紙を　出せば、あした　そちらに　着く　はずです。<br/>
+    Hôm nay nếu gửi thư thì ngày mai chắc chắn sẽ đến bên đó.<br/><br/>
 
-    田中さんの　会社は　社員が　少ないのに、3人も　休んで　いるので、いそがしい　はずです。
-    Mặc dù công ty Mr.Tanaka ít người và 3 người đang nghỉ, chắc chắn là bận rôn lắm.
+    田中さんの　会社は　社員が　少ないのに、3人も　休んで　いるので、いそがしい　はずです。<br/>
+    Mặc dù công ty Mr.Tanaka ít người và 3 người đang nghỉ, chắc chắn là bận rôn lắm.<br/>
 
-    小林さんの　おくさんは　料理の　先生だから、料理が　上手な　はずです。
-    Vì vợ của Mr.Kobayashi là giáo viên dạy nấu ăn nên nấu ăn giỏi là chắc rồi.
+    小林さんの　おくさんは　料理の　先生だから、料理が　上手な　はずです。<br/>
+    Vì vợ của Mr.Kobayashi là giáo viên dạy nấu ăn nên nấu ăn giỏi là chắc rồi.<br/><br/>
 
-    きょうは　日曜日だから、会社は　休みの　はずです。
-    Hôm nay chủ nhật, nên công ty nghỉ là hiển nhiên.
+    きょうは　日曜日だから、会社は　休みの　はずです。<br/>
+    Hôm nay chủ nhật, nên công ty nghỉ là hiển nhiên.<br/>
 
 "},
 
 {"grammar":"～ようだ","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"It seems～, It looks like ～",
+"meanVN":"Hình như là ～ ",
 "detail":"<p style='font-size:22px; text-align:center'><b>～ようだ</b></p> 
+<b>接続：</b><br/>
+It seems～, It looks like ～<br/>
+Hình như là ～<br/>
+Dùng để diễn đạt nhũng suy luận, phán đoán một cách trực quan, hoàn tòan dựa trên những cảm giác, cảm nhận (5 giác quan) của bản thân. Vì thế, những suy đoán đó có thể không chính xác.<br/>
 
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ）、N（xだ）＋ようだ<br/>
+
+※usage: plain form<br/>
+
+<b>用例：</b><br/>
+
+    いい　においが　します。だれか　ケーキを　やいて　いるようです。<br/>
+    Nghe mùi thơm, hình như ai đó đang làm bánh.<br/><br/>
+
+    きのうの　パーティ一は　あまり　楽しく　なかったようですね。<br/>
+    Có vẻ bữa tiệc hôm qua không được thích thú.<br/><br/>
+
+    かれは　野菜を　ぜんぜん　食べませんね。野菜が　きらいなようです。<br/>
+    Anh ta chẳng bao giờ ăn rau quả. CÓ vẻ anh ta ghét rau.<br/><br/>
+
+    A「大川さん、大川さん、いますか。…かぎが　かかって　いますね。」<br/>
+    Mr.Okawa, Mr.Okawa có đó không?...cửa khóa<br/>
+    B「電気も　きえて　います。るすの　ようですね。」<br/>
+    Điện cũng cắt, chắc là không có nhà.<br/>
 "},
 
 {"grammar":"～らしい","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"It seems ～，It appears ～,I heard ",
+"meanVN":"Diễn tả ý người nói đánh giá nội dung được nói đến có tính xác thực cao. Sự đánh giá đó căn cứ vào những thông tin từ bên ngoài hoặc là do bản thân quán sát được.",
 "detail":"<p style='font-size:22px; text-align:center'><b>～らしい</b></p> 
+<b>意味：</b><br/>
 
-"},
+It seems ～，It appears ～,I heard<br/>
+Diễn tả ý người nói đánh giá nội dung được nói đến có tính xác thực cao. Sự đánh giá đó căn cứ vào những thông tin từ bên ngoài hoặc là do bản thân quán sát được.<br/>
 
-{"grammar":"～らしい","meanJP":"",
-"meanEN":"",
-"meanVN":"",
-"detail":"<p style='font-size:22px; text-align:center'><b>～らしい</b></p> 
+<b>接続：</b><br/>
 
+V、い－adj、な－adj（xだ）、N（xだ）＋らしい<br/>
+
+※usage: plain form
+
+<b>用例：</b><br/>
+
+    大阪では　もう　ゆきが　ふって　いる　らしいです。<br/>
+    Hình như tuết đang rơi ở Osaka.<br/><br/>
+
+    その　映画は　あまリ　おもしろくないらしいので、ほかの 映画を　見る　ことに　しました。<br/>
+    Vì hình như phim đó không hay nên chọn xem phim khác.<br/><br/>
+
+    火曜日なのに　店が　しまって　います。きょうは 休みらしいですね。<br/>
+    Mặc dù là ngày thứ 3 nhưng quán đóng cửa, hình như hôm nay nghĩ.<br/><br/>
+
+<b>意味2：</b><br/>
+typical of ～,just like ～<br/>
+Đặc thù～, giống～<br/>
+
+<b>接続：</b><br/>
+
+N＋らしい<br/><br/>
+
+    きょうは　春らしい　天気です。<br/>
+    Hôm nay thời tiết như mùa xuân.<br/><br/>
+
+    あの　人の　やりかたは　あまリ　男らしくないと思います。<br/>
+    Cách người kia là ra dáng đàn ông<br/><br/>
+
+    A「この　へんは　学生が　多いですね。」<br/>
+    Quanh đây nhiều sinh viên nhỉ.<br/><br/>
+    B「ええ、ほんとうに　大学の　町らしいですね。」<br/>
+    Ừ, thật giống như phồ đại học vậy<br/>
 "},
 
 {"grammar":"～かもしれない","meanJP":"",
-"meanEN":"",
+"meanEN":"might ～，perhaps ～",
 "meanVN":"",
 "detail":"<p style='font-size:22px; text-align:center'><b>～かもしれない</b></p> 
+<b>意味：</b><br/>
+might ～，perhaps ～<br/><br/>
 
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ）、N（xだ）＋かもしれない<br/>
+
+※usage: plain form<br/>
+
+<b>用例：</b><br/>
+
+    今から　急げば、間に合う　かもしれません。<br/>
+    Bây giờ nếu mà gấp thì có lẽ cũng còn kịp đó.<br/><br/>
+
+    あの　スーパーは　何でも　安いですが、品物が　あまリ よくない　かもしれません。<br/>
+    Siêu thị kia cái gì cũng rẽ, có lẽ là hàng không tốt.<br/><br/>
+
+    その　店の　人は　あまリ　親切　じや　ない　かもしれません。<br/>
+    Người quán đó có lẽ không thân thiết.<br/><br/>
+
+    かれは　とても　重い　病気　かもしれません。<br/>
+    Anh ta có lẽ lâm trọng bệnh.<br/><br/>
 "},
 
 {"grammar":"～だろうとおもう","meanJP":"",
-"meanEN":"",
+"meanEN":" I think (probably)　～",
 "meanVN":"",
 "detail":"<p style='font-size:22px; text-align:center'><b>～だろうとおもう</b></p> 
+<b>意味：</b><br/>
+I think (probably)　～<br/><br/>
 
+<b>接続：</b><br/>
+V、い－adj、な－adj（xだ）、N（xだ）＋だろうとおもう<br/><br/>
+
+※usage: plain form
+
+<b>用例：</b><br/>
+
+    A「毎日　あついですね。」<br/>
+    Ngày nào cũng nóng nhỉ.<br/>
+    B「ええ、あしたも　あつく　なる　だろうと　思いますよ。」<br/>
+    Ừ, Tôi nghỉ ngày mai có lẽ cũng nóng.<br/><br/>
+
+    ああの　レストランは　たぶん　高いだろうと　思います。<br/>
+    Tôi nghỉ nhà hàng đó chắc là mắc lắm.<br/><br/>
+
+    その　町は　あまり　あんぜん　じゃ　ないだろうと　思いますよ。<br/>
+    気を　つけて　旅行して　ください。<br/>
+    Tôi nghỉ phố đó không an toàn. Hãy cẩn thận khi đi du lịch.<br/><br/>
+
+    A「田中さんの　会社は　土曜日　休みでしょうか」<br/>
+    Công ty Mr.Tanaka nghĩ ngày thứ 7 phải không?<br/>
+    B「いいえ、かれは　土曜日　いつも　仕事を　して　いますから、休み　じゃ　ないだろうと　思います。」<br/>
+    Không, bởi vì anh ấy lúc nào cũng làm việc ngày thứ 7, nên có lẻ không nghĩ.<br/>
 "},
 
 {"grammar":"～だろう","meanJP":"",
-"meanEN":"",
+"meanEN":" probably ~ <plain form of 'でしょう'>",
 "meanVN":"",
 "detail":"<p style='font-size:22px; text-align:center'><b>～だろう</b></p> 
+<b>意味：</b><br/>
 
+probably ~ <plain form of 'でしょう'><br/>
+When such sentences include interrogatives, the meaning changes to 'I wonder ...'<br/>
+Diễn tả sự suy đoán, suy diễn của người nói dựa vào tình hình hay thông tinh xung quanh.<br/><br/>
+
+<b>接続：</b><br/>
+
+V、い－adj、な－adj（xだ）、N（xだ）＋ だろう<br/>
+
+※usage: plain form<br/>
+
+<b>用例：</b><br/>
+
+    山田さんは　たぶん　来ないだろう。<br/>
+    Có lẽ Mr.Yamada không đến.<br/><br/>
+
+    あの　へんは　今ごろ　きっと　寒いだろう。<br/>
+    Vùng này hiện giờ có lẻ lạnh lắm.<br/><br/>
+
+    あの　マンションなら　駅から　近いし、たぶん　べんりだろう。<br/>
+    Căn hộ đó gần ga nên có vẻ thuận tiện.<br/><br/>
+
+    この　かばんは　ヤンさんのじゃ　ないだろう。<br/>
+    Cái cặp này chắc là không phải của Mr.Jan.<br/><br/>
+
+    田中さんの　たんじょうびは　いつだろう。<br/>
+    Sinh nhật Mr.Tanaka khi nào vậy ta?
 "},
 
 {"grammar":"～にする","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"decide to ～",
+"meanVN":" Diễn tả ý do mình tự quyết định bằng ý chí của mình.",
 "detail":"<p style='font-size:22px; text-align:center'><b>～にする</b></p> 
 
 "},
 
 {"grammar":"～ことにする","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":" decide to ～",
+"meanVN":" Diễn tả ý do mình tự quyết định bằng ý chí của mình.",
 "detail":"<p style='font-size:22px; text-align:center'><b>～ことにする</b></p> 
 
 "},
 
 {"grammar":"～つもりだ","meanJP":"",
-"meanEN":"",
+"meanEN":" intend to ～，have plans to ～",
 "meanVN":"",
 "detail":"<p style='font-size:22px; text-align:center'><b>～つもりだ</b></p> 
 
 "},
 
 {"grammar":"～ようにする","meanJP":"",
-"meanEN":"",
+"meanEN":"try to ～, make sure to ～",
 "meanVN":"",
 "detail":"<p style='font-size:22px; text-align:center'><b>～ようにする</b></p> 
 
 "},
 
 {"grammar":"～(よ）うとする","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":" be about to",
+"meanVN":" Diễn tả việc khi bắt đầu làm hành động 1 thì có hành động 2 xảy ra.",
 "detail":"<p style='font-size:22px; text-align:center'><b>～(よ）うとする</b></p> 
 
 "},
 
 {"grammar":"～(よ)うとおもう","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":" I think I will～",
+"meanVN":"Diễn tả quyết định, ý chí hoặc kế hoạch của người nói, quyết định đã có từ trước và bây giờ.
+vẫn giữ quyết định đó.",
 "detail":"<p style='font-size:22px; text-align:center'><b>～(よ)うとおもう</b></p> 
 
 "},
@@ -1161,66 +1290,169 @@ V、い－adj、な－adj（xだ）、N（xだ）＋はずだ
 "},
 
 {"grammar":"～てくる/いく","meanJP":"",
-"meanEN":"",
+"meanEN":"come to ～，get to ～ くdescribes a change that takes place over time>",
 "meanVN":"",
 "detail":"<p style='font-size:22px; text-align:center'><b>～てくる/いく</b></p> 
 
 "},
 
 {"grammar":"～く/にする","meanJP":"",
-"meanEN":"",
+"meanEN":"change into ～，make ～ ",
 "meanVN":"",
 "detail":"<p style='font-size:22px; text-align:center'><b>～く/にする</b></p> 
 
 "},
 
 {"grammar":"～ことになる","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"It will be/has been decided that ～，come about",
+"meanVN":"Diễn tả những quyết định do những nguyên nhân bên ngoài như hành động không phải do chủ thể của mình mà là do tự nhiên trở nên như vậy hay do mệnh lệnh của người khác.",
 "detail":"<p style='font-size:22px; text-align:center'><b>～ことになる</b></p> 
+意味：<br/>
 
+It will be/has been decided that ～，come about
+Diễn tả những quyết định do những nguyên nhân bên ngoài như hành động không phải do chủ thể của mình mà là do tự nhiên trở nên như vậy hay do mệnh lệnh của người khác.
+<br/>
+接続：<br/>
+
+V dictionary、Vない　＋ことになる
+
+用例：<br/>
+
+    田中さんは　イギリスへ　ひっこす　ことに　なリました。
+    Mr. Tanaka đã quyết định chuyển đến nước Anh.
+
+    たぶん、ヤンさんは　来月から　この　会社で　働く　ことに　なるでしよう。
+    Có lẽ, từ tháng tới Mr.Jan sẽ vào làm ở công ty này. (đã được quyết định)
 "},
 
 {"grammar":"～ようになる","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"come to ～",
+"meanVN":"come to ～
+Diễn tả sự thay đổi từ trạng thái không thể sang trạng thái có thể khi nối tiếp với các động từ chỉ khả năng hay năng lực. Khi nối với các động từ chủ động, thì diển tả thay đổi thói quen từ trước tới giờ không có trở nên tự nhiên có. Sự thay đổi này có thể diển tả sự thay đổi có tính cá nhân cũng như sự thay đổi của xã hội.",
 "detail":"<p style='font-size:22px; text-align:center'><b>～ようになる</b></p> 
+意味：<br/>
 
+come to ～
+Diễn tả sự thay đổi từ trạng thái không thể sang trạng thái có thể khi nối tiếp với các động từ chỉ khả năng hay năng lực. Khi nối với các động từ chủ động, thì diển tả thay đổi thói quen từ trước tới giờ không có trở nên tự nhiên có. Sự thay đổi này có thể diển tả sự thay đổi có tính cá nhân cũng như sự thay đổi của xã hội.
+<br/>
+接続：<br/>
+
+V dictionary　＋ようになる
+
+用例：<br/>
+
+    日本語が　話せるように　なりました。
+    Đã trở nên có thể nói tiếng Nhật.
+
+    A「日本語の新聞が　読めるように　なリましたか。」
+    Bạn đã có thể đọc tiếng Nhật được chưa?
+    B「いいえ、まだ読めません。早く　読めるように　なリたいです。」
+    Chưa, vẫn chưa đọc. Tôi cũng muốn có thể đọc nhanh.
+    A「がんばって　ください。」
+    Cố gắng lên.
 "},
 
 {"grammar":"～く/になる","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"become ～",
+"meanVN":"Trở nên, trở thành ",
 "detail":"<p style='font-size:22px; text-align:center'><b>～く/になる</b></p> 
+意味：<br/>
 
+become ～
+Trở nên, trở thành
+接続：<br/>
+
+い－adj（xい）、な－adj（xな）、N＋ く/になる
+
+※いい→よく　なる
+
+用例：<br/>
+
+    A「体の　ぐあいは　いかがですか。」
+    Sức khõe tốt chứ?
+    B「あリがとう。おかげさまで　よく　なりました。」
+    Cám ơn, nhờ trời đã tốt hơn.
+
+    ピアノが　上手に　なりたいです。
+    Muốn trở nên giỏi Piano.
+    ③大きく　なったら、はいしゃに　なる　つもリです。
+    Dự định trở thành nha sĩ khi lớn lên.
 "},
 
 {"grammar":"AとBと、どちらが～","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"Which is ～er A or B ?",
+"meanVN":" Cái nào ～hơn (A hay B) ",
 "detail":"<p style='font-size:22px; text-align:center'><b>AとBと、どちらが～</b></p> 
+意味：<br/>
 
+Which is ～er A or B ?<br/>
+Cái nào ～hơn (A hay B)<br/>
+接続：<br/>
+
+AとB と、どちら が～
+
+用例：<br/>
+
+    A「この カメラと その カメラと どちらが 使いやすいですか。」<br/>
+    　Cái máy ảnh này và cái kia, cái nào dễ sử dụng hơn?<br/>
+    B「そうですね。こちらの　ほうが　いいと思います。」<br/>
+       Vâng, Tôi nghĩ là cái kia dễ sử dung hơn.<br/><br/>
+
+    A「田中さんと　小林さんと　どちらが　テニスが上手？」<br/>
+         Mr.Tanaka va Mr.Kobayashi ai đánh tennis giỏi hơn?<br/>
+    B「田中さんの　ほうが　上手かな。」<br/>
+       Có lẽ là Mr.Tanaka giỏi hơn.<br/>
 "},
 
 {"grammar":"AはBほど～ない","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"A is not as ～as B.",
+"meanVN":" A không bằng B ",
 "detail":"<p style='font-size:22px; text-align:center'><b>AはBほど～ない</b></p> 
 
 "},
 
 {"grammar":"BよりAのほうが～","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"A is not as ～as B.",
+"meanVN":"A không bằng B",
 "detail":"<p style='font-size:22px; text-align:center'><b>BよりAのほうが～</b></p> 
+意味：<br/>
 
+A is not as ～as B.<br/>
+A không bằng B<br/><br/>
+接続：<br/>
+
+Aは Bほど ～ない<br/><br/>
+
+用例：<br/>
+
+    来週は　今週ほど　いそがしくないと　思います。<br/>
+    Tôi nghĩ tuần tới không bận rộn như tuần này.<br/><br/>
+
+    外国語を　聞く　ことは　話す　ことほど　むずかしくないと 思います。<br/>
+    Tôi nghĩ việc nghe ngoại ngữ không khó như việc nói.<br/>
 "},
 
 {"grammar":"AはBより","meanJP":"",
-"meanEN":"",
-"meanVN":"",
+"meanEN":"A is ～er than B.",
+"meanVN":" A～hơn B ",
 "detail":"<p style='font-size:22px; text-align:center'><b>AはBより</b></p> 
+意味：
 
+A is ～er than B.
+A～hơn B
+接続：
+
+Aは B より
+
+用例：
+
+    来週は　今週よリ　いそがしいと　思います。
+    Tôi nghĩ là tuần sau sẽ bận rộn hơn tuần này.
+
+    A「東京は　ニュ一ヨ一クよリ　人が　多いですか。」
+         Tokyo đông người hơn New York phải không?
+    B「はい、ずっと　多いと　思います。」
+      Ừ, Tôi nghĩ là đông hơn rất nhiều
 "},
 
 {"grammar":"～てはいけない","meanJP":"",

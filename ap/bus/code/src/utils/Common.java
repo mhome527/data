@@ -1,5 +1,7 @@
 package app.infobus.utils;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
@@ -19,7 +21,7 @@ public class Common {
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, clsListData.class);
 		} catch (Exception e) {
-			LogUtil.e("Common", "getObjectJson Error:" + e.getMessage());
+			ULog.e("Common", "getObjectJson Error:" + e.getMessage());
 		}
 		return obj;
 	}
@@ -31,7 +33,7 @@ public class Common {
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, cls);
 		} catch (Exception e) {
-			LogUtil.e("Common", "getObjectJson 2 Error:" + e.getMessage());
+			ULog.e("Common", "getObjectJson 2 Error:" + e.getMessage());
 		}
 		return obj;
 	}
@@ -43,7 +45,7 @@ public class Common {
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, clsListData.class);
 		} catch (Exception e) {
-			LogUtil.e("Common", "getObjectJson 2 Error:" + e.getMessage());
+			ULog.e("Common", "getObjectJson 2 Error:" + e.getMessage());
 		}
 		return obj;
 	}
@@ -55,7 +57,7 @@ public class Common {
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, clsListData.class);
 		} catch (Exception e) {
-			LogUtil.e("Common", "getObjectJson 2 Error:" + e.getMessage());
+			ULog.e("Common", "getObjectJson 2 Error:" + e.getMessage());
 		}
 		return obj;
 	}
@@ -67,7 +69,7 @@ public class Common {
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, clsListName.class);
 		} catch (Exception e) {
-			LogUtil.e("Common", "getObjectJson 2 Error:" + e.getMessage());
+			ULog.e("Common", "getObjectJson 2 Error:" + e.getMessage());
 		}
 		return obj;
 	}
@@ -79,7 +81,7 @@ public class Common {
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, clsListName.class);
 		} catch (Exception e) {
-			LogUtil.e("Common", "getObjectJson 2 Error:" + e.getMessage());
+			ULog.e("Common", "getObjectJson 2 Error:" + e.getMessage());
 		}
 		return obj;
 	}
@@ -100,5 +102,20 @@ public class Common {
 		return false;
 	}
 
+	 public static Object getObjectJsonPath(Class<?> cls, String pathFile) {
+	        Object obj = null;
+	        try {
+	            ULog.i(Common.class, "Read file json from local");
+	            File yourFile = new File(pathFile);
+	            FileInputStream stream = new FileInputStream(yourFile);
+	            Reader reader = new InputStreamReader(stream);
+	            Gson gson = new Gson();
+	            obj = gson.fromJson(reader, cls);
+	        } catch (Exception e) {
+	            ULog.e("Common", "getObjectJsonPath 3 Error:" + e.getMessage());
+	            e.printStackTrace();
+	        }
+	        return obj;
+	    }
 	
 }

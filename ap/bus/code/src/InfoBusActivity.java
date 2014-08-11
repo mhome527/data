@@ -12,25 +12,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
-import android.widget.LinearLayout;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
-import android.widget.RadioButton;
 import app.infobus.adapter.BusAdapter;
 import app.infobus.entity.clsItem;
 import app.infobus.entity.clsListData;
 import app.infobus.entity.clsPathBus;
 import app.infobus.utils.Common;
 import app.infobus.utils.Constant;
-import app.infobus.utils.LogUtil;
+import app.infobus.utils.ULog;
 import app.infobus.utils.Utility;
 
 public class InfoBusActivity extends AbstractActivity {
 
 	String tag = InfoBusActivity.class.getSimpleName();
 	private ListView lstBus;
-	private LinearLayout lnSearch;
 
 	public static ArrayList<clsPathBus> arrPathBus = null;
 
@@ -42,7 +39,7 @@ public class InfoBusActivity extends AbstractActivity {
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		try {
-			LogUtil.i(tag, "initView....");
+			ULog.i(tag, "initView....");
 			lstBus = (ListView) findViewById(R.id.lstBus);
 
 			lstBus.setOnItemClickListener(new OnItemClickListener() {
@@ -150,8 +147,8 @@ public class InfoBusActivity extends AbstractActivity {
 				}
 				lstBus.setAdapter(new BusAdapter(activity, arrPathBus));
 			} else
-				LogUtil.i(tag, "Loading-PostExecute Load fail");
-			LogUtil.i(tag, "Loading-PostExecute done");
+				ULog.i(tag, "Loading-PostExecute Load fail");
+			ULog.i(tag, "Loading-PostExecute done");
 		}
 	}
 

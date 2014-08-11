@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import app.infobus.R;
 import app.infobus.entity.clsPathBus;
-import app.infobus.utils.LogUtil;
+import app.infobus.utils.ULog;
 import app.infobus.utils.Utility;
 
 public class BusAdapter extends ArrayAdapter<clsPathBus> {
@@ -26,7 +26,7 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> {
 		super(activity, R.layout.list_num, arrPathBus);
 		this.arrPathBus = arrPathBus;
 		this.activity = activity;
-		LogUtil.i(tag, "BusAdapter....");
+		ULog.i(tag, "BusAdapter....");
 
 	}
 

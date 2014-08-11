@@ -3,7 +3,9 @@ package sjpn4.vn.adapter;
 import java.util.List;
 
 import sjpn4.vn.R;
+import sjpn4.vn.Util.ULog;
 import sjpn4.vn.model.ReadingModel;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Parcelable;
@@ -11,17 +13,16 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.TextView;
 
 public class ReadingPagerAdapter extends PagerAdapter {
 
 	private View layout;
 	private Activity act;
-	private WebView webReading;
 	private TextView tvNote;
 	private TextView tvTitle;
 	private TextView tvTitle2;
+	private TextView tvReading;
 
 	public List<ReadingModel> lstDay;
 
@@ -35,6 +36,7 @@ public class ReadingPagerAdapter extends PagerAdapter {
 		return lstDay.size();
 	}
 
+	@SuppressLint("InflateParams")
 	@Override
 	public Object instantiateItem(View container, int position) {
 		LayoutInflater inflater = (LayoutInflater) act.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -50,8 +52,11 @@ public class ReadingPagerAdapter extends PagerAdapter {
 	private void initView() {
 		tvTitle = (TextView) layout.findViewById(R.id.tvTitle);
 		tvTitle2 = (TextView) layout.findViewById(R.id.tvTitle2);
-		webReading = (WebView) layout.findViewById(R.id.webReading);
+//		webReading = (WebView) layout.findViewById(R.id.webReading);
 		tvNote = (TextView) layout.findViewById(R.id.tvNote);
+		tvReading = (TextView) layout.findViewById(R.id.tvReading);
+//		webReading.getSettings().setRenderPriority(RenderPriority.HIGH);
+//		webReading.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
 	}
 
 	private void setData(ReadingModel model) {
@@ -66,9 +71,14 @@ public class ReadingPagerAdapter extends PagerAdapter {
 			else
 				tvTitle2.setText(model.title2);
 
-			webReading.loadData(model.reading, "text/html; charset=utf-8", "utf-8");
+//			webReading.loadData(model.reading, "text/html; charset=utf-8", "utf-8");
+//		
+			tvReading.setText(model.reading);
+			ULog.i("readingadapter", "===text:" + model.reading);
 			tvNote.setText(model.note);
 
+		}else{
+			ULog.e("readingadapter", "===text: NULL");
 		}
 	}
 

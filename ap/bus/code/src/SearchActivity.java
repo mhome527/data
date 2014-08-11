@@ -30,7 +30,7 @@ import app.infobus.entity.clsPathBus;
 import app.infobus.entity.searchEntity;
 import app.infobus.utils.Common;
 import app.infobus.utils.Constant;
-import app.infobus.utils.LogUtil;
+import app.infobus.utils.ULog;
 
 public class SearchActivity extends AbstractActivity {
 
@@ -113,7 +113,7 @@ public class SearchActivity extends AbstractActivity {
 
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					LogUtil.i(tag, "initView ...HCM");
+					ULog.i(tag, "initView ...HCM");
 					new LoadData(SearchActivity.this).execute();
 				}
 			});
@@ -134,7 +134,7 @@ public class SearchActivity extends AbstractActivity {
 			// edtAuto1.setAdapter(adapter);
 			// edtAuto2.setAdapter(adapter);
 		} catch (Exception e) {
-			LogUtil.e(tag, "initView ...Error:" + e.getMessage());
+			ULog.e(tag, "initView ...Error:" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -225,7 +225,7 @@ public class SearchActivity extends AbstractActivity {
 				listSearched.add(str);
 				// listPath.add(path);
 
-				LogUtil.i(tag, "getPath path:" + str);
+				ULog.i(tag, "getPath path:" + str);
 				// tvBus.setText(tvBus.getText() + " || " + str);
 				path = "";
 				count = 0;
@@ -574,14 +574,11 @@ public class SearchActivity extends AbstractActivity {
 
 	private class AutoCompleteAdapter extends ArrayAdapter<String> implements Filterable {
 
-		// ArrayList<searchEntity> arrStreet;
-		ArrayList<String> arrFilter;
-		// Filter myFilter;
 		CusFilter myFilter;
 
 		public AutoCompleteAdapter(Context context) {
 			super(context, android.R.layout.simple_dropdown_item_1line);
-			LogUtil.i("SearchActivity", "adapter ");
+			ULog.i("SearchActivity", "adapter ");
 			myFilter = new CusFilter(this);
 
 		}
@@ -612,7 +609,7 @@ public class SearchActivity extends AbstractActivity {
 
 		@Override
 		protected FilterResults performFiltering(CharSequence constraint) {
-			LogUtil.i("SearchActivity-HuynhTD", "performFiltering...");
+			ULog.i("SearchActivity-HuynhTD", "performFiltering...");
 			new FilterStreet(this, constraint).execute();
 			return null;
 		}
@@ -623,7 +620,7 @@ public class SearchActivity extends AbstractActivity {
 				if (results == null || arrFilter == null || arrFilter.size() == 0)
 					return;
 				adapterAuto.clear();
-				LogUtil.i(tag, "publishResults add data size: " + arrFilter.size());
+				ULog.i(tag, "publishResults add data size: " + arrFilter.size());
 				// Add data to AutoCompleteTextView (have to add)
 				for (int i = 0; i < arrFilter.size(); i++) {
 					adapterAuto.add(arrFilter.get(i));
@@ -632,7 +629,7 @@ public class SearchActivity extends AbstractActivity {
 				arrFilter = null;
 
 			} catch (Exception e) {
-				LogUtil.e(tag, "publishResults error:" + e.getMessage());
+				ULog.e(tag, "publishResults error:" + e.getMessage());
 			}
 		}
 
@@ -707,14 +704,14 @@ public class SearchActivity extends AbstractActivity {
 				@Override
 				public void onDismiss(DialogInterface dialog) {
 
-					LogUtil.i(tag, "Dialog cancel");
+					ULog.i(tag, "Dialog cancel");
 					dialog.cancel();
 				}
 			});
 			alert.setCanceledOnTouchOutside(false);
 			alert.show();
 		} catch (Exception e) {
-			LogUtil.e(tag, "confirmReceive error:" + e);
+			ULog.e(tag, "confirmReceive error:" + e);
 		}
 	}
 
@@ -736,7 +733,7 @@ public class SearchActivity extends AbstractActivity {
 		protected Boolean doInBackground(Object... params) {
 
 			try {
-				LogUtil.i(tag, "dataloading.....hcm:" + rbtnHcm.isChecked());
+				ULog.i(tag, "dataloading.....hcm:" + rbtnHcm.isChecked());
 
 				// arrPathBus = ReadData.getPathData(activity);
 				// clsList = Common.getNameHCM(activity);
@@ -746,7 +743,7 @@ public class SearchActivity extends AbstractActivity {
 					clsList = Common.getListName(activity, Constant.LIST_STREET_HN);
 
 				if (clsList == null) {
-					LogUtil.e(tag, "dataloading Load Error");
+					ULog.e(tag, "dataloading Load Error");
 					return false;
 				} else
 					return true;
@@ -762,7 +759,7 @@ public class SearchActivity extends AbstractActivity {
 			searchEntity entity;
 			super.onPostExecute(result);
 			if (result) {
-				LogUtil.i(tag, "postExe.....");
+				ULog.i(tag, "postExe.....");
 				arrStreet = new ArrayList<searchEntity>();
 				for (clsNameStreet item : clsList.list) {
 					entity = new searchEntity(item.getName(), item.getKey());
@@ -774,8 +771,8 @@ public class SearchActivity extends AbstractActivity {
 				edtAuto2.setAdapter(adapter);
 
 			} else
-				LogUtil.i(tag, "Loading-PostExecute Load fail");
-			LogUtil.i(tag, "Loading-PostExecute done");
+				ULog.i(tag, "Loading-PostExecute Load fail");
+			ULog.i(tag, "Loading-PostExecute done");
 		}
 	}
 

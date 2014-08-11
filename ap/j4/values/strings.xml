@@ -14,16 +14,17 @@
     <string name="old_vocabulary">Leanned</string>
     <string name="Exercises">Exercises</string>
     <string name="Show_Reading">Show Full</string>
-    <string name="adUnitId">a15385fbb4047d4</string>
+<!--      <string name="adUnitId">a15385fbb4047d4</string> -->
+    <string name="adUnitId">ca-app-pub-2668784685856471/6317255143</string>
     <string name="page">1</string>
     <string name="level">level</string>
     <string name="grammar">Grammar</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="top_title">Japanese Exam - N3</string>
-	<string name="top_part">Part I</string>
-	<string name="top_language">Tiếng Việt</string>
-	
+    <string name="top_part">Part I</string>
+    <string name="top_language">Tiếng Việt</string>
+
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">

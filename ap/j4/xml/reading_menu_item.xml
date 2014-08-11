@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
 
-    <WebView
+  <!--   <WebView
         android:id="@+id/webReading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" /> -->
+        <TextView
+        android:id="@+id/tvReading"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -44,12 +47,12 @@
             android:visibility="gone" />
     </RelativeLayout>
 
-    <com.google.android.gms.ads.AdView
+    <!-- <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/adUnitId" />
+        ads:adUnitId="@string/adUnitId" /> -->
 
 </LinearLayout>

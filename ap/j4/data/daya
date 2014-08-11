@@ -1,0 +1,20 @@
+
+{
+	"title":"",
+    "reading":"<p></p>",
+    "title2":"",
+    "img":"",
+    "note":"",
+"readingList":[
+        {
+            "question":"",
+            "ans":"",
+            "listQuestion":[
+                {"qa":""},
+                {"qa":""},
+                {"qa":""},
+                {"qa":""}
+            ]
+        }
+    ]
+}

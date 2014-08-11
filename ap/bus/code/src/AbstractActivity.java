@@ -1,20 +1,22 @@
 package app.infobus;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import app.infobus.utils.Constant;
-import app.infobus.utils.LogUtil;
+import app.infobus.utils.Prefs;
+import app.infobus.utils.ULog;
 
 public abstract class AbstractActivity extends Activity {
 	private String tag = AbstractActivity.class.getSimpleName();
@@ -24,6 +26,8 @@ public abstract class AbstractActivity extends Activity {
 	private Activity mActivity;
 	public RadioButton rbtnHcm;
 	public RadioButton rbtnHN;
+    public static Prefs pref;
+
 
 	@Override
 	protected final void onCreate(final Bundle savedInstanceState) {
@@ -33,8 +37,10 @@ public abstract class AbstractActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		try {
-			LogUtil.i(tag, "======class: " + this.getClass().getSimpleName());
+			ULog.i(tag, "======class: " + this.getClass().getSimpleName());
 			mActivity = this;
+			if (pref == null)
+	            pref = new Prefs(this);
 			// //////////
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
 			setContentView(R.layout.layout_base);
@@ -119,4 +125,15 @@ public abstract class AbstractActivity extends Activity {
 
 	protected abstract void initView(final Bundle savedInstanceState);
 
+	public void showConfirmDialog(Context context, String title, String message, DialogInterface.OnClickListener onOkie, DialogInterface.OnClickListener onCancel) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setCancelable(false);
+        builder.setPositiveButton(R.string.ok, onOkie);
+        builder.setNegativeButton(R.string.cancel, onCancel);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        AlertDialog dialog = builder.create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+    }
 }

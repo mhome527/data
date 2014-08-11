@@ -92,8 +92,8 @@ public class Top extends BaseAct implements OnClickListener {
 			// startActivityAct(Reading.class);
 			break;
 		case R.id.btnReading:
-//			startActivityAct(Reading.class);
-			startActivityAct(ReadingPager.class);
+			startActivityAct(ReadingFagment.class);
+//			startActivityAct(ReadingPager.class);
 			break;
 		case R.id.btnGammer:
 			// startActivityAct(Vocabulary.class);

@@ -2,15 +2,17 @@ package sjpn4.vn.slidingmenu.adapter;
 
 import java.util.List;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.AdView;
 
 import sjpn4.vn.R;
 import sjpn4.vn.Util.Common;
 import sjpn4.vn.model.subModel.ReadingList;
 import sjpn4.vn.model.subModel.SubReadingList;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,16 +48,16 @@ public class SlideMenuListAdapter extends BaseAdapter {
 		return position;
 	}
 
+	@SuppressLint("InflateParams")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
 		final TextView tvAns;
 		if (convertView == null) {
 			holder = new ViewHolder();
-			LayoutInflater mInflater = (LayoutInflater) context
-					.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+			LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 			convertView = mInflater.inflate(R.layout.reading_menu_item, null);
-			holder.web = (WebView) convertView.findViewById(R.id.webReading);
+			holder.tvReading = (TextView) convertView.findViewById(R.id.tvReading);
 			tvAns = (TextView) convertView.findViewById(R.id.tvAns);
 			holder.tvAns = tvAns;
 			holder.btnAns = (Button) convertView.findViewById(R.id.btnAns);
@@ -67,31 +69,32 @@ public class SlideMenuListAdapter extends BaseAdapter {
 						tvAns.setVisibility(View.VISIBLE);
 						v.setVisibility(View.GONE);
 					} else {
-//						Toast.makeText(context, "connect to netword",
-//								Toast.LENGTH_LONG).show();
+						// Toast.makeText(context, "connect to netword",
+						// Toast.LENGTH_LONG).show();
 						Common.showDialogWifi(context);
 					}
 				}
 			});
 			// ///////ad
-			AdView adView = (AdView) convertView.findViewById(R.id.adView);
-			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("sony-so_04d-CB5A1KBLPT").build();
-			adView.loadAd(adRequest);
-			// //////////////////
+			// AdView adView = (AdView) convertView.findViewById(R.id.adView);
+			// AdRequest adRequest = new AdRequest.Builder().build();
+			// adView.loadAd(adRequest);
+			// // //////////////////
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		holder.web.loadData(createHtml(arrData.get(position), position),
-				"text/html; charset=utf-8", "utf-8");
+		// holder.web.loadData(createHtml(arrData.get(position), position),
+		// "text/html; charset=utf-8", "utf-8");
+		holder.tvReading.setText(Html.fromHtml(createHtml(arrData.get(position), position)));
 		holder.tvAns.setText(arrData.get(position).ans);
 		return convertView;
 	}
 
 	private class ViewHolder {
 		TextView tvAns;
-		WebView web;
+		TextView tvReading;
 		Button btnAns;
 	}
 
@@ -107,7 +110,7 @@ public class SlideMenuListAdapter extends BaseAdapter {
 		}
 		htmlQA += " </p></body></html>";
 
-//		ULog.§i(this, "createHtml() html:" + htmlQA);
+		// ULog.i(this, "createHtml() html:" + htmlQA);
 		return htmlQA;
 	}
 
@@ -115,15 +118,14 @@ public class SlideMenuListAdapter extends BaseAdapter {
 		String html;
 		html = "<!DOCTYPE html><html><body>";
 		html += "<p style='font-size:16px; line-height:25px'><b>";
-		html += "<span style='border: 1px solid green ;padding: 3px 0px 0px 0px;'>"
-				+ count + " </span>" + data + "</b></br>";
+		html += "<span style='border: 1px solid green ;padding: 3px 0px 0px 0px;'>" + count + " </span>" + data
+				+ "</b></p><p>";
 		return html;
 	}
 
 	private String createTagSubHtml(int count, String data) {
 		String html;
-		html = "<span style='padding: 0px 0px 0px 20px;'>" + count + ". "
-				+ data + "</span><br/>";
+		html = "<span style='padding: 0px 0px 0px 20px;'>" + count + ". " + data + "</span><br/>";
 		return html;
 	}
 }
