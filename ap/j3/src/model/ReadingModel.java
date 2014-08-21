@@ -1,12 +1,18 @@
 package sjpn3.vn.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
 import sjpn3.vn.model.subModel.ReadingList;
 
-public class ReadingModel {
+public class ReadingModel implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@SerializedName("title")
 	public String title;

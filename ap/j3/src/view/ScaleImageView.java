@@ -1,5 +1,6 @@
 package sjpn3.vn.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 
+@SuppressLint({ "FloatMath", "ClickableViewAccessibility" })
 public class ScaleImageView extends ImageView implements OnTouchListener {
     private Context mContext;
     private float MAX_SCALE = 2f;
@@ -62,7 +64,8 @@ public class ScaleImageView extends ImageView implements OnTouchListener {
         this.initialize();
     }
 
-    private void initialize() {
+    @SuppressLint("ClickableViewAccessibility")
+	private void initialize() {
         this.setScaleType(ScaleType.MATRIX);
         this.mMatrix = new Matrix();
         Drawable d = getDrawable();
@@ -193,7 +196,8 @@ public class ScaleImageView extends ImageView implements OnTouchListener {
         return FloatMath.sqrt(mWidth * mWidth + mHeight * mHeight);
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean onTouchEvent(MotionEvent event) {
         if (mDetector.onTouchEvent(event)) {
             return true;

@@ -7,23 +7,15 @@ import sjpn3.vn.Util.BitmapUtil;
 import sjpn3.vn.Util.ULog;
 import sjpn3.vn.activity.ReadingPager;
 import sjpn3.vn.model.ReadingModel;
-import sjpn3.vn.view.ScaleImageView;
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ReadingPagerAdapter extends PagerAdapter implements OnClickListener {
@@ -42,7 +34,7 @@ public class ReadingPagerAdapter extends PagerAdapter implements OnClickListener
 //	private RelativeLayout rlReading;
 	
 
-	private boolean isShow = false;
+//	private boolean isShow = false;
 	private boolean isClick = false;
 
 
@@ -59,6 +51,7 @@ public class ReadingPagerAdapter extends PagerAdapter implements OnClickListener
 		return lstDay.size();
 	}
 
+	@SuppressLint("InflateParams")
 	@Override
 	public Object instantiateItem(View container, int position) {
 		LayoutInflater inflater = (LayoutInflater) act.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -103,7 +96,6 @@ public class ReadingPagerAdapter extends PagerAdapter implements OnClickListener
 
 			}
 			tvNote.setText(model.note);
-
 		}
 
 	}
@@ -115,7 +107,7 @@ public class ReadingPagerAdapter extends PagerAdapter implements OnClickListener
 			if (isClick)
 				return;
 			isClick = true;
-			isShow = true;
+//			isShow = true;
 //			rlReading.setVisibility(View.VISIBLE);
 			// imgReading.setImageResource(idReading);
 //			imgReading.setImageBitmap(BitmapUtil.decodeSampledBitmapFromResource2(act.getResources(), idReading, act.widthScreen - 10, act.widthScreen - 10));

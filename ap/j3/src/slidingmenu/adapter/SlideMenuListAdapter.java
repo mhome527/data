@@ -2,14 +2,14 @@ package sjpn3.vn.slidingmenu.adapter;
 
 import java.util.List;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.AdView;
 import sjpn3.vn.R;
 import sjpn3.vn.Util.Common;
 import sjpn3.vn.Util.ULog;
 import sjpn3.vn.model.subModel.ReadingList;
 import sjpn3.vn.model.subModel.SubReadingList;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -47,6 +47,7 @@ public class SlideMenuListAdapter extends BaseAdapter {
 		return position;
 	}
 
+	@SuppressLint("InflateParams")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
@@ -75,9 +76,9 @@ public class SlideMenuListAdapter extends BaseAdapter {
 				}
 			});
 			// ///////ad
-			AdView adView = (AdView) convertView.findViewById(R.id.adView);
-			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("sony-so_04d-CB5A1KBLPT").build();
-			adView.loadAd(adRequest);
+//			AdView adView = (AdView) convertView.findViewById(R.id.adView);
+//			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice("sony-so_04d-CB5A1KBLPT").build();
+//			adView.loadAd(adRequest);
 			// //////////////////
 			convertView.setTag(holder);
 		} else {

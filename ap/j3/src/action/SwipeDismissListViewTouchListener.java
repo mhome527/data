@@ -19,6 +19,7 @@ package sjpn3.vn.action;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.graphics.Rect;
 import android.os.SystemClock;
 import android.view.MotionEvent;
@@ -29,12 +30,9 @@ import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.widget.AbsListView;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import sjpn3.vn.R;
 import sjpn3.vn.Util.ULog;
 
 /**
@@ -169,6 +167,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 		};
 	}
 
+	@SuppressLint("ClickableViewAccessibility")
 	@Override
 	public boolean onTouch(View view, MotionEvent motionEvent) {
 		
