@@ -53,6 +53,8 @@ public class Common {
 	public static clsListData getDataBus(Context context, String name) {
 		clsListData obj = null;
 		try {
+			ULog.i("Common", "getDataBus:" + name);
+
 			Reader reader = new InputStreamReader(context.getAssets().open(name));
 			Gson gson = new Gson();
 			obj = gson.fromJson(reader, clsListData.class);

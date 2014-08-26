@@ -31,7 +31,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Thong Tin Xe Buýt"
+                android:text="Thông Tin Xe Buýt"
                 android:textColor="@color/green"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -61,7 +61,7 @@
                         android:id="@+id/rbtnHN"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ha Noi" />
+                        android:text="Hà Nội" />
                 </RadioGroup>
             </LinearLayout>
         </LinearLayout>

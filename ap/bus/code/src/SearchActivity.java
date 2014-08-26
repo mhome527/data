@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -13,6 +14,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -32,6 +34,7 @@ import app.infobus.utils.Common;
 import app.infobus.utils.Constant;
 import app.infobus.utils.ULog;
 
+@SuppressLint("DefaultLocale")
 public class SearchActivity extends AbstractActivity {
 
 	public String tag = SearchActivity.class.getSimpleName();
@@ -71,14 +74,10 @@ public class SearchActivity extends AbstractActivity {
 
 			// cty = getIntent().getStringExtra(Constant.KEY_CITY);
 			isCheck = getIntent().getBooleanExtra(Constant.KEY_CITY, true);
-			if(isCheck)
+			if (isCheck)
 				rbtnHcm.setChecked(true);
 			else
 				rbtnHN.setChecked(true);
-			// ///////ad
-			AdView adView = (AdView) this.findViewById(R.id.adView);
-			AdRequest adRequest = new AdRequest.Builder().build();
-			adView.loadAd(adRequest);
 
 			imgChange.setOnClickListener(new OnClickListener() {
 
@@ -106,13 +105,20 @@ public class SearchActivity extends AbstractActivity {
 						searchBus();
 					}
 
+					InputMethodManager inputManager = (InputMethodManager) SearchActivity.this
+							.getSystemService(Context.INPUT_METHOD_SERVICE);
+					inputManager.hideSoftInputFromWindow(SearchActivity.this
+							.getCurrentFocus().getWindowToken(),
+							InputMethodManager.HIDE_NOT_ALWAYS);
+
 				}
 			});
 
 			rbtnHcm.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 				@Override
-				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				public void onCheckedChanged(CompoundButton buttonView,
+						boolean isChecked) {
 					ULog.i(tag, "initView ...HCM");
 					new LoadData(SearchActivity.this).execute();
 				}
@@ -121,7 +127,8 @@ public class SearchActivity extends AbstractActivity {
 			// rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			//
 			// @Override
-			// public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			// public void onCheckedChanged(CompoundButton buttonView, boolean
+			// isChecked) {
 			// LogUtil.i(tag, "initView ...HN");
 			// new LoadData(SearchActivity.this).execute();
 			// }
@@ -133,6 +140,11 @@ public class SearchActivity extends AbstractActivity {
 			// adapter = new AutoCompleteAdapter(this);
 			// edtAuto1.setAdapter(adapter);
 			// edtAuto2.setAdapter(adapter);
+
+			// ///////ad
+//			AdView adView = (AdView) this.findViewById(R.id.adView);
+//			AdRequest adRequest = new AdRequest.Builder().build();
+//			adView.loadAd(adRequest);
 		} catch (Exception e) {
 			ULog.e(tag, "initView ...Error:" + e.getMessage());
 			e.printStackTrace();
@@ -217,7 +229,7 @@ public class SearchActivity extends AbstractActivity {
 						if (count == 0)
 							str = arrTmp[i];
 						else
-							str += " --> " + arrTmp[i];
+							str += " ➙ " + arrTmp[i];
 						count++;
 					}
 				}
@@ -246,7 +258,8 @@ public class SearchActivity extends AbstractActivity {
 		String tmp;
 		for (ArrayList<Node> arrNode : listBusPath) {
 			for (Node nodetmp : arrNode) {
-				if (nodetmp.getNum().equals(num) && !nodetmp.getBefore().equals("")) {
+				if (nodetmp.getNum().equals(num)
+						&& !nodetmp.getBefore().equals("")) {
 					// listPath.add(nodetmp.getBefore());
 					tmp = nodetmp.getBefore();
 					if (nodetmp.getCount() < 2) {
@@ -268,7 +281,8 @@ public class SearchActivity extends AbstractActivity {
 		ArrayList<String> arrAdded = new ArrayList<String>();
 		boolean isCheckStreet = false, isStart = false;
 		for (Node nodeT : arrBegin) {
-			if (!isCheckAdd(nodeT.getNum(), arrAdded)) {// kiem tra da chon bus hay chua
+			if (!isCheckAdd(nodeT.getNum(), arrAdded)) {// kiem tra da chon bus
+														// hay chua
 				bus1 = getBus(nodeT.getNum());
 				// if (nodeT.getStart())
 				path1 = bus1.getPathStart();
@@ -382,7 +396,8 @@ public class SearchActivity extends AbstractActivity {
 
 					if (!strTmp.equals("")) {
 						count++;
-						nodeTemp = new Node(pathBus.getNum(), start, node.getNum());
+						nodeTemp = new Node(pathBus.getNum(), start,
+								node.getNum());
 						nodeTemp.setStreet(strTmp);
 						// kiem tra bus moi co cat duong bus cuoi cung hay khong
 						nodeCheck = checkPathEnd(strTmp, path2);
@@ -481,7 +496,8 @@ public class SearchActivity extends AbstractActivity {
 		return isBus;
 	}
 
-	// kiem tra tuyen duong cua xe khac co cat voi tuyen duong xe di ngang wa diem cuoi cung
+	// kiem tra tuyen duong cua xe khac co cat voi tuyen duong xe di ngang wa
+	// diem cuoi cung
 	private Node checkPathEnd(String street, String[] path) {
 		clsPathBus clsBus;
 		Node node = null;
@@ -513,7 +529,7 @@ public class SearchActivity extends AbstractActivity {
 		for (clsPathBus pathBus : InfoBusActivity.arrPathBus) {
 			arrPath = pathBus.getPathStart();
 			for (int i = 0; i < arrPath.length; i++) {
-				if (arrPath[i].equals(street)) {
+				if (arrPath[i].toLowerCase().equals(street.toLowerCase())) {
 					node = new Node(pathBus.getNum(), true, "");
 					node.setStart(false);
 					node.setStreet(street);
@@ -526,7 +542,7 @@ public class SearchActivity extends AbstractActivity {
 			if (!isCheck) {
 				arrPath = pathBus.getPathBack();
 				for (int i = 0; i < arrPath.length; i++) {
-					if (arrPath[i].equals(street)) {
+					if (arrPath[i].toLowerCase().equals(street.toLowerCase())) {
 						node = new Node(pathBus.getNum(), false, "");
 						node.setStart(false);
 						node.setStreet(street);
@@ -544,11 +560,11 @@ public class SearchActivity extends AbstractActivity {
 	private String comparePathS(String street, String[] path1, String[] path2) {
 		boolean isCheck = false;
 		for (String pathA : path1) {
-			if (pathA.equals(street))
+			if (pathA.toLowerCase().equals(street.toLowerCase()))
 				isCheck = true;
 			if (isCheck)
 				for (String pathB : path2) {
-					if (pathA.equals(pathB))
+					if (pathA.toLowerCase().equals(pathB.toLowerCase()))
 						return pathA;
 				}
 		}
@@ -557,7 +573,9 @@ public class SearchActivity extends AbstractActivity {
 	}
 
 	/*
-	 * private boolean comparePath(String[] path1, String[] path2) { for (String pathA : path1) { for (String pathB : path2) { if (pathA.equals(pathB)) return true; } }
+	 * private boolean comparePath(String[] path1, String[] path2) { for (String
+	 * pathA : path1) { for (String pathB : path2) { if (pathA.equals(pathB))
+	 * return true; } }
 	 * 
 	 * return false; }
 	 */
@@ -572,7 +590,8 @@ public class SearchActivity extends AbstractActivity {
 		return null;
 	}
 
-	private class AutoCompleteAdapter extends ArrayAdapter<String> implements Filterable {
+	private class AutoCompleteAdapter extends ArrayAdapter<String> implements
+			Filterable {
 
 		CusFilter myFilter;
 
@@ -615,16 +634,20 @@ public class SearchActivity extends AbstractActivity {
 		}
 
 		@Override
-		protected void publishResults(CharSequence constraint, FilterResults results) {
+		protected void publishResults(CharSequence constraint,
+				FilterResults results) {
 			try {
-				if (results == null || arrFilter == null || arrFilter.size() == 0)
+				if (results == null || arrFilter == null
+						|| arrFilter.size() == 0)
 					return;
 				adapterAuto.clear();
 				ULog.i(tag, "publishResults add data size: " + arrFilter.size());
+
 				// Add data to AutoCompleteTextView (have to add)
 				for (int i = 0; i < arrFilter.size(); i++) {
 					adapterAuto.add(arrFilter.get(i));
 				}
+
 				// adapterAuto.notifyAll();
 				arrFilter = null;
 
@@ -639,7 +662,16 @@ public class SearchActivity extends AbstractActivity {
 				arrFilter = new ArrayList<String>();
 				for (searchEntity entity : arrStreet) {
 					key = entity.getKey();
-					if (constraint != null && key != null && (key.contains(constraint.toString()))) {
+					if (constraint != null
+							&& key != null
+							&& (key.contains(constraint.toString()
+									.toLowerCase().replaceAll("á", "a")
+									.replaceAll("ậ", "a").replaceAll("à", "a")
+									.replaceAll("â", "a").replaceAll("ê", "e")
+									.replaceAll("ễ", "e").replaceAll("ể", "e")
+									.replaceAll("ô", "o").replaceAll("ý", "y")
+									.replaceAll("đ", "d").replaceAll("ị", "i")
+									.replaceAll("ý", "y").replaceAll("ư", "u")))) {
 						// || constraint.toString().contains(str)) {
 						if (!checkExist(entity.getName(), arrFilter))
 							arrFilter.add(entity.getName());
@@ -689,13 +721,14 @@ public class SearchActivity extends AbstractActivity {
 		try {
 
 			AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
-			alt_bld.setMessage(str).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int id) {
-					// Action for 'Yes' Button
+			alt_bld.setMessage(str).setPositiveButton("OK",
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int id) {
+							// Action for 'Yes' Button
 
-				}
-			});
+						}
+					});
 			AlertDialog alert = alt_bld.create();
 			// Title for AlertDialog
 			alert.setTitle("Search");
@@ -738,9 +771,11 @@ public class SearchActivity extends AbstractActivity {
 				// arrPathBus = ReadData.getPathData(activity);
 				// clsList = Common.getNameHCM(activity);
 				if (rbtnHcm.isChecked())
-					clsList = Common.getListName(activity, Constant.LIST_STREET_HCM);
+					clsList = Common.getListName(activity,
+							Constant.LIST_STREET_HCM);
 				else
-					clsList = Common.getListName(activity, Constant.LIST_STREET_HN);
+					clsList = Common.getListName(activity,
+							Constant.LIST_STREET_HN);
 
 				if (clsList == null) {
 					ULog.e(tag, "dataloading Load Error");

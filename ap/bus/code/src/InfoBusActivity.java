@@ -28,6 +28,8 @@ public class InfoBusActivity extends AbstractActivity {
 
 	String tag = InfoBusActivity.class.getSimpleName();
 	private ListView lstBus;
+	private BusAdapter adapterHCM = null;
+	private BusAdapter adapterHN = null;
 
 	public static ArrayList<clsPathBus> arrPathBus = null;
 
@@ -41,7 +43,7 @@ public class InfoBusActivity extends AbstractActivity {
 		try {
 			ULog.i(tag, "initView....");
 			lstBus = (ListView) findViewById(R.id.lstBus);
-
+			lstBus.setItemsCanFocus(false);
 			lstBus.setOnItemClickListener(new OnItemClickListener() {
 
 				@Override
@@ -61,26 +63,49 @@ public class InfoBusActivity extends AbstractActivity {
 
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					new LoadData(InfoBusActivity.this).execute();
+					if (isChecked) {
+						if (adapterHCM == null || adapterHCM.getCount() < 1)
+							new LoadData(InfoBusActivity.this).execute();
+						else {
+							lstBus.setAdapter(adapterHCM);
+							lstBus.post(new Runnable() {
+						        @Override
+						        public void run() {
+						        	adapterHCM.notifyDataSetChanged();
+						        }
+						    });
+						}
+					}else{
+						if (adapterHN == null || adapterHN.getCount() < 1)
+							new LoadData(InfoBusActivity.this).execute();
+						else {
+							lstBus.setAdapter(adapterHN);
+							lstBus.post(new Runnable() {
+						        @Override
+						        public void run() {
+						        	adapterHN.notifyDataSetChanged();
+						        }
+						    });
+						}
+					}
 				}
 
 			});
 
-//			rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-//
-//				@Override
-//				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//					new LoadData(InfoBusActivity.this).execute();
-//				}
-//			});
+			// rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			//
+			// @Override
+			// public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			// new LoadData(InfoBusActivity.this).execute();
+			// }
+			// });
 
 			new LoadData(this).execute();
 
 			// ///////ad
-			AdView adView = (AdView) this.findViewById(R.id.adView);
-			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-					.addTestDevice("sony-so_04d-CB5A1KBLPT").build();
-			adView.loadAd(adRequest);
+//			AdView adView = (AdView) this.findViewById(R.id.adView);
+//			AdRequest adRequest = new AdRequest.Builder().build();
+//			adView.loadAd(adRequest);
 			// //////////////////
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -145,7 +170,27 @@ public class InfoBusActivity extends AbstractActivity {
 					arrPathBus.add(clsPath);
 
 				}
-				lstBus.setAdapter(new BusAdapter(activity, arrPathBus));
+				// lstBus.setAdapter(null);
+				if (rbtnHcm.isChecked()){
+					adapterHCM = new BusAdapter(activity, arrPathBus);
+					lstBus.setAdapter(adapterHCM);
+					lstBus.post(new Runnable() {
+				        @Override
+				        public void run() {
+				        	adapterHCM.notifyDataSetChanged();
+				        }
+				    });
+				}else{
+					adapterHN = new BusAdapter(activity, arrPathBus);
+					lstBus.setAdapter(adapterHN);
+					lstBus.post(new Runnable() {
+				        @Override
+				        public void run() {
+				        	adapterHN.notifyDataSetChanged();
+				        }
+				    });
+				}
+
 			} else
 				ULog.i(tag, "Loading-PostExecute Load fail");
 			ULog.i(tag, "Loading-PostExecute done");

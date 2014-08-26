@@ -36,10 +36,9 @@ public class InfoDetailActivity extends AbstractActivity {
 				rbtnHN.setChecked(true);
 			
 			// ///////ad
-			AdView adView = (AdView) this.findViewById(R.id.adView);
-			AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-					.addTestDevice("sony-so_04d-CB5A1KBLPT").build();
-			adView.loadAd(adRequest);
+//			AdView adView = (AdView) this.findViewById(R.id.adView);
+//			AdRequest adRequest = new AdRequest.Builder().build();
+//			adView.loadAd(adRequest);
 			// //////////////////
 			getIntentData();
 			setData();
