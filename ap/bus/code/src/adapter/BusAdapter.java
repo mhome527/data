@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -72,24 +73,36 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 		tv = (TextView) convertView.findViewById(R.id.tvStart);
 		str = Utility.ArrToString(clsBus.getPathStart());
 		tv.setText(str);
+		
+		imgMap = (ImageButton)convertView.findViewById(R.id.imgMap);
+		
+		if(clsBus.locS != null && clsBus.locS.size() > 0){
+			imgMap.setVisibility(View.VISIBLE);
+		}else{
+			imgMap.setVisibility(View.GONE);
+		}
 
 		imgMap = (ImageButton) convertView.findViewById(R.id.imgMap);
 		imgMap.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-		        LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
-		        vwParentRow.setBackgroundColor(Color.YELLOW); 
-		        vwParentRow.refreshDrawableState(); 
+//		        LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
+//		        vwParentRow.setBackgroundColor(Color.YELLOW); 
+//		        vwParentRow.refreshDrawableState(); 
 		        
 		        Intent intent = new Intent(activity, MapBus.class);
-				clsPathBus pathBus = arrPathBus.get(position);
-				intent.putExtra("num", pathBus.getNum());
-				intent.putExtra("namePath", pathBus.getNamePath());
-				intent.putExtra("start", Utility.ArrToString(pathBus.getPathStart()));
-				intent.putExtra("back", Utility.ArrToString(pathBus.getPathBack()));
-				intent.putExtra("info", pathBus.getInfo());
-				activity.startActivity(intent);		
+//				clsPathBus pathBus = arrPathBus.get(position);
+//				intent.putExtra("num", pathBus.getNum());
+//				intent.putExtra("namePath", pathBus.getNamePath());
+//				intent.putExtra("start", Utility.ArrToString(pathBus.getPathStart()));
+//				intent.putExtra("back", Utility.ArrToString(pathBus.getPathBack()));
+//				intent.putExtra("info", pathBus.getInfo());
+//				Bundle extra = new Bundle();
+//				extra.putSerializable("list_bus", arrPathBus);
+//				intent.putExtra("extra", extra);
+				intent.putExtra("num", position);
+				activity.startActivity(intent);	
 			}
 		});
 
@@ -98,9 +111,9 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 			
 			@Override
 			public void onClick(View v) {
-				LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
-		        vwParentRow.setBackgroundColor(Color.YELLOW); 
-		        vwParentRow.refreshDrawableState(); 
+//				LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
+//		        vwParentRow.setBackgroundColor(Color.YELLOW); 
+//		        vwParentRow.refreshDrawableState(); 
 		        
 				Intent intent = new Intent(activity, InfoDetailActivity.class);
 				clsPathBus pathBus = arrPathBus.get(position);
@@ -117,9 +130,9 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 			
 			@Override
 			public void onClick(View v) {
-				LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
-		        vwParentRow.setBackgroundColor(Color.YELLOW); 
-		        vwParentRow.refreshDrawableState(); 
+//				LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
+//		        vwParentRow.setBackgroundColor(Color.YELLOW); 
+//		        vwParentRow.refreshDrawableState(); 
 		        
 				Intent intent = new Intent(activity, InfoDetailActivity.class);
 				clsPathBus pathBus = arrPathBus.get(position);

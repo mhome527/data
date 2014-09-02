@@ -8,15 +8,14 @@ package app.infobus.entity;
 import java.util.List;
 
 public class clsListData {
-    public List<clsItem> getItems() {
-        return list;
-    }
+	public List<clsItem> getItems() {
+		return list;
+	}
 
-    public void setItems(List<clsItem> list) {
-        this.list = list;
-    }
+	public void setItems(List<clsItem> list) {
+		this.list = list;
+	}
 
-    public List<clsItem> list;
+	public List<clsItem> list;
 
-  
 }

@@ -5,6 +5,8 @@
 
 package app.infobus.entity;
 
+import java.util.List;
+
 public class clsItem {
     String num;
     public String getNum() {
@@ -41,5 +43,7 @@ public class clsItem {
     String start;
     String back;
     String info;
+    public List<LocXY> locS;
+    public List<LocXY> locB;
 
 }

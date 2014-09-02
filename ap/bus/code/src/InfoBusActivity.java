@@ -167,6 +167,8 @@ public class InfoBusActivity extends AbstractActivity {
 					clsPath.setPathStart(item.getStart().toString().split(" - "));
 					clsPath.setPathBack(item.getBack().split(" - "));
 					clsPath.setInfo(item.getInfo());
+					clsPath.locS = item.locS;
+					clsPath.locB = item.locB;
 					arrPathBus.add(clsPath);
 
 				}
