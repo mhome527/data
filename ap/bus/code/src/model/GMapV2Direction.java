@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.LatLng;
 import app.infobus.utils.ULog;
 
 public class GMapV2Direction {
+	private static String TAG = GMapV2Direction.class.getSimpleName();
 	public final static String MODE_DRIVING = "driving";
 	public final static String MODE_WALKING = "walking";
 
@@ -30,7 +31,7 @@ public class GMapV2Direction {
 				+ "&sensor=false&units=metric&mode=driving";
 		// url
 		// ="https://www.google.com/maps/dir/Nguy%E1%BB%85n+Th%E1%BB%8B+Th%E1%BA%ADp,+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/H%C3%A0+Huy+Gi%C3%A1p,+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/@10.833114,106.667621,12z/data=!4m14!4m13!1m5!1m1!1s0x31752f9b89891a9d:0x3baea612cd791697!2m2!1d106.7084737!2d10.7391665!1m5!1m1!1s0x3174d7d6d75b7305:0x9cc6442d4b22af76!2m2!1d106.6811474!2d10.8844117!5i1";
-		ULog.i("GoogleMapsDirection", url);
+//		ULog.i("GoogleMapsDirection", url);
 		try {
 			HttpClient httpClient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
@@ -42,6 +43,7 @@ public class GMapV2Direction {
 			return doc;
 		} catch (Exception e) {
 			e.printStackTrace();
+			ULog.e(TAG, "getDocument error:" + e.getMessage());
 		}
 		return null;
 	}
@@ -138,6 +140,8 @@ public class GMapV2Direction {
 				lng = Double.parseDouble(lngNode.getTextContent());
 				listGeopoints.add(new LatLng(lat, lng));
 			}
+		}else{
+//			ULog.e(GMapV2Direction.class, "getDirection NONE!!!!!");
 		}
 
 		return listGeopoints;

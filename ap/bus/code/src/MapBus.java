@@ -2,9 +2,7 @@ package app.infobus;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.w3c.dom.Document;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,6 +30,7 @@ public class MapBus extends FragmentActivity {
 	// private ArrayList<clsPathBus> arrPathBus;
 	private int number;
 	private ProgressBar progressMap;
+	private ProgressBar progressMap2;
 
 	private PolylineOptions rectLineAllStart;
 	private PolylineOptions rectLineAllBack;
@@ -40,19 +39,15 @@ public class MapBus extends FragmentActivity {
 	// LatLng pos1 = new LatLng(10.739956, 106.703260);
 	// LatLng pos2 = new LatLng(10.759561, 106.698604);
 	// LatLng pos3 = new LatLng(10.760994, 106.700385);
-	//
-	// LatLng pos4 = new LatLng(10.771239, 106.693411);
-	// LatLng pos5 = new LatLng(10.775539, 106.698883);
-	// LatLng pos6 = new LatLng(10.782368, 106.705041);
 
-	// LatLng pos8 = new LatLng(10.8086801,106.6705759);
-	// LatLng pos9 = new LatLng(10.8170503,106.680957);
-	// LatLng pos10 = new LatLng(10.8236609,106.6816507);
-	// LatLng pos11 = new LatLng(10.8618387,106.6743374);
 	private int width;
 	private int height;
+	private boolean reloadStart = false;
+	private boolean reloadBack = false;
+	private LatLngBounds boundXY;
+	private LatLng startL, endL;
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "deprecation" })
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.map_bus);
@@ -67,6 +62,7 @@ public class MapBus extends FragmentActivity {
 		height = display.getHeight();
 
 		progressMap = (ProgressBar) findViewById(R.id.progressMap);
+		progressMap2 = (ProgressBar) findViewById(R.id.progressMap2);
 		md = new GMapV2Direction();
 		mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
 		mMap.setMyLocationEnabled(true);
@@ -80,14 +76,15 @@ public class MapBus extends FragmentActivity {
 
 		// mMap.addPolyline(rectLine);
 		number = getIntent().getIntExtra("num", 0);
+
 		TextView tvNum = (TextView) findViewById(R.id.tvNum);
-		tvNum.setText(number + "");
+		tvNum.setText(InfoBusActivity.arrPathBus.get(number).getNum());
 		// Bundle extra = getIntent().getBundleExtra("extra");
 		// arrPathBus = (ArrayList<clsPathBus>) extra.getSerializable("list_bus");
 		// List<LocXY> listXY = new ArrayList<LocXY>();
 
-		rectLineAllStart = new PolylineOptions().width(8).color(Color.GREEN);
-		rectLineAllBack = new PolylineOptions().width(3).color(Color.RED);
+		rectLineAllStart = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
+		rectLineAllBack = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
 
 		DrawStreet();
 		// testDrawStreet();
@@ -96,30 +93,22 @@ public class MapBus extends FragmentActivity {
 
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
-		// new DrawDirectoryAsk().execute(InfoBusActivity.arrPathBus.get(number).locS, InfoBusActivity.arrPathBus.get(number).locB);
-		// setLocationXY(InfoBusActivity.arrPathBus.get(number).locS, true);
-		// setLocationXY(InfoBusActivity.arrPathBus.get(number).locB, true);
 	}
 
-	// "lat":10.777100, "lng":106.705768}, {"lat":10.771697, "lng":106.706377}, {"lat":10.775091, "lng":106.701785},
-	// {"lat":10.769705, "lng":106.696914}, {"lat":10.754545, "lng":106.678246}, {"lat":10.752373, "lng":106.666144},
-	// {"lat":10.750873, "lng":106.658414}, {"lat":10.751439, "lng":106.651902}],
-
-	private void testDrawStreet() {
-		List<LocXY> listXY = new ArrayList<LocXY>();
-		mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(10.777030, 106.705789), 14));
-		listXY.add(new LocXY(10.777030, 106.705789));
-		// listXY.add(new LocXY(10.773741, 106.706486));
-		listXY.add(new LocXY(10.770839, 106.705722));
-		listXY.add(new LocXY(10.769705, 106.696914));
-		listXY.add(new LocXY(10.754545, 106.678246));
-		listXY.add(new LocXY(10.752373, 106.666144));
-		listXY.add(new LocXY(10.750873, 106.658414));
-		listXY.add(new LocXY(10.751439, 106.651902));
-		setLocationXY(listXY, true);
-	}
+//	private void testDrawStreet() {
+//		List<LocXY> listXY = new ArrayList<LocXY>();
+//		mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(10.777030, 106.705789), 14));
+//		listXY.add(new LocXY(10.777030, 106.705789));
+//		// listXY.add(new LocXY(10.773741, 106.706486));
+//		listXY.add(new LocXY(10.770839, 106.705722));
+//		listXY.add(new LocXY(10.769705, 106.696914));
+//		listXY.add(new LocXY(10.754545, 106.678246));
+//		listXY.add(new LocXY(10.752373, 106.666144));
+//		listXY.add(new LocXY(10.750873, 106.658414));
+//		listXY.add(new LocXY(10.751439, 106.651902));
+//		setLocationXY(listXY, true);
+//	}
 
 	private void DrawStreet() {
 		Handler loadMap = new Handler();
@@ -128,35 +117,35 @@ public class MapBus extends FragmentActivity {
 			@SuppressWarnings("unchecked")
 			@Override
 			public void run() {
-				LatLng startL, endL, xy;
-				LatLngBounds boundXY;
+
 				// ULog.e(this, "loading....");
 				startL = new LatLng(InfoBusActivity.arrPathBus.get(number).locS.get(0).lat, InfoBusActivity.arrPathBus.get(number).locS
 						.get(0).lng);
 				endL = new LatLng(InfoBusActivity.arrPathBus.get(number).locB.get(0).lat, InfoBusActivity.arrPathBus.get(number).locB
 						.get(0).lng);
-				if (InfoBusActivity.arrPathBus.get(number).locS.size() > 3)
-					xy = new LatLng(InfoBusActivity.arrPathBus.get(number).locS.get(3).lat, InfoBusActivity.arrPathBus.get(number).locS
-							.get(3).lng);
-				else
-					xy = new LatLng(InfoBusActivity.arrPathBus.get(number).locS.get(0).lat, InfoBusActivity.arrPathBus.get(number).locS
-							.get(0).lng);
+				// if (InfoBusActivity.arrPathBus.get(number).locS.size() > 3)
+				// xy = new LatLng(InfoBusActivity.arrPathBus.get(number).locS.get(3).lat, InfoBusActivity.arrPathBus.get(number).locS
+				// .get(3).lng);
+				// else
+				// xy = new LatLng(InfoBusActivity.arrPathBus.get(number).locS.get(0).lat, InfoBusActivity.arrPathBus.get(number).locS
+				// .get(0).lng);
 
-				// boundXY = createLatLngBoundsObject(startL, endL);
-				// mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(boundXY, width, height, 150));
+				boundXY = createLatLngBoundsObject(startL, endL);
+				mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(boundXY, width, height, 150));
+				// mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(boundXY, 12));
 
-				mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(xy, 12));
+				// mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(xy, 12));
 
-				mMap.addMarker(new MarkerOptions().position(startL).title("Xuat phat")
-						.icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_green)));
+				// mMap.addMarker(new MarkerOptions().position(startL).title("Xuat phat")
+				// .icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_green)));
+				//
+				// mMap.addMarker(new MarkerOptions().position(endL).title("Luoc ve")
+				// .icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_orange)));
 
-				mMap.addMarker(new MarkerOptions().position(endL).title("Luoc ve")
-						.icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_orange)));
-
+				addMarkerStreet();
 				// new DrawStreetAsk().execute(InfoBusActivity.arrPathBus.get(number).locS, InfoBusActivity.arrPathBus.get(number).locB);
 				new DrawStreetAsk(true).execute(InfoBusActivity.arrPathBus.get(number).locS);
 				new DrawStreetAsk(false).execute(InfoBusActivity.arrPathBus.get(number).locB);
-				// setLocationXY(InfoBusActivity.arrPathBus.get(number).locS, true);
 				// setLocationXY(InfoBusActivity.arrPathBus.get(number).locS, true);
 				// setLocationXY(InfoBusActivity.arrPathBus.get(number).locB, false);
 			}
@@ -170,77 +159,6 @@ public class MapBus extends FragmentActivity {
 		// }
 	}
 
-	//
-	private class DrawStreetAsk extends AsyncTask<List<LocXY>, Void, Boolean> {
-
-		List<LocXY> lstLocXY[];
-
-		private boolean start;
-
-		public DrawStreetAsk(boolean start) {
-			this.start = start;
-		}
-
-		@Override
-		protected void onPreExecute() {
-			// TODO Auto-generated method stub
-			super.onPreExecute();
-
-		}
-
-		@Override
-		protected void onPostExecute(Boolean result) {
-			// setLocationXY(lstLocXY[0], true);
-			// setLocationXY(lstLocXY[1], false);
-			super.onPostExecute(result);
-			progressMap.setVisibility(View.GONE);
-
-			ULog.i(MapBus.class, "draw map.. start:" + start);
-
-			// for (PolylineOptions polyline : rectLineAllStart)
-			if (start)
-				mMap.addPolyline(rectLineAllStart);
-			else {
-				mMap.addPolyline(rectLineAllBack);
-			}
-			// mMap.addPolyline(rectLineAllBack);
-
-			Handler loadMap = new Handler();
-			loadMap.postDelayed(new Runnable() {
-
-				@Override
-				public void run() {
-					// for (PolylineOptions polyline : rectLineAllBack)
-					// mMap.addPolyline(rectLineAllBack);
-					ULog.i(MapBus.class, "reDraw start:" + start);
-					if (start)
-						mMap.addPolyline(rectLineAllStart);
-					else {
-						mMap.addPolyline(rectLineAllBack);
-					}
-				}
-			}, 2000);
-
-			// for (PolylineOptions polyline : rectLineAllBack)
-			// mMap.addPolyline(polyline);
-		}
-
-		@Override
-		protected Boolean doInBackground(List<LocXY>... lstLocXY) {
-			try {
-				// md = new GMapV2Direction();
-				// this.lstLocXY = lstLocXY;
-				setLocationXY(lstLocXY[0], start);
-				// setLocationXY(lstLocXY[1], false);
-				// setLocationXY(lstLocXY[1], false);
-			} catch (Exception e) {
-				ULog.e(MapBus.class, "Draw Error:" + e.getMessage());
-				return false;
-			}
-			return true;
-		}
-	}
-
 	private void setLocationXY(List<LocXY> locXY, boolean start) {
 		LocXY loc;
 		LocXY locTmp = null;
@@ -251,9 +169,6 @@ public class MapBus extends FragmentActivity {
 			loc = locXY.get(i);
 			if (i == 0) {
 				locTmp = loc;
-				// mMap.addMarker(new MarkerOptions().position(new LatLng(loc.lat, loc.lng)).title("Xuat phat")
-				// .icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_orange)));
-				// mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(loc.lat, loc.lng), 14));
 			} else {
 				ULog.i(this, "location loc1:" + locTmp.lat + ", " + locTmp.lng + "; loc2:" + loc.lat + ", " + loc.lng);
 				latX = new LatLng(locTmp.lat, locTmp.lng);
@@ -264,104 +179,186 @@ public class MapBus extends FragmentActivity {
 				// drawMap(latX, latY, start);
 				// drawStreet(latX, latY, start);
 
-				if (i == locXY.size() - 1) {
-					// mMap.addMarker(new MarkerOptions().position(new LatLng(loc.lat, loc.lng)).title("End buyt"));
-					// mMap.addMarker(new MarkerOptions().position(new LatLng(loc.lat, loc.lng)).title("tro ve")
-					// .icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_orange)));
-				}
 			}
 		}
 		// setLocationLat(new)
 	}
 
-	private void drawMap(LatLng lX, LatLng lY, boolean start) {
-		PolylineOptions rectLine;
-		Document doc = md.getDocument(lX, lY, GMapV2Direction.MODE_DRIVING);
-
-		ArrayList<LatLng> directionPoint = md.getDirection(doc);
-		if (start)
-			rectLine = new PolylineOptions().width(8).color(Color.BLUE);
-		else
-			rectLine = new PolylineOptions().width(3).color(Color.RED);
-		//
-		for (int i = 0; i < directionPoint.size(); i++) {
-			rectLine.add(directionPoint.get(i));
-		}
-		mMap.addPolyline(rectLine);
-	}
+//	private void drawMap(LatLng lX, LatLng lY, boolean start) {
+//		PolylineOptions rectLine;
+//		Document doc = md.getDocument(lX, lY, GMapV2Direction.MODE_DRIVING);
+//
+//		ArrayList<LatLng> directionPoint = md.getDirection(doc);
+//		if (start)
+//			rectLine = new PolylineOptions().width(8).color(Color.BLUE);
+//		else
+//			rectLine = new PolylineOptions().width(3).color(Color.RED);
+//		//
+//		for (int i = 0; i < directionPoint.size(); i++) {
+//			rectLine.add(directionPoint.get(i));
+//		}
+//		mMap.addPolyline(rectLine);
+//	}
 
 	// ////////////////////// new
 
 	private void drawMap2(LatLng lX, LatLng lY, boolean start) {
-		PolylineOptions rectLine;
-		Document doc = md.getDocument(lX, lY, GMapV2Direction.MODE_DRIVING);
+		try {
+			if(isFinishing())
+				return;
+			Document doc = md.getDocument(lX, lY, GMapV2Direction.MODE_DRIVING);
 
-		ArrayList<LatLng> directionPoint = md.getDirection(doc);
-		// if (start)
-		// rectLine = new PolylineOptions().width(8).color(Color.BLUE);
-		// else
-		// rectLine = new PolylineOptions().width(3).color(Color.RED);
-		//
-		if (start) {
-			for (int i = 0; i < directionPoint.size(); i++) {
-				rectLineAllStart.add(directionPoint.get(i));
+			if (doc == null) {
+				ULog.e(MapBus.class, "drawMap2 get document NULL!!!!!");
+				return;
 			}
-		} else {
-			for (int i = 0; i < directionPoint.size(); i++)
-				rectLineAllBack.add(directionPoint.get(i));
+			ArrayList<LatLng> directionPoint = md.getDirection(doc);
+			if (directionPoint.size() == 0) {
+				if (start)
+					reloadStart = true;
+				else
+					reloadBack = true;
+			}
+			ULog.i(MapBus.class, "drawMap2 directionPoin size:" + directionPoint.size() + "; start: " + start);
+			if (start) {
+				for (int i = 0; i < directionPoint.size(); i++) {
+					rectLineAllStart.add(directionPoint.get(i));
+				}
+			} else {
+				for (int i = 0; i < directionPoint.size(); i++)
+					rectLineAllBack.add(directionPoint.get(i));
+			}
+		} catch (Exception e) {
+			ULog.e(MapBus.class, "drawMap2 error:" + e.getMessage());
 		}
 
-		// if (start)
-		// rectLineAllStart.add(rectLine);
-		// else
-		// rectLineAllBack.add(rectLine);
-		// mMap.addPolyline(rectLine);
 	}
 
-	// private void drawStreet(LatLng lX, LatLng lY, boolean start){
-	// new DrawShootStreet(start).execute(lX, lY);
-	// }
-
-	private class DrawShootStreet extends AsyncTask<LatLng, Boolean, PolylineOptions> {
+	//
+	private class DrawStreetAsk extends AsyncTask<List<LocXY>, Void, Boolean> {
 		private boolean start;
 
-		public DrawShootStreet(boolean start) {
+		public DrawStreetAsk(boolean start) {
+			this.start = start;
+		}
+
+		@SuppressWarnings("unchecked")
+		@Override
+		protected void onPostExecute(Boolean result) {
+			super.onPostExecute(result);
+			if(isFinishing())
+				return;
+			progressMap.setVisibility(View.GONE);
+			if (rectLineAllBack.getPoints().size() == 0)
+				progressMap2.setVisibility(View.VISIBLE);
+
+			mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(boundXY, width, height, 150));
+
+			if (start) {
+				mMap.addPolyline(rectLineAllStart);
+
+				if (reloadStart) {
+					ULog.i(MapBus.class, "reload street start");
+					reloadStart = false;
+					rectLineAllStart = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
+					new ReloadStreet(true).execute(InfoBusActivity.arrPathBus.get(number).locS);
+				}
+			} else {
+				mMap.addPolyline(rectLineAllBack);
+				if (reloadBack) {
+					ULog.i(MapBus.class, "reload street back");
+					reloadBack = false;
+					rectLineAllBack = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
+					new ReloadStreet(false).execute(InfoBusActivity.arrPathBus.get(number).locB);
+				} else {
+					progressMap2.setVisibility(View.GONE);
+				}
+			}
+
+		}
+
+		@Override
+		protected Boolean doInBackground(List<LocXY>... lstLocXY) {
+			try {
+				setLocationXY(lstLocXY[0], start);
+				// setLocationXY(lstLocXY[1], false);
+			} catch (Exception e) {
+				ULog.e(MapBus.class, "Draw Error:" + e.getMessage());
+				return false;
+			}
+			return true;
+		}
+	}
+
+	private class ReloadStreet extends AsyncTask<List<LocXY>, Void, Boolean> {
+		private boolean start;
+
+		public ReloadStreet(boolean start) {
 			this.start = start;
 		}
 
 		@Override
 		protected void onPreExecute() {
-			// TODO Auto-generated method stub
 			super.onPreExecute();
-
+			progressMap2.setVisibility(View.VISIBLE);
+			ULog.i(MapBus.class, "ReloadStreet.... start:" + start);
 		}
 
 		@Override
-		protected PolylineOptions doInBackground(LatLng... params) {
-			PolylineOptions rectLine;
-			if (start)
-				rectLine = new PolylineOptions().width(8).color(Color.BLUE);
-			else
-				rectLine = new PolylineOptions().width(3).color(Color.RED);
-
-			Document doc = md.getDocument(params[0], params[0], GMapV2Direction.MODE_DRIVING);
-
-			ArrayList<LatLng> directionPoint = md.getDirection(doc);
-			for (int i = 0; i < directionPoint.size(); i++) {
-				rectLine.add(directionPoint.get(i));
+		protected Boolean doInBackground(List<LocXY>... lstLocXY) {
+			try {
+				setLocationXY(lstLocXY[0], start);
+			} catch (Exception e) {
+				ULog.e(MapBus.class, "Draw Error:" + e.getMessage());
+				return false;
 			}
-			return rectLine;
+			return true;
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
-		protected void onPostExecute(PolylineOptions rectLine) {
-			// TODO Auto-generated method stub
-			super.onPostExecute(rectLine);
-			ULog.i(MapBus.class, "finish, draw...");
-			mMap.addPolyline(rectLine);
+		protected void onPostExecute(Boolean result) {
+			super.onPostExecute(result);
+			if(isFinishing())
+				return;
+			if (rectLineAllStart.getPoints().size() > 0 && rectLineAllBack.getPoints().size() > 0) {
+				mMap.clear();
+				addMarkerStreet();
+				mMap.addPolyline(rectLineAllStart);
+				mMap.addPolyline(rectLineAllBack);
+			}
 
+			if (start) {
+				if (reloadStart) {
+					ULog.i(MapBus.class, "reload 2 street start");
+					reloadStart = false;
+					rectLineAllStart = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
+					new ReloadStreet(true).execute(InfoBusActivity.arrPathBus.get(number).locS);
+				} else {
+					progressMap2.setVisibility(View.GONE);
+				}
+			} else {
+				mMap.addPolyline(rectLineAllBack);
+				if (reloadBack) {
+					ULog.i(MapBus.class, "reload 2 street back");
+					reloadBack = false;
+					rectLineAllBack = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
+					new ReloadStreet(false).execute(InfoBusActivity.arrPathBus.get(number).locB);
+				} else {
+					progressMap2.setVisibility(View.GONE);
+				}
+			}
+
+			ULog.i(MapBus.class, "ReloadStreet finish start:" + start);
 		}
+	}
 
+	private void addMarkerStreet() {
+		mMap.addMarker(new MarkerOptions().position(startL).title(MapBus.this.getString(R.string.startPath2))
+				.icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_green)));
+
+		mMap.addMarker(new MarkerOptions().position(endL).title(MapBus.this.getString(R.string.backPath2))
+				.icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_orange)));
 	}
 
 	private LatLngBounds createLatLngBoundsObject(LatLng firstLocation, LatLng secondLocation) {
