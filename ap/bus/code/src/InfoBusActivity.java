@@ -19,8 +19,10 @@ import app.infobus.adapter.BusAdapter;
 import app.infobus.entity.clsItem;
 import app.infobus.entity.clsListData;
 import app.infobus.entity.clsPathBus;
+import app.infobus.entity.clsPolylineEntity;
 import app.infobus.utils.Common;
 import app.infobus.utils.Constant;
+import app.infobus.utils.InternalStorage;
 import app.infobus.utils.ULog;
 import app.infobus.utils.Utility;
 
@@ -107,11 +109,19 @@ public class InfoBusActivity extends AbstractActivity {
 //			AdRequest adRequest = new AdRequest.Builder().build();
 //			adView.loadAd(adRequest);
 			// //////////////////
+			
+			//test
+//			test();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
+	private void test(){
+		clsPolylineEntity entity = new clsPolylineEntity();
+		InternalStorage.writeObject(this,  "s", entity);
+		InternalStorage.readObject(this,  "s");
+	}
 	private class LoadData extends AsyncTask<Object, Object, Object> {
 		clsListData clsList;
 		private Activity activity;

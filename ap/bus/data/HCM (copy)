@@ -17,7 +17,7 @@
 },
 
 {"num":"03","name":"Bến Thành - Thạnh Lộc",
-"start":"Công viên 23/9 - Lê Lai - vong xoay Bến Thành - Phó Đức Chính - Lê Thị Hồng Gấm - Calmette - Trạm Bến Thành - Hàm Nghi - Hồ Tùng Mậu - đường nhánh S2 - Tôn Đức Thắng - Hai Bà Trưng - Võ Thị Sáu - Nam Kỳ Khởi Nghĩa - cầu Công Lý - Nguyễn Văn Trỗi - Huỳnh Văn Bánh - Phan Đình Phùng - tttNKxPDPxHVTxPDL - Nguyễn Kiệm - Nguyễn Thái Sơn - Phạm Ngũ Lão (Q.Gò Vấp) - tttPNLxQTxNVNxNO - Nguyễn Oanh - Hà Huy Giáp - trường cao đẳng Điện Lực - Thạnh Lộc 30",
+"start":"Bến Công viên 23/9 - Lê Lai - vong xoay Bến Thành - Phó Đức Chính - Lê Thị Hồng Gấm - Calmette - Trạm Bến Thành - Hàm Nghi - Hồ Tùng Mậu - đường nhánh S2 - Tôn Đức Thắng - Hai Bà Trưng - Võ Thị Sáu - Nam Kỳ Khởi Nghĩa - cầu Công Lý - Nguyễn Văn Trỗi - Huỳnh Văn Bánh - Phan Đình Phùng - tttNKxPDPxHVTxPDL - Nguyễn Kiệm - Nguyễn Thái Sơn - Phạm Ngũ Lão (Q.Gò Vấp) - tttPNLxQTxNVNxNO - Nguyễn Oanh - Hà Huy Giáp - trường cao đẳng Điện Lực - Thạnh Lộc 30",
 "back":"Thạnh Lộc 30 - trường cao đẳng Điện Lực - Hà Huy Giáp - Nguyễn Oanh - Nguyễn Kiệm - Hoàng Minh Giám - Đào Duy Anh - Hồ Văn Huê - Hoàng Văn Thụ - Trần Huy Liệu - Nguyễn Văn Trỗi - Lý Chính Thắng - Hai Bà Trưng - Tôn Đức Thắng - Hàm Nghi - Trạm Bến Thành - Trần Hưng Đạo - Phạm Ngũ Lão - Bến Công viên 23/9",
 "info":"Loại hình hoạt động: Buýt có trợ giá <br/>Cự ly: 15,95 km <br/>Số chuyến: 312 chuyến/ngày<br/>Thời gian chuyến: 55 phút<br/>Giãn cách: 5 - 15 phút/ chuyến<br/>Thời gian hoạt động: <br/> + Sài Gòn: 04h55 - 20h30 <br/> + Thạnh Lộc: 04h15 - 20h15 <br/>Loại xe: 55 chỗ",
 
@@ -30,10 +30,6 @@
 {"num":"04","name":"Bến Thành - Cộng Hòa - BX An Sương",
 "start":"Bến Công viên 23/9 - Lê Lai - Trạm Bến Thành - Phó Đức Chính - Lê Thị Hồng Gấm - Calmette - Trạm Bến Thành  - Hàm Nghi - Pasteur - Võ Thị Sáu - Nam Kỳ Khởi Nghĩa - Nguyễn Văn Trỗi – Phan Đình Giót - Phan Thúc Duyện - Trần Quốc Hoàn - Cộng Hòa - Trường Chinh - ngã 4 An Sương - Quốc Lộ 22 - Quay đầu tại ngã 3 Công ty Việt Hưng – Quốc lộ 22 - BX An Sương",
 "back":"Bến xe An Sương - Quốc lộ 22 - Ngã 4 An Sương - Trường Chinh - Cộng Hòa - Hoàng Văn Thụ - Nguyễn Văn Trỗi - Nam Kỳ Khởi Nghĩa - Hàm Nghi - Trạm Bến Thành - Trần Hưng Đạo - Phạm Ngũ lão - Bến Công viên 23/9",
-"locS":[{"lat":10.768613, "lng":106.690303}, {"lat":10.771596, "lng":106.697695}, {"lat":10.770595, "lng":106.699208}, {"lat":10.769486, "lng":106.698208}, {"lat":10.770171, "lng":106.697548}, {"lat":10.770491, "lng":106.698157}, {"lat":10.770917, "lng":106.699711}, {"lat":10.771088, "lng":106.702405}, {"lat":10.785573, "lng":106.689708}, {"lat":10.785478, "lng":106.688624}, {"lat":10.800755, "lng":106.666759}, {"lat":10.801492, "lng":106.662548}, {"lat":10.800987, "lng":106.65919}, {"lat":10.803832, "lng":106.637925}, {"lat":10.808195, "lng":106.634545}, {"lat":10.826126, "lng":106.626488}, {"lat":10.843708, "lng":106.614735}, {"lat":10.844688, "lng":106.613989}, {"lat":10.843760, "lng":106.613034}],
-
-"locB":[{"lat":10.843760, "lng":106.613034}, {"lat":10.841764, "lng":106.615748}, {"lat":10.826036, "lng":106.626338}, {"lat":10.806214, "lng":106.636015}, {"lat":10.802151, "lng":106.643804}, {"lat":10.800544, "lng":106.663602}, {"lat":10.800291, "lng":106.666456}, {"lat":10.799690, "lng":106.668601}, {"lat":10.786843, "lng":106.68698}, {"lat":10.771408, "lng":106.700965}, {"lat":10.771097, "lng":106.699415}, {"lat":10.770892, "lng":106.697907}, {"lat":10.768747, "lng":106.693589}, {"lat":10.767271, "lng":106.689877}],
-
 "info":"Loại hình hoạt động: Buýt có trợ giá <br/>Cự ly: 15km <br/>Số chuyến: 303 chuyến/ngày<br/>Thời gian chuyến: 50 - 55 phút<br/>Giãn cách: 5 - 15 phút/ chuyến<br/>Thời gian hoạt động: <br/> + Sài Gòn: 05h30 - 20h00 <br/> + BX An Sương: 05h00 - 20h00 <br/> Loại xe: 47 - 50 chỗ"},
 
 {"num":"05","name":"Bến xe Chợ Lớn - Biên Hòa",
@@ -68,34 +64,18 @@
 
 
 {"num":"11","name":"Bến Thành - Đầm Sen",
-"start":"Công viên 23/9 - Lê Lai - Nguyễn Thị Nghĩa - Nguyễn Trãi - Nguyễn Văn Cừ - truong Đại Học Khoa Học Tự Nhiên - An Dương Vương - Nguyễn Tri Phương - Hồng Bàng - Lý Thường Kiệt - Nguyễn Chí Thanh - bệnh viện Chợ Rẫy - Thuận Kiều - Lê Đại Hành - Lãnh Binh Thăng - Ông Ích Khiêm - Hòa Bình - Công viên Đầm Sen",
-
-"back":"Công viên Đầm Sen - Hòa Bình - Ông Ích Khiêm - Lãnh Binh Thăng - Tôn Thất Hiệp - đường 3/2 - Phó Cơ Điều - bệnh viện Chợ Rẫy - Nguyễn Chí Thanh - Lý Thường Kiệt - Hồng Bàng - An Dương Vương - truong Đại Học Khoa Học Tự Nhiên - Nguyễn Văn Cừ - Nguyễn Trãi - Nguyễn Thị Nghĩa - Phạm Ngũ Lão - Công viên 23/9",
-
-"locS":[{"lat":10.768613, "lng":106.690303}, {"lat":10.770308, "lng":106.694013}, {"lat":10.770909, "lng":106.692789}, {"lat":10.766977, "lng":106.688358}, {"lat":10.760885, "lng":106.683455}, {"lat":10.760200, "lng":106.680966}, {"lat":10.757470, "lng":106.669454}, {"lat":10.755536, "lng":106.663108}, {"lat":10.756458, "lng":106.662054}, {"lat":10.758353, "lng":106.661179}, {"lat":10.757910, "lng":106.658304}, {"lat":10.760376, "lng":106.658304}, {"lat":10.762231, "lng":106.655874}, {"lat":10.766695, "lng":106.642618}, {"lat":10.766985, "lng":106.641717}, {"lat":10.768877, "lng":106.637871}],
-
-"locB":[{"lat":10.768877, "lng":106.637871}, {"lat":10.766985, "lng":106.641717}, {"lat":10.766695, "lng":106.642618}, {"lat":10.760861, "lng":106.652784}, {"lat":10.760439, "lng":106.653803}, {"lat":10.762162, "lng":106.656936}, {"lat":10.757577, "lng":106.65736}, {"lat":10.758136, "lng":106.661592}, {"lat":10.755327, "lng":106.663089}, {"lat":10.761058, "lng":106.683399}, {"lat":10.762349, "lng":106.686505}, {"lat":10.770995, "lng":106.692838}, {"lat":10.769245, "lng":106.694629}, {"lat":10.767279, "lng":106.689866}],
-
+"start":"Bãi đậu xe buýt Công viên 23/9 - Lê Lai - Nguyễn Thị Nghĩa - Nguyễn Trãi - Nguyễn Văn Cừ - truong Đại Học Khoa Học Tự Nhiên - An Dương Vương - Nguyễn Tri Phương - Hồng Bàng - Lý Thường Kiệt - Nguyễn Chí Thanh - bệnh viện Chợ Rẫy - Thuận Kiều - Lê Đại Hành - Lãnh Binh Thăng - Ông Ích Khiêm - Hòa Bình - Công viên Đầm Sen",
+"back":"Công viên Đầm Sen - Hòa Bình - Ông Ích Khiêm - Lãnh Binh Thăng - Tôn Thất Hiệp - đường 3/2 - Phó Cơ Điều - bệnh viện Chợ Rẫy - Nguyễn Chí Thanh - Lý Thường Kiệt - Hồng Bàng - An Dương Vương - truong Đại Học Khoa Học Tự Nhiên - Nguyễn Văn Cừ - Nguyễn Trãi - Nguyễn Thị Nghĩa - Phạm Ngũ Lão - Bãi đậu xe buýt Công viên 23/9",
 "info":"Loại hình hoạt động: Buýt có trợ giá <br/>Cự ly: 9,8km <br/>Số chuyến: 160 <br/> Thời gian chuyến: 40 phút<br/>Giãn cách: 8 - 15 phút/ chuyến<br/>Thời gian hoạt động: 05h30 - 18h15 <br/>Loại xe: 55 chỗ"},
 
 {"num":"12","name":"Bến Thành - Thác Giang Điền",
-"start":"Công viên 23/9 - Lê Lai - Công trường Quách Thị Trang - Trần Hưng Đạo - Phạm Ngũ Lão - Yersin - Trần Hưng Đạo - trạm Bến Thành - Hàm Nghi - Tôn Đức Thắng - Đinh Tiên Hoàng - Nguyễn Thị Minh Khai - Xô Viết Nghệ Tĩnh - Điện Biên Phủ - Xa lộ Hà Nội - Quốc lộ 52 - Quốc lộ 1 - Thác Giang Điền",
-"back":"Thác Giang Điền - Quốc lộ 1 - Quốc lộ 52 - Xa lộ Hà Nội - Điện Biên Phủ - Xô Viết Nghệ Tĩnh - Nguyễn Thị Minh Khai - Đinh Tiên Hoàng - Tôn Đức Thắng - Hàm Nghi - trạm Bến Thành  - Trần Hưng Đạo - Phạm Ngũ Lão - Công viên 23/9",
-
-"locS":[{"lat":10.768613, "lng":106.690303},{"lat":10.771596, "lng":106.697706},{"lat":10.769851, "lng":106.696317},{"lat":10.769435, "lng":106.696617},	{"lat":10.770502, "lng":106.698151}],
-
-"locB":[{"lat":10.921042, "lng":106.985329},{"lat":10.947103, "lng":106.980738},{"lat":10.961797, "lng":106.94412},{"lat":10.807518, "lng":106.755277},{"lat":10.801158, "lng":106.713333},{"lat":10.801556, "lng":106.712689},{"lat":10.800070, "lng":106.711187},{"lat":10.787097, "lng":106.702142},{"lat":10.781627, "lng":106.706809},{"lat":10.770855, "lng":106.705897},{"lat":0.771023, "lng":106.698065},{"lat":10.767277, "lng":106.689863}],
-
+"start":"Trạm Bến Thành - Hàm Nghi - Tôn Đức Thắng - Đinh Tiên Hoàng - Nguyễn Thị Minh Khai - Xô Viết Nghệ Tĩnh - Điện Biên Phủ - Xa lộ Hà Nội - Quốc lộ 52 - Quốc lộ 1A - Thác Giang Điền",
+"back":"Thác Giang Điền - Quốc lộ 1A - Quốc lộ 52 - Xa lộ Hà Nội - Điện Biên Phủ - Xô Viết Nghệ Tĩnh - Nguyễn Thị Minh Khai - Đinh Tiên Hoàng - Tôn Đức Thắng - Hàm Nghi - Trạm Bến Thành",
 "info":"Loại hình hoạt động: Buýt không trợ giá <br/>Số chuyến: 84 chuyến/ngày <br/>Thời gian chuyến: 90 phút <br/>Thời gian hoạt động:<br/>Bến Thành: 5h00 - 18h00 <br/> Thác Giang Điền: 4h20 - 17h20 <br/> Giãn cách: 15 - 20 phút/chuyến <br/> Loại xe: 80 chỗ <br/> Giá vé:<br/> - Hành khách đi lại dưới 1/3 cự ly tuyến:<br/> Giá vé 5.000đồng/ Hành khách /lượt <br/> - Hành khách đi lại từ 1/3 đến dưới 1/2 cự ly tuyến:<br/> Giá vé 10.000đồng/ Hành khách /lượt. <br/> - Hành khách đi lại từ 1/2 đến dưới 2/3 cự ly tuyến:<br/> Giá vé 15.000đồng/ Hành khách /lượt. <br/> - Hành khách đi lại từ 2/3 cự ly đến suốt tuyến (52 km):<br/>Giá vé 20.000đồng/ Hành khách /lượt"},
 
-{"num":"13","name":"Công viên 23/9 - Bến xe Củ Chi",
-"start":"Công viên 23/9 - Lê Lai - Nguyễn Thị Nghĩa - Cách Mạng Tháng Tám - Hoàng Văn Thụ - Xuân Diệu - Xuân Hồng - Trường Chinh - Quốc lộ 22 - Bến xe Củ Chi",
+{"num":"13","name":"Bến Thành - Bến xe Củ Chi",
+"start":"Bãi đậu xe buýt Công viên 23/9 - Lê Lai - Nguyễn Thị Nghĩa - Cách Mạng Tháng Tám - Hoàng Văn Thụ - Xuân Diệu - Xuân Hồng - Trường Chinh - Quốc lộ 22 - Bến xe Củ Chi",
 "back":" Bến xe Củ Chi - Quốc lộ 22 - Trường Chinh - Cách Mạng Tháng Tám - Nguyễn Thị Nghĩa - Phạm Ngũ Lão - Bãi đậu xe buýt Công viên 23/9",
-
-"locS":[{"lat":10.768613, "lng":106.690303},{"lat":10.770278, "lng":106.694058},{"lat":10.771912, "lng":106.692599},{"lat":10.792601, "lng":106.653906},{"lat":10.794904, "lng":106.6553},{"lat":10.796073, "lng":106.655075},{"lat":10.794134, "lng":106.652205},{"lat":10.793844, "lng":106.651615},{"lat":10.802402, "lng":106.636369},{"lat":10.822393, "lng":106.630211},{"lat":10.853117, "lng":106.608685},{"lat":10.971311, "lng":106.481729}],
-
-"locB":[{"lat":10.971311, "lng":106.481729},{"lat":10.853089, "lng":106.608584},{"lat":10.839117, "lng":106.617433},{"lat":10.804584, "lng":106.635522},{"lat":10.791515, "lng":106.655864},{"lat":10.771122, "lng":106.693484},{"lat":10.769145, "lng":106.694547},{"lat":10.767290, "lng":106.689869}],
-
 "info":"Loại hình hoạt động: Buýt nhanh có trợ giá <br/> Cự ly: 35,65km <br/>Số chuyến: 146 chuyến/ngày<br/>Thời gian chuyến: 75 phút<br/>Giãn cách: 10 - 20 phút/ chuyến<br/>Thời gian hoạt động: <br/>Bến Thành: 04h30 - 20h30 <br/> BX Củ Chi: 03h30 - 19h30 <br/> Loại xe: 80 chỗ"},
 
 {"num":"14","name":"BX Miền Đông - 3/2 - BX Miền Tây",
@@ -119,36 +99,18 @@
 "info":"Loại hình hoạt động: Buýt có trợ giá <br/> Cự ly: 13 km <br/>Số chuyến: 150 chuyến/ngày<br/>Thời gian chuyến: 50 phút<br/>Giãn cách: 10 - 15 phút/ chuyến<br/>Thời gian hoạt động: 05h15 - 19h00 <br/>Loại xe: 12 chỗ"},
 
 {"num":"18","name":"Bến Thành - Chợ Hiệp Thành",
-"start":"Công viên 23/9 - Lê Lai - vòng xoay Bến Thành – Trần Hưng Đạo – Phạm Ngũ Lão – Yersin – Trần Hưng Đạo – Phạm Ngũ Lão - trạm Bến Thành - Hàm Nghi - Pasteur - Lê Duẩn - Đinh Tiên Hoàng – Phan Đăng Lưu - Nơ Trang Long - Lê Quang Định - Nguyễn Văn Nghi - Quang Trung - Tô Ký – Nguyễn Ảnh Thủ - Hiệp Thành 13 - Chợ Hiệp Thành",
-"back":"Chợ Hiệp Thành - Hiệp Thành 13 - Nguyễn Ảnh Thủ - Tô Ký - Quang Trung - Nguyễn Văn Nghi - Lê Quang Định - Nơ Trang Long - Phan Đăng Lưu – Đinh Tiên Hoàng - Võ Thị Sáu - Hai Bà Trưng - Lê Duẩn - Nam Kỳ Khởi Nghĩa - Hàm Nghi - trạm Bến Thành - Trần Hưng Đạo - Phạm Ngũ Lão - Công viên 23/9",
-
-"locS":[{"lat":10.768613, "lng":106.690303}, {"lat":10.771596, "lng":106.697706}, {"lat":10.769857, "lng":106.696306}, {"lat":10.769303, "lng":106.696376}, {"lat":10.770479, "lng":106.698173}, {"lat":10.770916, "lng":106.699696}, {"lat":10.771148, "lng":106.702373}, {"lat":10.779182, "lng":106.697389}, {"lat":10.785653, "lng":106.702585}, {"lat":10.791913, "lng":106.695887}, {"lat":10.802605, "lng":106.696494}, {"lat":10.802900, "lng":106.694919}, {"lat":10.808354, "lng":106.695018}, {"lat":10.816468, "lng":106.688597}, {"lat":10.821877, "lng":106.688554}, {"lat":10.823634, "lng":106.687286}, {"lat":10.826587, "lng":106.679789}, {"lat":10.853092, "lng":106.626252}, {"lat":10.859825, "lng":106.617647}, {"lat":10.868343, "lng":106.616676}, {"lat":10.883292, "lng":106.62935}, {"lat":10.878595, "lng":106.637946}, {"lat":10.879489, "lng":106.638525}
-],
-
-"locB":[{"lat":10.879489, "lng":106.638525}, {"lat":10.878595, "lng":106.637946}, {"lat":10.883292, "lng":106.62935}, {"lat":10.868343, "lng":106.616676}, {"lat":10.859825, "lng":106.617647}, {"lat":10.852781, "lng":106.626225}, {"lat":10.847623, "lng":106.634867}, {"lat":10.826492, "lng":106.679709}, {"lat":0.826250, "lng":106.68091}, {"lat":10.819680, "lng":106.690002}, {"lat":10.808354, "lng":106.695018}, {"lat":10.802900, "lng":106.694919}, {"lat":10.802605, "lng":106.696494}, {"lat":10.791913, "lng":106.695887}, {"lat":10.787781, "lng":106.692068}, {"lat":10.781405, "lng":106.699508}, {"lat":10.778075, "lng":106.696563}, {"lat":10.771061, "lng":106.700951}, {"lat":10.771108, "lng":106.698124}, {"lat":10.767282, "lng":106.689873}],
-
-"info":"Loại hình hoạt động: Buýt có trợ giá <br/>Cự ly: 23,25 km <br/>Số chuyến: 200 chuyến/ngày<br/>Thời gian chuyến: 70 phút<br/>Giãn cách: 6 - 15 phút/ chuyến<br/>Thời gian hoạt động: <br/>Trạm Bến Thành: 05h00 - 20h00 <br/> Chợ Hiệp Thành: 04h30 - 19h20 <br/> Loại xe: 80 chỗ"},
+"start":"Công trường Quách Thị Trang (Trạm điều hành Sài Gòn) - Hàm Nghi - Pasteur - Lê Duẩn - Đinh Tiên Hoàng - Phan Đăng Lưu - Nơ Trang Long - Lê Quang Định - Nguyễn Văn Nghi - Quang Trung - Tô Ký - Nguyễn Ảnh Thủ - HT13 - Chợ Hiệp Thành",
+"back":"Chợ Hiệp Thành - HT13 - Nguyễn Ảnh Thủ - Tô Ký - Quang Trung - Nguyễn Văn Nghi - Lê Quang Định - Nơ Trang Long - Phan Đăng Lưu - Đinh Tiên Hoàng - Võ Thị Sáu - Hai Bà Trưng - Lê Duẩn - Nam Kỳ Khởi Nghĩa - Hàm Nghi - Công trường Quách Thị Trang (trạm điều hành Sài Gòn)",
+"info":"Loại hình hoạt động: Buýt có trợ giá <br/>Cự ly: 21,75 km <br/>Số chuyến: 200 chuyến/ngày<br/>Thời gian chuyến: 70 phút<br/>Giãn cách: 6 - 15 phút/ chuyến<br/>Thời gian hoạt động: <br/>Trạm Bến Thành: 05h00 - 20h00 <br/> Chợ Hiệp Thành: 04h30 - 19h20 <br/> Loại xe: 80 chỗ"},
 
 {"num":"19","name":"Bến Thành - KCX Linh Trung - ĐH Quốc gia",
-"start":"Công viên 23/9 - Lê Lai - vòng xoay Bến Thành - Trần Hưng Đạo - Phạm Ngũ Lão - Yersin - Trần Hưng Đạo - Phạm Ngũ Lão - trạm Bến Thành - Hàm Nghi - Hồ Tùng Mậu - đường nhánh S2 - Tôn Đức Thắng - Hai Bà Trưng - Lê Duẩn - Đinh Tiên Hoàng - Nguyễn Thị Minh Khai - Xô Viết Nghệ Tĩnh - Quốc lộ 13-Quốc lộ 1A - (Trạm 2) - Quốc lộ 1A - Đường 621 - (ngã 3 đường vào khu ký túc xá) - (Ngã ba đường vào Trường ĐH Quốc tế) - (ngã 3 đường vào Trường ĐH Khoa Học Tự Nhiên) - Bến xe buýt A Khu đô thị ĐH Quốc gia TP.HCM",
-"back":"Bến xe buýt A Khu đô thị ĐH Quốc Gia TP.HCM (rẽ phải)-(Ngã 3 đường vào Trường ĐH Khoa Học Tự Nhiên)-(Ngã 3 đường vào Trường ĐH Quốc Tế)-(Ngã 3 đường vào khu ký túc xá)-Đường 621-Quốc lộ 1A-(Trạm 2)-Quốc lộ 1A-Quốc lộ 13-Đinh Bộ Lĩnh-Nguyễn Xí-Ung Văn Khiêm-D2-Điện Biên Phủ-Xô Viết Nghệ Tĩnh-Nguyễn Thị Minh Khai-Đinh Tiên Hoàng-Lê Duẩn-Hai Bà Trưng-Tôn Đức Thắng-Hàm Nghi-trạm Bến Thành - Trần Hưng Đạo - Phạm Ngũ lão - Bến Công viên 23/9",
-
-"locS":[{"lat":10.768613, "lng":106.690303}, {"lat":10.771596, "lng":106.697706}, {"lat":10.769857, "lng":106.696306}, {"lat":10.769303, "lng":106.696376}, {"lat":10.770479, "lng":106.698173}, {"lat":10.770914, "lng":106.699721}, {"lat":10.770621, "lng":106.704541}, {"lat":10.771419, "lng":106.706319}, {"lat":10.775749, "lng":106.706005}, {"lat":10.781693, "lng":106.699769}, {"lat":10.785653, "lng":106.702593}, {"lat":10.786986, "lng":106.701979}, {"lat":10.802660, "lng":106.711385}, {"lat":10.826264, "lng":106.714414}, {"lat":10.866398, "lng":106.726546}, {"lat":10.875518, "lng":106.757214}, {"lat":10.866219, "lng":106.792287}, {"lat":10.863580, "lng":106.797303}, {"lat":10.870065, "lng":106.806422}, {"lat":10.873593, "lng":106.801761}],
-
-"locB":[{"lat":10.873593, "lng":106.801761}, {"lat":10.871140, "lng":106.807103}, {"lat":10.867291, "lng":106.787319}, {"lat":10.872378, "lng":106.768088}, {"lat":10.868247, "lng":106.729534}, {"lat":10.862199, "lng":106.724778}, {"lat":10.816667, "lng":106.711316}, {"lat":10.813701, "lng":106.709744}, {"lat":10.812131, "lng":106.710592}, {"lat":10.807554, "lng":106.716366}, {"lat":10.801023, "lng":106.715146}, {"lat":10.801547, "lng":106.712711}, {"lat":10.800011, "lng":106.711179}, {"lat":10.786721, "lng":106.701732}, {"lat":10.785394, "lng":106.702816}, {"lat":10.784582, "lng":106.702526}, {"lat":10.781315, "lng":106.69978}, {"lat":10.773969, "lng":106.706528}, {"lat":10.770870, "lng":106.705713}, {"lat":10.771086, "lng":106.698106}, {"lat":10.767286, "lng":106.689888}
-],
-
-"info":"Loại hình hoạt động: Buýt có trợ giá <br/> Cự ly: 27,5 km <br/>Số chuyến: <br/> Thứ 2 - thứ 7: 247 chuyến/ngày<br/>Chủ nhật: 250 chuyến/ngày<br/>Thời gian chuyến: 70 phút <br/> Giãn cách: 5 - 20 phút/ chuyến<br/>Thời gian hoạt động: <br/>Chuyến đầu tiên xuất bến: 05h00 <br/> Chuyến cuối cùng xuất bến: 20h00 <br/>Loại xe: 80 chỗ <br/>Liên hiệp HTX Vận tải TP.HCM, ĐT: 39.716.720"},
+"start":"Công trường Quách Thị Trang (trạm điều hành Sài Gòn) - Hàm Nghi - Hồ Tùng Mậu - đường nhánh S2 - Tôn Đức Thắng - Hai Bà Trưng - Lê Duẩn - Đinh Tiên Hoàng - Nguyễn Thị Minh Khai - Xô Viết Nghệ Tĩnh - Quốc lộ 13 - Quốc lộ 1A - (Trạm 2) - Quốc lộ 1A - Đường 621 - (ngã ba đường vào khu ký túc xá) - (Ngã ba đường vào Trường ĐH Quốc Tế) - (ngã ba đường vào Trường ĐH Khoa Học Tự Nhiên) - Bến xe buýt A Khu đô thị ĐH Quốc Gia TP.HCM;",
+"back":"Bến xe buýt A Khu đô thị ĐH Quốc gia TP.HCM (rẽ phải) - (Ngã ba đường vào Trường ĐH Khoa học Tự nhiên) - (Ngã ba đường vào Trường ĐH Quốc tế) - (Ngã ba đường vào khu ký túc xá) - đường 621 - Quốc lộ 1A - (Trạm 2) - Quốc lộ 1A - Quốc lộ 13 - Đinh Bộ Lĩnh - Nguyễn Xí - Ung Văn Khiêm - D2 - Điện Biên Phủ - Xô Viết Nghệ Tĩnh - Nguyễn Thị Minh Khai - Đinh Tiên Hoàng - Lê Duẩn - Hai Bà Trưng - Tôn Đức Thắng - Hàm Nghi - Công trường Quách Thị Trang (trạm điều hành Sài Gòn)",
+"info":"Loại hình hoạt động: Buýt có trợ giá <br/> Cự ly: 26,05 km <br/>Số chuyến: <br/> Thứ 2 - thứ 7: 247 chuyến/ngày<br/>Chủ nhật: 250 chuyến/ngày<br/>Thời gian chuyến: 70 phút <br/> Giãn cách: 5 - 20 phút/ chuyến<br/>Thời gian hoạt động: <br/>Chuyến đầu tiên xuất bến: 05h00 <br/> Chuyến cuối cùng xuất bến: 20h00 <br/>Loại xe: 80 chỗ"},
 
 {"num":"20","name":"Bến Thành - Nhà Bè",
-"start":"công viên 23/9 - Lê Lai - (Vòng xoay) - Trần Hưng Đạo - Phạm Ngũ Lão - Yersin - Trần Hưng Đạo - Trạm Bến Thành (57 Phạm Ngũ Lão) - Hàm Nghi - Tôn Đức Thắng - cầu Khánh Hội - Nguyễn Tất Thành - cầu Tân Thuận 2 - đường vòng chân cầu - Trần Xuân Soạn (chợ Tân Thuận) - Huỳnh Tấn Phát - Bến Mũi Nhà Bè",
-"back":"Bến Mũi Nhà Bè - Huỳnh Tấn Phát - cầu Tân Thuận 1 - Nguyễn Tất Thành - Cầu Khánh Hội - Tôn Đức Thắng - Nguyễn Huệ - Hải Triều - Hàm Nghi - Trạm Bến Thành - Trần Hưng Đạo - Phạm Ngũ Lão - công viên 23/9",
-
-"locS":[{"lat":10.768613, "lng":106.690303},{"lat":10.771596, "lng":106.697706},{"lat":10.769857, "lng":106.696306},{"lat":10.769303, "lng":106.696376},{"lat":10.770479, "lng":106.698173},{"lat":10.770914, "lng":106.699721},{"lat":10.765201, "lng":106.707102},{"lat":10.757177, "lng":106.717595},{"lat":10.753807, "lng":106.720725},{"lat":10.755762, "lng":106.722061},{"lat":10.752047, "lng":106.728528},{"lat":10.673602, "lng":106.766003}],
-
-"locB":[{"lat":10.673602, "lng":106.766003},{"lat":10.754598, "lng":106.727359},{"lat":10.757770, "lng":106.716555},{"lat":10.771514, "lng":106.706341},{"lat":10.772289, "lng":106.70552},{"lat":10.772107, "lng":106.705313},{"lat":10.770937, "lng":106.703683},{"lat":10.771113, "lng":106.699402},{"lat":10.771090, "lng":106.698122},{"lat":10.767271, "lng":106.689861}],
-
-
+"start":"Bãi xe buýt công viên 23/9 - Lê Lai - (Vòng xoay) - Trần Hưng Đạo - Phạm Ngũ Lão - Yersin - Trần Hưng Đạo - Trạm Bến Thành (57 Phạm Ngũ Lão) - Hàm Nghi - Tôn Đức Thắng - cầu Khánh Hội - Nguyễn Tất Thành - cầu Tân Thuận 2 - đường vòng chân cầu - Trần Xuân Soạn (chợ Tân Thuận) - Huỳnh Tấn Phát - Bến Mũi Nhà Bè",
+"back":"Bến Mũi Nhà Bè - Huỳnh Tấn Phát - cầu Tân Thuận 1 - Nguyễn Tất Thành - Cầu Khánh Hội - Tôn Đức Thắng - Nguyễn Huệ - Hải Triều - Hàm Nghi - Trạm Bến Thành - Trần Hưng Đạo - Phạm Ngũ Lão - Bãi xe buýt công viên 23/9",
 "info":"Loại hình hoạt động: Buýt có trợ giá <br/> Cự ly: 17,3 km <br/>Số chuyến: 328 chuyến/ngày<br/>Thời gian chuyến: 50 phút<br/>Giãn cách: 4 - 20 phút/ chuyến<br/>Thời gian hoạt động: <br/>Bến Thành: 04h20 - 20h40 <br/> Nhà Bè: 04h20 - 20h00 <br/> Loại xe: 80 chỗ"},
 
 {"num":"22","name":"BX Quận 8 - KCN Lê Minh Xuân",
@@ -219,11 +181,6 @@
 {"num":"35","name":"Tuyến xe buýt Quận 1",
 "start":"Công viên 23/9 - Lê Lai - Tôn Thất Tùng - Bùi Thị Xuân - Cống Quỳnh - Nguyễn Thị Minh Khai - Nguyễn Văn Cừ - Trần Hưng Đạo - Trạm Bến Thành - Hàm Nghi - Hồ Tùng Mậu - đường nhánh S2 - Tôn Đức Thắng - Hai Bà Trưng - Nguyễn Du - Công xã Paris - Lê Duẩn - Đinh Tiên Hoàng - Nguyễn Thị Minh Khai - Phùng Khắc Khoan - Điện Biên Phủ - Nguyễn Bỉnh Khiêm - Nguyễn Đình Chiểu - Bến xe buýt đường Hoàng Sa",
 "back":"Bến xe buýt đường Hoàng Sa - Nguyễn Đình Chiểu - Hai Bà Trưng - Nguyễn Thị Minh Khai - Đinh Tiên Hoàng - Lê Duẩn - Công xã Paris - Đồng Khởi - Lý Tự Trọng - Hai Bà Trưng - Tôn Đức Thắng - Hàm Nghi - Trạm Bến Thành - Phạm Ngũ Lão - Trần Hưng Đạo - Nguyễn Văn Cừ - Phạm Viết Chánh - Bùi Thị Xuân - Tôn Thất Tùng - Pham Ngũ Lão - Công viên 23/9",
-
-"locS":[{"lat":10.768613, "lng":106.690303},{"lat":10.768919, "lng":106.68952},{"lat":10.769825, "lng":106.688468},{"lat":10.767696, "lng":106.686087},{"lat":10.766516, "lng":106.68268},{"lat":10.764381, "lng":106.682085},{"lat":10.757014, "lng":106.685759},{"lat":10.771095, "lng":106.698119},{"lat":10.770926, "lng":106.699707},{"lat":10.770541, "lng":106.704588},{"lat":10.773804, "lng":106.706536},{"lat":10.776486, "lng":106.705173},{"lat":10.780001, "lng":106.700898},{"lat":10.779268, "lng":106.699889},{"lat":10.780517, "lng":106.698687},{"lat":10.785281, "lng":106.702963},{"lat":10.786261, "lng":106.701225},{"lat":10.784174, "lng":106.69836},{"lat":10.787673, "lng":106.694884},{"lat":10.792110, "lng":106.699744},{"lat":10.790603, "lng":106.701611},{"lat":10.792361, "lng":106.703327}],
-
-"locB":[{"lat":10.792361, "lng":106.703327},{"lat":10.784704, "lng":106.695962},{"lat":10.782889, "lng":106.698003},{"lat":10.782926, "lng":106.69811},{"lat":10.786525, "lng":106.701645},{"lat":10.785076, "lng":106.702986},{"lat":10.780051, "lng":106.698357},{"lat":10.778752, "lng":106.70013},{"lat":10.777991, "lng":106.701045},{"lat":10.779150, "lng":106.702206},{"lat":10.775756, "lng":106.706001},{"lat":10.774428, "lng":106.706556},{"lat":10.770848, "lng":106.705873},{"lat":10.771111, "lng":106.698129},{"lat":10.769482, "lng":106.696686},{"lat":10.756687, "lng":106.685067},{"lat":10.765809, "lng":106.682288},{"lat":10.767769, "lng":106.686429},{"lat":10.769814, "lng":106.688725},{"lat":10.767284, "lng":106.689938}],
-
 "info":"Loại hình hoạt động: Buýt có trợ giá <br/> - Cự ly: 10,2 km <br/> - Thời gian hoạt động trong ngày: <br/> Chuyến đầu tiên xuất bến: 06 giờ 00 phút <br/> Chuyến cuối cùng xuất bến 20 giờ 00 phút <br/> - Thời gian hành trình: 40 - 50 phút/chuyến <br/> - Thời gian giãn cách: 8 - 15 phút/ngày <br/> - Loại xe: Bahai 40 chỗ (có máy lạnh). <br/> - Tổng số chuyến xe hoạt động trong ngày: 150 chuyến/ngày"},
 
 {"num":"36","name":"Bến Thành - Thới An",
@@ -292,35 +249,10 @@
 "back":"Công viên phần mềm Quang Trung - Tô Ký - Nguyễn Ảnh Thủ - Phan Văn Hớn - Phan Văn Đối - Hương lộ 80 - Nguyễn Thị Tú - Lê Trọng Tấn - Tân Kỳ Tân Quý - Trường Chinh - Lý Thường Kiệt - Siêu thị CMC (Tân Bình)",
 "info":" Buýt có trợ giá <br/> Cự ly: 21,75 km <br/> Số chuyến: 210 chuyến/ngày <br/> Thời gian chuyến: 70 phút <br/> Giãn cách: 8 - 14 phút/chuyến <br/> Thời gian hoạt động: <br/> Siêu thị CMC: 04h45 - 19h30 <br/> CVPM Quang Trung: 04h30 - 19h15 <br/> Loại xe: 40 chỗ"}, 
 
-{"num":"50","name":"ĐH Bách khoa - Bến Thành - ĐH Quốc gia",
-"start":"ĐH Bách Khoa - Lý Thường Kiệt - Hồng Bàng - An Dương Vương - Nguyễn Văn Cừ - Nguyễn Trãi - Nguyễn Cư Trinh – Trần Hưng Đạo - trạm Bến Thành - Lê Lợi - Pasteur - Lê Duẩn - Đinh Tiên Hoàng - Điện Biên Phủ - Xa lộ Hà Nội - Quốc lộ 52 - Quốc lộ 1A - Đường 621 - (ngã ba đường vào khu ký túc xá) - (ngã ba đường vào Trường ĐH Quốc tế) - (ngã ba đường vào Trường ĐH Khoa Học Tự Nhiên) - Bến xe buýt A Khu đô thị ĐH Quốc gia TP.HCM",
-
-"back":"Bến xe buýt A Khu đô thị ĐH Quốc gia TP.HCM (rẽ phải) - (ngã ba đường vào Trường ĐH Khoa Học Tự Nhiên) - (ngã ba đường vào Trường ĐH Quốc tế) - (ngã ba đường vào khu ký túc xá) - Đường 621 - Quốc lộ 1A - Quốc lộ 52 - Xa lộ Hà Nội - Điện Biên Phủ - Nguyễn Bỉnh Khiêm - Nguyễn Thị Minh Khai - Đinh Tiên Hoàng - Lê Duẩn - Nam Kỳ Khởi Nghĩa - Hàm Nghi - trạm Bến Thành - Phạm Ngũ Lão - Nguyễn Trãi - Nguyễn Văn Cừ - An Dương Vương - Nguyễn Tri Phương - Hùng Vương - Hồng Bàng - Lý Thường Kiệt - ĐH Bách Khoa",
-
-"locS":[{"lat":10.771200, "lng":106.657945},{"lat":10.755226, "lng":106.662526},{"lat":10.760976, "lng":106.68342},{"lat":10.762378, "lng":106.686542},{"lat":10.765540, "lng":106.693269},{"lat":10.772138, "lng":106.699143},{"lat":10.775020, "lng":106.700704},{"lat":10.777055, "lng":106.699647},{"lat":10.779368, "lng":106.697577},{"lat":10.785623, "lng":106.702619},{"lat":10.790513, "lng":106.697654},{"lat":10.801221, "lng":106.713222},{"lat":10.800905, "lng":106.738875},{"lat":10.844880, "lng":106.771372},{"lat":10.867239, "lng":106.803454},{"lat":10.873582, "lng":106.801845}],
-
-"locB":[
-{"lat":10.873582, "lng":106.801845},
-{"lat":10.867774, "lng":106.803915},{"lat":10.864155, "lng":106.798055},{"lat":10.860546, "lng":106.791958},{"lat":10.850120, "lng":106.774824},
-{"lat":10.844229, "lng":106.770725},
-{"lat":10.802038, "lng":106.743468},
-{"lat":10.800081, "lng":106.706922},
-{"lat":10.792000, "lng":106.699819},
-{"lat":10.788607, "lng":106.703531},
-{"lat":10.786575, "lng":106.701587},
-{"lat":10.785176, "lng":106.703081},
-{"lat":10.778167, "lng":106.696456},
-{"lat":10.771053, "lng":106.701093},
-{"lat":10.771870, "lng":106.698355},
-{"lat":10.766768, "lng":106.688479},
-{"lat":10.759421, "lng":106.684016},
-{"lat":10.761182, "lng":106.683361},
-{"lat":10.756676, "lng":106.669548},
-{"lat":10.757645, "lng":106.669419},
-{"lat":10.755395, "lng":106.662386},
-{"lat":10.771200, "lng":106.657945}],
-
-"info":" Buýt có trợ giá <br/> Cự ly: 29,95 km <br/> Hoạt động từ thứ 2 đến thứ 7 hàng tuần <br/> Số chuyến: 78 chuyến/ngày <br/> Thời gian chuyến: 75 - 80 phút <br/> Thời gian hoạt động: Từ thứ 2 đến thứ 7 <br/>+ĐH Bách khoa: 05h40 - 16h30 <br/> + ĐH Quốc gia:    06h00 - 16h52  <br/> Loại xe: 80 "}, 
+{"num":"50","name":"Đại học Bách khoa - Đại học Quốc gia",
+"start":"ĐH Bách Khoa - Lý Thường Kiệt - Hồng Bàng - An Dương Vương - truong Đại Học Khoa Học Tự Nhiên - Nguyễn Văn Cừ - Nguyễn Trãi - Lê Lai - Trạm Bến Thành - Lê Lợi - Pasteur - Lê Duẩn - Đinh Tiên Hoàng - Điện Biên Phủ - Xa lộ Hà Nội - Quốc lộ 52 - Quốc lộ 1A - đường 621 - (Ngã ba đường vào khu ký túc xá) - (Ngã ba đường vào Trường ĐH Quốc Tế) - (Ngã ba đường vào Trường ĐH Khoa học Tự nhiên) - Bến xe buýt A Khu đô thị ĐH Quốc gia TP.HCM;",
+"back":"Bến xe buýt A Khu đô thị ĐH Quốc gia TP.HCM (rẽ phải) - (Ngã ba đường vào Trường ĐH Khoa học Tự nhiên) - (Ngã ba đường vào Trường ĐH Quốc tế) - (Ngã ba đường vào khu ký túc xá) - đường 621 - Quốc lộ 1A - Quốc lộ 52 - Xa lộ Hà Nội - Điện Biên Phủ - Nguyễn Bỉnh Khiêm - Nguyễn Thị Minh Khai - Đinh Tiên Hoàng - Lê Duẩn - Nam Kỳ Khởi Nghĩa - Hàm Nghi - Trạm Bến Thành - Phạm Ngũ Lão - Nguyễn Trãi - Nguyễn Văn Cừ - truong Đại Học Khoa Học Tự Nhiên - An Dương Vương - Nguyễn Tri Phương - Hùng Vương - Hồng Bàng - Lý Thường Kiệt - ĐH Bách Khoa",
+"info":" Buýt có trợ giá <br/> Cự ly: 29,95 km <br/> Hoạt động từ thứ 2 đến thứ 7 hàng tuần <br/> Số chuyến: 78 chuyến/ngày <br/> Thời gian chuyến: 75 - 80 phút <br/> Thời gian hoạt động: Từ thứ 2 đến thứ 7 <br/>+ĐH Bách khoa: 05h15 - 17h00 <br/> +ĐH Khoa học Tự Nhiên: 06h00 - 17h50 <br/> Giãn cách: 12 - 30 phút/chuyến <br/> Loại xe: 80 "}, 
 
 {"num":"51","name":"Bến xe Miền Đông - Bình Hưng Hòa",
 "start":"Bến xe Miền Đông - Đinh Bộ Lĩnh - Bạch Đằng - Phan Đăng Lưu - Hoàng Văn Thụ - Phan Đình Giót - Phan Thúc Duyện - Trần Quốc Hoàn - Hoàng Văn Thụ - Xuân Diệu - Xuân Hồng - Trường Chinh - Đồng Đen - Bàu Cát - Nguyễn Hồng Đào - chợ Bàu Cát - Bàu Cát 4 - Trương Công Định - Âu Cơ - Nguyễn Văn Săng - Tân Sơn Nhì - Hẻm 26 - Tân Kỳ Tân Qúy - Đầu bến Chợ Bình Hưng Hòa;",
@@ -342,7 +274,7 @@
 "back":"Ga Chợ Lớn – Lê Quang Sung – Phạm Đình Hổ - Tháp Mười – Phú Hữu – Nguyễn Trãi – Trần Phú – Lê Hồng Phong – Điện Biên Phủ - Hai Bà Trưng - Trần Quang Khải – cầu Hoàng Hoa Thám – Đường số 1 – Phan Xích Long – Phan Đăng Lưu - Nơ Trang Long – Nguyễn Huy Lượng - Lê Quang Định - Bạch Đằng - Xô Viết Nghệ Tĩnh  – Quốc lộ 13  - Đinh Bộ Lĩnh – Bến xe Miền Đông",
 "info":" Buýt có trợ giá <br/> Cự ly: 16,86 km <br/> Số chuyến: 200 chuyến/ngày <br/> Thời gian chuyến: 50 - 55 phút <br/> Giãn cách: 8 - 15 phút/chuyến <br/> Thời gian hoạt động: 04h00 - 20h00 <br/> Loại xe: 80 chỗ"}, 
 
-{"num":"55","name":"CVPM Quang Trung - Khu Công nghệ cao (Q9)",
+{"num":"55","name":"CV phần mềm Quang Trung - Khu Công nghệ cao (Q9)",
 "start":"Công viên Phần mềm Quang Trung - Tô Ký - (quay đầu ngã ba Tân Chánh Hiệp 21 - Tô Ký) - Quang Trung - Nguyễn Kiệm - Hoàng Minh Giám - Đào Duy Anh - Hồ Văn Huê - Hoàng Văn Thụ - Phan Đăng Lưu - Bạch Đằng - Xô Viết Nghệ Tĩnh - Điện Biên Phủ - Xa lộ Hà Nội - Quốc lộ 52 - Lê Văn Việt - Khu Công nghệ cao (Quận 9)",
 "back":"Khu Công nghệ cao (Q.9) - Lê Văn Việt - Quốc lộ 52 - Xa lộ Hà Nội - Điện Biên Phủ - Xô Viết Nghệ Tĩnh - Bạch Đằng - Phan Đăng Lưu - Nguyễn Kiệm - Nguyễn Thái Sơn - Phạm Ngũ Lão (Q.Gò Vấp) - Quang Trung - Tô Ký - CVPM Quang Trung",
 "info":" Buýt có trợ giá <br/> Cự ly: 29,8 <br/> Số chuyến: <br/> +Thứ 2 - thứ 6: 236 chuyến/ngày <br/> +Thứ 7: 190 chuyến/ngày <br/> +Chủ nhật: 146 chuyến/ngày <br/> Thời gian chuyến: 70 - 80 phút <br/> Giãn cách: 4 - 15 phút/chuyến <br/> Thời gian hoạt động: <br/> + Chuyến đầu tiên xuất bến: 05h00 <br/> + Chuyến cuối cùng xuất bến 19h00 <br/> Loại xe: 80 "}, 
@@ -393,8 +325,8 @@
 "info":"Buýt có trợ giá<br/> Cự ly: 17,1 km<br/> Số chuyến: 114 chuyến/ngày<br/> Thời gian chuyến: 50 - 60 phút<br/> Giãn cách: 12 - 15 phút/chuyến<br/> Thời gian hoạt động: 05h30 - 18h00<br/> Loại xe: 55 chỗ"},
 
 {"num":"65","name":"Bến Thành - CMT8 - Bến xe An Sương",
-"start":"Công viên 23/9 - Lê Lai - Trần Hưng Đạo - Phạm Ngũ lão - Yersin - Trần Hưng Đạo - trạm Bến Thành - Lê Lai - Phạm Hồng Thái - Cách Mạng Tháng Tám - Hoàng Văn Thụ - Xuân Diệu - Xuân Hồng - Trường Chinh - Quốc lộ 22 - Ngã 3 Công ty Việt Hưng (quay đầu) - Quốc lộ 22 - Bến xe An Sương",
-"back":"Bến xe An Sương - Quốc lộ 22 - Trường Chinh - Cách Mạng Tháng Tám - Nguyễn Thị Nghĩa - Lê Lai - Trạm Bến Thành - Trần Hưng Đạo - Phạm Ngũ Lão - Công viên 23/9",
+"start":"Bến Công viên 23/9 - Lê Lai - Trần Hưng Đạo - Phạm Ngũ lão - Yersin - Trần Hưng Đạo - trạm Bến Thành - Lê Lai - Phạm Hồng Thái - Cách Mạng Tháng Tám - Hoàng Văn Thụ - Xuân Diệu - Xuân Hồng - Trường Chinh - Quốc lộ 22 - Ngã 3 Công ty Việt Hưng (quay đầu) - Quốc lộ 22 - Bến xe An Sương",
+"back":"Bến xe An Sương - Quốc lộ 22 - Trường Chinh - Cách Mạng Tháng Tám - Nguyễn Thị Nghĩa - Lê Lai - Trạm Bến Thành - Trần Hưng Đạo - Phạm Ngũ Lão - Bến Công viên 23/9",
 "info":"Buýt có trợ giá<br/> Cự ly: 16,3 km<br/> Số chuyến: 226 chuyến/ngày<br/> Thời gian chuyến: 50 phút<br/> Giãn cách: 6 - 15 phút/chuyến<br/> Thời gian hoạt động: <br/> + Bến Thành: 04h50 - 20h00 <br/> + BX An Sương: 04h30 - 20h00<br/> Loại xe: 80 chỗ"},
 
 

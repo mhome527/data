@@ -1,6 +1,14 @@
 {
     "list":[
         {
+            "name":"Công viên 23/9",
+            "key":"cong vien 23/9"
+        },
+        {
+            "name":"Công viên 23/9",
+            "key":"cv 23/9"
+        },
+		{
             "name":"trường cao đẳng Điện Lực",
             "key":"truong cao dang dien luc"
         },
@@ -711,6 +719,10 @@
         {
             "name":"Chợ Hiệp Thành",
             "key":"cho hiep thanh"
+        },
+        {
+            "name":"Hiệp Thành 13",
+            "key":"hiep thanh 13"
         },
         {
             "name":"Hồ Tùng Mậu",

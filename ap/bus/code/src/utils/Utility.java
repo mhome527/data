@@ -1,5 +1,10 @@
 package app.infobus.utils;
 
+import java.io.File;
+import java.util.ArrayList;
+
+import com.google.android.gms.maps.model.LatLng;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -7,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 import android.provider.Settings;
 import android.view.Gravity;
 import android.widget.LinearLayout;
@@ -81,22 +87,6 @@ public class Utility {
 		return dialog;
 	}
 
-	// check Internet conenction.
-	public  boolean checkInternetConenction(Context context) {
-		ConnectivityManager check = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (check != null) {
-			NetworkInfo[] info = check.getAllNetworkInfo();
-			if (info != null)
-				for (int i = 0; i < info.length; i++)
-					if (info[i].getState() == NetworkInfo.State.CONNECTED) {
-						return true;
-					}
-		} else {
-			// "not conencted to internet"
-			return false;
-		}
-		return false;
-	}
 
 	// Check if Internet Network is active
 	public static boolean checkNetwork(Activity activity) {
@@ -113,5 +103,22 @@ public class Utility {
 					mobileDataAvailable = true;
 		}
 		return wifiDataAvailable || mobileDataAvailable;
+	}
+	
+	public static boolean createDirIfNotExists(String path) {
+		boolean ret = true;
+
+		File file = new File(path);
+		if (!file.exists()) {
+			if (!file.mkdirs()) {
+				ULog.e("Common", "Problem creating Image folder");
+				ret = false;
+			}
+		}
+		return ret;
+	}
+	
+	public static void logPoint(ArrayList<LatLng> directionPoint, String number, boolean start ){
+		
 	}
 }

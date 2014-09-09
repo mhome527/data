@@ -50,14 +50,31 @@
             android:text="TextView dsaf das fasdf asdf asdf asdfsdaf sdf sdfa sdf f sdafasdf sdf sfa fdg sdfg dfgsd sdf sdaf sffsd 435 34"
             android:textSize="14dp" />
 
-         <ImageButton
-            android:id="@+id/imgMap"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="5dp"
-            android:background="@drawable/map"
-            android:paddingTop="10dp" /> 
+        <LinearLayout
+            android:id="@+id/llMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/imgMap"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:background="@drawable/map"
+                android:paddingTop="10dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Bản đồ"
+                android:textSize="14dp" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

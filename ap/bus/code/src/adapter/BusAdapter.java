@@ -15,6 +15,7 @@ import android.widget.SectionIndexer;
 import android.widget.TextView;
 import app.infobus.InfoDetailActivity;
 import app.infobus.MapBus;
+import app.infobus.MapBus_bk;
 import app.infobus.R;
 import app.infobus.entity.clsPathBus;
 import app.infobus.utils.ULog;
@@ -55,7 +56,9 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 		String str;
 		TextView tv;
 		LinearLayout llDetail;
-		ImageButton imgMap;
+//		ImageButton imgMap;
+		LinearLayout imgMap;
+
 		if (convertView == null) {
 			LayoutInflater inflater = activity.getLayoutInflater();
 			convertView = inflater.inflate(R.layout.list_num, null, true);
@@ -69,15 +72,15 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 		str = Utility.ArrToString(clsBus.getPathStart());
 		tv.setText(str);
 
-		imgMap = (ImageButton) convertView.findViewById(R.id.imgMap);
+		imgMap = (LinearLayout) convertView.findViewById(R.id.llMap);
 
 		if (clsBus.locS != null && clsBus.locS.size() > 0) {
 			imgMap.setVisibility(View.VISIBLE);
 		} else {
 			imgMap.setVisibility(View.GONE);
 		}
-
-		imgMap = (ImageButton) convertView.findViewById(R.id.imgMap);
+//
+//		imgMap = (ImageButton) convertView.findViewById(R.id.imgMap);
 		imgMap.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -89,6 +92,7 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 					Utility.dialogWifi(activity);
 				} else {
 					Intent intent = new Intent(activity, MapBus.class);
+//					Intent intent = new Intent(activity, MapBus_bk.class);
 					intent.putExtra("num", position);
 					activity.startActivity(intent);
 				}
