@@ -1,22 +1,33 @@
 package app.infobus.utils;
 
+//import java.io.BufferedReader;
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
+//import java.io.FileOutputStream;
+//import java.io.InputStreamReader;
+//import java.io.OutputStreamWriter;
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.maps.model.LatLng;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Environment;
 import android.provider.Settings;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import app.infobus.MyApplication;
 import app.infobus.R;
 
 public class Utility {
@@ -87,6 +98,40 @@ public class Utility {
 		return dialog;
 	}
 
+	public static AlertDialog dialogCallConfirm(Activity activity, String title, DialogInterface.OnClickListener lisOk,
+			DialogInterface.OnClickListener lisCancel) {
+		// 1. Instantiate an AlertDialog.Builder with its constructor
+		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+		// create layout for dialog
+		LinearLayout layout = new LinearLayout(activity);
+		LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+				LinearLayout.LayoutParams.WRAP_CONTENT);
+		layout.setOrientation(LinearLayout.VERTICAL);
+		layout.setLayoutParams(parms);
+		layout.setGravity(Gravity.CLIP_VERTICAL);
+		layout.setPadding(2, 2, 2, 2);
+
+		TextView tv = new TextView(activity);
+		tv.setText(String.format(activity.getString(R.string.confirm_call_tx), title));
+		tv.setPadding(10, 30, 10, 30);
+		tv.setGravity(Gravity.CENTER);
+		tv.setTextSize(16);
+
+		// create layout for textview
+		LinearLayout.LayoutParams tvParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+				LinearLayout.LayoutParams.WRAP_CONTENT);
+		layout.addView(tv, tvParams);
+
+		builder.setView(layout);
+		builder.setPositiveButton(activity.getString(R.string.cancel), lisCancel);
+
+		builder.setNegativeButton(activity.getString(R.string.call), lisOk);
+
+		AlertDialog dialog = builder.create();
+		dialog.show();
+		return dialog;
+	}
 
 	// Check if Internet Network is active
 	public static boolean checkNetwork(Activity activity) {
@@ -104,7 +149,7 @@ public class Utility {
 		}
 		return wifiDataAvailable || mobileDataAvailable;
 	}
-	
+
 	public static boolean createDirIfNotExists(String path) {
 		boolean ret = true;
 
@@ -117,8 +162,180 @@ public class Utility {
 		}
 		return ret;
 	}
-	
-	public static void logPoint(ArrayList<LatLng> directionPoint, String number, boolean start ){
-		
+
+	public static void logPoint(ArrayList<LatLng> directionPoint, String number, boolean start) {
+
 	}
+
+	/**
+	 * set event tracking
+	 * 
+	 * @param category
+	 *            : The event category
+	 * @param label
+	 *            : The event label
+	 */
+	public static void setEventGA(String action, String label) {
+		try {			
+			MyApplication mInstance = MyApplication.getInstance();
+			Tracker tracker = mInstance.getTrackerApp();
+			tracker.send(new HitBuilders.EventBuilder().setCategory("BUS").setAction(action).setLabel(label).build());
+			// if (BuildConfig.DEBUG) {
+			// String tmp = category + "-" + action + "-" + label;
+			// count = PreferenceUtil.getInt(MyApplication.getInstance(), tmp);
+			// ULog.i("Common", "setEventGA " + tmp + ": " + count);
+			// PreferenceUtil.setInt(MyApplication.getInstance(), tmp, ++count);
+			// writeGAToSDFile(ConstanstKey.LOG_EVENT_FILE, getCurrentDate() + "\n ==>  " + tmp +"   click: " + count);
+			// }
+		} catch (Exception e) {
+			ULog.e("Common", "setEventGA Error:" + e.getMessage());
+		}
+	}
+
+	public static void setScreenNameGA(String name) {
+		// int count;
+		try {
+			MyApplication mInstance = MyApplication.getInstance();
+			Tracker tracker = mInstance.getTrackerApp();
+			tracker.set(Fields.SCREEN_NAME, name);
+			tracker.send(MapBuilder.createAppView().build());
+			// if (BuildConfig.DEBUG) {
+			// count = PreferenceUtil.getInt(MyApplication.getInstance(), name);
+			// ULog.e("Common", "setScreenNameGA " + name + ": " + count);
+			// PreferenceUtil.setInt(MyApplication.getInstance(), name, ++count);
+			// Utils.LogI("Common", "GA " + nameScreen + ":" + countScreen);
+			// writeGAToSDFile(ConstanstKey.LOG_SCREEN_FILE, getCurrentDate() + " ==> " + name + "    click:  " + count);
+			//
+			// }
+		} catch (Exception e) {
+			ULog.e("Common", "setScreenNameGA Error:" + e.getMessage());
+		}
+	}
+
+	public static boolean checkGps(Context context) {
+		try {
+			ULog.i("Common", "checkGPS");
+			LocationManager myLocManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+			if (myLocManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER))
+				return true;
+		} catch (Exception e) {
+			ULog.e("Common", "checkGps error:" + e.getMessage());
+		}
+		return false;
+	}
+
+	public static int getResId(String variableName, Context context, Class<?> c) {
+
+	    try {
+	        Field idField = c.getDeclaredField(variableName);
+	        return idField.getInt(idField);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return -1;
+	    } 
+	}
+	// public static void showDialogGPS(final Activity context) {
+	//
+	// final Dialog dialog = new Dialog(context);
+	// dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	// dialog.setContentView(R.layout.dialog_gps);
+	//
+	// dialog.show();
+	// dialog.setCanceledOnTouchOutside(false);
+	// // LinearLayout lnNotice = (LinearLayout)dialog.findViewById(R.id.lnNotice);
+	// TextView tvMsg = (TextView) dialog.findViewById(R.id.tvMsg);
+	// Button btnSettings = (Button) dialog.findViewById(R.id.btnSettings);
+	// Button btnCancel = (Button) dialog.findViewById(R.id.btnCancel);
+	//
+	// //
+	// // lnNotice.getLayoutParams().width = width;
+	// // lnNotice.getLayoutParams().height = height;
+	// tvMsg.setText(String.format(context.getString(R.string.msg_alert_gps),context.getString(R.string.app_name)));
+	// btnSettings.setOnClickListener(new OnClickListener() {
+	// @Override
+	// public void onClick(View arg0) {
+	// dialog.dismiss();
+	// Intent gpsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+	// context.startActivity(gpsIntent);
+	// }
+	// });
+	//
+	// btnCancel.setOnClickListener(new OnClickListener() {
+	// @Override
+	// public void onClick(View arg0) {
+	// dialog.dismiss();
+	// }
+	// });
+	//
+	// }
+
+	// public static void writeGAToSDFile(String filename, String data) {
+	// String pathfile;
+	// String aDataRow = "";
+	// String aBuffer = "";
+	//
+	// try {
+	//
+	// pathfile = android.os.Environment.getExternalStorageDirectory() +"";
+	// ULog.i("Common", "writeGAToSDFile Path file: " + pathfile);
+	// File dir = new File(pathfile, Constant.INFO_BUS);
+	// if (!dir.exists()) {
+	// dir.mkdirs();
+	// }
+	//
+	// File f = new File(dir + File.separator + filename);
+	// //read file
+	// if(f.exists()){
+	// FileInputStream fIn = new FileInputStream(f);
+	// BufferedReader myReader = new BufferedReader(
+	// new InputStreamReader(fIn));
+	//
+	// while ((aDataRow = myReader.readLine()) != null) {
+	// aBuffer += aDataRow + "\n";
+	// }
+	// myReader.close();
+	// }
+	// ////
+	//
+	// FileOutputStream fOut = new FileOutputStream(f);
+	// OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
+	// // myOutWriter.append(data);
+	// myOutWriter.write(aBuffer + data);
+	// myOutWriter.close();
+	// fOut.close();
+	// } catch (FileNotFoundException e) {
+	// e.printStackTrace();
+	// ULog.e("Common", "FileNotFoundException Error:" + e.getMessage());
+	//
+	// } catch (Exception e) {
+	// if (BuildConfig.DEBUG)
+	// e.printStackTrace();
+	// ULog.e("Common", "Exception Error:" + e.getMessage());
+	// }
+	//
+	// }
+	//
+	// public static void deleteLogGAToSDFile(String filename) {
+	// String pathfile;
+	//
+	// try {
+	//
+	// pathfile = android.os.Environment.getExternalStorageDirectory() +"";
+	// ULog.i("Common", "deleteLogGAToSDFile Path file: " + pathfile);
+	// File dir = new File(pathfile, ConstanstKey.LOG_FOLDER_NAME);
+	// if (!dir.exists()) {
+	// dir.mkdirs();
+	// }
+	//
+	// File f = new File(dir + File.separator + filename);
+	//
+	// if(f.exists()){
+	// f.delete();
+	// }
+	// } catch (Exception e) {
+	// if (BuildConfig.DEBUG)
+	// e.printStackTrace();
+	// ULog.e("Common", "Exception Error:" + e.getMessage());
+	// }
+	// }
 }

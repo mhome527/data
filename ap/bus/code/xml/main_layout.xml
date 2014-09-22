@@ -1,0 +1,86 @@
+<app.infobus.view.MainLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- This holds our menu -->
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1F1F1F"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/tvTitleCity"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/HCM"
+                android:textColor="@color/green"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/imgBack"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/button_back_selector"
+                android:contentDescription="@string/app_name" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/activity_main_menu_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000" >
+        </ListView>
+    </LinearLayout>
+
+    <!-- This holds our content -->
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_light"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <!-- This is where fragment will show up -->
+
+
+        <!--
+             <FrameLayout
+            android:id="@+id/activity_main_content_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+        -->
+        <!-- Content -->
+
+        <include layout="@layout/info_bus_layout" />
+
+        <!--
+             <View
+            android:id="@+id/viewTmp"
+            android:layout_width="40dp"
+            android:layout_height="fill_parent" android:background="@color/ALL_gray"> </View>
+        -->
+
+
+        <!-- End content -->
+
+    </RelativeLayout>
+
+</app.infobus.view.MainLayout>

@@ -1,7 +1,5 @@
 package app.infobus.entity;
 
-import java.io.Serializable;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -12,6 +10,7 @@ public class LocXY implements Parcelable  {
 	/**
 	 * 
 	 */
+	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 	@SerializedName("lat")	
 	public double lat;

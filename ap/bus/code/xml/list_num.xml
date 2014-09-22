@@ -20,18 +20,18 @@
             android:layout_margin="5dp"
             android:background="@drawable/circle"
             android:gravity="center"
-            android:text="100"
+            android:hint="@string/HCM2"
             android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tvNamePath"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="tuyen"
+            android:text="@string/HCM2"
             android:textColor="@color/white"
-            android:textSize="15dp"
+            android:textSize="17sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -46,9 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ellipsize="end"
+            android:hint="@string/app_name"
             android:maxLines="3"
-            android:text="TextView dsaf das fasdf asdf asdf asdfsdaf sdf sdfa sdf f sdafasdf sdf sfa fdg sdfg dfgsd sdf sdaf sffsd 435 34"
-            android:textSize="14dp" />
+            android:textSize="16sp" />
 
         <LinearLayout
             android:id="@+id/llMap"
@@ -63,7 +63,8 @@
                 android:layout_height="35dp"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="5dp"
-                android:background="@drawable/map"
+                android:background="@drawable/button_map_selector"
+                android:contentDescription="@string/app_name"
                 android:paddingTop="10dp"
                 android:visibility="visible" />
 
@@ -72,8 +73,8 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="3"
-                android:text="Bản đồ"
-                android:textSize="14dp" />
+                android:text="@string/map"
+                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 

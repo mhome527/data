@@ -12,8 +12,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
-import app.infobus.InfoBusActivity;
 import app.infobus.InfoDetailActivity;
+import app.infobus.MainFragment;
 import app.infobus.MapBus;
 import app.infobus.R;
 import app.infobus.entity.clsPathBus;
@@ -22,11 +22,11 @@ import app.infobus.utils.ULog;
 import app.infobus.utils.Utility;
 
 @SuppressLint("InflateParams")
-public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndexer {
+public class ListBusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndexer {
 
-	private String tag = BusAdapter.class.getSimpleName();
+	private String tag = ListBusAdapter.class.getSimpleName();
 	private ArrayList<clsPathBus> arrPathBus;
-	private InfoBusActivity activity;
+	private MainFragment activity;
 	private String[] alpha;
 	public boolean isClick = false;
 
@@ -34,7 +34,7 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 	// super(context, textViewResourceId, objects);
 	// }
 
-	public BusAdapter(InfoBusActivity activity, ArrayList<clsPathBus> arrPathBus) {
+	public ListBusAdapter(MainFragment activity, ArrayList<clsPathBus> arrPathBus) {
 		super(activity, R.layout.list_num, arrPathBus);
 		this.arrPathBus = arrPathBus;
 		this.activity = activity;
@@ -107,7 +107,7 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 						intent.putExtra(Constant.HCM, false);
 					activity.startActivity(intent);
 				}
-				ULog.i(BusAdapter.class, "map click value: " + activity.isHCM);
+				ULog.i(ListBusAdapter.class, "map click value: " + activity.isHCM);
 			}
 		});
 
@@ -133,7 +133,7 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 						intent.putExtra(Constant.HCM, false);
 					activity.startActivity(intent);
 				}
-				ULog.i(BusAdapter.class, "map2 click value: " + activity.isHCM);
+				ULog.i(ListBusAdapter.class, "map2 click value: " + activity.isHCM);
 
 			}
 		});

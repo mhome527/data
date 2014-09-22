@@ -2,10 +2,7 @@ package app.infobus.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
-
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 public class clsPolylineEntity implements Serializable {
 
@@ -16,7 +13,7 @@ public class clsPolylineEntity implements Serializable {
 	/**
 	 * 
 	 */
-	private transient ArrayList<LatLng> listPoint;
+//	private transient ArrayList<LatLng> listPoint;
 	public ArrayList<PointStreet> listPoint2;
 	public String test = "data test";
 

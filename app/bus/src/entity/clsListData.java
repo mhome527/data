@@ -17,5 +17,6 @@ public class clsListData {
 	}
 
 	public List<clsItem> list;
-
+	public String[]update_bus;
+	public String update_date;
 }

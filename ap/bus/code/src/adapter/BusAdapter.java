@@ -2,7 +2,6 @@ package app.infobus.adapter;
 
 import java.util.ArrayList;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +12,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
+import app.infobus.InfoBusActivity;
 import app.infobus.InfoDetailActivity;
 import app.infobus.MapBus;
-import app.infobus.MapBus_bk;
 import app.infobus.R;
 import app.infobus.entity.clsPathBus;
+import app.infobus.utils.Constant;
 import app.infobus.utils.ULog;
 import app.infobus.utils.Utility;
 
@@ -26,14 +26,15 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 
 	private String tag = BusAdapter.class.getSimpleName();
 	private ArrayList<clsPathBus> arrPathBus;
-	private Activity activity;
+	private InfoBusActivity activity;
 	private String[] alpha;
+	public boolean isClick = false;
 
 	// public BusAdapter(Context context, int textViewResourceId, List<clsPathBus> objects) {
 	// super(context, textViewResourceId, objects);
 	// }
 
-	public BusAdapter(Activity activity, ArrayList<clsPathBus> arrPathBus) {
+	public BusAdapter(InfoBusActivity activity, ArrayList<clsPathBus> arrPathBus) {
 		super(activity, R.layout.list_num, arrPathBus);
 		this.arrPathBus = arrPathBus;
 		this.activity = activity;
@@ -48,6 +49,7 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 			// if(arrPathBus.size() < 90 && i >20)
 			// return;
 		}
+		isClick = false;
 	}
 
 	@Override
@@ -56,8 +58,8 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 		String str;
 		TextView tv;
 		LinearLayout llDetail;
-//		ImageButton imgMap;
-		LinearLayout imgMap;
+		ImageButton imgMap;
+		LinearLayout llMap;
 
 		if (convertView == null) {
 			LayoutInflater inflater = activity.getLayoutInflater();
@@ -72,15 +74,43 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 		str = Utility.ArrToString(clsBus.getPathStart());
 		tv.setText(str);
 
-		imgMap = (LinearLayout) convertView.findViewById(R.id.llMap);
+		llMap = (LinearLayout) convertView.findViewById(R.id.llMap);
 
 		if (clsBus.locS != null && clsBus.locS.size() > 0) {
-			imgMap.setVisibility(View.VISIBLE);
+			llMap.setVisibility(View.VISIBLE);
 		} else {
-			imgMap.setVisibility(View.GONE);
+			llMap.setVisibility(View.GONE);
 		}
-//
-//		imgMap = (ImageButton) convertView.findViewById(R.id.imgMap);
+		//
+		isClick = false;
+		imgMap = (ImageButton) convertView.findViewById(R.id.imgMap);
+		llMap.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
+				// vwParentRow.setBackgroundColor(Color.YELLOW);
+				// vwParentRow.refreshDrawableState();
+				if (isClick)
+					return;
+				isClick = true;
+				if (!Utility.checkNetwork(activity)) {
+					Utility.dialogWifi(activity);
+					isClick = false;
+				} else {
+					Intent intent = new Intent(activity, MapBus.class);
+					// Intent intent = new Intent(activity, MapBus_bk.class);
+					intent.putExtra("num", position);
+					if (activity.isHCM)
+						intent.putExtra(Constant.HCM, true);
+					else
+						intent.putExtra(Constant.HCM, false);
+					activity.startActivity(intent);
+				}
+				ULog.i(BusAdapter.class, "map click value: " + activity.isHCM);
+			}
+		});
+
 		imgMap.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -88,14 +118,23 @@ public class BusAdapter extends ArrayAdapter<clsPathBus> implements SectionIndex
 				// LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
 				// vwParentRow.setBackgroundColor(Color.YELLOW);
 				// vwParentRow.refreshDrawableState();
+				if (isClick)
+					return;
+				isClick = true;
 				if (!Utility.checkNetwork(activity)) {
 					Utility.dialogWifi(activity);
+					isClick = false;
 				} else {
 					Intent intent = new Intent(activity, MapBus.class);
-//					Intent intent = new Intent(activity, MapBus_bk.class);
 					intent.putExtra("num", position);
+					if (activity.isHCM)
+						intent.putExtra(Constant.HCM, true);
+					else
+						intent.putExtra(Constant.HCM, false);
 					activity.startActivity(intent);
 				}
+				ULog.i(BusAdapter.class, "map2 click value: " + activity.isHCM);
+
 			}
 		});
 

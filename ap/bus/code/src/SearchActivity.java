@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,12 +17,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.TextView;
 import app.infobus.adapter.NumAdapter;
 import app.infobus.entity.Node;
 import app.infobus.entity.clsListName;
@@ -35,12 +33,15 @@ import app.infobus.utils.Constant;
 import app.infobus.utils.ULog;
 
 @SuppressLint("DefaultLocale")
-public class SearchActivity extends AbstractActivity {
+public class SearchActivity extends BaseActivity {
 
 	public String tag = SearchActivity.class.getSimpleName();
 	private ImageView imgChange;
+	private ImageView imgHome;
+
 	private Button btnSearch;
 	private ListView listSearch;
+	private TextView tvCity;
 	private String beginPath = "Bùi Công Trừng", endPath = "Tân Hòa Đông";
 	private ArrayList<Node> arrBegin, arrEnd;
 	private ArrayList<ArrayList<Node>> listBusPath = new ArrayList<ArrayList<Node>>();
@@ -52,6 +53,9 @@ public class SearchActivity extends AbstractActivity {
 
 	private ArrayList<String> listSearched;
 	ArrayList<Node> listFound = new ArrayList<Node>();
+	private boolean isHCM = true;
+	private boolean isClick = false;
+	private ArrayList<clsPathBus> arrPathBus = null;
 
 	// public SearchActivity(){
 	//
@@ -59,26 +63,30 @@ public class SearchActivity extends AbstractActivity {
 	@Override
 	protected int getViewLayoutId() {
 		// TODO Auto-generated method stub
-		return R.layout.search_bus;
+		return R.layout.search_bus_layout;
 	}
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
-		boolean isCheck = false;
 		try {
 			imgChange = (ImageView) findViewById(R.id.imgChange);
 			edtAuto1 = (AutoCompleteTextView) findViewById(R.id.edtAuto1);
 			edtAuto2 = (AutoCompleteTextView) findViewById(R.id.edtAuto2);
 			btnSearch = (Button) findViewById(R.id.btnSearch);
 			listSearch = (ListView) findViewById(R.id.listSearch);
+			tvCity = (TextView) findViewById(R.id.tvCity);
+			imgHome = (ImageView) findViewById(R.id.imgHome);
 
 			// cty = getIntent().getStringExtra(Constant.KEY_CITY);
-			isCheck = getIntent().getBooleanExtra(Constant.KEY_CITY, true);
-			if (isCheck)
-				rbtnHcm.setChecked(true);
-			else
-				rbtnHN.setChecked(true);
+			isHCM = getIntent().getBooleanExtra(Constant.KEY_CITY, true);
 
+			if (isHCM) {
+				arrPathBus = MainFragment.arrPathBusHCM;
+				tvCity.setText(getString(R.string.HCM));
+			} else {
+				arrPathBus = MainFragment.arrPathBusHN;
+				tvCity.setText(getString(R.string.HN));
+			}
 			imgChange.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -107,33 +115,29 @@ public class SearchActivity extends AbstractActivity {
 
 					InputMethodManager inputManager = (InputMethodManager) SearchActivity.this
 							.getSystemService(Context.INPUT_METHOD_SERVICE);
-					inputManager.hideSoftInputFromWindow(SearchActivity.this
-							.getCurrentFocus().getWindowToken(),
+					inputManager.hideSoftInputFromWindow(SearchActivity.this.getCurrentFocus().getWindowToken(),
 							InputMethodManager.HIDE_NOT_ALWAYS);
 
 				}
 			});
 
-			rbtnHcm.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			imgHome.setOnClickListener(new View.OnClickListener() {
 
 				@Override
-				public void onCheckedChanged(CompoundButton buttonView,
-						boolean isChecked) {
-					ULog.i(tag, "initView ...HCM");
-					new LoadData(SearchActivity.this).execute();
+				public void onClick(View v) {
+
+					if (isClick)
+						return;
+					isClick = true;
+//					Intent i = new Intent(SearchActivity.this, InfoBusActivity.class);
+//					Intent i = new Intent(SearchActivity.this, MainFragment.class);
+//					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//					i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//					startActivity(i);
+					finish();
 				}
 			});
 
-			// rbtnHN.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			//
-			// @Override
-			// public void onCheckedChanged(CompoundButton buttonView, boolean
-			// isChecked) {
-			// LogUtil.i(tag, "initView ...HN");
-			// new LoadData(SearchActivity.this).execute();
-			// }
-			// });
-			// //test
 			new LoadData(this).execute();
 
 			// //////////////////
@@ -142,9 +146,9 @@ public class SearchActivity extends AbstractActivity {
 			// edtAuto2.setAdapter(adapter);
 
 			// ///////ad
-//			AdView adView = (AdView) this.findViewById(R.id.adView);
-//			AdRequest adRequest = new AdRequest.Builder().build();
-//			adView.loadAd(adRequest);
+			AdView adView = (AdView) this.findViewById(R.id.adView);
+			AdRequest adRequest = new AdRequest.Builder().build();
+			adView.loadAd(adRequest);
 		} catch (Exception e) {
 			ULog.e(tag, "initView ...Error:" + e.getMessage());
 			e.printStackTrace();
@@ -199,7 +203,7 @@ public class SearchActivity extends AbstractActivity {
 		} else if (checkPathBegin()) {
 			// have bus
 		} else {
-			for (int i = 0; i < InfoBusActivity.arrPathBus.size() / 2; i++) {
+			for (int i = 0; i < arrPathBus.size() / 2; i++) {
 				if (getListPath())
 					break;
 			}
@@ -258,8 +262,7 @@ public class SearchActivity extends AbstractActivity {
 		String tmp;
 		for (ArrayList<Node> arrNode : listBusPath) {
 			for (Node nodetmp : arrNode) {
-				if (nodetmp.getNum().equals(num)
-						&& !nodetmp.getBefore().equals("")) {
+				if (nodetmp.getNum().equals(num) && !nodetmp.getBefore().equals("")) {
 					// listPath.add(nodetmp.getBefore());
 					tmp = nodetmp.getBefore();
 					if (nodetmp.getCount() < 2) {
@@ -357,7 +360,7 @@ public class SearchActivity extends AbstractActivity {
 		boolean isCheckEnd = false;
 		String strTmp;
 		int count = 0;
-		for (clsPathBus pathBus : InfoBusActivity.arrPathBus) {
+		for (clsPathBus pathBus : arrPathBus) {
 			if (!isCheckAdd(pathBus.getNum())) {// kiem tra da chon bus hay chua
 				for (Node node : arrBus) {
 					bus1 = getBus(node.getNum());
@@ -396,8 +399,7 @@ public class SearchActivity extends AbstractActivity {
 
 					if (!strTmp.equals("")) {
 						count++;
-						nodeTemp = new Node(pathBus.getNum(), start,
-								node.getNum());
+						nodeTemp = new Node(pathBus.getNum(), start, node.getNum());
 						nodeTemp.setStreet(strTmp);
 						// kiem tra bus moi co cat duong bus cuoi cung hay khong
 						nodeCheck = checkPathEnd(strTmp, path2);
@@ -526,7 +528,7 @@ public class SearchActivity extends AbstractActivity {
 		String arrPath[];
 		boolean isCheck = false;
 		ArrayList<Node> arrListBus = new ArrayList<Node>();
-		for (clsPathBus pathBus : InfoBusActivity.arrPathBus) {
+		for (clsPathBus pathBus : arrPathBus) {
 			arrPath = pathBus.getPathStart();
 			for (int i = 0; i < arrPath.length; i++) {
 				if (arrPath[i].toLowerCase().equals(street.toLowerCase())) {
@@ -573,16 +575,15 @@ public class SearchActivity extends AbstractActivity {
 	}
 
 	/*
-	 * private boolean comparePath(String[] path1, String[] path2) { for (String
-	 * pathA : path1) { for (String pathB : path2) { if (pathA.equals(pathB))
-	 * return true; } }
+	 * private boolean comparePath(String[] path1, String[] path2) { for (String pathA : path1) { for (String pathB : path2) { if
+	 * (pathA.equals(pathB)) return true; } }
 	 * 
 	 * return false; }
 	 */
 
 	private clsPathBus getBus(String num) {
 
-		for (clsPathBus pathBus : InfoBusActivity.arrPathBus) {
+		for (clsPathBus pathBus : arrPathBus) {
 			if (pathBus.getNum().equals(num)) {
 				return pathBus;
 			}
@@ -590,8 +591,7 @@ public class SearchActivity extends AbstractActivity {
 		return null;
 	}
 
-	private class AutoCompleteAdapter extends ArrayAdapter<String> implements
-			Filterable {
+	private class AutoCompleteAdapter extends ArrayAdapter<String> implements Filterable {
 
 		CusFilter myFilter;
 
@@ -634,11 +634,9 @@ public class SearchActivity extends AbstractActivity {
 		}
 
 		@Override
-		protected void publishResults(CharSequence constraint,
-				FilterResults results) {
+		protected void publishResults(CharSequence constraint, FilterResults results) {
 			try {
-				if (results == null || arrFilter == null
-						|| arrFilter.size() == 0)
+				if (results == null || arrFilter == null || arrFilter.size() == 0)
 					return;
 				adapterAuto.clear();
 				ULog.i(tag, "publishResults add data size: " + arrFilter.size());
@@ -664,14 +662,10 @@ public class SearchActivity extends AbstractActivity {
 					key = entity.getKey();
 					if (constraint != null
 							&& key != null
-							&& (key.contains(constraint.toString()
-									.toLowerCase().replaceAll("á", "a")
-									.replaceAll("ậ", "a").replaceAll("à", "a")
-									.replaceAll("â", "a").replaceAll("ê", "e")
-									.replaceAll("ễ", "e").replaceAll("ể", "e")
-									.replaceAll("ô", "o").replaceAll("ý", "y")
-									.replaceAll("đ", "d").replaceAll("ị", "i")
-									.replaceAll("ý", "y").replaceAll("ư", "u")))) {
+							&& (key.contains(constraint.toString().toLowerCase().replaceAll("á", "a").replaceAll("ậ", "a")
+									.replaceAll("à", "a").replaceAll("â", "a").replaceAll("ê", "e").replaceAll("ễ", "e")
+									.replaceAll("ể", "e").replaceAll("ô", "o").replaceAll("ý", "y").replaceAll("đ", "d")
+									.replaceAll("ị", "i").replaceAll("ý", "y").replaceAll("ư", "u")))) {
 						// || constraint.toString().contains(str)) {
 						if (!checkExist(entity.getName(), arrFilter))
 							arrFilter.add(entity.getName());
@@ -721,14 +715,13 @@ public class SearchActivity extends AbstractActivity {
 		try {
 
 			AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
-			alt_bld.setMessage(str).setPositiveButton("OK",
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int id) {
-							// Action for 'Yes' Button
+			alt_bld.setMessage(str).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int id) {
+					// Action for 'Yes' Button
 
-						}
-					});
+				}
+			});
 			AlertDialog alert = alt_bld.create();
 			// Title for AlertDialog
 			alert.setTitle("Search");
@@ -766,16 +759,14 @@ public class SearchActivity extends AbstractActivity {
 		protected Boolean doInBackground(Object... params) {
 
 			try {
-				ULog.i(tag, "dataloading.....hcm:" + rbtnHcm.isChecked());
+				ULog.i(tag, "dataloading.....hcm:" + isHCM);
 
 				// arrPathBus = ReadData.getPathData(activity);
 				// clsList = Common.getNameHCM(activity);
-				if (rbtnHcm.isChecked())
-					clsList = Common.getListName(activity,
-							Constant.LIST_STREET_HCM);
+				if (isHCM)
+					clsList = Common.getListName(activity, Constant.LIST_STREET_HCM);
 				else
-					clsList = Common.getListName(activity,
-							Constant.LIST_STREET_HN);
+					clsList = Common.getListName(activity, Constant.LIST_STREET_HN);
 
 				if (clsList == null) {
 					ULog.e(tag, "dataloading Load Error");

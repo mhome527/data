@@ -13,11 +13,14 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import app.infobus.entity.LocXY;
+import app.infobus.entity.clsPathBus;
 import app.infobus.entity.clsPolylineEntity;
 import app.infobus.model.GMapV2Direction;
-import app.infobus.model.PolylineCacheStore;
+import app.infobus.utils.Constant;
 import app.infobus.utils.InternalStorage;
 import app.infobus.utils.ULog;
+import app.infobus.utils.Utility;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -51,65 +54,75 @@ public class MapBus extends FragmentActivity {
 	private boolean reloadBack = false;
 	private LatLngBounds boundXY;
 	private LatLng startL, endL;
-	private PolylineCacheStore cacheStore;
+	private boolean isHcm = true;
+	private ArrayList<clsPathBus> arrPathBus = null;
+ 
+	// private PolylineCacheStore cacheStore;
 
 	@SuppressWarnings({ "deprecation" })
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.map_bus);
+		try {
+			if (android.os.Build.VERSION.SDK_INT > 9) {
+				StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+				StrictMode.setThreadPolicy(policy);
+			}
 
-		if (android.os.Build.VERSION.SDK_INT > 9) {
-			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-			StrictMode.setThreadPolicy(policy);
+			Display display = getWindowManager().getDefaultDisplay();
+			width = display.getWidth();
+			height = display.getHeight();
+
+			progressMap = (ProgressBar) findViewById(R.id.progressMap);
+			progressMap2 = (ProgressBar) findViewById(R.id.progressMap2);
+			md = new GMapV2Direction();
+			mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+			mMap.setMyLocationEnabled(true);
+
+			// cacheStore = PolylineCacheStore.load(this, "sb");
+
+			number = getIntent().getIntExtra("num", 0);
+			isHcm = getIntent().getBooleanExtra(Constant.HCM, true);
+
+			if(isHcm)
+				arrPathBus = MainFragment.arrPathBusHCM;
+			else
+				arrPathBus = MainFragment.arrPathBusHN;
+
+			TextView tvNum = (TextView) findViewById(R.id.tvNum);
+			tvNum.setText(arrPathBus.get(number).getNum());
+
+			ULog.i(MapBus.class, "oncreate number:" + number +"; city:" + isHcm);
+			DrawStreet();
+			// testDrawStreet();
+			// draw street
+			// Handler loadMap = new Handler();
+			// loadMap.postDelayed(new Runnable() {
+			//
+			// @Override
+			// public void run() {
+			// drawStreet(number);
+			// }
+			// }, 500);
+
+			// /
+			// GA
+			if (isHcm) {
+				Utility.setScreenNameGA("MapBus Ho Chi Minh");
+				Utility.setEventGA(Constant.GA_HCM +"-Map", number + "");
+			} else {
+				Utility.setScreenNameGA("MapBus Ha Noi");
+				Utility.setEventGA(Constant.GA_HN + "-Map", number + "");
+			}
+		} catch (Exception e) {
+			ULog.e(MapBus.class, "onCreate error:" + e.getMessage());
 		}
-
-		Display display = getWindowManager().getDefaultDisplay();
-		width = display.getWidth();
-		height = display.getHeight();
-
-		progressMap = (ProgressBar) findViewById(R.id.progressMap);
-		progressMap2 = (ProgressBar) findViewById(R.id.progressMap2);
-		md = new GMapV2Direction();
-		mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-		mMap.setMyLocationEnabled(true);
-
-		cacheStore = PolylineCacheStore.load(this, "sb");
-
-		number = getIntent().getIntExtra("num", 0);
-
-		TextView tvNum = (TextView) findViewById(R.id.tvNum);
-		tvNum.setText(InfoBusActivity.arrPathBus.get(number).getNum());
-
-		DrawStreet();
-		// testDrawStreet();
 
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-	}
-
-	private void testDrawStreet() {
-		List<LocXY> listXY = new ArrayList<LocXY>();
-		mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(10.770839, 106.705722), 14));
-		listXY.add(new LocXY(10.777030, 106.705789));
-		// listXY.add(new LocXY(10.773741, 106.706486));
-		listXY.add(new LocXY(10.770839, 106.705722));
-		listXY.add(new LocXY(10.769705, 106.696914));
-		listXY.add(new LocXY(10.754545, 106.678246));
-		listXY.add(new LocXY(10.752373, 106.666144));
-		listXY.add(new LocXY(10.750873, 106.658414));
-		listXY.add(new LocXY(10.751439, 106.651902));
-		setLocationXY(listXY, true);
-		// GroundOverlayOptions newarkMap = new GroundOverlayOptions()
-		// .image(BitmapDescriptorFactory.fromResource(R.drawable.bus_green))
-		// .anchor(1, 1)
-		// .position(new LatLng(10.770839, 106.705722), 8600f, 6500f);
-		//
-		//
-		// mMap.addGroundOverlay(newarkMap);
-
 	}
 
 	private void DrawStreet() {
@@ -121,20 +134,20 @@ public class MapBus extends FragmentActivity {
 			public void run() {
 
 				// ULog.e(this, "loading....");
-				startL = new LatLng(InfoBusActivity.arrPathBus.get(number).locS.get(0).lat, InfoBusActivity.arrPathBus.get(number).locS
+				startL = new LatLng(arrPathBus.get(number).locS.get(0).lat, arrPathBus.get(number).locS
 						.get(0).lng);
-				endL = new LatLng(InfoBusActivity.arrPathBus.get(number).locB.get(0).lat, InfoBusActivity.arrPathBus.get(number).locB
+				endL = new LatLng(arrPathBus.get(number).locB.get(0).lat, arrPathBus.get(number).locB
 						.get(0).lng);
 
 				boundXY = createLatLngBoundsObject(startL, endL);
 				mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(boundXY, width, height, 150));
 
 				addMarkerStreet();
-				// new DrawStreetAsk().execute(InfoBusActivity.arrPathBus.get(number).locS, InfoBusActivity.arrPathBus.get(number).locB);
-				new DrawStreetAsk(true).execute(InfoBusActivity.arrPathBus.get(number).locS);
-				new DrawStreetAsk(false).execute(InfoBusActivity.arrPathBus.get(number).locB);
-				// setLocationXY(InfoBusActivity.arrPathBus.get(number).locS, true);
-				// setLocationXY(InfoBusActivity.arrPathBus.get(number).locB, false);
+				// new DrawStreetAsk().execute(MainFragment.arrPathBus.get(number).locS, MainFragment.arrPathBus.get(number).locB);
+				new DrawStreetAsk(true).execute(arrPathBus.get(number).locS);
+				new DrawStreetAsk(false).execute(arrPathBus.get(number).locB);
+				// setLocationXY(MainFragment.arrPathBus.get(number).locS, true);
+				// setLocationXY(MainFragment.arrPathBus.get(number).locB, false);
 			}
 		}, 500);
 
@@ -153,10 +166,12 @@ public class MapBus extends FragmentActivity {
 
 		for (int i = 0; i < locXY.size(); i++) {
 			loc = locXY.get(i);
+			// ULog.i(this, "location loc1====, {'lat':" + loc.lat + ", 'lng':" + loc.lng +"},");
+
 			if (i == 0) {
 				locTmp = loc;
 			} else {
-				 ULog.i(this, "location loc1:" + locTmp.lat + ", " + locTmp.lng + "; loc2:" + loc.lat + ", " + loc.lng);
+				// ULog.i(this, "location loc1====, {'lat':" + locTmp.lat + ", 'lng':" + locTmp.lng + "; loc2:" + loc.lat + ", " + loc.lng);
 				latX = new LatLng(locTmp.lat, locTmp.lng);
 				latY = new LatLng(loc.lat, loc.lng);
 				locTmp = loc;
@@ -209,6 +224,8 @@ public class MapBus extends FragmentActivity {
 				// for (int i = 0; i < directionPoint.size(); i++)
 				// rectLineAllBack.add(directionPoint.get(i));
 				listPointBack.addAll(directionPoint);
+				// logTemp(listPointBack, start);
+
 			}
 		} catch (Exception e) {
 			ULog.e(MapBus.class, "drawMap2 error:" + e.getMessage());
@@ -230,31 +247,40 @@ public class MapBus extends FragmentActivity {
 			clsPolylineEntity entity;
 			ArrayList<LatLng> listPointTmp;
 			try {
-//				if (start) {
-//					// read cache
-//					entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, number + "s");
-//
-//					if (entity != null) {
-//						listPointTmp = entity.getListPoint();
-//						if (listPointTmp != null && listPointTmp.size() > 0) {
-//							listPointStart = listPointTmp;
-//							ULog.i(MapBus.class, "Read cache successful (start)");
-//							return false;
-//
-//						}
-//					}
-//				} else {
-//					entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, number + "b");
-//					if (entity != null) {
-//						listPointTmp = entity.getListPoint();
-//
-//						if (listPointTmp != null && listPointTmp.size() > 0) {
-//							listPointBack = listPointTmp;
-//							ULog.i(MapBus.class, "Read cache successful (back)");
-//							return false;
-//						}
-//					}
-//				}
+				if (start) {
+					// read cache
+					if (isHcm)
+						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number)
+								.getNum() + "s");
+					else
+						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number)
+								.getNum() + "shn");
+
+					if (entity != null) {
+						listPointTmp = entity.getListPoint();
+						if (listPointTmp != null && listPointTmp.size() > 0) {
+							listPointStart = listPointTmp;
+							ULog.i(MapBus.class, "Read cache successful (start)");
+							return false;
+						}
+					}
+				} else {
+					if (isHcm)
+						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number)
+								.getNum() + "b");
+					else
+						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number)
+								.getNum() + "bhn");
+					if (entity != null) {
+						listPointTmp = entity.getListPoint();
+
+						if (listPointTmp != null && listPointTmp.size() > 0) {
+							listPointBack = listPointTmp;
+							ULog.i(MapBus.class, "Read cache successful (back)");
+							return false;
+						}
+					}
+				}
 				setLocationXY(lstLocXY[0], start);
 				// setLocationXY(lstLocXY[1], false);
 			} catch (Exception e) {
@@ -291,16 +317,21 @@ public class MapBus extends FragmentActivity {
 						ULog.i(MapBus.class, "reload street start");
 						reloadStart = false;
 						// rectLineAllStart = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
-						new ReloadStreet(true).execute(InfoBusActivity.arrPathBus.get(number).locS);
+						new ReloadStreet(true).execute(arrPathBus.get(number).locS);
 					} else {
 						if (result) {
 							clsPolylineEntity entity = new clsPolylineEntity();
 							// entity.listPoint = listPointStart;
 							entity.setListPoint(listPointStart);
 							// save cache start
-//							 InternalStorage.writeObject(MapBus.this, number + "s", entity);
+							if (isHcm)
+								InternalStorage.writeObject(MapBus.this, arrPathBus.get(number).getNum() + "s", entity);
+							else
+								InternalStorage.writeObject(MapBus.this, arrPathBus.get(number).getNum() + "shn", entity);
 							// cacheStore.putData(number + "s", entity);
 						}
+						// logTemp(listPointStart, start);
+
 					}
 				} else {
 					// ULog.i(MapBus.class, "Draw street back size: " + listPointBack.size());
@@ -311,7 +342,7 @@ public class MapBus extends FragmentActivity {
 						ULog.i(MapBus.class, "reload street back");
 						reloadBack = false;
 						// rectLineAllBack = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
-						new ReloadStreet(false).execute(InfoBusActivity.arrPathBus.get(number).locB);
+						new ReloadStreet(false).execute(arrPathBus.get(number).locB);
 					} else {
 						progressMap2.setVisibility(View.GONE);
 						if (result) {
@@ -319,9 +350,13 @@ public class MapBus extends FragmentActivity {
 							// entity.listPoint = listPointBack;
 							entity.setListPoint(listPointBack);
 							// save cache back
-//							 InternalStorage.writeObject(MapBus.this, number + "b", entity);
+							if (isHcm)
+								InternalStorage.writeObject(MapBus.this, arrPathBus.get(number).getNum() + "b", entity);
+							else
+								InternalStorage.writeObject(MapBus.this, arrPathBus.get(number).getNum() + "bhn", entity);
 							// cacheStore.putData(number + "b", entity);
 						}
+						// logTemp(listPointStart, start);
 					}
 				}
 			} catch (Exception e) {
@@ -398,7 +433,7 @@ public class MapBus extends FragmentActivity {
 					ULog.i(MapBus.class, "reload 2 street start");
 					reloadStart = false;
 					// rectLineAllStart = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
-					new ReloadStreet(true).execute(InfoBusActivity.arrPathBus.get(number).locS);
+					new ReloadStreet(true).execute(arrPathBus.get(number).locS);
 				} else {
 					progressMap2.setVisibility(View.GONE);
 
@@ -406,9 +441,14 @@ public class MapBus extends FragmentActivity {
 					// entity.listPoint = listPointStart;
 					entity.setListPoint(listPointStart);
 					// save cache back
-//					InternalStorage.writeObject(MapBus.this, number + "s", entity);
+					if (isHcm)
+						InternalStorage.writeObject(MapBus.this, arrPathBus.get(number).getNum() + "s", entity);
+					else
+						InternalStorage.writeObject(MapBus.this, arrPathBus.get(number).getNum() + "shn", entity);
+					// logTemp(listPointStart, start);
 
 				}
+
 			} else {
 				// mMap.addPolyline(rectLineAllBack);
 				// if (listPointBack.size() > 0){
@@ -421,15 +461,19 @@ public class MapBus extends FragmentActivity {
 					ULog.i(MapBus.class, "reload 2 street back");
 					reloadBack = false;
 					// rectLineAllBack = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
-					new ReloadStreet(false).execute(InfoBusActivity.arrPathBus.get(number).locB);
+					new ReloadStreet(false).execute(arrPathBus.get(number).locB);
 				} else {
 					progressMap2.setVisibility(View.GONE);
 
 					clsPolylineEntity entity = new clsPolylineEntity();
 					entity.setListPoint(listPointBack);
 					// save cache back
-//					InternalStorage.writeObject(MapBus.this, number + "b", entity);
-					// cacheStore.putData(number + "b", entity);
+					if (isHcm)
+						InternalStorage.writeObject(MapBus.this, arrPathBus.get(number).getNum() + "b", entity);
+					else
+						InternalStorage.writeObject(MapBus.this, arrPathBus.get(number).getNum() + "bhn", entity);
+
+					// logTemp(listPointStart, start);
 
 				}
 			}
@@ -455,6 +499,71 @@ public class MapBus extends FragmentActivity {
 		}
 		return null;
 	}
+
+	// private void drawStreet(List<LocXY> locXY, boolean start) {
+	// private void drawStreet(int num) {
+	// PolylineOptions rectLineAll;
+	// LatLng startBus;
+	// LatLng BackBus;
+	//
+	// List<LocXY> locS = InfoBusActivity.arrPathBus.get(number).locS;
+	// List<LocXY> locB = InfoBusActivity.arrPathBus.get(number).locB;
+	// // ULog.i(MapBus.class, "setLocationXY....start:" + start +"; size:" + listPointStart.size() + ", size2:" + listPointBack.size());
+	//
+	// startBus = new LatLng(InfoBusActivity.arrPathBus.get(number).locS.get(0).lat,
+	// InfoBusActivity.arrPathBus.get(number).locS.get(0).lng);
+	// BackBus = new LatLng(InfoBusActivity.arrPathBus.get(number).locB.get(0).lat, InfoBusActivity.arrPathBus.get(number).locB.get(0).lng);
+	//
+	// boundXY = createLatLngBoundsObject(startBus, BackBus);
+	// mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(boundXY, width, height, 150));
+	//
+	// mMap.addMarker(new MarkerOptions().position(startBus).title(MapBus.this.getString(R.string.startPath2))
+	// .icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_green)));
+	//
+	// mMap.addMarker(new MarkerOptions().position(BackBus).title(MapBus.this.getString(R.string.backPath2))
+	// .icon(BitmapDescriptorFactory.fromResource(R.drawable.bus_orange)));
+	//
+	// // start
+	// listPointStart = new ArrayList<LatLng>();
+	// for (LocXY xy : locS)
+	// listPointStart.add(new LatLng(xy.lat, xy.lng));
+	// rectLineAll = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
+	// rectLineAll.addAll(listPointStart);
+	// mMap.addPolyline(rectLineAll);
+	//
+	// // back
+	// listPointBack = new ArrayList<LatLng>();
+	// for (LocXY xy : locB)
+	// listPointBack.add(new LatLng(xy.lat, xy.lng));
+	// rectLineAll = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
+	// rectLineAll.addAll(listPointBack);
+	// mMap.addPolyline(rectLineAll);
+	// // setLocationLat(new)
+	// }
+
+	/**
+	 * 
+	 * @param directionPoint
+	 * @param start
+	 *            (true: bus begin; false: bus back)
+	 */
+	// private void logTemp(ArrayList<LatLng> directionPoint, boolean start) {
+	// if (directionPoint == null || directionPoint.size() <= 0)
+	// return;
+	// ULog.i(MapBus.class, "============================================================ LOG location *****");
+	// String strT;
+	// strT = "\"locS\":[";
+	// for (LatLng point : directionPoint) {
+	// // ULog.i(this, "start:" + start +", num: " +number + ", location ====, {'lat':" + point.latitude + ", 'lng':" + point.longitude
+	// // +"}," );
+	// strT += "{\"lat\":" + point.latitude + ", \"lng\":" + point.longitude + "},";
+	// // ULog.i(MapBus.class, number + "; start:" + start + " ====, xy=" + point.latitude + "," + point.longitude);
+	//
+	// }
+	// strT += "],";
+	// // Utility.writeGAToSDFile("HCM", strT);
+	//
+	// }
 
 	// private void drawMap(LatLng lX, LatLng lY, boolean start) {
 	// PolylineOptions rectLine;
