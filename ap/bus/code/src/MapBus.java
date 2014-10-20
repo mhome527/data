@@ -38,15 +38,8 @@ public class MapBus extends FragmentActivity {
 	private ProgressBar progressMap;
 	private ProgressBar progressMap2;
 
-	// private PolylineOptions rectLineAllStart;
-	// private PolylineOptions rectLineAllBack;
 	public ArrayList<LatLng> listPointStart;
 	public ArrayList<LatLng> listPointBack;
-
-	// private Handler loadMap;
-	// LatLng pos1 = new LatLng(10.739956, 106.703260);
-	// LatLng pos2 = new LatLng(10.759561, 106.698604);
-	// LatLng pos3 = new LatLng(10.760994, 106.700385);
 
 	private int width;
 	private int height;
@@ -56,7 +49,7 @@ public class MapBus extends FragmentActivity {
 	private LatLng startL, endL;
 	private boolean isHcm = true;
 	private ArrayList<clsPathBus> arrPathBus = null;
- 
+
 	// private PolylineCacheStore cacheStore;
 
 	@SuppressWarnings({ "deprecation" })
@@ -84,7 +77,7 @@ public class MapBus extends FragmentActivity {
 			number = getIntent().getIntExtra("num", 0);
 			isHcm = getIntent().getBooleanExtra(Constant.HCM, true);
 
-			if(isHcm)
+			if (isHcm)
 				arrPathBus = MainFragment.arrPathBusHCM;
 			else
 				arrPathBus = MainFragment.arrPathBusHN;
@@ -92,7 +85,7 @@ public class MapBus extends FragmentActivity {
 			TextView tvNum = (TextView) findViewById(R.id.tvNum);
 			tvNum.setText(arrPathBus.get(number).getNum());
 
-			ULog.i(MapBus.class, "oncreate number:" + number +"; city:" + isHcm);
+			ULog.i(MapBus.class, "oncreate number:" + number + "; city:" + isHcm);
 			DrawStreet();
 			// testDrawStreet();
 			// draw street
@@ -109,10 +102,10 @@ public class MapBus extends FragmentActivity {
 			// GA
 			if (isHcm) {
 				Utility.setScreenNameGA("MapBus Ho Chi Minh");
-				Utility.setEventGA(Constant.GA_HCM +"-Map", number + "");
+				Utility.setEventGA(Constant.GA_HCM + "-Map", arrPathBus.get(number).getNum() + "");
 			} else {
 				Utility.setScreenNameGA("MapBus Ha Noi");
-				Utility.setEventGA(Constant.GA_HN + "-Map", number + "");
+				Utility.setEventGA(Constant.GA_HN + "-Map", arrPathBus.get(number).getNum() + "");
 			}
 		} catch (Exception e) {
 			ULog.e(MapBus.class, "onCreate error:" + e.getMessage());
@@ -134,20 +127,22 @@ public class MapBus extends FragmentActivity {
 			public void run() {
 
 				// ULog.e(this, "loading....");
-				startL = new LatLng(arrPathBus.get(number).locS.get(0).lat, arrPathBus.get(number).locS
-						.get(0).lng);
-				endL = new LatLng(arrPathBus.get(number).locB.get(0).lat, arrPathBus.get(number).locB
-						.get(0).lng);
+				startL = new LatLng(arrPathBus.get(number).locS.get(0).lat, arrPathBus.get(number).locS.get(0).lng);
+				endL = new LatLng(arrPathBus.get(number).locB.get(0).lat, arrPathBus.get(number).locB.get(0).lng);
 
 				boundXY = createLatLngBoundsObject(startL, endL);
 				mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(boundXY, width, height, 150));
 
 				addMarkerStreet();
+
 				// new DrawStreetAsk().execute(MainFragment.arrPathBus.get(number).locS, MainFragment.arrPathBus.get(number).locB);
 				new DrawStreetAsk(true).execute(arrPathBus.get(number).locS);
 				new DrawStreetAsk(false).execute(arrPathBus.get(number).locB);
 				// setLocationXY(MainFragment.arrPathBus.get(number).locS, true);
 				// setLocationXY(MainFragment.arrPathBus.get(number).locB, false);
+				drawMapTmp(arrPathBus.get(number).locS, true);
+				drawMapTmp(arrPathBus.get(number).locB, false);
+
 			}
 		}, 500);
 
@@ -157,6 +152,7 @@ public class MapBus extends FragmentActivity {
 		LocXY loc;
 		LocXY locTmp = null;
 		LatLng latX, latY;
+		boolean bChange = false;
 		if (start)
 			listPointStart = new ArrayList<LatLng>();
 		else
@@ -172,15 +168,28 @@ public class MapBus extends FragmentActivity {
 				locTmp = loc;
 			} else {
 				// ULog.i(this, "location loc1====, {'lat':" + locTmp.lat + ", 'lng':" + locTmp.lng + "; loc2:" + loc.lat + ", " + loc.lng);
+
+				if (loc.lat < 0) {
+					bChange = true;
+					loc.lat = Math.abs(loc.lat);
+				}
+				ULog.i(this, "location loc1====, {'lat':" + locTmp.lat + ", 'lng':" + locTmp.lng + "; loc2:" + loc.lat + ", " + loc.lng
+						+ "; bChange:" + bChange);
+
 				latX = new LatLng(locTmp.lat, locTmp.lng);
 				latY = new LatLng(loc.lat, loc.lng);
+
 				locTmp = loc;
 				// add
-				drawMap2(latX, latY, start); // xu ly TH ko load duoc
+				if (bChange)
+					drawMap2(latY, latX, start); // xu ly truong hop nguoc chieu, ko ve duoc
+				else
+					drawMap2(latX, latY, start);
 				// drawMap(latX, latY, start);
 				// drawStreet(latX, latY, start);
 
 			}
+			bChange = false;
 		}
 		// setLocationLat(new)
 	}
@@ -250,11 +259,9 @@ public class MapBus extends FragmentActivity {
 				if (start) {
 					// read cache
 					if (isHcm)
-						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number)
-								.getNum() + "s");
+						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number).getNum() + "s");
 					else
-						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number)
-								.getNum() + "shn");
+						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number).getNum() + "shn");
 
 					if (entity != null) {
 						listPointTmp = entity.getListPoint();
@@ -266,11 +273,9 @@ public class MapBus extends FragmentActivity {
 					}
 				} else {
 					if (isHcm)
-						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number)
-								.getNum() + "b");
+						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number).getNum() + "b");
 					else
-						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number)
-								.getNum() + "bhn");
+						entity = (clsPolylineEntity) InternalStorage.readObject(MapBus.this, arrPathBus.get(number).getNum() + "bhn");
 					if (entity != null) {
 						listPointTmp = entity.getListPoint();
 
@@ -309,9 +314,18 @@ public class MapBus extends FragmentActivity {
 
 				if (start) {
 					// ULog.i(MapBus.class, "Draw street start size: " + listPointStart.size());
+					mMap.clear();
+					addMarkerStreet();
 					rectLineAll = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
 					rectLineAll.addAll(listPointStart);
 					mMap.addPolyline(rectLineAll);
+
+					//ve duong ve (neu co)
+					if (listPointBack != null && listPointBack.size() > 0) {
+						rectLineAll = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
+						rectLineAll.addAll(listPointBack);
+						mMap.addPolyline(rectLineAll);
+					}
 
 					if (reloadStart) {
 						ULog.i(MapBus.class, "reload street start");
@@ -334,13 +348,25 @@ public class MapBus extends FragmentActivity {
 
 					}
 				} else {
+					mMap.clear();
+					addMarkerStreet();
+					//ve duong di neu co
+					if (listPointStart != null && listPointStart.size() > 0) {
+						rectLineAll = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
+						rectLineAll.addAll(listPointStart);
+						mMap.addPolyline(rectLineAll);
+					}
 					// ULog.i(MapBus.class, "Draw street back size: " + listPointBack.size());
 					rectLineAll = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
 					rectLineAll.addAll(listPointBack);
 					mMap.addPolyline(rectLineAll);
+					
+					
+					
 					if (reloadBack) {
 						ULog.i(MapBus.class, "reload street back");
 						reloadBack = false;
+						//chua lay het toa do thi lay lai toa do
 						// rectLineAllBack = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
 						new ReloadStreet(false).execute(arrPathBus.get(number).locB);
 					} else {
@@ -366,6 +392,24 @@ public class MapBus extends FragmentActivity {
 
 		}
 
+	}
+
+	private void drawMapTmp(List<LocXY> locTmp, boolean b) {
+		ArrayList<LatLng> listPoint = new ArrayList<LatLng>();
+		LatLng xy;
+		PolylineOptions rectLineAll;
+		if (b) {
+			rectLineAll = new PolylineOptions().width(8).color(getResources().getColor(R.color.green));
+		} else
+			rectLineAll = new PolylineOptions().width(3).color(getResources().getColor(R.color.orange));
+
+		for (LocXY loc : locTmp) {
+			xy = new LatLng(loc.lat, loc.lng);
+			listPoint.add(xy);
+		}
+
+		rectLineAll.addAll(listPoint);
+		mMap.addPolyline(rectLineAll);
 	}
 
 	private class ReloadStreet extends AsyncTask<List<LocXY>, Void, Boolean> {

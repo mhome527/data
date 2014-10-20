@@ -1,45 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
- 	<!-- Colors for specific screen -->
-	<color name="BgBorderImg">#FF0000</color>
-	<color name="BgBorderImgGray">#C2C2C2</color>
-	<color name="bg_feed2_0">#f4f6f1</color>
-	<color name="bg_feed2_1">#fefaee</color>
-	<color name="bg_qa_album10">#444444</color>
-	
-	<!-- Standard colors -->
-	 <color name="black">#000000</color>
-	 <color name="white">#FFFFFF</color>
-	 <color name="grey">#FF909090</color>
-	 <color name="yellow">#FFFF47</color>
-	 <color name="silver">#C0C0C0</color>
-	 <color name="blue">#0000FF</color>
-	 <color name="orange">#F26D00</color>
-	 <color name="TransparentBlack">#80000000</color>
-	 <color name="transparentBlack3">#88000000</color>
-	
-	<!-- Common colors for ALL screens -->
-	<color name="ALL_brown">#4E391F</color>
-	<color name="ALL_lightBrown">#765D34</color>
-	<color name="ALL_green">#004D28</color>
-	<color name="ALL_lightGreen">#629547</color>
-	<color name="ALL_gray">#7B7B7B</color>
-	<color name="ALL_lightGray">#D6D6D6</color>
-	<color name="ALL_orange">#FF6A26</color>
-	<color name="ALL_orange_inactive">#FBBF7B</color>
-	<color name="ALL_lightBlue">#0079B3</color>
-	<color name="ALL_red">#F22734</color>
-	<color name="ALL_yellow">#FFEEAD</color>
-	<color name="ALL_smokeWhite">#F3F1EE</color>
-	<color name="ALL_paleGreen">#E5F6CF</color>
-	<color name="ALL_black">#000000</color>
-	<color name="ALL_lightGreen2">#33FF00</color>
-	
-	<!-- CanNC:begin -->
-	<color name="calendar_text_color">#11233B</color>
-	<color name="bg_calendar">#C2C2C2</color>
-	<!-- CanNC:end -->
-	<color name="green">#007000</color>
-	<color name="lightgreen">#14FFFF</color>
+    <!-- Colors for specific screen -->
+    <color name="BgBorderImg">#FF0000</color>
+    <color name="BgBorderImgGray">#C2C2C2</color>
+    <color name="bg_feed2_0">#f4f6f1</color>
+    <color name="bg_feed2_1">#fefaee</color>
+    <color name="bg_qa_album10">#444444</color>
+
+    <!-- Standard colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#FF909090</color>
+    <color name="yellow">#FFFF47</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="blue">#0000FF</color>
+    <color name="TransparentBlack">#80000000</color>
+    <color name="transparentBlack3">#88000000</color>
+
+    <!-- Common colors for ALL screens -->
+    <color name="ALL_brown">#4E391F</color>
+    <color name="ALL_lightBrown">#765D34</color>
+    <color name="ALL_green">#004D28</color>
+    <color name="ALL_lightGreen">#629547</color>
+    <color name="ALL_gray">#7B7B7B</color>
+    <color name="ALL_lightGray">#D6D6D6</color>
+    <color name="ALL_orange">#FF6A26</color>
+    <color name="ALL_orange_inactive">#FBBF7B</color>
+    <color name="ALL_lightBlue">#0079B3</color>
+    <color name="ALL_red">#F22734</color>
+    <color name="ALL_yellow">#FFEEAD</color>
+    <color name="ALL_smokeWhite">#F3F1EE</color>
+    <color name="ALL_paleGreen">#E5F6CF</color>
+    <color name="ALL_black">#000000</color>
+    <color name="ALL_lightGreen2">#33FF00</color>
+    <color name="calendar_text_color">#11233B</color>
+    <color name="bg_calendar">#C2C2C2</color>
+    
+    <color name="lightgreen">#14FFFF</color>
+    
+    <color name="black_alpha_i_3">#4c000000</color>
+    <color name="black_alpha_i_6">#99000000</color>
+    <color name="black_alpha_i_10">#19000000</color>
+    <color name="black_alpha_i_15">#26000000</color>
+    <color name="black_alpha_i_20">#33000000</color>
+    <color name="black_alpha_i_30">#4D000000</color>
+    <color name="black_alpha_i_40">#66000000</color>
+    <color name="black_alpha_i_50">#80000000</color>
+    <color name="black_alpha_i_60">#99000000</color>
+    
+    <color name="white_alpha_i_80">#CCffffff</color>
+    <color name="white_alpha_i_30">#4Dffffff</color>
+    <color name="white_alpha_i_50">#80ffffff</color>
+    <color name="white_alpha_i_60">#99ffffff</color>
+    <color name="white_alpha_i_45">#73ffffff</color>
+    <color name="white_alpha_i_25">#40ffffff</color>
+    
+    <!-- use -->
+    <color name="green">#217A10</color>
+    <color name="orange">#FF773D</color>
+    <color name="back_light">#1F1F1F</color>
+    <color name="green2">#003333</color>
+
 </resources>

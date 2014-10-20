@@ -9,7 +9,6 @@ package app.infobus.utils;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.analytics.tracking.android.Tracker;
@@ -17,18 +16,28 @@ import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.maps.model.LatLng;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.provider.Settings;
 import android.view.Gravity;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import app.infobus.BuildConfig;
 import app.infobus.MyApplication;
 import app.infobus.R;
+import app.infobus.entity.PriceFace;
 
 public class Utility {
 	public static int parseInt(final String num) {
@@ -133,6 +142,47 @@ public class Utility {
 		return dialog;
 	}
 
+	// /////
+	public static void dialogPriceTaxi(final Context context, long price, final PriceFace priceFace) {
+		final Dialog dialog = new Dialog(context);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.dialog_price_taxi);
+		dialog.show();
+		dialog.setCanceledOnTouchOutside(false);
+
+		final EditText edtPrice = (EditText) dialog.findViewById(R.id.edtPrice);
+		Button btnCancel = (Button) dialog.findViewById(R.id.btnCancel);
+		Button btnSave = (Button) dialog.findViewById(R.id.btnSave);
+
+		edtPrice.setHint(price + "");
+		btnCancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				dialog.dismiss();
+			}
+		});
+
+		btnSave.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				String strPrice;
+				long price;
+				strPrice = edtPrice.getText().toString().trim(); 
+				if(!strPrice.equals("")){
+					try{
+						price = Long.parseLong(strPrice);
+						priceFace.setPrice(price);
+					}catch(Exception e){
+						
+					}
+				}
+				
+				
+			}
+		});
+	}
+
 	// Check if Internet Network is active
 	public static boolean checkNetwork(Activity activity) {
 		boolean wifiDataAvailable = false;
@@ -176,17 +226,13 @@ public class Utility {
 	 *            : The event label
 	 */
 	public static void setEventGA(String action, String label) {
-		try {			
-			MyApplication mInstance = MyApplication.getInstance();
-			Tracker tracker = mInstance.getTrackerApp();
-			tracker.send(new HitBuilders.EventBuilder().setCategory("BUS").setAction(action).setLabel(label).build());
-			// if (BuildConfig.DEBUG) {
-			// String tmp = category + "-" + action + "-" + label;
-			// count = PreferenceUtil.getInt(MyApplication.getInstance(), tmp);
-			// ULog.i("Common", "setEventGA " + tmp + ": " + count);
-			// PreferenceUtil.setInt(MyApplication.getInstance(), tmp, ++count);
-			// writeGAToSDFile(ConstanstKey.LOG_EVENT_FILE, getCurrentDate() + "\n ==>  " + tmp +"   click: " + count);
-			// }
+		try {
+			if (!BuildConfig.DEBUG) {
+				MyApplication mInstance = MyApplication.getInstance();
+				Tracker tracker = mInstance.getTrackerApp();
+				tracker.send(new HitBuilders.EventBuilder().setCategory("BUS").setAction(action).setLabel(label).build());
+			}
+
 		} catch (Exception e) {
 			ULog.e("Common", "setEventGA Error:" + e.getMessage());
 		}
@@ -195,18 +241,12 @@ public class Utility {
 	public static void setScreenNameGA(String name) {
 		// int count;
 		try {
-			MyApplication mInstance = MyApplication.getInstance();
-			Tracker tracker = mInstance.getTrackerApp();
-			tracker.set(Fields.SCREEN_NAME, name);
-			tracker.send(MapBuilder.createAppView().build());
-			// if (BuildConfig.DEBUG) {
-			// count = PreferenceUtil.getInt(MyApplication.getInstance(), name);
-			// ULog.e("Common", "setScreenNameGA " + name + ": " + count);
-			// PreferenceUtil.setInt(MyApplication.getInstance(), name, ++count);
-			// Utils.LogI("Common", "GA " + nameScreen + ":" + countScreen);
-			// writeGAToSDFile(ConstanstKey.LOG_SCREEN_FILE, getCurrentDate() + " ==> " + name + "    click:  " + count);
-			//
-			// }
+			if (!BuildConfig.DEBUG) {
+				MyApplication mInstance = MyApplication.getInstance();
+				Tracker tracker = mInstance.getTrackerApp();
+				tracker.set(Fields.SCREEN_NAME, name);
+				tracker.send(MapBuilder.createAppView().build());
+			}
 		} catch (Exception e) {
 			ULog.e("Common", "setScreenNameGA Error:" + e.getMessage());
 		}
@@ -226,13 +266,13 @@ public class Utility {
 
 	public static int getResId(String variableName, Context context, Class<?> c) {
 
-	    try {
-	        Field idField = c.getDeclaredField(variableName);
-	        return idField.getInt(idField);
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        return -1;
-	    } 
+		try {
+			Field idField = c.getDeclaredField(variableName);
+			return idField.getInt(idField);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
 	}
 	// public static void showDialogGPS(final Activity context) {
 	//

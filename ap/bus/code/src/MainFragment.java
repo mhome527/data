@@ -99,7 +99,7 @@ public class MainFragment extends BaseActivity {
 			// //////////////////
 
 			// get data from dropbox
-			 GetDataDropbox();
+			GetDataDropbox();
 
 			// GA
 			Utility.setScreenNameGA("Main Bus");
@@ -120,7 +120,7 @@ public class MainFragment extends BaseActivity {
 		if (adapterHCM != null)
 			adapterHCM.isClick = false;
 		if (adapterHN != null)
-			adapterHN.isClick = true;
+			adapterHN.isClick = false;
 	}
 
 	@Override
@@ -280,6 +280,9 @@ public class MainFragment extends BaseActivity {
 				ULog.e(MainFragment.class, "load data taxi error");
 				return;
 			}
+			if (BaseActivity.pref.getLongValue(0, Constant.PRICE_TAXI) == 0)
+				BaseActivity.pref.putLongValue(txEntity.price, Constant.PRICE_TAXI);
+
 			ULog.i(MainFragment.class, "load data taxi");
 			if (isHCM)
 				txAdapter = new TaxiAdapter(context, txEntity.hcm);

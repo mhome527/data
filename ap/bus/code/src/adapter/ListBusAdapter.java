@@ -102,9 +102,9 @@ public class ListBusAdapter extends ArrayAdapter<clsPathBus> implements SectionI
 					// Intent intent = new Intent(activity, MapBus_bk.class);
 					intent.putExtra("num", position);
 					if (activity.isHCM)
-						intent.putExtra(Constant.HCM, true);
+						intent.putExtra(Constant.HCM, true); // true: HCM
 					else
-						intent.putExtra(Constant.HCM, false);
+						intent.putExtra(Constant.HCM, false); //false: Ha Noi
 					activity.startActivity(intent);
 				}
 				ULog.i(ListBusAdapter.class, "map click value: " + activity.isHCM);
