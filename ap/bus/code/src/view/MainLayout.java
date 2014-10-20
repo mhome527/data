@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 import android.widget.Scroller;
+import app.infobus.utils.ULog;
 
 // DK Trick
 // Only the content is moving. Attach an View.OnTouchListener to it to support fling and drag & drop gesture
@@ -158,6 +159,8 @@ public class MainLayout extends LinearLayout {
         if(currentMenuState == MenuState.HIDING || currentMenuState == MenuState.SHOWING)
             return;
         
+    	ULog.i("MainLayout", "toggleMenu state:" + currentMenuState);
+
         switch(currentMenuState) {
         case HIDDEN:
             currentMenuState = MenuState.SHOWING;
@@ -213,6 +216,7 @@ public class MainLayout extends LinearLayout {
 
     // Called when sliding is complete
     private void onMenuSlidingComplete() {
+    	ULog.i("MainLayout", "onMenuSlidingComplete state:" + currentMenuState);
         switch (currentMenuState) {
         case SHOWING:
             currentMenuState = MenuState.SHOWN;

@@ -1,11 +1,6 @@
 package app.infobus.utils;
 
-//import java.io.BufferedReader;
-//import java.io.FileInputStream;
-//import java.io.FileNotFoundException;
-//import java.io.FileOutputStream;
-//import java.io.InputStreamReader;
-//import java.io.OutputStreamWriter;
+
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -143,18 +138,28 @@ public class Utility {
 	}
 
 	// /////
-	public static void dialogPriceTaxi(final Context context, long price, final PriceFace priceFace) {
+	public static void dialogPriceTaxi(final Context context, long price1, long price2, long priceBegin, int km, final PriceFace priceFace) {
 		final Dialog dialog = new Dialog(context);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.dialog_price_taxi);
 		dialog.show();
 		dialog.setCanceledOnTouchOutside(false);
 
-		final EditText edtPrice = (EditText) dialog.findViewById(R.id.edtPrice);
+		TextView tvPrice1 = (TextView) dialog.findViewById(R.id.tvPrice1);
+		TextView tvPrice2 = (TextView) dialog.findViewById(R.id.tvPrice2);
+
+		final EditText edtPriceBegin = (EditText) dialog.findViewById(R.id.edtPriceBegin);
+		final EditText edtPrice1 = (EditText) dialog.findViewById(R.id.edtPrice1);
+		final EditText edtPrice2 = (EditText) dialog.findViewById(R.id.edtPrice2);
 		Button btnCancel = (Button) dialog.findViewById(R.id.btnCancel);
 		Button btnSave = (Button) dialog.findViewById(R.id.btnSave);
 
-		edtPrice.setHint(price + "");
+		tvPrice1.setText(String.format(context.getString(R.string.title_price1), km));
+		tvPrice2.setText(String.format(context.getString(R.string.title_price2), km));
+		
+		edtPriceBegin.setHint(priceBegin + "");
+		edtPrice1.setHint(price1 + "");
+		edtPrice2.setHint(price2 + "");
 		btnCancel.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -163,22 +168,39 @@ public class Utility {
 		});
 
 		btnSave.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				String strPrice;
-				long price;
-				strPrice = edtPrice.getText().toString().trim(); 
-				if(!strPrice.equals("")){
-					try{
-						price = Long.parseLong(strPrice);
-						priceFace.setPrice(price);
-					}catch(Exception e){
-						
+				long priceBegin = 0, price1 = 0, price2 = 0;
+				strPrice = edtPriceBegin.getText().toString().trim();
+				if (!strPrice.equals("")) {
+					try {
+						priceBegin = Long.parseLong(strPrice);
+					} catch (Exception e) {
+						priceBegin = 0;
 					}
 				}
-				
-				
+				strPrice = edtPrice1.getText().toString().trim();
+				if (!strPrice.equals("")) {
+					try {
+						price1 = Long.parseLong(strPrice);
+					} catch (Exception e) {
+						price1 = 0;
+					}
+				}
+				strPrice = edtPrice2.getText().toString().trim();
+				if (!strPrice.equals("")) {
+					try {
+						price2 = Long.parseLong(strPrice);
+					} catch (Exception e) {
+						price2 = 0;
+					}
+				}
+
+				priceFace.setPrice(priceBegin, price1, price2);
+
+				dialog.dismiss();
 			}
 		});
 	}
@@ -206,7 +228,7 @@ public class Utility {
 		File file = new File(path);
 		if (!file.exists()) {
 			if (!file.mkdirs()) {
-				ULog.e("Common", "Problem creating Image folder");
+				ULog.e("Utility", "Problem creating Image folder");
 				ret = false;
 			}
 		}
@@ -234,7 +256,7 @@ public class Utility {
 			}
 
 		} catch (Exception e) {
-			ULog.e("Common", "setEventGA Error:" + e.getMessage());
+			ULog.e("Utility", "setEventGA Error:" + e.getMessage());
 		}
 	}
 
@@ -248,21 +270,11 @@ public class Utility {
 				tracker.send(MapBuilder.createAppView().build());
 			}
 		} catch (Exception e) {
-			ULog.e("Common", "setScreenNameGA Error:" + e.getMessage());
+			ULog.e("Utility", "setScreenNameGA Error:" + e.getMessage());
 		}
 	}
 
-	public static boolean checkGps(Context context) {
-		try {
-			ULog.i("Common", "checkGPS");
-			LocationManager myLocManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-			if (myLocManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER))
-				return true;
-		} catch (Exception e) {
-			ULog.e("Common", "checkGps error:" + e.getMessage());
-		}
-		return false;
-	}
+
 
 	public static int getResId(String variableName, Context context, Class<?> c) {
 
@@ -274,40 +286,63 @@ public class Utility {
 			return -1;
 		}
 	}
-	// public static void showDialogGPS(final Activity context) {
-	//
-	// final Dialog dialog = new Dialog(context);
-	// dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-	// dialog.setContentView(R.layout.dialog_gps);
-	//
-	// dialog.show();
-	// dialog.setCanceledOnTouchOutside(false);
-	// // LinearLayout lnNotice = (LinearLayout)dialog.findViewById(R.id.lnNotice);
-	// TextView tvMsg = (TextView) dialog.findViewById(R.id.tvMsg);
-	// Button btnSettings = (Button) dialog.findViewById(R.id.btnSettings);
-	// Button btnCancel = (Button) dialog.findViewById(R.id.btnCancel);
-	//
-	// //
-	// // lnNotice.getLayoutParams().width = width;
-	// // lnNotice.getLayoutParams().height = height;
-	// tvMsg.setText(String.format(context.getString(R.string.msg_alert_gps),context.getString(R.string.app_name)));
-	// btnSettings.setOnClickListener(new OnClickListener() {
-	// @Override
-	// public void onClick(View arg0) {
-	// dialog.dismiss();
-	// Intent gpsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-	// context.startActivity(gpsIntent);
-	// }
-	// });
-	//
-	// btnCancel.setOnClickListener(new OnClickListener() {
-	// @Override
-	// public void onClick(View arg0) {
-	// dialog.dismiss();
-	// }
-	// });
-	//
-	// }
+	
+	public static boolean checkGps(Context context) {
+		try {
+			ULog.i("Utility", "checkGPS");
+			LocationManager myLocManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+			if (myLocManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER))
+				return true;
+		} catch (Exception e) {
+			ULog.e("Utility", "checkGps error:" + e.getMessage());
+		}
+		return false;
+	}
+	
+	public static void showDialogGPS(final Activity context) {
+//		DisplayMetrics displaymetrics = new DisplayMetrics();
+//		getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+//		int width = (int) (displaymetrics.widthPixels * 0.94);
+//		int height = (int) (displaymetrics.heightPixels * 0.77);
+//
+//		WindowManager.LayoutParams params = getActivity().getWindow().getAttributes();
+//		params.width = width;
+//		params.height = height;
+//		getActivity().getWindow().setAttributes(params);
+
+		final Dialog dialog = new Dialog(context);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.dialog_gps);
+
+		dialog.show();
+		dialog.setCanceledOnTouchOutside(false);
+//		LinearLayout lnNotice = (LinearLayout)dialog.findViewById(R.id.lnNotice);
+		TextView tvMsg = (TextView) dialog.findViewById(R.id.tvMsg);
+		Button btnSettings = (Button) dialog.findViewById(R.id.btnSettings);
+		Button btnCancel = (Button) dialog.findViewById(R.id.btnCancel);
+
+//
+//		lnNotice.getLayoutParams().width = width;
+//		lnNotice.getLayoutParams().height = height;
+		tvMsg.setText(String.format(context.getString(R.string.msg_alert_gps),context.getString(R.string.app_name)));
+		btnSettings.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				dialog.dismiss();
+				Intent gpsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+				context.startActivity(gpsIntent);
+			}
+		});
+
+		btnCancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				dialog.dismiss();
+			}
+		});
+		
+	}
+	
 
 	// public static void writeGAToSDFile(String filename, String data) {
 	// String pathfile;

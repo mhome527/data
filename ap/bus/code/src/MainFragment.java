@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -17,13 +19,15 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -43,16 +47,13 @@ import app.infobus.utils.ULog;
 import app.infobus.utils.Utility;
 import app.infobus.view.MainLayout;
 
-public class MainFragment extends BaseActivity {
+public class MainFragment extends BaseActivity implements View.OnClickListener {
 
 	private String tag = MainFragment.class.getSimpleName();
 	private ListView lstBus;
 	private ListBusAdapter adapterHCM = null;
 	private ListBusAdapter adapterHN = null;
-	private LinearLayout lnSearch;
-	private TextView tvTitleCity;
-	private ImageButton imgBack;
-	private ImageButton imgTaxi;
+	private TextView tvTilteMenu;
 	private RadioButton rbtnHcm;
 	private boolean isClick = false;
 	public boolean isHCM = true;
@@ -76,21 +77,28 @@ public class MainFragment extends BaseActivity {
 		try {
 			ULog.i(tag, "initView....");
 
-			// //menu
-
 			// //////
 			mainLayout = this.getViewLayout();
 			lstBus = (ListView) findViewById(R.id.lstBus);
-			lnSearch = (LinearLayout) findViewById(R.id.search);
 			rbtnHcm = (RadioButton) findViewById(R.id.rbtnHcm);
-			tvTitleCity = getViewChild(R.id.tvTitleCity);
-			imgBack = getViewChild(R.id.imgBack);
-			imgTaxi = getViewChild(R.id.imgTaxi);
+			ImageButton imgTaxi = getViewChild(R.id.imgTaxi);
+			TextView tvDistanceTaxi = getViewChild(R.id.tvDistanceTaxi);
+
+			ImageButton imgNextDistance = getViewChild(R.id.imgNextDistance);
+			RelativeLayout rlDistanceTaxi = getViewChild(R.id.rlDistanceTaxi);
+
+			rlDistanceTaxi.setOnClickListener(this);
+			tvDistanceTaxi.setOnClickListener(this);
+			imgTaxi.setOnClickListener(this);
+			imgNextDistance.setOnClickListener(this);
+
 			setListenerView();
 
 			new LoadData(this).execute();
-
 			new LoadTaxi(this).execute();
+
+			setHeaderMenu();
+			setTitleMenu(false);
 
 			// ///////ad
 			AdView adView = (AdView) this.findViewById(R.id.adView);
@@ -114,7 +122,6 @@ public class MainFragment extends BaseActivity {
 
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
 		isClick = false;
 		if (adapterHCM != null)
@@ -125,44 +132,73 @@ public class MainFragment extends BaseActivity {
 
 	@Override
 	public void onBackPressed() {
-		if (mainLayout.isMenuShown()) {
+		if (mainLayout != null && mainLayout.isMenuShown()) {
 			mainLayout.toggleMenu();
 		} else {
 			super.onBackPressed();
 		}
 	}
 
+	@Override
+	public void onClick(View v) {
+		Intent i;
+		switch (v.getId()) {
+		case R.id.imgMenu:
+			setTitleMenu(!mainLayout.isMenuShown());
+			mainLayout.toggleMenu();
+
+			break;
+		case R.id.rlDistanceTaxi:
+		case R.id.tvDistanceTaxi:
+		case R.id.imgTaxi:
+		case R.id.imgNextDistance:
+			i = new Intent(MainFragment.this, MapTaxi.class);
+			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			// i.putExtra(Constant.KEY_CITY, isHCM);
+			startActivity(i);
+			break;
+		case R.id.imgSearch:
+			if (isClick)
+				return;
+			isClick = true;
+			i = new Intent(MainFragment.this, SearchActivity.class);
+			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			i.putExtra(Constant.KEY_CITY, isHCM);
+			startActivity(i);
+			break;
+
+		}
+
+	}
+
+	private void setTitleMenu(boolean isMenu) {
+		if (!isMenu) {
+			if (isHCM)
+				tvTilteMenu.setText(getString(R.string.bus) + " - " + getString(R.string.HCM));
+			else
+				tvTilteMenu.setText(getString(R.string.bus) + " - " + getString(R.string.HN));
+		} else {
+			if (isHCM)
+				tvTilteMenu.setText(getString(R.string.taxi) + " - " + getString(R.string.HCM));
+			else
+				tvTilteMenu.setText(getString(R.string.taxi) + " - " + getString(R.string.HN));
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		return false;
+	}
+
+	//
+	// @Override
+	// public boolean onOptionsItemSelected(MenuItem item) {
+	// mainLayout.toggleMenu();
+	// return true;
+	// }
+
 	private void setListenerView() {
 		lstBus.setItemsCanFocus(false);
-		// lstBus.setOnItemClickListener(new OnItemClickListener() {
-		//
-		// @Override
-		// public void onItemClick(AdapterView<?> adapterBus, View arg1, int position, long id) {
-		//
-		// Intent intent = new Intent(MainFragment.this, InfoDetailActivity.class);
-		// clsPathBus pathBus = (clsPathBus) adapterBus.getItemAtPosition(position);
-		// intent.putExtra("num", pathBus.getNum());
-		// intent.putExtra("namePath", pathBus.getNamePath());
-		// intent.putExtra("start", Utility.ArrToString(pathBus.getPathStart()));
-		// intent.putExtra("back", Utility.ArrToString(pathBus.getPathBack()));
-		// intent.putExtra("info", pathBus.getInfo());
-		// intent.putExtra(Constant.HCM, isHCM);
-		//
-		// startActivity(intent);
-		// if (isHCM)
-		// Utility.setEventGA(tag, Constant.GA_HCM, pathBus.getNum());
-		// else
-		// Utility.setEventGA(tag, Constant.GA_HN, pathBus.getNum());
-		// }
-		// });
-		//
-		// lstBus.setOnTouchListener(new OnTouchListener() {
-		//
-		// @Override
-		// public boolean onTouch(View arg0, MotionEvent arg1) {
-		// return true;
-		// }
-		// });
 
 		rbtnHcm.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
@@ -170,41 +206,39 @@ public class MainFragment extends BaseActivity {
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				ULog.i(MainFragment.class, "radio checked:" + isChecked);
 				isHCM = isChecked;
-				updateListBus(isChecked);
+				updateListBus();
 			}
 
 		});
 
-		// search
-		lnSearch.setOnClickListener(new View.OnClickListener() {
+	}
 
-			@Override
-			public void onClick(View v) {
-				if (isClick)
-					return;
-				isClick = true;
-				Intent i = new Intent(MainFragment.this, SearchActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				i.putExtra(Constant.KEY_CITY, isHCM);
-				startActivity(i);
-			}
-		});
+	@SuppressLint("InflateParams")
+	private void setHeaderMenu() {
+		// requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		// getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.header_menu);
 
-		imgTaxi.setOnClickListener(new View.OnClickListener() {
+		ActionBar mActionBar = MainFragment.this.getActionBar();
+		mActionBar.show();
+		mActionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		mActionBar.setDisplayShowHomeEnabled(false);
+		mActionBar.setDisplayShowTitleEnabled(false);
+		LayoutInflater mInflater = LayoutInflater.from(this);
+		View mCustomView = mInflater.inflate(R.layout.header_menu, null);
 
-			@Override
-			public void onClick(View v) {
-				mainLayout.toggleMenu();
-			}
-		});
+		tvTilteMenu = (TextView) mCustomView.findViewById(R.id.tvTilteMenu);
+		tvTilteMenu.setText(getString(R.string.info));
+		ImageButton imgMenu = (ImageButton) mCustomView.findViewById(R.id.imgMenu);
+		imgMenu.setOnClickListener(this);
 
-		imgBack.setOnClickListener(new View.OnClickListener() {
+		ImageButton imgTaxi = (ImageButton) mCustomView.findViewById(R.id.imgTaxi);
+		imgTaxi.setOnClickListener(this);
 
-			@Override
-			public void onClick(View v) {
-				mainLayout.toggleMenu();
-			}
-		});
+		ImageButton imgSearch = (ImageButton) mCustomView.findViewById(R.id.imgSearch);
+		imgSearch.setOnClickListener(this);
+
+		mActionBar.setCustomView(mCustomView);
+		mActionBar.setDisplayShowCustomEnabled(true);
 	}
 
 	/**
@@ -213,10 +247,10 @@ public class MainFragment extends BaseActivity {
 	 * @param isChecked
 	 *            (true: HCM; false: HaNoi)
 	 */
-	private void updateListBus(boolean isChecked) {
-		ULog.i(MainFragment.class, "updateListBus Load bus value:" + isChecked);
-		if (isChecked) {
-			tvTitleCity.setText(getString(R.string.HCM));
+	private void updateListBus() {
+		ULog.i(MainFragment.class, "updateListBus Load bus value:" + isHCM);
+		setTitleMenu(false);
+		if (isHCM) {
 			if (adapterHCM == null || adapterHCM.getCount() < 1)
 				new LoadData(MainFragment.this).execute();
 			else {
@@ -233,7 +267,6 @@ public class MainFragment extends BaseActivity {
 				txAdapter.setAdapterTX(txEntity.hcm);
 
 		} else {
-			tvTitleCity.setText(getString(R.string.HN));
 			if (adapterHN == null || adapterHN.getCount() < 1)
 				new LoadData(MainFragment.this).execute();
 			else {
@@ -274,15 +307,17 @@ public class MainFragment extends BaseActivity {
 
 		@Override
 		protected void onPostExecute(Boolean result) {
-			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			if (result == false) {
 				ULog.e(MainFragment.class, "load data taxi error");
 				return;
 			}
-			if (BaseActivity.pref.getLongValue(0, Constant.PRICE_TAXI) == 0)
-				BaseActivity.pref.putLongValue(txEntity.price, Constant.PRICE_TAXI);
-
+			if (BaseActivity.pref.getLongValue(0, Constant.PRICE1_TAXI) == 0) {
+				BaseActivity.pref.putLongValue(txEntity.price1, Constant.PRICE1_TAXI);
+				BaseActivity.pref.putLongValue(txEntity.price2, Constant.PRICE2_TAXI);
+				BaseActivity.pref.putLongValue(txEntity.price_begin, Constant.PRICE_BEGIN_TAXI);
+				BaseActivity.pref.putIntValue(txEntity.default_km, Constant.KM_TAXI);
+			}
 			ULog.i(MainFragment.class, "load data taxi");
 			if (isHCM)
 				txAdapter = new TaxiAdapter(context, txEntity.hcm);
@@ -587,4 +622,5 @@ public class MainFragment extends BaseActivity {
 		// Hide menu anyway
 		// mainLayout.toggleMenu();
 	}
+
 }

@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/HCM"
-        android:textColor="@color/green2"
+        android:textColor="@color/ALL_red"
         android:textSize="20sp"
         android:textStyle="bold" />
 

@@ -13,6 +13,9 @@ public class Constant {
 	//
 	//http://maps.googleapis.com/maps/api/distancematrix/json?origins=10.861657,%20106.678478&destinations=10.741041,106.618371&mode=driving
 	public static String URL_DISTANCE ="http://maps.googleapis.com/maps/api/distancematrix/json?mode=driving";
+	
+	//https://maps.googleapis.com/maps/api/directions/json?origin=Adelaide,SA&destination=Adelaide,SA&waypoints=optimize:true|Barossa+Valley,SA|Clare,SA|Connawarra,SA|McLaren+Vale,SA&key=AIzaSyBrkpsBfa8Q22h2Y9qUMN8UBUa0s1rWn_U
+	public static String URL_BUS_ROUTE ="https://maps.googleapis.com/maps/api/directions/json?origin=Adelaide,SA&destination=Adelaide,SA&waypoints=optimize:true|Barossa+Valley,SA|Clare,SA|Connawarra,SA|McLaren+Vale,SA&key=AIzaSyBrkpsBfa8Q22h2Y9qUMN8UBUa0s1rWn_U";
 	public static final String KEY_ORG = "origins";
 	public static final String KEY_DES = "destinations";
 	public static String HCM = "HCM";
@@ -41,7 +44,11 @@ public class Constant {
 	final static public String CLEAR_CACHE_HCM = "clear_cache_HCM";
 	final static public String CLEAR_CACHE_HN = "clear_cache_HN";
 
-	final static public String PRICE_TAXI = "price_taxi";
+	final static public String PRICE1_TAXI = "price1_taxi";
+	final static public String PRICE2_TAXI = "price2_taxi";
+	final static public String PRICE_BEGIN_TAXI = "price_begin_taxi";
+	final static public String KM_TAXI = "km_taxi";
+	static public int KM_DEFAULT = 31;
 
 	// GA
 	public static String KEY_ANALYSIS = "UA-54709178-1"; // daohuynh7

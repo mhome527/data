@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, InfoBusActivity!</string>
+    <string name="app_name">BusHCM</string>
+    <string name="namePath">線路: </string>
+    <string name="num">バスの番号: </string>
+    <string name="startPath">行き : </string>
+    <string name="backPath">帰り :</string>
+    <string name="startPath2">行き</string>
+    <string name="backPath2">帰り </string>
+    <string name="adUnitId">ca-app-pub-2668784685856471/7793988345</string>
+    <string name="cancel">キャンセル</string>
+    <string name="save">保存</string>
+    <string name="call">電話</string>
+    <string name="ok">OK</string>
+    <string name="configm_replay">アプリを終了しますか？</string>
+    <string name="new_app">new app</string>
+    <string name="bus_number">バスの番号:</string>
+    <string name="bus">バス</string>
+    <string name="default_value">000</string>
+    <string name="connect_wifi">インターネットに接続して下さい</string>
+    <string name="turn_on_wifi">Wi-Fi をオンにして下さい。</string>
+    <string name="HCM2">HCM</string>
+    <string name="HCM">Hồ Chí Minh</string>
+    <string name="HN">Hà Nội</string>
+    <string name="info">バス情報</string>
+    <string name="search">検索</string>
+    <string name="confirm_call_tx">タクシーを呼ぶ %s</string>
+    <string name="map">地図</string>
+    <string name="to">まで</string>
+    <string name="from">から</string>
+    <string name="list_bus">バスのリスト:</string>
+    <string name="distance">距離</string>
+    <string name="time">時間</string>
+    <string name="money_km">お金/Km</string>
+    <string name="money">お金 (VND)</string>
+    <string name="defaule_number">00</string>
+    <string name="next">続き</string>
+    <string name="title_price1">%d KM以下の値段</string>
+    <string name="title_price2">%d KM以上の値段</string>
+    <string name="title_begin">最初の1kmまでは</string>
+    <string name="taxi">Taxi</string>
+    <string name="taxi_guid1">出発地を選ぶように地図に押してください。あと、「続き」ボタンを押してください。</string>
+    <string name="taxi_guid2">目的地を選ぶように地図に押してください。あと、「続き」ボタンを押してください。</string>
+    <string name="distance_taxi">「出発地」と「目的地」を入力いただくことでタクシーの概算料金</string>
+    <string name="day">日</string>
+    <string name="hour">時</string>
+    <string name="mins">分</string>
+
+</resources>

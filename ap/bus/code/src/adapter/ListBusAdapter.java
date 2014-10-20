@@ -101,10 +101,7 @@ public class ListBusAdapter extends ArrayAdapter<clsPathBus> implements SectionI
 					Intent intent = new Intent(activity, MapBus.class);
 					// Intent intent = new Intent(activity, MapBus_bk.class);
 					intent.putExtra("num", position);
-					if (activity.isHCM)
-						intent.putExtra(Constant.HCM, true); // true: HCM
-					else
-						intent.putExtra(Constant.HCM, false); //false: Ha Noi
+					intent.putExtra(Constant.KEY_CITY, activity.isHCM);
 					activity.startActivity(intent);
 				}
 				ULog.i(ListBusAdapter.class, "map click value: " + activity.isHCM);
@@ -127,10 +124,7 @@ public class ListBusAdapter extends ArrayAdapter<clsPathBus> implements SectionI
 				} else {
 					Intent intent = new Intent(activity, MapBus.class);
 					intent.putExtra("num", position);
-					if (activity.isHCM)
-						intent.putExtra(Constant.HCM, true);
-					else
-						intent.putExtra(Constant.HCM, false);
+					intent.putExtra(Constant.KEY_CITY, activity.isHCM);
 					activity.startActivity(intent);
 				}
 				ULog.i(ListBusAdapter.class, "map2 click value: " + activity.isHCM);
@@ -154,6 +148,7 @@ public class ListBusAdapter extends ArrayAdapter<clsPathBus> implements SectionI
 				intent.putExtra("start", Utility.ArrToString(pathBus.getPathStart()));
 				intent.putExtra("back", Utility.ArrToString(pathBus.getPathBack()));
 				intent.putExtra("info", pathBus.getInfo());
+				intent.putExtra(Constant.KEY_CITY, activity.isHCM);
 				activity.startActivity(intent);
 			}
 		});
@@ -162,9 +157,6 @@ public class ListBusAdapter extends ArrayAdapter<clsPathBus> implements SectionI
 
 			@Override
 			public void onClick(View v) {
-				// LinearLayout vwParentRow = (LinearLayout)v.getParent().getParent();
-				// vwParentRow.setBackgroundColor(Color.YELLOW);
-				// vwParentRow.refreshDrawableState();
 
 				Intent intent = new Intent(activity, InfoDetailActivity.class);
 				clsPathBus pathBus = arrPathBus.get(position);
@@ -173,6 +165,7 @@ public class ListBusAdapter extends ArrayAdapter<clsPathBus> implements SectionI
 				intent.putExtra("start", Utility.ArrToString(pathBus.getPathStart()));
 				intent.putExtra("back", Utility.ArrToString(pathBus.getPathBack()));
 				intent.putExtra("info", pathBus.getInfo());
+				intent.putExtra(Constant.KEY_CITY, activity.isHCM);
 				activity.startActivity(intent);
 			}
 		});

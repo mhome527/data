@@ -5,19 +5,23 @@ import java.util.HashMap;
 import java.util.Map;
 import org.w3c.dom.Document;
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Animation.AnimationListener;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import app.infobus.R.id;
+import android.widget.Toast;
 import app.infobus.entity.DataDistance;
 import app.infobus.entity.PriceFace;
 import app.infobus.model.GMapV2Direction;
@@ -25,22 +29,36 @@ import app.infobus.request.DistanceAPI;
 import app.infobus.utils.Constant;
 import app.infobus.utils.ULog;
 import app.infobus.utils.Utility;
-
 import com.android.volley.VolleyError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-public class MapTaxi extends BaseActivity implements OnClickListener{
+public class MapTaxi extends BaseActivity implements OnClickListener {
 	private GMapV2Direction md;
 	private RelativeLayout llInfo;
 	private TextView tvNext;
-	private TextView tvMoneyKm;
+	private TextView tvPriceBegin;
+	private TextView tvPrice1;
+	private TextView tvPrice2;
+	private TextView tvGuid1;
+	private TextView tvGuid2;
+	private TextView tvTiltePrice1;
+	private TextView tvTiltePrice2;
+
+	private TextView tvFrom;
+	private TextView tvTo;
+	private TextView tvKm;
+	private TextView tvTime;
+	private TextView tvMoney;
 
 	private ImageButton imgEditPrice;
 	private GoogleMap mMap;
@@ -50,9 +68,14 @@ public class MapTaxi extends BaseActivity implements OnClickListener{
 	private ProgressDialog progressDialog;
 	private boolean isDraw = false;
 	private ImageButton imgClose;
-	private long price = 16500;
+	private long price1 = 16500;
+	private long price2 = 12500;
+	private long priceBegin = 10500;
+	private int kmLimit = 31;
+	private Animation slideRight1;
+	private Animation slideRight2;
+	private Animation slideRight3;
 
-	
 	@Override
 	protected int getViewLayoutId() {
 		return R.layout.map_taxi;
@@ -60,64 +83,113 @@ public class MapTaxi extends BaseActivity implements OnClickListener{
 
 	@Override
 	protected void initView(Bundle savedInstanceState) {
-		md = new GMapV2Direction();
-		mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-		tvNext = this.getViewChild(R.id.tvNext);
-		llInfo = this.getViewChild(R.id.llInfo);
-		imgClose = this.getViewChild(R.id.imgClose);
-		llInfo.setVisibility(View.GONE);
-		imgEditPrice = this.getViewChild(R.id.imgEditPrice);
-		tvMoneyKm = MapTaxi.this.getViewChild(R.id.tvMoneyKm);
+		try {
+			md = new GMapV2Direction();
+			mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+			tvNext = this.getViewChild(R.id.tvNext);
+			llInfo = this.getViewChild(R.id.llInfo);
+			imgClose = this.getViewChild(R.id.imgClose);
+			llInfo.setVisibility(View.GONE);
+			imgEditPrice = this.getViewChild(R.id.imgEditPrice);
+			tvPriceBegin = MapTaxi.this.getViewChild(R.id.tvPriceBegin);
+			tvPrice1 = MapTaxi.this.getViewChild(R.id.tvPrice1);
+			tvPrice2 = MapTaxi.this.getViewChild(R.id.tvPrice2);
 
-		price = BaseActivity.pref.getLongValue(price, Constant.PRICE_TAXI);
+			tvFrom = MapTaxi.this.getViewChild(R.id.tvFrom);
+			tvTo = MapTaxi.this.getViewChild(R.id.tvTo);
+			tvKm = MapTaxi.this.getViewChild(R.id.tvKm);
+			tvTime = MapTaxi.this.getViewChild(R.id.tvTime);
+			tvMoney = MapTaxi.this.getViewChild(R.id.tvMoney);
 
-		setListenerView();
-		setCenterMapOnMyLocation();
-		// test();
+			tvTiltePrice1 = MapTaxi.this.getViewChild(R.id.tvTiltePrice1);
+			tvTiltePrice2 = MapTaxi.this.getViewChild(R.id.tvTiltePrice2);
+			// tvMoney = MapTaxi.this.getViewChild(R.id.tvMoney);
+			tvGuid1 = MapTaxi.this.getViewChild(R.id.tvGuid1);
+			tvGuid2 = MapTaxi.this.getViewChild(R.id.tvGuid2);
 
+			priceBegin = BaseActivity.pref.getLongValue(priceBegin, Constant.PRICE_BEGIN_TAXI);
+			price1 = BaseActivity.pref.getLongValue(price1, Constant.PRICE1_TAXI);
+			price2 = BaseActivity.pref.getLongValue(price2, Constant.PRICE2_TAXI);
+			kmLimit = BaseActivity.pref.getIntValue(Constant.KM_DEFAULT, Constant.KM_TAXI);
+
+			setListenerView();
+			setCenterMapOnMyLocation();
+			setAnimation();
+			setInitData();
+			// test();
+
+			Utility.setScreenNameGA("MapTaxi");
+			
+			if (!Utility.checkGps(this))
+				Utility.showDialogGPS(this);
+			// ///////ad
+			AdView adView = (AdView) this.findViewById(R.id.adView);
+			AdRequest adRequest = new AdRequest.Builder().build();
+			adView.loadAd(adRequest);
+		} catch (Exception e) {
+			ULog.e(this, "onCreate error:" + e.getMessage());
+		}
 	}
 
-	// @Override
-	// public void onWindowFocusChanged(boolean hasFocus) {
-	// super.onWindowFocusChanged(hasFocus);
-	// if (hasFocus) {
-	// decorView.setSystemUiVisibility(
-	// View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-	// | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-	// | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-	// | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-	// | View.SYSTEM_UI_FLAG_FULLSCREEN
-	// | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);}
-	// }
+	private void setInitData() {
+		tvTiltePrice1.setText(String.format(getString(R.string.title_price1), kmLimit));
+		tvTiltePrice2.setText(String.format(getString(R.string.title_price2), kmLimit));
+	}
 
-	// @Override
-	// public void onWindowFocusChanged(boolean hasFocus) {
-	// super.onWindowFocusChanged(hasFocus);
-	// RelativeLayout mBaseLayout = this.getViewChild(id.rootView);
-	// if (hasFocus) {
-	// mBaseLayout.setSystemUiVisibility(
-	// View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-	// | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-	// | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-	// | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-	// | View.SYSTEM_UI_FLAG_FULLSCREEN
-	// | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);}
-	// }
+	private void setAnimation() {
+		slideRight2 = AnimationUtils.loadAnimation(MapTaxi.this, R.anim.slide_out_right2);
+		slideRight2.setAnimationListener(new AnimationListener() {
+			@Override
+			public void onAnimationStart(Animation animation) {
+				tvGuid2.setVisibility(View.VISIBLE);
 
-	private void test() {
-		// View decorView = getWindow().getDecorView();
-		// // Hide the status bar.
-		// int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-		// decorView.setSystemUiVisibility(uiOptions);
-		// // Remember that you should never show the action bar if the
-		// // status bar is hidden, so hide that too if necessary.
-		// ActionBar actionBar = getActionBar();
-		// actionBar.hide();
-		RelativeLayout mBaseLayout = this.getViewChild(id.rootView);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-			mBaseLayout.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-		else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-			mBaseLayout.setSystemUiVisibility(View.STATUS_BAR_HIDDEN);
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				// tvGuid2.setVisibility(View.GONE);
+			}
+		});
+
+		slideRight1 = AnimationUtils.loadAnimation(MapTaxi.this, R.anim.slide_out_right);
+		slideRight1.setAnimationListener(new AnimationListener() {
+			@Override
+			public void onAnimationStart(Animation animation) {
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				tvGuid1.setVisibility(View.GONE);
+				tvGuid2.startAnimation(slideRight2);
+				// tvGuid2.setVisibility(View.VISIBLE);
+			}
+		});
+
+		slideRight3 = AnimationUtils.loadAnimation(MapTaxi.this, R.anim.slide_out_right);
+		slideRight3.setAnimationListener(new AnimationListener() {
+			@Override
+			public void onAnimationStart(Animation animation) {
+				// tvGuid2.setVisibility(View.VISIBLE);
+
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				tvGuid2.setVisibility(View.GONE);
+			}
+		});
 	}
 
 	private void setListenerView() {
@@ -157,19 +229,28 @@ public class MapTaxi extends BaseActivity implements OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.tvNext:
-			if (choice == 0 && locStart != null)
+			if (choice == 0 && locStart != null) {
 				choice = 1; // choice location 2
-			else if (choice == 1 && locEnd != null) {
+				// moveGuidToRight();
+				tvGuid1.startAnimation(slideRight1);
+			} else if (choice == 1 && locEnd != null) {
 				isDraw = true;
 				new DrawStreetAsk(this).execute();
 				choice = 2;
 				getDistance();
+				// moveGuidToRight2() ;
+				tvGuid2.startAnimation(slideRight3);
+
 			} else if (choice == 2 && locStart != null & locEnd != null) {
 				if (!isDraw) {
+					llInfo.setVisibility(View.GONE);
 					locStart = null;
 					locEnd = null;
 					choice = 0;
 					mMap.clear();
+					tvGuid1.setVisibility(View.VISIBLE);
+					tvGuid2.setVisibility(View.GONE);
+
 				}
 			} else {
 				// //show msg
@@ -181,22 +262,41 @@ public class MapTaxi extends BaseActivity implements OnClickListener{
 			break;
 		case R.id.imgEditPrice:
 			// edit price
-			Utility.dialogPriceTaxi(MapTaxi.this, price, priceFace);
-			
-			
+			Utility.dialogPriceTaxi(MapTaxi.this, price1, price2, priceBegin, kmLimit, priceFace);
+
 			break;
 		}
 	}
 
 	PriceFace priceFace = new PriceFace() {
-		
+
 		@Override
-		public void setPrice(long price) {
-			tvMoneyKm.setText(price +"");
-			BaseActivity.pref.putLongValue(price, Constant.PRICE_TAXI);
+		public void setPrice(long priceBegin, long price1, long price2) {
+
+			if (priceBegin > 0) {
+				BaseActivity.pref.putLongValue(priceBegin, Constant.PRICE_BEGIN_TAXI);
+				tvPriceBegin.setText(priceBegin + "");
+			}
+
+			if (price1 > 0) {
+				BaseActivity.pref.putLongValue(price1, Constant.PRICE1_TAXI);
+				tvPrice1.setText(price1 + "");
+			}
+
+			if (price2 > 0) {
+				BaseActivity.pref.putLongValue(price2, Constant.PRICE2_TAXI);
+				tvPrice2.setText(price2 + "");
+			}
+
+			MapTaxi.this.priceBegin = BaseActivity.pref.getLongValue(priceBegin, Constant.PRICE_BEGIN_TAXI);
+			MapTaxi.this.price1 = BaseActivity.pref.getLongValue(price1, Constant.PRICE1_TAXI);
+			MapTaxi.this.price2 = BaseActivity.pref.getLongValue(price2, Constant.PRICE2_TAXI);
+			kmLimit = BaseActivity.pref.getIntValue(Constant.KM_DEFAULT, Constant.KM_TAXI);
+
+			tvMoney.setText(getAmountMomey(tvKm.getText().toString()));
 		}
 	};
-	
+
 	private void getDistance() {
 		new DistanceAPI(DataDistance.class) {
 
@@ -234,45 +334,73 @@ public class MapTaxi extends BaseActivity implements OnClickListener{
 	}
 
 	private void setData(DataDistance entity) {
-		TextView tvFrom = MapTaxi.this.getViewChild(R.id.tvFrom);
-		TextView tvTo = MapTaxi.this.getViewChild(R.id.tvTo);
-		TextView tvKm = MapTaxi.this.getViewChild(R.id.tvKm);
-		TextView tvTime = MapTaxi.this.getViewChild(R.id.tvTime);
-		TextView tvMoney = MapTaxi.this.getViewChild(R.id.tvMoney);
+		String time;
 		// TextView tvFrom = MapTaxi.this.getViewChild(R.id.tvFrom);
 
 		tvFrom.setText(entity.origin_addresses[0]);
 		tvTo.setText(entity.destination_addresses[0]);
 		tvKm.setText(entity.rows.get(0).elements.get(0).distance.text);
-		tvTime.setText(entity.rows.get(0).elements.get(0).duration.text);
-		tvMoneyKm.setText(price + "");
-		tvMoney.setText(getAmountMomey(entity.rows.get(0).elements.get(0).distance.text, 10000));
+		time = entity.rows.get(0).elements.get(0).duration.text;
+		time = time.replaceAll("day", MapTaxi.this.getString(R.string.day)).replaceAll("hours", MapTaxi.this.getString(R.string.hour))
+				.replaceAll("mins", MapTaxi.this.getString(R.string.mins));
+		tvTime.setText(time);
+		tvPriceBegin.setText(priceBegin + "");
+		tvPrice1.setText(price1 + "");
+		tvPrice2.setText(price2 + "");
+		tvMoney.setText(getAmountMomey(entity.rows.get(0).elements.get(0).distance.text));
 	}
 
 	@SuppressLint("DefaultLocale")
-	private String getAmountMomey(String strUnit, double money) {
+	private String getAmountMomey(String strUnit) {
 		double km = 0;
+		long money = 0;
 		try {
 			if (strUnit.toUpperCase().contains("KM")) {
-				km = Double.parseDouble(strUnit.toUpperCase().replaceAll("KM", "").trim());
+				km = Double.parseDouble(strUnit.toUpperCase().replaceAll("KM", "").replaceAll(",", "").trim());
 			} else if (strUnit.toUpperCase().contains("M")) {
-				km = Integer.parseInt(strUnit.toUpperCase().replaceAll("M", "").trim()) / 1000;
+				km = Integer.parseInt(strUnit.toUpperCase().replaceAll("M", "").replaceAll(",", "").trim()) / 1000;
 			}
-			return (long) (km * money) + "";
+			
+			if (km <= 1)
+				money = priceBegin;
+			else if (km < kmLimit)
+				money = (long) (priceBegin +  (double) ((km - 1) * price1));
+			else
+				money = (long) (priceBegin +  (double) ((kmLimit - 2) * price1) +  (double) ((km - (kmLimit - 1)) * price2));
+
+			return money + "";
 		} catch (Exception e) {
-			return "0";
+			ULog.e(MapTaxi.this, "getAmountMoney error:" + e.getMessage());
 		}
+		return "0";
 	}
 
 	private void setCenterMapOnMyLocation() {
-		LatLng myLocation;
-		mMap.setMyLocationEnabled(true);
+		// LatLng myLocation;
+		// mMap.setMyLocationEnabled(true);
+		//
+		// Location location = mMap.getMyLocation();
+		//
+		// if (location != null) {
+		// myLocation = new LatLng(location.getLatitude(), location.getLongitude());
+		// mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 15));
+		// }
 
-		Location location = mMap.getMyLocation();
+		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
 
+		Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
 		if (location != null) {
-			myLocation = new LatLng(location.getLatitude(), location.getLongitude());
-			mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 15));
+			mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 13));
+
+			CameraPosition cameraPosition = new CameraPosition.Builder()
+					.target(new LatLng(location.getLatitude(), location.getLongitude())) // Sets the center of the map to location user
+					.zoom(14) // Sets the zoom
+					// .bearing(90) // Sets the orientation of the camera to east
+					// .tilt(40) // Sets the tilt of the camera to 30 degrees
+					.build(); // Creates a CameraPosition from the builder
+			mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
 		}
 	}
 
@@ -342,18 +470,11 @@ public class MapTaxi extends BaseActivity implements OnClickListener{
 
 			if (result)
 				mMap.addPolyline(rectLine);
-			else
+			else {
 				ULog.e(MapTaxi.class, "Can't draw map");
-
+				Toast.makeText(MapTaxi.this, MapTaxi.this.getString(R.string.not_found), Toast.LENGTH_LONG).show();
+			}
 		}
 	}
 
-	// float distance = (float) Math.sqrt((newX - oldX) * (newX - oldX) + (newY - oldY) * (newY - oldY));
-
-	private float getKm() {
-		// return (float) Math.sqrt((locStart.latitude - locEnd.latitude) * (locStart.latitude - locEnd.latitude)
-		// + (locStart.longitude - locEnd.longitude) * (locStart.longitude - locEnd.longitude));
-
-		return 0;
-	}
 }
